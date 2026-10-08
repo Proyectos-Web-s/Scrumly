@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCRUMLY - Procesos de Desarrollo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/Procesos-y-Desarrollo-de-Software.css" />
+    <link rel="stylesheet" href="CSS/menu.css" />
+  </head>
+  <body>
+
+        <!-- Barra de Navegación -->
+            <div class="Barra-de-Navegacion">
+                <img src="IMG/Logo-SCRUMLY.jpeg" alt="SCRUMLY Logo" class="logo-SCRUMLY">
+                <p class="Titulo-Barra">SCRUMLY</p>
+                <i class="Hambu bi-list" id="boton-menu"></i>
+            <!-- Menu hamburgesa -->
+                <nav class="Menu" id="menu">
+                    <div class="Menu-Titulo">
+                        <span>MENÚ</span>
+                    </div>
+
+                    <a href="index.html">
+                        <i class="bi bi-house"></i>
+                        <span>Inicio</span>
+                    </a>
+
+                    <!-- Gestión de Calidad -->
+                    <div class="Item-Menu">
+
+                        <!-- Con un click se despliega -->
+                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                            <i class="bi bi-patch-check"></i>
+
+                            <span>
+                                Gestión de la Calidad<br>
+                                del Software
+                            </span>
+
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+
+                        <div class="Submenu">
+                            <a href="Gestion-de-Calidad-del-Software.html#fundamentos-calidad">Fundamentos</a>
+                            <a href="Gestion-de-Calidad-del-Software.html#calidad-agil">Técnicas de Aseguramiento de la Calidad</a>
+                            <a href="Gestion-de-Calidad-del-Software.html#estandares-calidad">Herramientas de Calidad</a>
+                        </div>
+
+                    </div>
+
+                    <div class="Item-Menu">
+                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                            <i class="bi bi-bezier2"></i>
+                            <span>Procesos de Desarrollo<br>de Software</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="Submenu">
+                            <a href="Procesos-y-Desarrollo-de-Software.html#inicio-procesos">Ciclo de Vida del Desarrollo (SDLC)</a>
+                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-cascada">Modelo en Cascada</a>
+                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-v">Modelo en V</a>
+                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-iterativo">Modelo Iterativo e Incremental</a>
+                        </div>
+                    </div>
+
+                    <div class="Item-Menu">
+                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                            <i class="bi bi-lightning-charge"></i>
+                            <span>Metodologías Ágiles</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="Submenu">
+                            <a href="Metodologias-Agiles.html#scrum-en-profundidad">Scrum en profundidad</a>
+                            <a href="Metodologias-Agiles.html#kanban">Kanban</a>
+                            <a href="Metodologias-Agiles.html#xp">XP (Extreme Programming)</a>
+                            <a href="Procesos-y-Desarrollo-de-Software.html#comparacion-modelos">Comparativa con modelos tradicionales</a>
+                        </div>
+                    </div>
+
+                    <div class="Item-Menu">
+                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                            <i class="bi bi-book"></i>
+                            <span>Recursos y Aprendizajes</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="Submenu">
+                            <a href="Recursos-y-Aprendizajes.html#glosario">Glosario</a>
+                            <a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
+                            <a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
+                            <a href="#">Ejercicios y Casos Prácticos</a>
+                        </div>
+                    </div>
+
+                    <a href="index.html"><i class="bi bi-people"></i><span>Sobre Nosotros</span></a>
+                    <a href="#"><i class="bi bi-envelope"></i><span>Contacto</span></a>
+                </nav>
+            </div>
+
+      <section id="inicio-procesos" class="Seccion-Principal">
+
+        <p class="Antetitulo">Procesos y desarrollo de software</p>
+
+          <div class="Contenedor-Titulos">
+            <h1 class="Titulo-A">Modelos</h1>
+            <h1 class="Titulo-B">Tradicionales</h1>
+          </div>
+
+        <p class="Parrafo-Principal">
+          Los modelos de desarrollo organizan las actividades necesarias para construir un sistema:
+          requerimientos, diseño, implementación, pruebas y mantenimiento.
+          Según Sommerville, un modelo de proceso es una representación simplificada de un proceso de software y
+          puede adaptarse a distintos proyectos.
+        </p>
+
+      </section>
+
+      <div class="Selector-Modelos">
+
+        <a href="#modelo-cascada" class="Boton-Modelo">01 Modelo en Cascada</a>
+        <a href="#modelo-v" class="Boton-Modelo">02 Modelo en V</a>
+        <a href="#modelo-iterativo" class="Boton-Modelo">03 Modelo Iterativo e Incremental</a>
+
+      </div>
+
+    
+      <!-- Seccion 1: Modelo en Cascada -->
+      <section id="modelo-cascada" class="Seccion-Modelo">
+
+        <div class="Contenedor-Titulo-Modelo">
+          <span class="Antetitulo-Modelo">01 · MODELO</span>
+          <h2 class="Titulo-Modelo"><i class="bi bi-arrow-down Icono-Titulo-Modelo" aria-hidden="true"></i>Modelo en Cascada</h2>
+        </div>
+
+        <div class="Contenido-Modelo">
+          <div class="Texto-Modelo">
+                <h3>¿Qué es?</h3>
+                <p>
+                  El modelo en cascada organiza el desarrollo mediante
+                  fases separadas y ordenadas. Las actividades de
+                  especificación, desarrollo, validación y evolución se
+                  representan como etapas diferenciadas.
+                </br></br>
+                  Es un proceso dirigido por un plan, en el que las
+                  actividades se planifican antes de comenzar el trabajo.
+              </p>
+          </div>
+
+          <div class="Diagrama-Modelo">
+            <h3>Diagrama del modelo</h3>
+            <div class="Diagrama-Cascada">
+              <img src="IMG/Diagrama-Casacada.PNG" class="Imagen-Cascada">
+            </div>
+          </div>
+          <div class="Cabecera-Etapas">
+            <h3>Etapas</h3>
+          </div>
+          <div class="Etapas-Modelo">
+            <div class="Pasos-Modelo">
+              <article class="Paso-Modelo" tabindex="0">
+                <span class="Numero-Paso">01</span>
+                <div class="Paso-Contenido">
+                  <h4>Análisis</h4>
+                  <p>Se establecen los servicios, restricciones y objetivos mediante la consulta con los usuarios.</p>
+                  <p class="Paso-Detalle">En esta etapa se recopilan y analizan las necesidades del usuario para definir claramente qué debe hacer el sistema.</p>
+                </div>
+              </article>
+              <article class="Paso-Modelo" tabindex="0">
+                <span class="Numero-Paso">02</span>
+                <div class="Paso-Contenido">
+                  <h4>Diseño</h4>
+                  <p>Los requerimientos se utilizan para definir la arquitectura y las principales características.</p>
+                  <p class="Paso-Detalle">Se define cómo estará organizado el sistema, incluyendo su estructura, componentes y la forma en que funcionarán entre sí.</p>
+                </div>
+              </article>
+              <article class="Paso-Modelo" tabindex="0">
+                <span class="Numero-Paso">03</span>
+                <div class="Paso-Contenido">
+                  <h4>Codificación</h4>
+                  <p>El diseño se transforma en unidades de software y se verifica cada una de ellas.</p>
+                  <p class="Paso-Detalle">Los programadores desarrollan el software siguiendo el diseño establecido y realizan pruebas sobre las unidades creadas.</p>
+                </div>
+              </article>
+            </div>
+            <div class="Pasos-Modelo">
+              <article class="Paso-Modelo" tabindex="0">
+                <span class="Numero-Paso">04</span>
+                <div class="Paso-Contenido">
+                  <h4>Validación y Verificación</h4>
+                  <p>Las unidades se integran y se prueba el sistema completo.</p>
+                  <p class="Paso-Detalle">Se comprueba que el sistema funcione correctamente y que cumpla con los requisitos establecidos al comienzo del proyecto.</p>
+                </div>
+              </article>
+              <article class="Paso-Modelo" tabindex="0">
+                <span class="Numero-Paso">05</span>
+                <div class="Paso-Contenido">
+                  <h4>Implementación</h4>
+                  <p>El sistema entra en funcionamiento.</p>
+                  <p class="Paso-Detalle">El software se instala y se pone a disposición de los usuarios para comenzar a utilizarlo en el entorno correspondiente.</p>
+                </div>
+              </article>
+              <article class="Paso-Modelo" tabindex="0">
+                <span class="Numero-Paso">06</span>
+                <div class="Paso-Contenido">
+                  <h4>Evolución y Mantenimiento</h4>
+                  <p>Se corrigen errores, se mejora y se incorporan nuevos servicios.</p>
+                  <p class="Paso-Detalle">Se realizan modificaciones para solucionar problemas, adaptar el sistema a nuevos cambios y agregar mejoras o funcionalidades.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="Comparativa-Modelo">
+          <article class="Ventajas-Modelo">
+            <h4>✓ Ventajas</h4>
+            <ul>
+              <li>Las etapas están claramente definidas.</li>
+              <li>Facilita la planificación y el seguimiento del proyecto.</li>
+              <li>Está bien documentado y facilita la supervisión.</li>
+              <li>Puede ser adecuado cuando los requisitos son estables.</li>
+            </ul>
+          </article>
+
+          <article class="Desventajas-Modelo">
+            <h4>✕ Desventajas</h4>
+            <ul>
+              <li>Es difícil responder a cambios en los requisitos.</li>
+              <li>Los problemas detectados tarde pueden requerir volver etapas anteriores.</li>
+              <li>La separación rígida entre fases puede dificultar la adaptación.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="Utilizarlo-Modelo">
+          <i class="bi bi-bullseye Icono-Modelo" aria-hidden="true"></i>
+          <div class="Contenido-Utilizarlo-Modelo">
+            <h3>¿Cuándo utilizarlo?</h3>
+            <p>Cuando los requerimientos están bien definidos y se espera que cambien poco.</p>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+      <!-- Seccion 2: Modelo en V -->
+      <section id="modelo-v" class="Seccion-Modelo">
+        <div class="Contenedor-Titulo-Modelo">
+          <span class="Antetitulo-Modelo">02 · MODELO</span>
+          <h2 class="Titulo-Modelo"><i class="bi bi-bezier2 Icono-Titulo-Modelo" aria-hidden="true"></i>Modelo en V</h2>
+        </div>
+
+        <div class="Contenido-Modelo">
+          <div class="Texto-Modelo">
+            <h3>¿Qué es?</h3>
+            <p>
+              El modelo en V es una variante del enfoque secuencial en la que las actividades de
+              desarrollo se relacionan directamente con actividades de verificación y validación.
+            </p>
+            <p>
+              En el lado izquierdo se ubica el análisis y el diseño, y en el lado derecho las distintas
+              etapas de pruebas. Esto ayuda a comprobar que cada fase cumple con sus objetivos.
+            </p>
+
+          </div>
+
+          <div class="Diagrama-Modelo">
+            <h3>Diagrama del modelo</h3>
+            <div class="Diagrama-V">
+              <img class="Imagen-V" src="IMG/Diagrama-V.PNG">
+            </div>
+            <p>Cada etapa valida un nivel concreto del producto.</p>
+
+          </div>
+        </div>
+
+        <div class="Listas-Modelo">
+          <div class="Lista-Modelo">
+            <h4>Lado de desarrollo</h4>
+            <ul>
+              <li class="Etapa-V" tabindex="0">
+                <strong>Análisis de requerimientos</strong>
+                <p>Se identifican las necesidades del usuario y se establecen las funciones que deberá cumplir el sistema.</p>
+              </li>
+              <li class="Etapa-V" tabindex="0">
+                <strong>Diseño del sistema</strong>
+                <p>Se define cómo estará organizado el sistema y cómo se relacionarán sus diferentes partes.</p>
+              </li>
+              <li class="Etapa-V" tabindex="0">
+                <strong>Diseño de arquitectura</strong>
+                <p>Se establece la estructura general del software y los principales componentes que lo forman.</p>
+              </li>
+              <li class="Etapa-V" tabindex="0">
+                <strong>Diseño de módulos</strong>
+                <p>Se divide el sistema en módulos más pequeños, definiendo la función que tendrá cada uno.</p>
+              </li>
+              <li class="Etapa-V" tabindex="0">
+                <strong>Implementación</strong>
+                <p>Se desarrolla el código del sistema siguiendo el diseño y la arquitectura establecidos.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="Lista-Modelo">
+            <h4>Lado de pruebas</h4>
+            <ul>
+              <li class="Etapa-V" tabindex="0">
+                <strong>Pruebas unitarias</strong>
+                <p>Se comprueba que cada componente o unidad del software funcione correctamente de manera individual.</p>
+              </li>
+              <li class="Etapa-V" tabindex="0">
+                <strong>Pruebas de integración</strong>
+                <p>Se verifica que los diferentes módulos funcionen correctamente cuando se conectan entre sí.</p>
+              </li>
+              <li class="Etapa-V" tabindex="0">
+                <strong>Pruebas del sistema</strong>
+                <p>Se prueba el sistema completo para comprobar que cumple con los requisitos establecidos.</p>
+              </li>
+              <li class="Etapa-V" tabindex="0">
+                <strong>Pruebas de aceptación</strong>
+                <p>Se verifica que el sistema responda a las necesidades del usuario y esté listo para su entrega.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="Comparativa-Modelo">
+          <article class="Ventajas-Modelo">
+            <h4>✓ Ventajas</h4>
+            <ul>
+              <li>Relaciona las etapas de desarrollo con las pruebas correspondientes.</li>
+              <li>Permite planificar las pruebas desde etapas tempranas.</li>
+              <li>Facilita la organización estructurada del proyecto.</li>
+              <li>Hace explícita la relación entre verificación y validación.</li>
+            </ul>
+          </article>
+
+          <article class="Desventajas-Modelo">
+            <h4>✕ Desventajas</h4>
+            <ul>
+              <li>Es poco flexible ante cambios importantes de requisitos.</li>
+              <li>Un producto funcional suele aparecer recién hacia las últimas etapas.</li>
+              <li>Durante las pruebas, los cambios importantes de diseño son difíciles.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="Utilizarlo-Modelo">
+          <i class="bi bi-bullseye Icono-Modelo" aria-hidden="true"></i>
+          <div class="Contenido-Utilizarlo-Modelo">
+            <h3>¿Cuándo utilizarlo?</h3>
+            <p>En proyectos con requerimientos claros que necesitan un proceso estructurado de verificación y validación.</p>
+          </div>
+        </div>
+      </section>
+
+
+
+
+      <!-- Seccion 3: Modelo Iterativo e Incremental -->
+      <section id="modelo-iterativo" class="Seccion-Modelo">
+        <div class="Contenedor-Titulo-Modelo">
+          <span class="Antetitulo-Modelo">03 · MODELO</span>
+          <h2 class="Titulo-Modelo"><i class="bi bi-arrow-repeat Icono-Titulo-Modelo" aria-hidden="true"></i>Modelo Iterativo e Incremental</h2>
+        </div>
+
+        <div class="Contenido-Modelo">
+          <div class="Texto-Modelo">
+            <h3>¿Qué es?</h3>
+            <p>
+              La especificación, el desarrollo y la validación están vinculados. El sistema se construye
+              mediante versiones llamadas incrementos, y cada una agrega nuevas funcionalidades.
+            </p>
+            <p>
+              El desarrollo se repite en ciclos, permitiendo revisar y mejorar el sistema a medida que
+              avanza. Los primeros incrementos pueden incluir funciones prioritarias y luego ir creciendo.
+            </p>
+
+          </div>
+
+          <div class="Diagrama-Modelo">
+            <h3>Diagrama del modelo</h3>
+          <div class="Diagrama-Iterativo">
+              <img class="Imagen-Iterativo" src="IMG/Diagrama-Interativo.PNG">
+            </div>
+          </div>
+        </div>
+
+        <div class="Funcion-Modelo">
+          <h4>¿Cómo funciona?</h4>
+          <p>Cada incremento entrega una versión con una funcionalidad nueva y el producto va evolucionando.</p>
+        </div>
+
+        <div class="Comparativa-Modelo">
+          <article class="Ventajas-Modelo">
+            <h4>✓ Ventajas</h4>
+            <ul>
+              <li>Permite incorporar cambios con mayor facilidad.</li>
+              <li>El cliente puede probar versiones tempranas del producto.</li>
+              <li>Se adapta mejor a requisitos cambiantes o no completamente definidos.</li>
+              <li>Reduce el riesgo de entregar un sistema muy tarde o con fallos graves.</li>
+            </ul>
+          </article>
+
+          <article class="Desventajas-Modelo">
+            <h4>✕ Desventajas</h4>
+            <ul>
+              <li>El proceso puede ser menos visible para los administradores.</li>
+              <li>La estructura puede ser difícil de gestionar si no se realiza una refactorización adecuada.</li>
+              <li>Los sistemas grandes pueden requerir una coordinación más compleja.</li>
+              <li>Los requisitos y responsabilidades deben estar claras desde el inicio.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="Utilizarlo-Modelo">
+          <i class="bi bi-bullseye Icono-Modelo" aria-hidden="true"></i>
+          <div class="Contenido-Utilizarlo-Modelo">
+            <h3>¿Cuándo utilizarlo?</h3>
+            <p>Cuando los requerimientos pueden cambiar y se necesitan versiones funcionales de forma progresiva.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+      <section id="comparacion-modelos" class="Seccion-Comparacion">
+        <div class="Cabecera-Comparacion">
+          <span class="Etiqueta-Comparacion">COMPARACIÓN</span>
+          <h2>Tres formas de organizar el desarrollo</h2>
+        </div>
+
+        <table class="Tabla-Comparacion">
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th>Cascada</th>
+              <th>Modelo en V</th>
+              <th>Iterativo / Incremental</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Organización</td>
+              <td>Secuencial</td>
+              <td>Secuencial + pruebas relacionadas</td>
+              <td>Por ciclos e incrementos</td>
+            </tr>
+            <tr>
+              <td>Cambios</td>
+              <td>Difíciles</td>
+              <td>Difíciles</td>
+              <td>Más fáciles</td>
+            </tr>
+            <tr>
+              <td>Entrega</td>
+              <td>Principalmente al final</td>
+              <td>Principalmente al final</td>
+              <td>Por versiones</td>
+            </tr>
+            <tr>
+              <td>Pruebas</td>
+              <td>Después de implementar</td>
+              <td>Planificadas desde etapas tempranas</td>
+              <td>En cada incremento</td>
+            </tr>
+            <tr>
+              <td>Participación del usuario</td>
+              <td>Principalmente al inicio</td>
+              <td>Principalmente al inicio</td>
+              <td>Continua</td>
+            </tr>
+            <tr>
+              <td>Requisitos</td>
+              <td>Estables</td>
+              <td>Estables</td>
+              <td>Pueden continuar</td>
+            </tr>
+            <tr>
+              <td>Enfoque</td>
+              <td>Planificado</td>
+              <td>Verificación y validación</td>
+              <td>Evolución progresiva</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div class="Info-Importante">
+        <span class="Icono-Informacion">i</span>
+        <p>
+          Los modelos no son mutuamente excluyentes. En proyectos grandes pueden combinarse: algunas partes
+          pueden desarrollarse mediante cascada y otras mediante un enfoque incremental, según las
+          características de cada parte del sistema.
+        </p>
+      </div>
+
+      <div class="Seccion-footer">
+        <footer>
+          <p class="Parrafo-Pie">Scrumly . Sistema de gestión de calidad del software</p>
+        </footer>
+      </div>
+
+    <script src="JS/script.js"></script>
+  </body>
+</html>

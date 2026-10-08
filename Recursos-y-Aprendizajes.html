@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SCRUMLY - Recursos y Aprendizajes</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="CSS/Recursos-y-Aprendizajes.css" />
+		<link rel="stylesheet" href="CSS/menu.css" />
+	</head>
+	<body>
+		<!-- Barra de navegación principal -->
+		<div class="Barra-de-Navegacion">
+			<a href="index.html" class="Enlace-Logo">
+				<img src="IMG/Logo-SCRUMLY.jpeg" alt="SCRUMLY Logo" class="logo-SCRUMLY" />
+			</a>
+			<p class="Titulo-Barra">SCRUMLY</p>
+			<i class="Hambu bi-list" id="boton-menu"></i>
+
+            <!-- Menu hamburgesa -->
+                <nav class="Menu" id="menu">
+                    <div class="Menu-Titulo">
+                        <span>MENÚ</span>
+                    </div>
+
+                    <a href="index.html">
+                        <i class="bi bi-house"></i>
+                        <span>Inicio</span>
+                    </a>
+
+                    <!-- Gestión de Calidad -->
+                    <div class="Item-Menu">
+
+                        <!-- Con un click se despliega -->
+                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                            <i class="bi bi-patch-check"></i>
+
+                            <span>
+                                Gestión de la Calidad<br>
+                                del Software
+                            </span>
+
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+
+                        <div class="Submenu">
+                            <a href="Gestion-de-Calidad-del-Software.html#fundamentos-calidad">Fundamentos</a>
+                            <a href="Gestion-de-Calidad-del-Software.html#calidad-agil">Técnicas de Aseguramiento de la Calidad</a>
+                            <a href="Gestion-de-Calidad-del-Software.html#estandares-calidad">Herramientas de Calidad</a>
+                        </div>
+
+                    </div>
+
+                    <div class="Item-Menu">
+                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                            <i class="bi bi-bezier2"></i>
+                            <span>Procesos de Desarrollo<br>de Software</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="Submenu">
+                            <a href="Procesos-y-Desarrollo-de-Software.html#inicio-procesos">Ciclo de Vida del Desarrollo (SDLC)</a>
+                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-cascada">Modelo en Cascada</a>
+                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-v">Modelo en V</a>
+                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-iterativo">Modelo Iterativo e Incremental</a>
+                        </div>
+                    </div>
+
+                    <div class="Item-Menu">
+                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                            <i class="bi bi-lightning-charge"></i>
+                            <span>Metodologías Ágiles</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="Submenu">
+                            <a href="Metodologias-Agiles.html#scrum-en-profundidad">Scrum en profundidad</a>
+                            <a href="Metodologias-Agiles.html#kanban">Kanban</a>
+                            <a href="Metodologias-Agiles.html#xp">XP (Extreme Programming)</a>
+                            <a href="Procesos-y-Desarrollo-de-Software.html#comparacion-modelos">Comparativa con modelos tradicionales</a>
+                        </div>
+                    </div>
+
+                    <div class="Item-Menu">
+                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                            <i class="bi bi-book"></i>
+                            <span>Recursos y Aprendizajes</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="Submenu">
+                            <a href="Recursos-y-Aprendizajes.html#glosario">Glosario</a>
+                            <a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
+                            <a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
+                            <a href="#">Ejercicios y Casos Prácticos</a>
+                        </div>
+                    </div>
+
+                    <a href="index.html"><i class="bi bi-people"></i><span>Sobre Nosotros</span></a>
+                    <a href="#"><i class="bi bi-envelope"></i><span>Contacto</span></a>
+                </nav>
+            </div>
+
+		<!-- Sección principal del glosario -->
+		<main class="Pagina-Glosario">
+			<section class="Seccion-Principal">
+				<p class="Antetitulo-Principal">RECURSOS Y APRENDIZAJES / 01</p>
+				<h1>GLOSARIO<span>.</span></h1>
+				<h2>Las palabras clave para entender el mundo del software.</h2>
+				<p class="Descripcion-Principal">
+					Un espacio de consulta rápida con los principales conceptos utilizados a lo largo de Scrumly:
+					calidad de software, procesos de desarrollo, modelos tradicionales, Scrum y requisitos.
+				</p>
+			</section>
+
+			<!-- Sección de búsqueda del glosario -->
+			<section id="glosario" class="Seccion-Busqueda" aria-labelledby="titulo-busqueda">
+				<h2 id="titulo-busqueda" class="Texto-Oculto">Buscar términos del glosario</h2>
+
+				<!-- Campo de búsqueda con lupa -->
+				<label class="Campo-Busqueda" for="Buscador-Glosario">
+					<i class="bi bi-search"></i>
+					<input id="Buscador-Glosario" type="search" placeholder="Buscá un término..." autocomplete="off" />
+				</label>
+
+				<!-- Filtros por letra inicial -->
+				<div class="Filtros-Letras" id="Filtros-Letras" aria-label="Filtrar términos por letra">
+					<button class="Boton-Letra activo" type="button" data-letra="">Todo</button>
+					<button class="Boton-Letra" type="button" data-letra="A">A</button>
+					<button class="Boton-Letra" type="button" data-letra="B">B</button>
+					<button class="Boton-Letra" type="button" data-letra="C">C</button>
+					<button class="Boton-Letra" type="button" data-letra="D">D</button>
+					<button class="Boton-Letra" type="button" data-letra="E">E</button>
+					<button class="Boton-Letra" type="button" data-letra="F">F</button>
+					<button class="Boton-Letra" type="button" data-letra="G">G</button>
+					<button class="Boton-Letra" type="button" data-letra="H">H</button>
+					<button class="Boton-Letra" type="button" data-letra="I">I</button>
+					<button class="Boton-Letra" type="button" data-letra="J">J</button>
+					<button class="Boton-Letra" type="button" data-letra="K">K</button>
+					<button class="Boton-Letra" type="button" data-letra="L">L</button>
+					<button class="Boton-Letra" type="button" data-letra="M">M</button>
+					<button class="Boton-Letra" type="button" data-letra="N">N</button>
+					<button class="Boton-Letra" type="button" data-letra="O">O</button>
+					<button class="Boton-Letra" type="button" data-letra="P">P</button>
+					<button class="Boton-Letra" type="button" data-letra="Q">Q</button>
+					<button class="Boton-Letra" type="button" data-letra="R">R</button>
+					<button class="Boton-Letra" type="button" data-letra="S">S</button>
+					<button class="Boton-Letra" type="button" data-letra="T">T</button>
+					<button class="Boton-Letra" type="button" data-letra="U">U</button>
+					<button class="Boton-Letra" type="button" data-letra="V">V</button>
+					<button class="Boton-Letra" type="button" data-letra="W">W</button>
+					<button class="Boton-Letra" type="button" data-letra="X">X</button>
+					<button class="Boton-Letra" type="button" data-letra="Y">Y</button>
+					<button class="Boton-Letra" type="button" data-letra="Z">Z</button>
+				</div>
+
+				<!-- Resultados actualizados por JavaScript -->
+				<div class="Resultados-Glosario" id="Resultados-Glosario" aria-live="polite"></div>
+			</section>
+		</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- Sección principal de preguntas frecuentes -->
+		<main class="Pagina-PF">
+			<section id="inicio-preguntas" class="Seccion-Principal-PF">
+				<p class="Antetitulo-PF">RECURSOS Y APRENDIZAJES / 02</p>
+				<h1>PREGUNTAS FRECUENTES<span>.</span></h1>
+				<p class="Descripcion-PF">
+					¿Tenés alguna duda? En esta sección encontrarás respuestas a las preguntas más frecuentes sobre calidad
+					de software, procesos de desarrollo y metodologías ágiles.
+				</p>
+			</section>
+
+			<!-- Sección de preguntas desplegables -->
+			<section id="preguntas-frecuentes" class="Seccion-Preguntas" aria-labelledby="titulo-preguntas">
+				<div class="Encabezado-Preguntas">
+					<i class="bi bi-question-circle"></i>
+					<h2 id="titulo-preguntas">12 Preguntas · hacé clic para ver la respuesta</h2>
+				</div>
+
+				<!-- Cada pregunta puede abrirse sin cerrar las demás -->
+				<div class="Lista-Preguntas">
+					<article class="Pregunta-Frecuente">
+						<button class="Boton-Pregunta" type="button" aria-expanded="true">
+							<span>¿Qué es la calidad del software?</span>
+							<i class="bi bi-chevron-up"></i>
+						</button>
+						<div class="Respuesta-Pregunta">
+							<p>La calidad del software se relaciona con el grado en que un sistema cumple con los requisitos establecidos y satisface las necesidades de sus usuarios. Para evaluarla se pueden utilizar características, métricas y técnicas de aseguramiento de la calidad.</p>
+						</div>
+					</article>
+
+					<article class="Pregunta-Frecuente">
+						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué es un proceso de software?</span><i class="bi bi-chevron-down"></i></button>
+						<div class="Respuesta-Pregunta"><p>Es un conjunto de actividades relacionadas que permiten desarrollar un producto de software. Estas actividades pueden incluir la especificación, el diseño, la implementación, la validación y la evolución del software.</p></div>
+					</article>
+
+					<article class="Pregunta-Frecuente">
+						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué es un modelo de desarrollo de software?</span><i class="bi bi-chevron-down"></i></button>
+						<div class="Respuesta-Pregunta"><p>Es una representación simplificada de un proceso de software. Los modelos permiten organizar y representar las actividades que se realizan durante el desarrollo.</p></div>
+					</article>
+
+					<article class="Pregunta-Frecuente">
+						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué es el modelo en Cascada?</span><i class="bi bi-chevron-down"></i></button>
+						<div class="Respuesta-Pregunta"><p>Es un modelo de desarrollo en el que las actividades se organizan en etapas. Entre ellas se encuentran la definición de requerimientos, el diseño, la implementación, las pruebas y el mantenimiento.</p></div>
+					</article>
+
+					<article class="Pregunta-Frecuente">
+						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué es el desarrollo incremental?</span><i class="bi bi-chevron-down"></i></button>
+						<div class="Respuesta-Pregunta"><p>Es un enfoque en el que el sistema se desarrolla y entrega mediante diferentes incrementos. Cada incremento incorpora nuevas funcionalidades hasta llegar a una versión completa del sistema.</p></div>
+					</article>
+
+					<article class="Pregunta-Frecuente">
+						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué es Scrum?</span><i class="bi bi-chevron-down"></i></button>
+						<div class="Respuesta-Pregunta"><p>Scrum es una metodología ágil que organiza el desarrollo del producto mediante ciclos de trabajo llamados Sprints, permitiendo entregar incrementos del producto y recibir retroalimentación de manera frecuente.</p></div>
+					</article>
+
+					<article class="Pregunta-Frecuente">
+						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué es un Sprint?</span><i class="bi bi-chevron-down"></i></button>
+						<div class="Respuesta-Pregunta"><p>Es un período de tiempo limitado durante el cual el equipo trabaja para desarrollar un incremento del producto. En Scrum, un Sprint puede durar hasta cuatro semanas.</p></div>
+					</article>
+
+					<article class="Pregunta-Frecuente">
+						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué es el Product Backlog?</span><i class="bi bi-chevron-down"></i></button>
+						<div class="Respuesta-Pregunta"><p>Es la lista priorizada de los requisitos y funcionalidades que se desean desarrollar en el producto. Se actualiza y modifica a medida que cambian las necesidades del proyecto.</p></div>
+					</article>
+
+					<article class="Pregunta-Frecuente">
+						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué hace el Scrum Master?</span><i class="bi bi-chevron-down"></i></button>
+						<div class="Respuesta-Pregunta"><p>El Scrum Master ayuda a que Scrum sea comprendido y aplicado correctamente, facilita las reuniones y ayuda al equipo a resolver los impedimentos que puedan afectar el desarrollo del Sprint.</p></div>
+					</article>
+
+					<article class="Pregunta-Frecuente">
+						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué es una prueba de software?</span><i class="bi bi-chevron-down"></i></button>
+						<div class="Respuesta-Pregunta"><p>Es una actividad utilizada para comprobar el comportamiento del software y detectar errores o problemas antes de su entrega.</p></div>
+					</article>
+
+					<article class="Pregunta-Frecuente">
+						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué diferencia hay entre verificación y validación?</span><i class="bi bi-chevron-down"></i></button>
+						<div class="Respuesta-Pregunta"><p>La verificación busca comprobar que el software se está construyendo de acuerdo con los requisitos y especificaciones. La validación busca comprobar que el producto desarrollado satisface las necesidades de los usuarios.</p></div>
+					</article>
+
+					<article class="Pregunta-Frecuente">
+						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Para qué sirve el Glosario de Scrumly?</span><i class="bi bi-chevron-down"></i></button>
+						<div class="Respuesta-Pregunta"><p>El glosario permite consultar rápidamente definiciones de términos relacionados con la calidad del software, los procesos de desarrollo y las metodologías ágiles.</p></div>
+					</article>
+				</div>
+			</section>
+		</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- Sección principal de enlaces de interés -->
+		<main class="Pagina-EDI">
+			<section id="inicio-enlaces" class="Seccion-Principal-EDI">
+				<p class="Antetitulo-EDI">RECURSOS Y APRENDIZAJES / 03</p>
+				<h1>ENLACES DE INTERÉS<span>.</span></h1>
+				<p class="Descripcion-EDI">Sitios web, estándares, libros y guías oficiales para seguir aprendiendo sobre calidad del software y metodologías ágiles.</p>
+			</section>
+
+			<!-- Sección 1: libros y guías recomendadas -->
+			<section id="enlaces-interes" class="Seccion-Enlaces" aria-labelledby="titulo-enlaces">
+				<h2 id="titulo-enlaces" class="Texto-Oculto">Libros y guías recomendadas</h2>
+
+				<div class="Tarjetas-Enlaces">
+					<article class="Tarjeta-Enlace">
+						<div class="Cabecera-Enlace"><i class="bi bi-book"></i><span>LIBRO</span></div>
+						<h3>Ingeniería de Software — Ian Sommerville</h3>
+						<p>Material utilizado para estudiar los procesos de software, modelos de desarrollo, requisitos, pruebas y calidad.</p>
+						<a href="https://gc.scalahed.com/recursos/files/r161r/w25469w/ingdelsoftwarelibro9_compressed.pdf" target="_blank" rel="noopener noreferrer">VER REFERENCIA DEL LIBRO <i class="bi bi-arrow-up-right"></i></a>
+					</article>
+
+					<article class="Tarjeta-Enlace">
+						<div class="Cabecera-Enlace"><i class="bi bi-file-earmark-text"></i><span>GUÍA</span></div>
+						<h3>Scrum Estándar — Scrum Manager</h3>
+						<p>Material utilizado para estudiar Scrum, sus roles, eventos, artefactos y funcionamiento.</p>
+						<a href="https://www.scrummanager.com/files/scrum_master.pdf" target="_blank" rel="noopener noreferrer">LEER SCRUM ESTÁNDAR <i class="bi bi-arrow-up-right"></i></a>
+					</article>
+				</div>
+
+				<div class="Aviso-Enlaces">
+					<i class="bi bi-shield-check"></i>
+					<p>Todos los enlaces se abren en una pestaña nueva de forma segura, para que no pierdas tu lugar en Scrumly.</p>
+				</div>
+			</section>
+		</main>
+
+		<!-- Pie de página -->
+		<div class="Seccion-footer">
+			<footer><p class="Parrafo-Pie">Scrumly . Sistema de gestión de calidad del software</p></footer>
+		</div>
+
+		<script src="JS/script.js"></script>
+	</body>
+</html>

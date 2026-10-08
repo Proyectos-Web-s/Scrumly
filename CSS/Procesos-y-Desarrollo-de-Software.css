@@ -1,0 +1,591 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #efeae1;
+  color: #181d2a;
+  font-family: 'Public Sans', Arial, sans-serif;
+}
+/* =========================================================
+   PROCESOS Y DESARROLLO DE SOFTWARE
+   ========================================================= */
+
+/* Presentación y selector de modelos */
+.Seccion-Principal {
+  margin: 0 auto;
+}
+
+.Antetitulo{
+    color: #C084FC ;
+    font-size: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    margin-top: 70px;
+    margin-left: 20px;
+    font-family: 'Public Sans', sans-serif;
+}
+
+.Contenedor-Titulos{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.Titulo-A,
+.Titulo-B{
+    font-size: 80px;
+    width: 280px;
+    padding-left: 20px;
+    margin: 0px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.Titulo-A{
+    color: #0B0D1A;
+}
+.Titulo-B{
+    color: #C084FC ;
+}
+
+
+.Parrafo-Principal{
+    font-size: 20px;
+    width: 660px;
+    padding: 8px;
+    padding-left:40px;
+    margin-top: 5px;
+    font-family: 'Public Sans', sans-serif;
+}
+
+
+
+
+/* Selector de modelos */
+.Selector-Modelos {
+  display: flex;
+  gap: 18px;
+  margin: 30px;
+}
+
+.Boton-Modelo {
+  border: 1px solid rgba(95, 93, 108, 0.4);
+  background: rgba(255, 255, 255, 0.12);
+  color: #1a1d22;
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+
+.Boton-Modelo:hover {
+  background: #eadff8;
+}
+
+
+
+
+/* Estructura compartida de las secciones de modelos */
+.Seccion-Modelo {
+  padding: 16px 18px 18px;
+  margin-bottom: 18px;
+}
+
+/* Encabezado del modelo */
+.Contenedor-Titulo-Modelo {
+  margin-bottom: 18px;
+}
+
+.Antetitulo-Modelo {
+  display: inline-block;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #C084FC;
+  margin-bottom: 8px;
+}
+
+.Titulo-Modelo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 65px;
+  color: #171b24;
+}
+
+.Icono-Titulo-Modelo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #e4d8f2;
+  color: #745e8e;
+  font-size: 26px;
+}
+
+
+
+/* Contenido común de los modelos */
+.Contenido-Modelo {
+  display: grid;
+  /*divide automáticamente el espacio disponible.*/
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.Texto-Modelo{
+  font-size: 25px;
+}
+
+/* Modelo en Cascada: diagrama */
+.Diagrama-Modelo {
+  align-self: start;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.Diagrama-Cascada{
+  width: 650px;
+  height: 250px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(116, 94, 142, 0.22);
+  border-radius: 12px;
+}
+
+.Imagen-Cascada{
+  margin: 0px;
+  width: 650px;
+  height: 250px;
+  border-radius: 12px;
+}
+
+
+
+/* Etapas del modelo en Cascada */
+.Cabecera-Etapas {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.Cabecera-Etapas h3 {
+  margin: 0;
+  color: #111111;
+  font-size: 1.6rem;
+}
+
+.Etapas-Modelo {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.Pasos-Modelo {
+  display: grid;
+  gap: 10px;
+}
+
+.Paso-Modelo {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  min-height: 68px;
+  padding: 12px 18px;
+  background: #ffffff;
+  border: 1px solid #dccbb7;
+  border-radius: 18px;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.Paso-Modelo:hover,
+.Paso-Modelo:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(43, 35, 52, 0.12);
+  border-color: #80659a;
+}
+
+.Numero-Paso {
+  color: #80659a;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.Paso-Contenido h4 {
+  margin: 0 0 4px;
+  color: #111111;
+  font-size: 1rem;
+}
+
+.Paso-Contenido p {
+  margin: 0;
+  color: #38373b;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.Paso-Contenido .Paso-Detalle {
+  max-height: 0;
+  margin-top: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, margin-top 0.3s ease, opacity 0.2s ease;
+}
+
+.Paso-Modelo:hover .Paso-Detalle,
+.Paso-Modelo:focus .Paso-Detalle {
+  max-height: 100px;
+  margin-top: 8px;
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .Paso-Contenido .Paso-Detalle {
+    max-height: none;
+    margin-top: 8px;
+    opacity: 1;
+  }
+  .Etapa-V p {
+    max-height: none;
+    margin-top: 6px;
+    opacity: 1;
+  }
+}
+
+/* Modelo en V: etapas de desarrollo y pruebas */
+.Lista-Modelo {
+  margin-top: 14px;
+  background-color: #ffffff;
+  padding: 12px 14px;
+  border: 1px solid #dccbb7;
+  border-radius: 18px;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.Lista-Modelo:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(43, 35, 52, 0.12);
+  border-color: #80659a;
+}
+
+.Listas-Modelo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  grid-column: 1 / -1;
+}
+
+.Lista-Modelo ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.Etapa-V {
+  padding: 10px 12px;
+  border: 1px solid rgba(116, 94, 142, 0.2);
+  border-radius: 10px;
+  background: #fffdf9;
+  cursor: default;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.Etapa-V:hover,
+.Etapa-V:focus-visible {
+  transform: translateY(-2px);
+  border-color: #80659a;
+  box-shadow: 0 6px 16px rgba(43, 35, 52, 0.12);
+}
+
+.Etapa-V strong {
+  display: block;
+  color: #181d2a;
+}
+
+.Etapa-V p {
+  max-height: 0;
+  margin: 0;
+  overflow: hidden;
+  opacity: 0;
+  color: #38373b;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  transition: max-height 0.3s ease, margin-top 0.3s ease, opacity 0.2s ease;
+}
+
+.Etapa-V:hover p,
+.Etapa-V:focus p {
+  max-height: 100px;
+  margin-top: 6px;
+  opacity: 1;
+}
+
+/* Modelo en V: diagrama */
+.Diagrama-V {
+  width: 650px;
+  height: 300px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(116, 94, 142, 0.22);
+  border-radius: 12px;
+}
+
+.Imagen-V {
+  margin: 0;
+  width: 650px;
+  height: 300px;
+  border-radius: 12px;
+}
+
+/* Modelo Iterativo e Incremental */
+.Diagrama-Iterativo {
+  width: 650px;
+  height: 270px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(116, 94, 142, 0.22);
+  border-radius: 12px;
+}
+
+.Imagen-Iterativo {
+  margin: 0;
+  width: 650px;
+  height: 270px;
+  border-radius: 12px;
+}
+
+.Funcion-Modelo {
+  grid-column: 1 / -1;
+  margin-top: 18px;
+  padding: 12px 14px;
+  background-color: #ffffff;
+  border: 1px solid #dccbb7;
+  border-radius: 18px;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.Funcion-Modelo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(43, 35, 52, 0.12);
+  border-color: #80659a;
+}
+
+.Funcion-Modelo p {
+  margin: 0;
+}
+
+/* Comparación entre modelos */
+.Comparativa-Modelo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.Ventajas-Modelo,
+.Desventajas-Modelo {
+  border-radius: 12px;
+  padding: 16px 18px 12px;
+  border: 2px solid;
+}
+
+.Ventajas-Modelo {
+  background: #d9f0d0;
+  border-color: #4ea466;
+}
+
+.Desventajas-Modelo {
+  background: #f4d6d6;
+  border-color: #d56b6d;
+}
+
+.Ventajas-Modelo h4,
+.Desventajas-Modelo h4 {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.Ventajas-Modelo ul,
+.Desventajas-Modelo ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.Ventajas-Modelo li,
+.Desventajas-Modelo li {
+  margin-bottom: 7px;
+}
+
+/* Caja de uso */
+.Utilizarlo-Modelo {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 18px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(116, 94, 142, 0.22);
+  border-radius: 10px;
+  padding: 16px 18px;
+  box-shadow: 0 4px 10px rgba(45, 35, 60, 0.12);
+}
+
+.Icono-Modelo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  margin-top: 2px;
+  color: #745e8e;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.Contenido-Utilizarlo-Modelo h3 {
+  margin: 0 0 8px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  color: #171b24;
+}
+
+.Contenido-Utilizarlo-Modelo p {
+  margin: 0;
+  font-size: 17px;
+}
+
+/* Tabla comparativa */
+.Seccion-Comparacion {
+  margin: 10px 20px 20px;
+}
+
+.Cabecera-Comparacion {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.Etiqueta-Comparacion {
+  color: #a979d4;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.Cabecera-Comparacion h2 {
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.3rem, 3.8vw, 4rem);
+  letter-spacing: -0.04em;
+  color: #111827;
+}
+
+.Nota-Tabla {
+  color: #5f5b65;
+  font-size: 0.8rem;
+}
+
+.Tabla-Comparacion {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(120, 102, 150, 0.25);
+}
+
+.Tabla-Comparacion th,
+.Tabla-Comparacion td {
+  border: 1px solid rgba(120, 102, 150, 0.22);
+  padding: 14px 12px;
+  text-align: left;
+  font-size: 0.96rem;
+}
+
+.Tabla-Comparacion th {
+  background: #1e232b;
+  color: white;
+  font-weight: 800;
+}
+
+.Tabla-Comparacion td {
+  background: rgba(255,255,255,0.06);
+  color: #1f2430;
+}
+
+/* Pie de página */
+.Seccion-footer {
+  background-color: #faf6f0;
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.Parrafo-Pie {
+  font-family: 'Public Sans', sans-serif;
+}
+
+.Info-Importante {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #e8dcc4;
+  border: 1px solid rgba(120, 102, 150, 0.25);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin: 24px 20px 30px;
+}
+
+.Icono-Informacion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #d9c9ef;
+  color: #47326b;
+  font-weight: 900;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.Info-Importante p {
+  margin: 0;
+  line-height: 1.5;
+  color: #1a1d22;
+}
+
+/* Pie de página */
+.Seccion-footer {
+    background-color: #faf6f0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.Parrafo-Pie {
+    font-family: 'Public Sans', sans-serif;
+}

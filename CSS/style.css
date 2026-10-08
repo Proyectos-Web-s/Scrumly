@@ -1,0 +1,325 @@
+/* =========================================================
+   ESTILOS DE LA PÁGINA DE INICIO
+   ========================================================= */
+
+body {
+    background-color: #F8F0E3;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sección principal */
+#Seccion-Principal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+/* Contenedor de texto */
+.Contenedor-Principal{
+    width: 60%;
+}
+
+.Antetitulo{
+    background-color: #D8C8F2;
+    border-radius: 20px;
+    width: 225px;
+    height: 16px;
+    padding: 10px;
+    padding-left: 20px;
+    margin-top: 70px;
+    margin-left: 20px;
+    font-family: 'Public Sans', sans-serif;
+}
+
+.Titulo-A,
+.Titulo-B{
+    font-size: 65px;
+    width: 810px;
+    padding: 8px;
+    padding-left: 20px;
+    margin: 5px 0;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.Titulo-A{
+color: #0B0D1A;
+}
+
+.Titulo-B{
+    color: #8B5CF6;
+}
+
+.Parrafo-Principal{
+    font-size: 20px;
+    width: 660px;
+    padding: 8px;
+    padding-left: 20px;
+    margin-top: 5px;
+    font-family: 'Public Sans', sans-serif;
+}
+
+/* Contenedor de imagen */
+.Contenedor-Imagen{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imagen principal */
+.Imagen-Principal{
+    width: 400px;
+    height: auto;
+}
+
+
+
+/* Sección de áreas */
+.Titulo-Areas{
+    font-size: 30px;
+    width: 810px;
+    padding: 8px;
+    padding-left: 20px;
+    margin: 5px 0;
+    margin-top: 160px;
+    color: #0B0D1A;
+    font-family: 'Oswald', sans-serif;
+}
+
+.Subtitulo-Areas{
+    font-size: 20px;
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 60px;
+}
+
+.Contenedor-Tarjetas-A,
+.Contenedor-Tarjetas-B{
+    display: flex; 
+    justify-content: center;
+    gap: 30px;
+}
+
+.Contenedor-Tarjetas-B{
+    margin-bottom: 40px;
+}
+
+/* Tarjetas de áreas */
+.Tarjeta-GCS,
+.Tarjeta-PDS,
+.Tarjeta-MA,
+.Tarjeta-RA,
+.Tarjeta-SN{
+    background-color: #faf6f0;
+    width: 420px;
+    height: 200px;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Contenido e interacción de las tarjetas */
+.Titulo-Tarjetas-Areas {
+    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.Texto-Tarjetas {
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.Tarjeta-GCS .bi,
+.Tarjeta-PDS .bi,
+.Tarjeta-MA .bi,
+.Tarjeta-RA .bi,
+.Tarjeta-SN .bi {
+    background-color: #D8C8F2;
+    border-radius: 5px;
+    color: #000000;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.A-Ver-Secciones {
+    color: #8B5CF6;
+    text-decoration: none;
+    font-family: 'Public Sans', sans-serif;
+}
+
+.Tarjeta-GCS:hover,
+.Tarjeta-PDS:hover,
+.Tarjeta-MA:hover,
+.Tarjeta-RA:hover,
+.Tarjeta-SN:hover {
+    transform: scale(1.03);
+}
+
+/* Pie de página */
+.Seccion-footer {
+    background-color: #faf6f0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.Parrafo-Pie {
+    font-family: 'Public Sans', sans-serif;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+
+    /* Sección Principal */
+
+    #Seccion-Principal {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 20px;
+    }
+
+    .Contenedor-Principal {
+        width: 100%;
+    }
+
+
+    /* Antetítulo */
+
+    .Antetitulo {
+        width: fit-content;
+        height: auto;
+        padding: 8px 15px;
+        margin-top: 35px;
+        margin-left: 0;
+        font-size: 12px;
+    }
+
+
+    /* Títulos principales */
+
+    .Titulo-A,
+    .Titulo-B {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 42px;
+        line-height: 0.95;
+        padding: 5px 0;
+        margin: 5px 0;
+    }
+
+
+    /* Párrafo principal */
+
+    .Parrafo-Principal {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 14px;
+        line-height: 1.4;
+        padding: 5px 0;
+        margin-top: 10px;
+    }
+
+
+    /* Imagen principal */
+
+    .Contenedor-Imagen {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .Imagen-Principal {
+        width: 70%;
+        max-width: 300px;
+    }
+
+
+    /* Sección Áreas */
+
+    .Titulo-Areas {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 280px;
+        padding: 0 20px;
+        margin-top: 70px;
+    }
+
+    .Subtitulo-Areas {
+        font-size: 14px;
+        padding: 0 20px;
+        margin-bottom: 30px;
+    }
+
+
+    /* Tarjetas de áreas */
+
+    .Contenedor-Tarjetas-A,
+    .Contenedor-Tarjetas-B {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+
+    /* Tarjetas */
+
+    .Tarjeta-GCS,
+    .Tarjeta-PDS,
+    .Tarjeta-MA,
+    .Tarjeta-RA,
+    .Tarjeta-SN {
+        width: 90%;
+        height: auto;
+        min-height: 180px;
+        padding: 18px;
+        margin-bottom: 0;
+    }
+
+
+    /* Títulos de las tarjetas */
+
+    .Titulo-Tarjetas-Areas {
+        font-size: 18px;
+    }
+
+
+    /* Texto de las tarjetas */
+
+    .Texto-Tarjetas {
+        font-size: 14px;
+    }
+
+
+    /* Iconos de las tarjetas */
+
+    .Tarjeta-GCS .bi,
+    .Tarjeta-PDS .bi,
+    .Tarjeta-MA .bi,
+    .Tarjeta-RA .bi,
+    .Tarjeta-SN .bi {
+        font-size: 18px;
+        padding: 5px;
+    }
+
+
+    /* Pie de página */
+
+    .Seccion-footer {
+        margin-top: 30px;
+        padding: 15px;
+    }
+
+    .Parrafo-Pie {
+        font-size: 12px;
+    }
+
+}

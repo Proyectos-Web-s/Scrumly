@@ -1,0 +1,570 @@
+/* =========================================================
+   SCRUM EN PROFUNDIDAD
+   ========================================================= */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Estilos generales de la página */
+body {
+	margin: 0;
+	background: #efeae1;
+	color: #181d2a;
+	font-family: 'Public Sans', Arial, sans-serif;
+}
+
+/* Contenedor principal y encabezado de Scrum */
+.Pagina-Scrum {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 70px 20px 40px;
+}
+
+.Encabezado-Scrum {
+	margin-bottom: 54px;
+}
+
+.Encabezado-Scrum h1,
+.Encabezado-Seccion h2 {
+	margin: 0;
+	font-family: 'Bebas Neue', sans-serif;
+	color: #171b24;
+}
+
+.Encabezado-Scrum h1 {
+	font-size: 80px;
+}
+
+.Encabezado-Scrum h1 span {
+	color: #765a91;
+}
+
+.Descripcion-Scrum {
+	max-width: 680px;
+	font-size: 20px;
+}
+
+.Ciclo-Resumen {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-top: 20px;
+	padding-top: 18px;
+	border-top: 1px solid rgba(120, 102, 150, 0.25);
+	color: #303039;
+	font-size: 14px;
+}
+
+.Ciclo-Resumen i {
+	color: #765a91;
+	font-size: 22px;
+}
+
+.Antetitulo-Scrum {
+	margin: 0 0 10px;
+	color: #C084FC;
+	font-size: 15px;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+/* Separación entre las secciones interactivas */
+.Seccion-Scrum {
+	margin-bottom: 60px;
+}
+
+.Encabezado-Seccion {
+	margin-bottom: 18px;
+}
+
+.Encabezado-Seccion h2 {
+	font-size: 55px;
+}
+
+.Descripcion-Seccion {
+	margin: 12px 0 0;
+	font-size: 16px;
+}
+
+/* Selector de pestañas y selector de duración */
+.Pestanas-Scrum,
+.Selector-Sprint {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex-wrap: wrap;
+	margin: 24px 0;
+}
+
+.Boton-Pestana,
+.Boton-Sprint {
+	border: 1px solid rgba(95, 93, 108, 0.4);
+	background: rgba(255, 255, 255, 0.12);
+	color: #1a1d22;
+	border-radius: 10px;
+	padding: 14px 18px;
+	font: inherit;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.Boton-Pestana {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.Boton-Pestana i {
+	color: #765a91;
+	font-size: 16px;
+}
+
+.Boton-Pestana span {
+	color: #765a91;
+}
+
+.Boton-Pestana.activo,
+.Boton-Sprint.activo {
+	background: #e7dff5;
+	border-color: rgba(120, 92, 166, 0.48);
+}
+
+.Boton-Pestana:hover,
+.Boton-Sprint:hover {
+	background: #eadff8;
+}
+
+/* Estados visibles y ocultos de los paneles */
+.Panel-Pestana[hidden] {
+	display: none;
+}
+
+.Panel-Pestana,
+.Tarjeta-Sprint-Info,
+.Tarjeta-Scrum {
+	padding: 20px;
+	border: 1px solid rgba(116, 94, 142, 0.22);
+	border-radius: 12px;
+	background: rgba(255, 255, 255, 0.15);
+}
+
+.Panel-Pestana {
+	padding: 0;
+	border: 0;
+	background: transparent;
+}
+
+.Panel-Pestana > p {
+	margin: 40px 0 24px;
+	font-size: 18px;
+}
+
+.Panel-Pestana h3,
+.Tarjeta-Sprint-Info h3,
+.Tarjeta-Scrum h4 {
+	margin-top: 0;
+}
+
+/* Distribución general de las tarjetas de Scrum */
+.Tarjetas-Scrum {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 16px;
+	margin-top: 20px;
+}
+
+.Tarjeta-Scrum {
+	background: rgba(255, 255, 255, 0.25);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#piezas-scrum .Tarjeta-Scrum:hover {
+	transform: scale(1.03);
+	box-shadow: 0 8px 20px rgba(43, 35, 52, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#piezas-scrum .Tarjeta-Scrum {
+		transition: none;
+	}
+}
+
+/* Tarjetas de los roles del equipo */
+.Tarjetas-Roles {
+	gap: 58px;
+}
+
+.Tarjeta-Rol {
+	min-height: 310px;
+	padding: 16px 18px;
+	background: #fffdf9;
+	border-color: rgba(164, 135, 101, 0.42);
+}
+
+.Cabecera-Tarjeta {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 16px;
+	color: #765a91;
+	font-size: 20px;
+}
+
+.Cabecera-Tarjeta span {
+	font-weight: 800;
+}
+
+.Tarjeta-Rol h4 {
+	margin-bottom: 14px;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 28px;
+	font-weight: 400;
+}
+
+.Tarjeta-Rol p {
+	line-height: 1.4;
+}
+
+.Tarjeta-Rol ul {
+	margin: 18px 0 0;
+	padding: 16px 0 0 30px;
+	border-top: 1px solid rgba(164, 135, 101, 0.35);
+	color: #55515a;
+}
+
+.Tarjeta-Rol li {
+	margin-bottom: 14px;
+	padding-left: 4px;
+}
+
+/* Tarjetas de los eventos del marco Scrum */
+.Tarjetas-Eventos {
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+}
+
+.Tarjeta-Evento {
+	min-height: 220px;
+	padding: 16px 18px;
+	background: #fffdf9;
+	border-color: rgba(164, 135, 101, 0.32);
+}
+
+.Tarjeta-Evento .Cabecera-Tarjeta {
+	margin-bottom: 16px;
+	font-size: 16px;
+}
+
+.Tarjeta-Evento .Cabecera-Tarjeta i {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 8px;
+	background: #e7dff5;
+	font-size: 22px;
+}
+
+.Tarjeta-Evento h4 {
+	margin-bottom: 8px;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 26px;
+	font-weight: 400;
+}
+
+.Tarjeta-Evento p {
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.4;
+}
+
+.Tarjeta-Evento ul {
+	margin: 16px 0 0;
+	padding-left: 18px;
+	color: #55515a;
+	font-size: 14px;
+}
+
+.Tarjeta-Evento li {
+	margin-bottom: 12px;
+}
+
+/* Tarjetas de los artefactos del producto */
+.Tarjeta-Artefacto {
+	min-height: 270px;
+	padding: 16px 18px;
+	background: #fffdf9;
+	border-color: rgba(164, 135, 101, 0.42);
+}
+
+.Tarjeta-Artefacto .Cabecera-Tarjeta {
+	margin-bottom: 16px;
+}
+
+.Tarjeta-Artefacto h4 {
+	margin-bottom: 4px;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 28px;
+	font-weight: 400;
+}
+
+.Tarjeta-Artefacto strong {
+	color: #765a91;
+	font-size: 14px;
+}
+
+.Tarjeta-Artefacto p {
+	line-height: 1.4;
+}
+
+.Detalle-Artefacto {
+	margin-top: 16px;
+	padding-top: 16px;
+	border-top: 1px solid rgba(164, 135, 101, 0.35);
+	color: #55515a;
+	line-height: 1.4;
+}
+
+/* Timeline y tarjeta informativa del Sprint */
+.Selector-Sprint strong {
+	font-size: 20px;
+}
+
+.Etiqueta-Sprint {
+	font-size: 14px !important;
+}
+
+.Contenido-Sprint {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 300px;
+	gap: 24px;
+	align-items: start;
+}
+
+.Timeline-Sprint {
+	display: grid;
+	gap: 0;
+	position: relative;
+	padding-left: 26px;
+}
+
+.Timeline-Sprint::before {
+	position: absolute;
+	top: 8px;
+	bottom: 8px;
+	left: 8px;
+	width: 1px;
+	background: #8b789f;
+	content: "";
+}
+
+.Mini-Seccion-Sprint {
+	position: relative;
+	padding-bottom: 22px;
+}
+
+.Mini-Seccion-Sprint::before {
+	position: absolute;
+	top: 2px;
+	left: 3px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #765a91;
+	content: "";
+}
+
+.Mini-Seccion-Sprint h4 {
+	margin: 0 0 8px 20px;
+	color: #765a91;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.Cierre-Sprint {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.Cierre-Sprint h4 {
+	flex-basis: 100%;
+}
+
+.Item-Sprint {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 8px;
+}
+
+.Item-Sprint button {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 14px;
+	border: 1px solid rgba(116, 94, 142, 0.35);
+	border-radius: 8px;
+	background: #fffdf9;
+	color: #1a1d22;
+	font: inherit;
+	font-size: 13px;
+}
+
+.Item-Sprint button.activo {
+	background: #765a91;
+	color: white;
+}
+
+.Item-Sprint button i {
+	font-size: 15px;
+}
+
+.Paso-Sprint h3 {
+	margin: 0;
+}
+
+.Paso-Sprint p {
+	margin: 6px 0 0;
+}
+
+.Tarjeta-Sprint-Info {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	box-sizing: border-box;
+	padding: 24px;
+	border: 1px solid #a99c8e;
+	border-top: 6px solid #765a91;
+	border-radius: 0;
+	background: #fffdf9;
+}
+
+.Cabecera-Tarjeta-Sprint {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+.Cabecera-Tarjeta-Sprint .Antetitulo-Scrum {
+	margin: 0;
+	color: #765a91;
+	font-size: 12px;
+}
+
+.Cabecera-Tarjeta-Sprint i {
+	flex: 0 0 auto;
+	color: #765a91;
+	font-size: 24px;
+}
+
+.Tarjeta-Sprint-Info h3 {
+	margin: 0;
+	color: #050505;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 32px;
+	font-weight: 400;
+	line-height: 1.1;
+}
+
+.Detalle-Sprint strong,
+.Duracion-Sugerida-Sprint strong {
+	color: #38373b;
+	font-size: 14px;
+}
+
+.Detalle-Sprint p,
+.Duracion-Sugerida-Sprint p {
+	margin: 4px 0 0;
+	color: #55515a;
+	font-size: 14px;
+	line-height: 1.4;
+}
+
+.Duracion-Sugerida-Sprint {
+	display: grid;
+	grid-template-columns: 20px 1fr;
+	align-items: center;
+	column-gap: 6px;
+	margin-top: auto;
+}
+
+.Duracion-Sugerida-Sprint > i {
+	color: #38373b;
+	font-size: 18px;
+}
+
+.Duracion-Sugerida-Sprint p {
+	grid-column: 1 / -1;
+}
+
+.Nuevo-Sprint {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 18px 0 0;
+	font-size: 15px;
+}
+
+.Nuevo-Sprint i {
+	color: #765a91;
+	font-size: 20px;
+}
+
+.Nota-Sprint {
+	margin: 34px 0 0;
+	color: #55515a;
+	font-size: 12px;
+}
+
+/* Pie de página */
+.Seccion-footer {
+	margin: 0;
+	padding: 20px;
+	background-color: #faf6f0;
+	text-align: center;
+}
+
+.Parrafo-Pie {
+	margin: 0;
+}
+
+/* Pie de página */
+.Seccion-footer {
+    background-color: #faf6f0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.Parrafo-Pie {
+    font-family: 'Public Sans', sans-serif;
+}
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 760px) {
+	.Pagina-Scrum {
+		padding-top: 40px;
+	}
+
+	.Encabezado-Scrum h1 {
+		font-size: 64px;
+	}
+
+	.Encabezado-Seccion h2 {
+		font-size: 44px;
+	}
+
+	.Tarjetas-Scrum,
+	.Contenido-Sprint {
+		grid-template-columns: 1fr;
+	}
+
+	.Tarjeta-Sprint-Info {
+		height: auto;
+	}
+}

@@ -1,0 +1,232 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SCRUMLY</title>
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="CSS/menu.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fuzzy+Bubbles:wght@400;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Barra de Navegación -->
+        <div class="Barra-de-Navegacion">
+            <img src="IMG/Logo-SCRUMLY.jpeg" alt="SCRUMLY Logo" class="logo-SCRUMLY">
+            <p class="Titulo-Barra">SCRUMLY</p>
+            <i class="Hambu bi-list" id="boton-menu"></i>
+
+            <!-- Menu hamburgesa -->
+                <nav class="Menu" id="menu">
+                    <div class="Menu-Titulo">
+                        <span>MENÚ</span>
+                    </div>
+
+                    <a href="index.html">
+                        <i class="bi bi-house"></i>
+                        <span>Inicio</span>
+                    </a>
+
+                    <!-- Gestión de Calidad -->
+                    <div class="Item-Menu">
+
+                        <!-- Con un click se despliega -->
+                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                            <i class="bi bi-patch-check"></i>
+
+                            <span>
+                                Gestión de la Calidad<br>
+                                del Software
+                            </span>
+
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+
+                        <div class="Submenu">
+                            <a href="Gestion-de-Calidad-del-Software.html#fundamentos-calidad">Fundamentos</a>
+                            <a href="Gestion-de-Calidad-del-Software.html#calidad-agil">Técnicas de Aseguramiento de la Calidad</a>
+                            <a href="Gestion-de-Calidad-del-Software.html#Herramientas-de-Calidad">Herramientas de Calidad</a>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Procesos de Desarrollo -->
+                    <div class="Item-Menu">
+
+                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                            <i class="bi bi-bezier2"></i>
+
+                            <span>
+                                Procesos de Desarrollo<br>
+                                de Software
+                            </span>
+
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+
+                        <div class="Submenu">
+                            <a href="Procesos-y-Desarrollo-de-Software.html#inicio-procesos">Ciclo de Vida del Desarrollo (SDLC)</a>
+                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-cascada">Modelo en Cascada</a>
+                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-v">Modelo en V</a>
+                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-iterativo">Modelo Iterativo e Incremental</a>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Metodologías Ágiles -->
+                    <div class="Item-Menu">
+
+                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                            <i class="bi bi-lightning-charge"></i>
+
+                            <span>Metodologías Ágiles</span>
+
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+
+                        <div class="Submenu">
+                            <a href="Metodologias-Agiles.html#scrum-en-profundidad">Scrum en profundidad</a>
+                            <a href="Metodologias-Agiles.html#kanban">Kanban</a>
+                            <a href="Metodologias-Agiles.html#xp">XP (Extreme Programming)</a>
+                            <a href="Procesos-y-Desarrollo-de-Software.html#comparacion-modelos">Comparativa con modelos tradicionales</a>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Recursos -->
+                    <div class="Item-Menu">
+
+                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                            <i class="bi bi-book"></i>
+
+                            <span>Recursos y Aprendizajes</span>
+
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+
+                        <div class="Submenu">
+                            <a href="Recursos-y-Aprendizajes.html#glosario">Glosario</a>
+                            <a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
+                            <a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
+                            <a href="#">Ejercicios y Casos Prácticos</a>
+                        </div>
+
+                    </div>
+
+
+                    <a href="index.html">
+                        <i class="bi bi-people"></i>
+                        <span>Sobre Nosotros</span>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-envelope"></i>
+                        <span>Contacto</span>
+                    </a>
+
+                </nav>
+            
+        </div>
+
+        <!-- Seccion Principal -->
+        <div id="Seccion-Principal">
+
+            <!-- Contenido Principal -->
+            <div class="Contenedor-Principal">
+
+                <p class="Antetitulo">
+                    Proyecto Educativo . Scrumly
+                </p> 
+
+                <h1 class="Titulo-A">Construí conocimiento,</h1>
+                <h1 class="Titulo-B">Creá software de calidad.</h1>
+
+                <p class="Parrafo-Principal">
+                    Un espacio pensado para aprender sobre la gestión de la calidad del software
+                    y los diferentes procesos utilizados para desarrollarlo.
+                    Encontrarás contenidos sobre calidad de software, procesos tradicionales y
+                    ágiles, y metodologías utilizadas en la industria, explicados de forma clara y
+                    accesible.
+                </p>
+            </div>
+            <div class="Contenedor-Imagen">
+                <img src="IMG/Logo-SCRUMLY-SF.png" alt="Imagen Principal" class="Imagen-Principal">
+            </div>
+        </div>
+
+        <!-- Seccion Areas -->
+        <div id="Seccion-Areas">
+
+            <!-- Contenido Areas -->
+            <div class="Contenedor-Areas">
+
+                <h2 class="Titulo-Areas"> Áreas principales del proyecto </h2> 
+                <p class="Subtitulo-Areas"> Conocé las secciones que organizarán el recorrido de aprendizaje </p>
+
+                <!-- Tarjetas de Seccion Areas -->
+                <div class="Contenedor-Tarjetas-A">
+
+                    <div class="Tarjeta-GCS">
+                        <i class="bi bi-patch-check"></i>
+                        <h3 class="Titulo-Tarjetas-Areas">Gestión de la Calidad del Software</h3>
+                        <p class="Texto-Tarjetas">
+                            Acceso a los conceptos centrales de calidad aplicados al software.
+                        </p>
+                        <a href="Gestion-de-Calidad-del-Software.html" class="A-Ver-Secciones">Ver Seccion --></a>
+                    </div>
+                    <div class="Tarjeta-PDS">
+                        <i class="bi bi-bezier2"></i>
+                        <h3 class="Titulo-Tarjetas-Areas">Procesos de Desarrollo de Software</h3>
+                        <p class="Texto-Tarjetas">
+                            Una entrada a los procesos tradicionales y ágiles de desarrollo.
+                        </p>
+                        <a href="Procesos-y-Desarrollo-de-Software.html" class="A-Ver-Secciones">Ver Seccion --></a>
+                    </div>
+                    <div class="Tarjeta-MA">
+                        <i class="bi bi-lightning-charge"></i>
+                        <h3 class="Titulo-Tarjetas-Areas">Metodologías Ágiles</h3>
+                        <p class="Texto-Tarjetas">
+                            Un acceso inicial a metodologías relevantes para equipos ágiles.
+                        </p>
+                        <a href="Metodologias-Agiles.html" class="A-Ver-Secciones">Ver Seccion --></a>
+                    </div>
+
+                </div>
+                
+                <div class="Contenedor-Tarjetas-B">
+
+                    <div class="Tarjeta-RA">
+                        <i class="bi bi-people"></i>
+                        <h3 class="Titulo-Tarjetas-Areas">Recursos y Aprendizajes</h3>
+                        <p class="Texto-Tarjetas">
+                            Materiales y apoyos que acompañarán el aprendizaje del proyecto.
+                        </p>
+                        <a href="Recursos-y-Aprendizajes.html" class="A-Ver-Secciones">Ver Seccion --></a>
+                    </div>
+                    <div class="Tarjeta-SN">
+                        <i class="bi bi-envelope"></i>
+                        <h3 class="Titulo-Tarjetas-Areas">Sobre Nosotros</h3>
+                        <p class="Texto-Tarjetas">
+                            Conocé el espacio destinado a presentar al equipo Scrumly.
+                        </p>
+                        <a href="Sobre-Nosotros.html" class="A-Ver-Secciones">Ver Seccion --></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Seccion Pie -->
+        <div class="Seccion-footer">
+            <footer>
+                <p class="Parrafo-Pie"> Scrumly . Sistema de gestión de calidad del software</p>               
+            </footer>
+        </div>
+
+        <script src="JS/script.js"></script>
+    </body> 

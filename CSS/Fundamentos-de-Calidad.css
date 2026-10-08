@@ -1,0 +1,648 @@
+/* 
+   GESTIÓN DE LA CALIDAD DEL SOFTWARE
+  */
+
+body {
+    background-color: #F8F0E3;
+    margin: 0;
+    padding: 0;
+}
+
+/* Secciones de contenido */
+
+
+/* Contenedor principal */
+#Seccion-Principal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+/* Contenedor de texto */
+.Contenedor-Principal{
+    width: 90%;
+}
+
+.Antetitulo{
+    border-radius: 40px;
+    width: 350px;
+    height: 16px;
+    padding: 10px;
+    padding-left: 20px;
+    margin-top: 70px;
+    margin-left: 20px;
+    font-family: 'Public Sans', sans-serif;
+}
+
+.Contenedor-Titulos{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.Titulo-A,
+.Titulo-B{
+    font-size: 65px;
+    width: 280px;
+    padding-left: 20px;
+    margin: 5px 0;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.Titulo-A{
+    color: #0B0D1A;
+}
+.Titulo-B{
+    
+    color: #C084FC ;
+}
+
+.Parrafo-Principal{
+    font-size: 20px;
+    width: 660px;
+    padding: 8px;
+    padding-left:40px;
+    margin-top: 5px;
+    font-family: 'Public Sans', sans-serif;
+}
+
+
+/* Secciones de conceptos */
+
+
+/* Antetítulo */
+
+.Antetitulo-Conceptos {
+    color: #C084FC;
+    width: 225px;
+    height: 16px;
+    padding: 10px;
+    padding-left: 20px;
+    margin-top: 70px;
+    margin-left: 20px;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 20px;
+}
+
+/* Título */
+
+.Titulo-Conceptos {
+    font-size: 35px;
+    width: 810px;
+    padding: 8px;
+    padding-left: 30px;
+    margin: 5px 0;
+    font-family: 'Bebas Neue', sans-serif;
+    color: #0B0D1A;
+}
+
+/* Texto */
+
+.Parrafo-Conceptos {
+    font-size: 22px;
+    width: 660px;
+    padding-left: 30px;
+    margin-top: 5px;
+    font-family: 'Public Sans', sans-serif;
+}
+
+
+
+
+/* Imagen de seccion 1*/
+.Contenedor-Imagen {
+    width: 100%;
+    margin-top: 100px;
+    transform: translateX(-80px);
+}
+
+.Imagen-Principal {
+    width: 100%;
+}
+
+.seccion-01{
+    display: flex;
+    align-items: center;
+
+}
+
+
+
+
+
+
+
+/* Tarjetas sección 2 */
+
+.Contenedor-Tarjetas-Caracteristicas {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    width: 100%;
+}
+
+/* Tarjetas */
+
+.Tarjeta-Caracteristicas{
+    background-color: #faf6f0;
+    border-radius: 15px;
+    width: 270px;
+    min-height: 210px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 10px;
+    transition: transform 0.4s ease, min-height 0.4s ease, box-shadow 0.4s ease;
+    border-color: #e4dccf;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Iconos de las tarjetas */
+
+.Tarjeta-Caracteristicas .bi{
+    display: inline-block;
+    background-color: #D8C8F2;
+    color: #8B5CF6;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 8px;
+}
+
+.Tarjeta-Caracteristicas:hover {
+    transform: scale(1.05);
+    min-height: 330px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.Texto-Extra {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 15px;
+    font-family: 'Public Sans', sans-serif;
+    transition: opacity 0.4s ease, max-height 0.5s ease;
+}
+
+.Tarjeta-Caracteristicas:hover .Texto-Extra {
+    opacity: 1;
+    max-height: 150px;
+}
+
+/* Títulos de las tarjetas */
+.Titulo-Tarjetas-Conceptos {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+/* Texto de las tarjetas */
+.Texto-Tarjetas {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+
+
+
+
+/*Tarjeta seccion 3*/
+
+/* Filas de métricas */
+
+.Fila-Metricas {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 30px 100px;
+}
+
+
+/* Tarjetas */
+
+.Tarjeta-Metricas {
+    background-color: #faf6f0;
+    border-radius: 15px;
+    width: 500px;
+    min-height: 150px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 40px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    transition: transform 0.4s ease, min-height 0.4s ease, box-shadow 0.4s ease;
+    border-color: #e4dccf;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Expansión de una sola tarjeta */
+
+.Tarjeta-Metricas:hover {
+    transform: scale(1.04);
+    min-height: 180px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Iconos */
+
+.Tarjeta-Metricas .bi {
+    display: inline-block;
+    flex-shrink: 0;
+    background-color: #D8C8F2;
+    color: #8B5CF6;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 8px;
+}
+
+/* Contenido de la tarjeta */
+.Contenido-Metrica {
+    flex: 1;
+}
+
+/* Títulos */
+.Titulo-Tarjetas-Metricas {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 20px;
+    margin: 0 0 15px 0;
+}
+
+
+/* Texto principal */
+.Texto-Tarjetas-Metricas {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+/* Texto adicional */
+.Texto-Extra-Metricas {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 15px 0 0 0;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease, max-height 0.5s ease;
+}
+
+
+/* Mostrar texto adicional */
+.Tarjeta-Metricas:hover .Texto-Extra-Metricas {
+    opacity: 1;
+    max-height: 150px;
+}
+
+.Texto-Pie-Metricas{
+    font-family: 'Public Sans', sans-serif;
+    font-size: 14px;
+    margin: 10px 145px;
+    color: #333;
+}
+
+
+
+
+
+/*Tarjetas sección 4 */
+.Contenedor-Calidad-Agil {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    width: 100%;
+}
+
+/* Tarjetas */
+.Tarjeta-Calidad-Agil {
+    background-color: #faf6f0;
+    border-radius: 15px;
+    width: 350px;
+    min-height: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 20px;
+    transition: transform 0.4s ease, min-height 0.4s ease, box-shadow 0.4s ease;
+    border-color: #e4dccf;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.Tarjeta-Calidad-Agil:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Iconos de las tarjetas */
+.Tarjeta-Calidad-Agil .bi{
+    display: inline-block;
+    background-color: #D8C8F2;
+    color: #8B5CF6;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 8px;
+}
+
+/* Títulos de las tarjetas */
+.Titulo-Calidad-Agil{
+    font-family: 'Public Sans', sans-serif;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+/* Texto de las tarjetas */
+.Texto-Calidad-Agil {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+
+
+/* Sección estándares */
+
+/* Selector de estándares */
+.Selector-Estandares {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #faf6f0;
+    width: 200px;
+    height: 35px;
+    padding: 3px;
+    border-radius: 25px;
+    margin-left: 30px;
+    border-color: #e4dccf;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones */
+.Boton-Estandar {
+    position: relative;
+    z-index: 2;
+    width: 50%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    color: #0B0D1A;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Fondo violeta */
+.Selector-Estandares::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 50%;
+    height: 34px;
+    background-color: #7850d3;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+/* Movimiento del violeta */
+.Selector-Estandares.iso25000::before {
+    transform: translateX(100%);
+}
+
+/* Cuadro de información */
+.Cuadro-Estandar {
+    background-color: #faf6f0;
+    border: 1px solid #c9bda9;
+    border-radius: 25px;
+    padding: 20px;
+    margin-top: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+    box-sizing: border-box;
+}
+
+/* Contenido del estándar */
+.Titulo-Estandar {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 26px;
+    margin: 0px;
+}
+
+.Subtitulo-Estandar {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 13px;
+    color: #6f5b8c;
+    margin: 0 0 15px 0;
+}
+
+.Texto-Estandar {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 16px;
+    color: #222222;
+    line-height: 1.5;
+    margin: 0px;
+}
+
+/* Características desplegables */
+.Caracteristica-Estandar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F8F0E3;
+    border: 1px solid #d8c8f2;
+    border-radius: 8px;
+    padding: 15px 12px;
+    margin-top: 10px;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 16px;
+    color: #0B0D1A;
+    cursor: pointer;
+}
+
+/* Característica abierta */
+
+.Caracteristica-Estandar.activa {
+    display: block;
+}
+
+.Caracteristica-Estandar.activa > span {
+    display: inline-block;
+}
+
+.Caracteristica-Estandar.activa > i {
+    float: right;
+}
+
+.Caracteristica-Estandar.activa p {
+    display: block;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 13px;
+    color: #555555;
+    margin: 10px 0 0 0;
+    line-height: 1.4;
+}
+
+.Caracteristica-Estandar p {
+    display: none;
+}
+
+/* Aviso informativo debajo del cuadro */
+.Info-Importante {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background-color: #f4e9cf;
+    border: 1px solid #d7c9ad;
+    border-radius: 15px;
+    padding: 12px 15px;
+    margin: 18px 30px 0;
+    box-sizing: border-box;
+}
+
+.Icono-Info {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background-color: #f5d76d;
+    color: #3b2c00;
+    border-radius: 50%;
+    font-weight: 900;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.Info-Importante p {
+    margin: 0;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #222222;
+}
+
+
+
+
+
+
+/* Sección de conclusión 4 */
+.Seccion-Conclusion {
+    padding-bottom: 40px;
+}
+
+.Titulo-Conclusion {
+    font-size: 40px;
+    line-height: 0.95;
+    width: 100%;
+    max-width: 1200px;
+    padding-left: 30px;
+    margin-bottom: 18px;
+}
+
+.Titulo-Conclusion::after {
+    content: " software.";
+    color: #C084FC;
+}
+
+.Parrafo-Conclusion {
+    margin-left: 0;
+    padding-left: 30px;
+    font-size: 22px;
+    width: auto;
+    max-width: 900px;
+}
+
+.Contenedor-Tarjetas-Conclusion {
+    display: flex;
+    justify-content: space-between;
+    gap: 22px;
+    margin-top: 26px;
+    padding: 0 30px;
+    flex-wrap: wrap;
+}
+
+.Tarjeta-Conclusion {
+    border-radius: 18px;
+    width: calc(25% - 16.5px);
+    min-width: 200px;
+    min-height: 260px;
+    padding: 18px 18px 16px;
+    box-sizing: border-box;
+    transition: transform 0.4s ease, min-height 0.4s ease, box-shadow 0.4s ease;
+    border-color: #e4dccf;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.Tarjeta-Conclusion:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+}
+
+.Icono-Conclusion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background-color: #d9c7ee;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    color: #4f2f85;
+    font-size: 28px;
+}
+
+.Tarjeta-Conclusion h3 {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 28px;
+    margin: 0 0 12px;
+    color: #0B0D1A;
+}
+
+.Tarjeta-Conclusion p {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0;
+    color: #222222;
+}
+
+.Texto-Pie-Conclusion {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 14px;
+    margin: 10px 35px;
+    color: #333;
+}
+
+
+/* Pie de página */
+.Seccion-footer {
+    background-color: #faf6f0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.Parrafo-Pie {
+    font-family: 'Public Sans', sans-serif;
+}

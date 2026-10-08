@@ -1,0 +1,669 @@
+/* =========================================================
+   GLOSARIO
+   ========================================================= */
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	background: #efeae1;
+	color: #181d2a;
+	font-family: 'Public Sans', Arial, sans-serif;
+}
+
+.Seccion-footer {
+	background-color: #faf6f0;
+	width: 100%;
+	margin: 0;
+	padding: 20px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.Parrafo-Pie {
+	font-family: 'Public Sans', sans-serif;
+}
+
+/* Presentación y búsqueda */
+.Pagina-Glosario {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 68px 20px 80px;
+}
+
+.Seccion-Principal {
+	max-width: 1120px;
+}
+
+.Antetitulo-Principal {
+	margin: 0 0 18px;
+	color: #765a91;
+	font-size: 15px;
+	font-weight: 800;
+	letter-spacing: 0.04em;
+}
+
+.Seccion-Principal h1 {
+	margin: 0;
+	color: #050505;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 78px;
+	font-weight: 400;
+	line-height: 0.95;
+}
+
+.Seccion-Principal h1 span {
+	color: #765a91;
+}
+
+.Seccion-Principal h2 {
+	margin: 24px 0 14px;
+	color: #303039;
+	font-size: 23px;
+	font-weight: 800;
+}
+
+.Descripcion-Principal {
+	max-width: 1080px;
+	margin: 0;
+	color: #38373b;
+	font-size: 22px;
+	line-height: 1.4;
+}
+
+/* Oculta el título auxiliar sin quitarlo de la estructura accesible */
+.Texto-Oculto {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+}
+
+/* Contenedor de búsqueda y filtro alfabético */
+.Seccion-Busqueda {
+	margin-top: 34px;
+}
+
+.Campo-Busqueda {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	min-height: 64px;
+	padding: 0 24px;
+	border: 1px solid rgba(120, 102, 150, 0.35);
+	border-radius: 12px;
+	background: #fffaf0;
+	box-shadow: 0 2px 5px rgba(56, 45, 35, 0.12);
+}
+
+.Campo-Busqueda i {
+	color: #55515a;
+	font-size: 25px;
+}
+
+.Campo-Busqueda input {
+	width: 100%;
+	border: 0;
+	outline: 0;
+	background: transparent;
+	color: #38373b;
+	font: inherit;
+	font-size: 22px;
+}
+
+.Campo-Busqueda input::placeholder {
+	color: #38373b;
+	opacity: 1;
+}
+
+.Filtros-Letras {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	flex-wrap: wrap;
+	margin-top: 18px;
+}
+
+.Boton-Letra {
+	min-width: 38px;
+	min-height: 34px;
+	padding: 6px 10px;
+	border: 1px solid rgba(95, 93, 108, 0.35);
+	border-radius: 10px;
+	background: #dedede;
+	color: #181d2a;
+	font: inherit;
+	font-weight: 800;
+	cursor: pointer;
+	transition: transform 0.18s ease;
+}
+
+.Boton-Letra:not(:disabled):hover,
+.Boton-Letra:not(:disabled):focus-visible {
+	transform: scale(1.1);
+}
+
+.Boton-Letra.activo {
+	background: #101019;
+	color: white;
+}
+
+.Boton-Letra:disabled {
+	border-color: transparent;
+	background: transparent;
+	color: #b9b7b5;
+	cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.Boton-Letra,
+	.Tarjeta-Glosario {
+		transition: none;
+	}
+}
+
+.Resultados-Glosario {
+	margin-top: 28px;
+}
+
+.Cantidad-Resultados {
+	margin: 0 0 18px;
+	font-size: 22px;
+	font-weight: 800;
+}
+
+.Grupo-Letra {
+	margin-top: 28px;
+}
+
+.Encabezado-Letra {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding-bottom: 16px;
+	border-bottom: 1px solid rgba(164, 135, 101, 0.35);
+}
+
+.Inicial-Letra {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 62px;
+	height: 58px;
+	border-radius: 10px;
+	background: #101019;
+	color: white;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 38px;
+}
+
+.Encabezado-Letra h2 {
+	margin: 0;
+	color: #171b24;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 30px;
+	font-weight: 400;
+}
+
+.Encabezado-Letra strong {
+	color: #b9b7b5;
+	font-size: 18px;
+}
+
+.Tarjetas-Resultados {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 12px;
+	margin-top: 24px;
+}
+
+.Tarjeta-Glosario {
+	min-height: 145px;
+	padding: 24px 26px;
+	border: 1px solid rgba(164, 135, 101, 0.35);
+	border-radius: 18px;
+	background: #ffffff;
+	transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.Tarjeta-Glosario:hover {
+	transform: scale(1.03);
+	box-shadow: 0 8px 20px rgba(43, 35, 52, 0.12);
+}
+
+.Tarjeta-Glosario i {
+	color: #765a91;
+	font-size: 31px;
+}
+
+.Tarjeta-Glosario h3 {
+	display: inline-block;
+	margin: 0 0 10px 14px;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 30px;
+	font-weight: 400;
+	vertical-align: top;
+}
+
+.Tarjeta-Glosario p {
+	margin: 0;
+	color: #55515a;
+	font-size: 18px;
+	line-height: 1.45;
+}
+
+.Sin-Resultados {
+	margin: 0;
+	padding: 24px;
+	border: 1px dashed rgba(164, 135, 101, 0.5);
+	border-radius: 10px;
+	text-align: center;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 760px) {
+	.Pagina-Glosario {
+		padding-top: 44px;
+	}
+
+	.Seccion-Principal h1 {
+		font-size: 60px;
+	}
+
+	.Seccion-Principal h2 {
+		font-size: 20px;
+	}
+
+	.Descripcion-Principal {
+		font-size: 18px;
+	}
+
+	.Campo-Busqueda input {
+		font-size: 18px;
+	}
+
+	.Filtros-Letras {
+		gap: 8px;
+	}
+
+	.Resultados-Glosario {
+		margin-top: 20px;
+	}
+
+	.Tarjetas-Resultados {
+		grid-template-columns: 1fr;
+	}
+
+	.Encabezado-Letra {
+		gap: 10px;
+	}
+
+	.Encabezado-Letra h2 {
+		font-size: 25px;
+	}
+
+	.Tarjeta-Glosario p {
+		font-size: 16px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+   PREGUNTAS FRECUENTES
+*/
+
+/* Sección principal de preguntas frecuentes */
+.Pagina-PF {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 68px 20px 80px;
+}
+
+.Seccion-Principal-PF {
+	max-width: 1120px;
+}
+
+.Antetitulo-PF {
+	margin: 0 0 18px;
+	color: #765a91;
+	font-size: 15px;
+	font-weight: 800;
+	letter-spacing: 0.04em;
+}
+
+.Seccion-Principal-PF h1 {
+	margin: 0;
+	color: #050505;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 78px;
+	font-weight: 400;
+	line-height: 0.95;
+}
+
+.Seccion-Principal-PF h1 span {
+	color: #765a91;
+}
+
+.Descripcion-PF {
+	max-width: 1100px;
+	margin: 24px 0 0;
+	color: #38373b;
+	font-size: 22px;
+	line-height: 1.4;
+}
+
+/* Encabezado de la lista de preguntas */
+.Seccion-Preguntas {
+	margin-top: 42px;
+}
+
+.Encabezado-Preguntas {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 22px;
+	color: #55515a;
+}
+
+.Encabezado-Preguntas i {
+	color: #765a91;
+	font-size: 21px;
+}
+
+.Encabezado-Preguntas h2 {
+	margin: 0;
+	font-size: 16px;
+}
+
+/* Tarjetas que abren y cierran sus respuestas */
+.Lista-Preguntas {
+	display: grid;
+	gap: 18px;
+}
+
+.Pregunta-Frecuente {
+	overflow: hidden;
+	border: 1px solid rgba(164, 135, 101, 0.42);
+	border-radius: 14px;
+	background: #fffdf9;
+}
+
+.Boton-Pregunta {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding: 20px 18px;
+	border: 0;
+	background: transparent;
+	color: #050505;
+	font: inherit;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 25px;
+	text-align: left;
+	cursor: pointer;
+}
+
+.Boton-Pregunta:hover {
+	color: #765a91;
+}
+
+.Boton-Pregunta i {
+	font-family: 'Public Sans', Arial, sans-serif;
+	font-size: 22px;
+}
+
+.Respuesta-Pregunta {
+	display: grid;
+	grid-template-rows: 0fr;
+	padding: 0 18px;
+	border-top: 1px solid transparent;
+	transition: grid-template-rows 0.3s ease, padding 0.3s ease, border-color 0.3s ease;
+}
+
+.Respuesta-Pregunta p {
+	overflow: hidden;
+	margin: 0;
+	color: #55515a;
+	font-size: 17px;
+	line-height: 1.4;
+}
+
+.Pregunta-Frecuente.abierta .Respuesta-Pregunta {
+	grid-template-rows: 1fr;
+	padding: 16px 18px 20px;
+	border-top-color: rgba(164, 135, 101, 0.3);
+}
+
+@media (max-width: 760px) {
+	/* Presentación y preguntas */
+	.Pagina-PF {
+		padding-top: 44px;
+	}
+
+	.Seccion-Principal-PF h1 {
+		font-size: 58px;
+	}
+
+	.Descripcion-PF {
+		font-size: 18px;
+	}
+
+	.Seccion-Preguntas {
+		margin-top: 32px;
+	}
+
+	.Boton-Pregunta {
+		font-size: 21px;
+	}
+
+	.Respuesta-Pregunta p {
+		font-size: 16px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+   ENLACES DE INTERÉS
+*/
+
+/* Sección principal de enlaces de interés */
+.Pagina-EDI {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 68px 20px 80px;
+}
+
+.Seccion-Principal-EDI {
+	max-width: 1120px;
+}
+
+.Antetitulo-EDI {
+	margin: 0 0 18px;
+	color: #765a91;
+	font-size: 15px;
+	font-weight: 800;
+	letter-spacing: 0.04em;
+}
+
+.Seccion-Principal-EDI h1 {
+	margin: 0;
+	color: #050505;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 78px;
+	font-weight: 400;
+	line-height: 0.95;
+}
+
+.Seccion-Principal-EDI h1 span {
+	color: #765a91;
+}
+
+.Descripcion-EDI {
+	max-width: 1120px;
+	margin: 24px 0 0;
+	color: #38373b;
+	font-size: 22px;
+	line-height: 1.4;
+}
+
+/* Tarjetas de libros y guías */
+.Seccion-Enlaces {
+	margin-top: 48px;
+}
+
+.Tarjetas-Enlaces {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 16px;
+}
+
+.Tarjeta-Enlace {
+	padding: 22px 20px 26px;
+	border: 1px solid rgba(164, 135, 101, 0.42);
+	border-radius: 18px;
+	background: #fffdf9;
+	transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.Tarjeta-Enlace:hover {
+	transform: scale(1.03);
+	box-shadow: 0 8px 20px rgba(43, 35, 52, 0.12);
+}
+.Cabecera-Enlace {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	color: #765a91;
+	font-weight: 800;
+}
+
+.Cabecera-Enlace i {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	background: #e1d7f2;
+	font-size: 23px;
+}
+
+.Tarjeta-Enlace h3 {
+	margin: 14px 0 16px;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 31px;
+	font-weight: 400;
+}
+
+.Tarjeta-Enlace p {
+	margin: 0 0 20px;
+	color: #55515a;
+	font-size: 18px;
+	line-height: 1.4;
+}
+
+.Tarjeta-Enlace a {
+	color: #765a91;
+	font-size: 17px;
+	font-weight: 800;
+	text-decoration: none;
+}
+
+.Tarjeta-Enlace a:hover {
+	color: #4d3d7a;
+}
+
+/* Aviso sobre la apertura segura de enlaces */
+.Aviso-Enlaces {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	margin-top: 28px;
+	padding: 20px 28px;
+	border: 1px solid rgba(164, 135, 101, 0.42);
+	border-radius: 18px;
+	background: rgba(255, 250, 240, 0.75);
+}
+
+.Aviso-Enlaces i {
+	color: #765a91;
+	font-size: 29px;
+}
+
+.Aviso-Enlaces p {
+	margin: 0;
+	font-size: 19px;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 760px) {
+	.Pagina-EDI {
+		padding-top: 44px;
+	}
+
+	.Seccion-Principal-EDI h1 {
+		font-size: 58px;
+	}
+
+	.Descripcion-EDI {
+		font-size: 18px;
+	}
+
+	.Tarjetas-Enlaces {
+		grid-template-columns: 1fr;
+	}
+
+	.Tarjeta-Enlace h3 {
+		font-size: 27px;
+	}
+
+	.Aviso-Enlaces {
+		align-items: flex-start;
+		padding: 18px;
+	}
+
+	.Aviso-Enlaces p {
+		font-size: 16px;
+	}
+}
