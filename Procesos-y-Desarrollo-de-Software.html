@@ -151,7 +151,62 @@
           <div class="Diagrama-Modelo">
             <h3>Diagrama del modelo</h3>
             <div class="Diagrama-Cascada">
-              <img src="IMG/Diagrama-Casacada.PNG" class="Imagen-Cascada">
+              <!-- Cada etapa es un bloque separado por una flecha de texto. -->
+              <div class="Diagrama-Cascada-Canvas">
+                <div class="Etapas-Cascada">
+                  <div class="Tramo-Cascada Tramo-Cascada-1">
+                    <div class="Etapa-Cascada">
+                      <span class="Numero-Cascada">01</span>
+                      <h4>Análisis</h4>
+                    </div>
+                    <div class="Flecha-Cascada" aria-hidden="true">
+                      <i class="bi bi-arrow-return-right"></i>
+                    </div>
+                  </div>
+                  <div class="Tramo-Cascada Tramo-Cascada-2">
+                    <div class="Etapa-Cascada">
+                      <span class="Numero-Cascada">02</span>
+                      <h4>Diseño</h4>
+                    </div>
+                    <div class="Flecha-Cascada" aria-hidden="true">
+                      <i class="bi bi-arrow-return-right"></i>
+                    </div>
+                  </div>
+                  <div class="Tramo-Cascada Tramo-Cascada-3">
+                    <div class="Etapa-Cascada">
+                      <span class="Numero-Cascada">03</span>
+                      <h4>Codificación</h4>
+                    </div>
+                    <div class="Flecha-Cascada" aria-hidden="true">
+                      <i class="bi bi-arrow-return-right"></i>
+                    </div>
+                  </div>
+                  <div class="Tramo-Cascada Tramo-Cascada-4">
+                    <div class="Etapa-Cascada">
+                      <span class="Numero-Cascada">04</span>
+                      <h4>Validación y Verificación</h4>
+                    </div>
+                    <div class="Flecha-Cascada" aria-hidden="true">
+                      <i class="bi bi-arrow-return-right"></i>
+                    </div>
+                  </div>
+                  <div class="Tramo-Cascada Tramo-Cascada-5">
+                    <div class="Etapa-Cascada">
+                      <span class="Numero-Cascada">05</span>
+                      <h4>Implementación</h4>
+                    </div>
+                    <div class="Flecha-Cascada" aria-hidden="true">
+                      <i class="bi bi-arrow-return-right"></i>
+                    </div>
+                  </div>
+                  <div class="Tramo-Cascada Tramo-Cascada-6">
+                    <div class="Etapa-Cascada">
+                      <span class="Numero-Cascada">06</span>
+                      <h4>Evolución y Mantenimiento</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="Cabecera-Etapas">
@@ -272,10 +327,62 @@
           <div class="Diagrama-Modelo">
             <h3>Diagrama del modelo</h3>
             <div class="Diagrama-V">
-              <img class="Imagen-V" src="IMG/Diagrama-V.PNG">
-            </div>
-            <p>Cada etapa valida un nivel concreto del producto.</p>
+              <!-- La grilla coloca desarrollo a la izquierda, niveles al centro y pruebas a la derecha. -->
+              <div class="Etapas-V-Diagrama">
+                <div class="Columna-V-Diagrama">
+                  <article class="Tarjeta-V-Diagrama" role="button" tabindex="0" aria-expanded="false">
+                    <h4>Requerimientos</h4>
+                    <p>Se identifican las necesidades del usuario y los requisitos del sistema.</p>
+                  </article>
+                  <article class="Tarjeta-V-Diagrama" role="button" tabindex="0" aria-expanded="false">
+                    <h4>Diseño del sistema</h4>
+                    <p>Se define la estructura general y el funcionamiento del sistema.</p>
+                  </article>
+                  <article class="Tarjeta-V-Diagrama" role="button" tabindex="0" aria-expanded="false">
+                    <h4>Arquitectura</h4>
+                    <p>Se organizan los componentes y sus relaciones.</p>
+                  </article>
+                  <article class="Tarjeta-V-Diagrama" role="button" tabindex="0" aria-expanded="false">
+                    <h4>Diseño de módulos</h4>
+                    <p>Se detalla cómo funcionará cada módulo antes de programarlo.</p>
+                  </article>
+                </div>
 
+                <div class="Numeros-V-Diagrama" aria-hidden="true">
+                  <span>1</span>
+                  <span>2</span>
+                  <span>3</span>
+                  <span>4</span>
+                </div>
+
+                <div class="Columna-V-Diagrama">
+                  <article class="Tarjeta-V-Diagrama Tarjeta-V-Prueba" role="button" tabindex="0" aria-expanded="false">
+                    <h4>Pruebas de aceptación</h4>
+                    <p>Comprueban que el sistema cumpla los requisitos del usuario.</p>
+                  </article>
+                  <article class="Tarjeta-V-Diagrama Tarjeta-V-Prueba" role="button" tabindex="0" aria-expanded="false">
+                    <h4>Pruebas del sistema</h4>
+                    <p>Verifican el funcionamiento completo del sistema.</p>
+                  </article>
+                  <article class="Tarjeta-V-Diagrama Tarjeta-V-Prueba" role="button" tabindex="0" aria-expanded="false">
+                    <h4>Pruebas de integración</h4>
+                    <p>Comprueban que los módulos funcionen correctamente juntos.</p>
+                  </article>
+                  <article class="Tarjeta-V-Diagrama Tarjeta-V-Prueba" role="button" tabindex="0" aria-expanded="false">
+                    <h4>Pruebas unitarias</h4>
+                    <p>Evalúan cada módulo por separado.</p>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Implementacion y nota complementan las etapas enfrentadas del modelo en V. -->
+              <article class="Tarjeta-V-Diagrama Implementacion-V-Diagrama" role="button" tabindex="0" aria-expanded="false">
+                <h4>Implementación</h4>
+                <p>Se programa el sistema siguiendo los diseños establecidos.</p>
+              </article>
+
+              <p class="Nota-V-Diagrama">Cada etapa de desarrollo se vincula con su prueba correspondiente.</p>
+            </div>
           </div>
         </div>
 
@@ -385,9 +492,42 @@
 
           <div class="Diagrama-Modelo">
             <h3>Diagrama del modelo</h3>
-          <div class="Diagrama-Iterativo">
-              <img class="Imagen-Iterativo" src="IMG/Diagrama-Interativo.PNG">
-            </div>
+            <div class="Diagrama-Iterativo">
+                <!-- Primera fila: idea, desarrollo y evolucion. Segunda fila: version y mejora. -->
+                <div class="Fila-Iterativa">
+                  <article class="Tarjeta-Iterativa" role="button" tabindex="0" aria-expanded="false">
+                    <h4>Idea inicial</h4>
+                    <p>Se plantea una primera idea de lo que hará el sistema.</p>
+                  </article>
+                  <span class="Flecha-Iterativa" aria-hidden="true">➜</span>
+                  <article class="Tarjeta-Iterativa" role="button" tabindex="0" aria-expanded="false">
+                    <h4>Desarrollo</h4>
+                    <p>Se construye una versión funcional del sistema.</p>
+                  </article>
+                  <span class="Flecha-Iterativa" aria-hidden="true">➜</span>
+                  <article class="Tarjeta-Iterativa" role="button" tabindex="0" aria-expanded="false">
+                    <h4>Evolución</h4>
+                    <p>Se incorporan cambios y nuevas funcionalidades.</p>
+                  </article>
+                  <span class="Flecha-Iterativa" aria-hidden="true">➜</span>
+                </div>
+
+                <div class="Fila-Iterativa">
+                  <article class="Tarjeta-Iterativa" role="button" tabindex="0" aria-expanded="false">
+                    <h4>Nueva versión</h4>
+                    <p>Se obtiene una versión más completa a partir de los cambios.</p>
+                  </article>
+                  <span class="Flecha-Iterativa" aria-hidden="true">➜</span>
+                  <article class="Tarjeta-Iterativa Tarjeta-Mejora-Iterativa" role="button" tabindex="0" aria-expanded="false">
+                    <h4>Mejora</h4>
+                    <p>Se revisa el resultado para detectar nuevas mejoras.</p>
+                  </article>
+                  <span class="Ciclo-Iterativo" aria-hidden="true">⟳</span>
+                </div>
+
+                <!-- Resume el resultado de repetir el ciclo de trabajo. -->
+                <p class="Nota-Iterativa">Cada ciclo produce una versión más completa del sistema.</p>
+              </div>
           </div>
         </div>
 
@@ -505,6 +645,38 @@
         </footer>
       </div>
 
+    <script>
+      // Permite abrir y cerrar las tarjetas de los diagramas con clic, Enter o barra espaciadora.
+      document.querySelectorAll(".Tarjeta-V-Diagrama").forEach(function (tarjeta) {
+        function alternar() {
+          var abierta = tarjeta.getAttribute("aria-expanded") === "true";
+          tarjeta.setAttribute("aria-expanded", String(!abierta));
+        }
+
+        tarjeta.addEventListener("click", alternar);
+        tarjeta.addEventListener("keydown", function (evento) {
+          if (evento.key === "Enter" || evento.key === " ") {
+            evento.preventDefault();
+            alternar();
+          }
+        });
+      });
+
+      document.querySelectorAll(".Tarjeta-Iterativa").forEach(function (tarjeta) {
+        function alternar() {
+          var abierta = tarjeta.getAttribute("aria-expanded") === "true";
+          tarjeta.setAttribute("aria-expanded", String(!abierta));
+        }
+
+        tarjeta.addEventListener("click", alternar);
+        tarjeta.addEventListener("keydown", function (evento) {
+          if (evento.key === "Enter" || evento.key === " ") {
+            evento.preventDefault();
+            alternar();
+          }
+        });
+      });
+    </script>
     <script src="JS/script.js"></script>
   </body>
 </html>
