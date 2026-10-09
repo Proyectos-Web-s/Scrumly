@@ -205,3 +205,36 @@
         font-size: 9px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   MENÚ RESPONSIVO: ANCHO Y ALTO SEGUROS EN TELÉFONOS
+   ========================================================= */
+@media (max-width: 768px) {
+    .Menu {
+        width: min(300px, calc(100vw - 16px));
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    .Titulo-Menu,
+    .Menu > a,
+    .Submenu a {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+}

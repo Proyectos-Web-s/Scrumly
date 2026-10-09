@@ -672,3 +672,152 @@ body {
 		font-size: 16px;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   RECURSOS: AJUSTES RESPONSIVOS PARA TELÉFONOS
+   Las tarjetas de resultados y enlaces se apilan en vertical.
+   ========================================================= */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	max-width: 100%;
+	overflow-x: clip;
+}
+
+body {
+	min-width: 0;
+}
+
+.Pagina-Glosario,
+.Pagina-PF,
+.Pagina-EDI {
+	min-width: 0;
+}
+
+.Seccion-Principal h1,
+.Seccion-Principal-PF h1,
+.Seccion-Principal-EDI h1 {
+	font-size: clamp(2.75rem, 7vw, 4.875rem);
+	overflow-wrap: anywhere;
+}
+
+.Tarjetas-Resultados,
+.Tarjetas-Enlaces {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.Tarjeta-Glosario,
+.Tarjeta-Enlace,
+.Pregunta-Frecuente {
+	min-width: 0;
+	overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+	.Pagina-Glosario,
+	.Pagina-PF,
+	.Pagina-EDI {
+		width: 100%;
+		padding: 40px 16px 48px;
+	}
+
+	.Seccion-Principal h1,
+	.Seccion-Principal-PF h1,
+	.Seccion-Principal-EDI h1 {
+		font-size: clamp(2.5rem, 12vw, 3.625rem);
+		line-height: 0.98;
+	}
+
+	.Seccion-Principal h2 {
+		font-size: 18px;
+	}
+
+	.Descripcion-Principal,
+	.Descripcion-PF,
+	.Descripcion-EDI {
+		font-size: 16px;
+		line-height: 1.5;
+	}
+
+	.Campo-Busqueda {
+		gap: 10px;
+		min-width: 0;
+		padding: 0 14px;
+	}
+
+	.Campo-Busqueda input {
+		min-width: 0;
+		font-size: 16px;
+	}
+
+	.Filtros-Letras {
+		gap: 6px;
+	}
+
+	.Boton-Letra {
+		min-width: 32px;
+		padding: 5px 7px;
+	}
+
+	.Tarjetas-Resultados,
+	.Tarjetas-Enlaces {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: 12px;
+		margin-right: 0;
+		padding: 6px 0 18px;
+	}
+
+	.Tarjetas-Resultados > .Tarjeta-Glosario,
+	.Tarjetas-Enlaces > .Tarjeta-Enlace {
+		width: 100%;
+	}
+
+	.Tarjeta-Glosario,
+	.Tarjeta-Enlace {
+		padding: 18px;
+	}
+
+	.Tarjeta-Glosario h3,
+	.Tarjeta-Enlace h3 {
+		font-size: 25px;
+	}
+
+	.Tarjeta-Glosario p,
+	.Tarjeta-Enlace p {
+		font-size: 16px;
+	}
+
+	.Aviso-Enlaces {
+		gap: 12px;
+	}
+
+	.Boton-Pregunta {
+		gap: 12px;
+		padding: 16px 14px;
+		font-size: 19px;
+	}
+
+	.Boton-Pregunta i {
+		flex: 0 0 auto;
+	}
+}

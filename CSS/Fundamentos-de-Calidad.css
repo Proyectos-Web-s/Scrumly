@@ -646,3 +646,260 @@ body {
 .Parrafo-Pie {
     font-family: 'Public Sans', sans-serif;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   GESTIÓN DE CALIDAD: AJUSTES RESPONSIVOS PARA TELÉFONOS
+   Las tarjetas se apilan verticalmente en teléfonos.
+   ========================================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+body {
+    min-width: 0;
+}
+
+#Seccion-Principal,
+.seccion-01 {
+    width: 100%;
+    min-width: 0;
+    gap: 24px;
+}
+
+.Contenedor-Principal,
+.Contenedor-Titulos,
+.Contenedor-Concepto,
+.Contenedor-Imagen {
+    min-width: 0;
+}
+
+.Contenedor-Principal {
+    width: min(100%, 900px);
+}
+
+.Contenedor-Titulos {
+    flex-wrap: wrap;
+}
+
+.Titulo-A,
+.Titulo-B {
+    width: auto;
+    max-width: 100%;
+    font-size: clamp(2.5rem, 5vw, 4.1rem);
+    overflow-wrap: anywhere;
+}
+
+.Parrafo-Principal,
+.Parrafo-Conceptos {
+    width: auto;
+    max-width: 100%;
+}
+
+.Titulo-Conceptos,
+.Titulo-Conclusion {
+    width: auto;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.Contenedor-Imagen {
+    transform: none;
+}
+
+.Imagen-Principal {
+    max-width: 100%;
+    height: auto;
+}
+
+.Texto-Pie-Metricas,
+.Texto-Pie-Conclusion {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.Cuadro-Estandar {
+    max-width: calc(100% - 60px);
+}
+
+@media (max-width: 900px) {
+    #Seccion-Principal,
+    .seccion-01 {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 20px;
+    }
+
+    .Contenedor-Principal,
+    .Contenedor-Imagen {
+        width: 100%;
+    }
+
+    .Contenedor-Imagen {
+        margin-top: 24px;
+    }
+
+    .Imagen-Principal {
+        display: block;
+        width: min(100%, 500px);
+        margin: 0 auto;
+    }
+
+    .Contenedor-Tarjetas-Caracteristicas,
+    .Contenedor-Calidad-Agil {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        padding: 8px 20px;
+    }
+
+    .Contenedor-Tarjetas-Caracteristicas > *,
+    .Contenedor-Calidad-Agil > * {
+        flex: 0 0 auto;
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+    }
+
+    .Fila-Metricas {
+        flex-direction: column;
+        margin: 24px 20px;
+        gap: 14px;
+    }
+
+    .Tarjeta-Metricas {
+        width: 100%;
+        min-width: 0;
+        margin-left: 0;
+    }
+
+    .Contenedor-Tarjetas-Conclusion {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 8px 20px 18px;
+    }
+
+    .Tarjeta-Conclusion {
+        flex: 0 0 auto;
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    #Seccion-Principal,
+    .seccion-01 {
+        padding: 0 16px;
+    }
+
+    .Contenedor-Titulos {
+        margin-left: 0;
+    }
+
+    .Titulo-A,
+    .Titulo-B {
+        padding-left: 0;
+        font-size: clamp(2rem, 10vw, 3rem);
+        line-height: 1;
+    }
+
+    .Antetitulo,
+    .Antetitulo-Conceptos {
+        width: fit-content;
+        max-width: 100%;
+        height: auto;
+        margin-left: 0;
+        font-size: 15px;
+        overflow-wrap: anywhere;
+    }
+
+    .Parrafo-Principal,
+    .Parrafo-Conceptos,
+    .Parrafo-Conclusion {
+        padding-left: 0;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .Titulo-Conceptos,
+    .Titulo-Conclusion {
+        padding: 0 16px;
+        font-size: clamp(1.7rem, 8vw, 2.3rem);
+    }
+
+    .Selector-Estandares {
+        max-width: calc(100% - 32px);
+        margin-left: 16px;
+    }
+
+    .Cuadro-Estandar,
+    .Info-Importante {
+        width: calc(100% - 32px);
+        max-width: none;
+        margin-right: 16px;
+        margin-left: 16px;
+    }
+
+    .Caracteristica-Estandar {
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .Fila-Metricas {
+        flex-direction: column;
+        margin: 20px 0;
+        padding: 8px 16px 16px;
+    }
+
+    .Tarjeta-Metricas {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .Tarjeta-Caracteristicas:hover,
+    .Tarjeta-Calidad-Agil:hover,
+    .Tarjeta-Metricas:hover,
+    .Tarjeta-Conclusion:hover {
+        transform: none;
+    }
+
+    .Texto-Extra,
+    .Texto-Extra-Metricas {
+        max-height: none;
+        opacity: 1;
+    }
+
+    .Texto-Pie-Metricas,
+    .Texto-Pie-Conclusion {
+        margin: 12px 16px;
+        font-size: 13px;
+    }
+}

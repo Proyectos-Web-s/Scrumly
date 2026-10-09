@@ -323,3 +323,181 @@ color: #0B0D1A;
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   INICIO RESPONSIVO: TABLETS Y TELÉFONOS
+   Las tarjetas se apilan verticalmente en teléfonos.
+   ========================================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+body {
+    min-width: 0;
+}
+
+#Seccion-Principal {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    gap: 24px;
+}
+
+.Contenedor-Principal,
+.Contenedor-Imagen,
+.Contenedor-Areas {
+    min-width: 0;
+}
+
+.Titulo-A,
+.Titulo-B {
+    width: auto;
+    max-width: 100%;
+    font-size: clamp(2.5rem, 5.1vw, 4.1rem);
+    overflow-wrap: anywhere;
+}
+
+.Parrafo-Principal {
+    width: auto;
+    max-width: 42rem;
+}
+
+.Imagen-Principal {
+    width: min(100%, 400px);
+}
+
+.Contenedor-Areas {
+    width: calc(100% - 32px);
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.Titulo-Areas {
+    width: auto;
+    max-width: 100%;
+    font-size: clamp(1.5rem, 3vw, 1.875rem);
+    overflow-wrap: anywhere;
+}
+
+.Subtitulo-Areas {
+    overflow-wrap: anywhere;
+}
+
+.Contenedor-Tarjetas-A,
+.Contenedor-Tarjetas-B {
+    min-width: 0;
+}
+
+.Tarjeta-GCS,
+.Tarjeta-PDS,
+.Tarjeta-MA,
+.Tarjeta-RA,
+.Tarjeta-SN {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+    #Seccion-Principal {
+        padding: 0 16px;
+        gap: 12px;
+    }
+
+    .Contenedor-Principal {
+        width: 100%;
+    }
+
+    .Titulo-A,
+    .Titulo-B {
+        font-size: clamp(2rem, 8vw, 2.625rem);
+        line-height: 1;
+    }
+
+    .Contenedor-Imagen {
+        width: 100%;
+    }
+
+    .Imagen-Principal {
+        width: min(70%, 300px);
+    }
+
+    .Contenedor-Areas {
+        width: 100%;
+    }
+
+    .Titulo-Areas {
+        padding: 0 16px;
+        margin-top: 70px;
+    }
+
+    .Subtitulo-Areas {
+        padding: 0 16px;
+    }
+
+    .Contenedor-Tarjetas-A,
+    .Contenedor-Tarjetas-B {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        gap: 15px;
+        padding: 0 16px;
+    }
+
+    .Tarjeta-GCS,
+    .Tarjeta-PDS,
+    .Tarjeta-MA,
+    .Tarjeta-RA,
+    .Tarjeta-SN {
+        flex: 0 0 auto;
+        width: 100%;
+        height: auto;
+        min-height: 180px;
+        padding: 18px;
+        margin-bottom: 0;
+    }
+
+    .Titulo-Tarjetas-Areas {
+        font-size: 18px;
+        line-height: 1.25;
+    }
+
+    .Texto-Tarjetas {
+        font-size: 14px;
+    }
+}

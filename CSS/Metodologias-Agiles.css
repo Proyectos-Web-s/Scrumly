@@ -568,3 +568,163 @@ body {
 		height: auto;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   SCRUM: AJUSTES RESPONSIVOS PARA TELÉFONOS
+   Las tarjetas agrupadas se apilan verticalmente en móvil.
+   ========================================================= */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	max-width: 100%;
+	overflow-x: clip;
+}
+
+body {
+	min-width: 0;
+}
+
+.Pagina-Scrum,
+.Seccion-Scrum,
+.Panel-Pestana,
+.Contenido-Sprint {
+	min-width: 0;
+}
+
+.Encabezado-Scrum h1 {
+	font-size: clamp(2.75rem, 7vw, 5rem);
+	overflow-wrap: anywhere;
+}
+
+.Encabezado-Seccion h2 {
+	font-size: clamp(2rem, 5vw, 3.45rem);
+	overflow-wrap: anywhere;
+}
+
+.Tarjetas-Scrum {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.Tarjeta-Scrum,
+.Tarjeta-Sprint-Info {
+	min-width: 0;
+	overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+	.Pagina-Scrum {
+		padding: 40px 16px 32px;
+	}
+
+	.Encabezado-Scrum {
+		margin-bottom: 36px;
+	}
+
+	.Encabezado-Scrum h1 {
+		font-size: clamp(2.5rem, 12vw, 4rem);
+		line-height: 0.98;
+	}
+
+	.Descripcion-Scrum,
+	.Descripcion-Seccion {
+		font-size: 16px;
+		line-height: 1.5;
+	}
+
+	.Ciclo-Resumen {
+		align-items: flex-start;
+	}
+
+	.Encabezado-Seccion h2 {
+		font-size: clamp(2rem, 9vw, 2.75rem);
+	}
+
+	.Pestanas-Scrum,
+	.Selector-Sprint {
+		gap: 8px;
+	}
+
+	.Boton-Pestana,
+	.Boton-Sprint {
+		max-width: 100%;
+		padding: 11px 12px;
+		font-size: 14px;
+	}
+
+	.Panel-Pestana > p {
+		margin-top: 24px;
+		font-size: 16px;
+		line-height: 1.5;
+	}
+
+	.Tarjetas-Scrum,
+	.Tarjetas-Eventos {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: 14px;
+		padding: 8px 0 18px;
+	}
+
+	.Tarjetas-Scrum > .Tarjeta-Scrum {
+		width: 100%;
+		min-width: 0;
+	}
+
+	.Tarjetas-Roles {
+		gap: 14px;
+	}
+
+	.Contenido-Sprint {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.Tarjeta-Sprint-Info {
+		padding: 18px;
+	}
+
+	.Tarjeta-Sprint-Info h3 {
+		font-size: 28px;
+	}
+
+	.Item-Sprint {
+		align-items: flex-start;
+		flex-wrap: wrap;
+	}
+
+	.Item-Sprint button {
+		max-width: 100%;
+	}
+}
