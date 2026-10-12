@@ -67,7 +67,7 @@ body {
 }
 
 
-/* Secciones de conceptos */
+/* Secciones de conceptos - Fundamentos*/
 
 
 /* Antetítulo */
@@ -373,7 +373,7 @@ body {
 
 
 
-/* Sección estándares */
+/* Sección estándares - Fundamentos */
 
 /* Selector de estándares */
 .Selector-Estandares {
@@ -543,7 +543,7 @@ body {
 
 
 
-/* Sección de conclusión 4 */
+/* Sección de conclusión - Fundamentos */
 .Seccion-Conclusion {
     padding-bottom: 40px;
 }
@@ -631,6 +631,336 @@ body {
     margin: 10px 35px;
     color: #333;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Seccion Niveles - Tecnicas*/
+/* Niveles de prueba */
+.Seccion-Niveles .Contenedor-Concepto {
+    box-sizing: border-box;
+    width: min(100%, 1240px);
+    margin: 0 auto;
+    padding: 0 18px 36px;
+}
+
+.Contenedor-Niveles {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    width: 95%;
+    margin-left: 30px;
+}
+
+.Tarjeta-Nivel {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 160px;
+    overflow: hidden;
+    border: 1px solid #dfd4c4;
+    border-radius: 15px;
+    background: #fff;
+}
+
+.Contenido-Nivel {
+    position: relative;
+    padding: 18px 18px 12px;
+}
+
+.Icono-Nivel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 7px;
+    background: #e2d9f0;
+    color: #80649e;
+    font-size: 16px;
+}
+
+.Numero-Nivel {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    color: #80649e;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.Titulo-Tarjeta-Nivel {
+    margin: 14px 0 7px;
+    color: #0b0d1a;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 29px;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.Texto-Tarjeta-Nivel {
+    margin: 0;
+    color: #555;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 15px;
+}
+
+.Boton-Detalle-Nivel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px 2px 0;
+    border: 0;
+    border-top: 1px solid #e5dbce;
+    background: transparent;
+    color: #80649e;
+    cursor: pointer;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.Boton-Detalle-Nivel:focus-visible {
+    outline: 2px solid #80649e;
+    outline-offset: 3px;
+}
+
+.Boton-Detalle-Nivel i {
+    font-size: 12px;
+    transition: transform 0.2s ease;
+}
+
+.Tarjeta-Nivel.abierta .Boton-Detalle-Nivel i {
+    transform: rotate(180deg);
+}
+
+.Detalle-Nivel {
+    padding: 18px 15px 20px;
+    border-top: 1px solid #dfd4c4;
+    color: #555;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.Detalle-Nivel p {
+    margin: 0 0 12px;
+}
+
+.Detalle-Nivel p:last-child {
+    margin-bottom: 0;
+    color: #171717;
+}
+
+.Etiqueta-Objetivo-Nivel {
+    color: #80649e;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Seccion Pruebas - Tecnicas*/
+.Seccion-Pruebas .Detalle-Nivel {
+    padding: 0;
+    border-top: 0;
+}
+
+.Panel-Tipo-Prueba {
+    min-height: 180px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 15px 14px 18px;
+    border-radius: 0 0 14px 14px;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.Panel-Tipo-Prueba > p {
+    margin: 0 0 14px;
+}
+
+.Panel-Tipo-Prueba .Etiqueta-Analisis-Prueba {
+    margin-bottom: 6px;
+    color: #80649e;
+    font-weight: 700;
+}
+
+.Panel-Tipo-Prueba ul {
+    display: grid;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.Panel-Tipo-Prueba li {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.Panel-Tipo-Prueba li i {
+    flex: 0 0 auto;
+    color: #80649e;
+    font-size: 19px;
+}
+
+.Panel-Caja-Negra {
+    background: #252525;
+    color: #f5f5f5;
+}
+
+.Panel-Caja-Blanca {
+    background: #fff;
+    color: #555;
+}
+
+.Flecha-Nivel {
+    display: flex;
+    flex: 0 0 20px;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    margin-top: 73px;
+    color: #80649e;
+    font-size: 20px;
+}
+
+@media (max-width: 900px) {
+    .Contenedor-Niveles {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .Tarjeta-Nivel {
+        width: 100%;
+    }
+
+    .Flecha-Nivel {
+        align-self: center;
+        margin: 0;
+        transform: rotate(90deg);
+    }
+}
+
+@media (max-width: 600px) {
+    .Seccion-Niveles .Contenedor-Concepto {
+        padding: 0 16px 28px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Seccion Otras Tecnicas - Tecnicas*/
+.Seccion-Mas-Tecnicas .Contenedor-Conceptos {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.Contenedor-Otras-Tecnicas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7%;
+    margin: 14px 30px 0;
+    padding: 20px 10px 0;
+    border-top: 1px solid #dfd4c4;
+}
+
+.Tarjeta-Otra-Tecnica {
+    min-width: 0;
+    color: #555;
+    font-family: 'Public Sans', sans-serif;
+}
+
+.Icono-Otra-Tecnica {
+    color: #80649e;
+    font-size: 28px;
+}
+
+.Tarjeta-Otra-Tecnica h2 {
+    margin: 6px 0 14px;
+    color: #0b0d1a;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.Tarjeta-Otra-Tecnica p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.45;
+}
+
+.Texto-Destacado-Tecnica {
+    color: #444;
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+    .Contenedor-Otras-Tecnicas {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        margin: 12px 16px 0;
+        padding: 18px 0 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Pie de página */
@@ -739,10 +1069,11 @@ body {
     height: auto;
 }
 
-.Texto-Pie-Metricas,
+.Texto-Pie-Metricas{
+    margin-left: 140px;
+}
 .Texto-Pie-Conclusion {
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-left: 35px;
 }
 
 .Cuadro-Estandar {

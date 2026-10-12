@@ -488,3 +488,26 @@ botonesPregunta.forEach((boton) => {
         flecha.classList.toggle("bi-chevron-down", !abierta);
     });
 });
+
+// Apertura independiente del detalle de cada nivel de prueba
+const botonesDetalleNivel = document.querySelectorAll(".Boton-Detalle-Nivel");
+
+botonesDetalleNivel.forEach((boton) => {
+    boton.addEventListener("click", () => {
+        const tarjeta = boton.closest(".Tarjeta-Nivel");
+        const detalleId = boton.getAttribute("aria-controls");
+        const detalle = detalleId ? document.getElementById(detalleId) : null;
+        const icono = boton.querySelector("i");
+        const texto = boton.querySelector("span");
+
+        if (!tarjeta || !detalle || !icono || !texto) return;
+
+        const abierto = boton.getAttribute("aria-expanded") !== "true";
+        boton.setAttribute("aria-expanded", String(abierto));
+        tarjeta.classList.toggle("abierta", abierto);
+        detalle.hidden = !abierto;
+        texto.textContent = abierto ? "Ocultar detalle" : "Ver detalle";
+        icono.classList.toggle("bi-chevron-up", abierto);
+        icono.classList.toggle("bi-chevron-down", !abierto);
+    });
+});
