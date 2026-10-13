@@ -24,8 +24,8 @@ body {
 .Antetitulo{
     background-color: #D8C8F2;
     border-radius: 20px;
-    width: 225px;
-    height: 16px;
+    width: 250px;
+    height: 40px;
     padding: 10px;
     padding-left: 20px;
     margin-top: 70px;
@@ -33,21 +33,17 @@ body {
     font-family: 'Public Sans', sans-serif;
 }
 
-.Titulo-A,
-.Titulo-B{
+#Seccion-Principal .Contenedor-Principal > h1 {
     font-size: 65px;
     width: 810px;
     padding: 8px;
     padding-left: 20px;
     margin: 5px 0;
     font-family: 'Bebas Neue', sans-serif;
+    color: #0B0D1A;
 }
 
-.Titulo-A{
-color: #0B0D1A;
-}
-
-.Titulo-B{
+#Seccion-Principal .Contenedor-Principal > h1 span {
     color: #8B5CF6;
 }
 
@@ -206,8 +202,7 @@ color: #0B0D1A;
 
     /* Títulos principales */
 
-    .Titulo-A,
-    .Titulo-B {
+    #Seccion-Principal .Contenedor-Principal > h1 {
         width: 100%;
         box-sizing: border-box;
         font-size: 42px;
@@ -384,8 +379,7 @@ body {
     min-width: 0;
 }
 
-.Titulo-A,
-.Titulo-B {
+#Seccion-Principal .Contenedor-Principal > h1 {
     width: auto;
     max-width: 100%;
     font-size: clamp(2.5rem, 5.1vw, 4.1rem);
@@ -442,8 +436,7 @@ body {
         width: 100%;
     }
 
-    .Titulo-A,
-    .Titulo-B {
+    #Seccion-Principal .Contenedor-Principal > h1 {
         font-size: clamp(2rem, 8vw, 2.625rem);
         line-height: 1;
     }

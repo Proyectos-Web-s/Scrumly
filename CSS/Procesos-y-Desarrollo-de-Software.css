@@ -31,19 +31,16 @@ body {
     margin-top: 10px;
     margin-left: 20px;
 }
-.Titulo-A,
-.Titulo-B{
+.Contenedor-Titulos h1 {
     font-size: 80px;
-    width: 280px;
+    width: 100%;
     padding-left: 20px;
     margin: 0px;
     font-family: 'Bebas Neue', sans-serif;
-}
-
-.Titulo-A{
     color: #0B0D1A;
 }
-.Titulo-B{
+
+.Contenedor-Titulos h1 span {
     color: #C084FC ;
 }
 
@@ -984,6 +981,362 @@ body {
   font-family: 'Public Sans', sans-serif;
 }
 
+/* Recorrido interactivo de las etapas del SDLC */
+.Seccion-Etapas-SDLC {
+  --sdlc-side-padding: clamp(20px, 5vw, 72px);
+  padding: 28px var(--sdlc-side-padding) 64px;
+}
+
+/* Contexto e importancia del ciclo de vida */
+.Seccion-Contexto-Ciclo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(32px, 5vw, 72px);
+  padding: 48px clamp(35px, 4.2vw, 56px);
+  background: #efeae1;
+}
+
+.Contenido-Contexto-Ciclo {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.Antetitulo-Contexto-Ciclo {
+  margin: 0 0 24px;
+  color: #80649c;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+#titulo-contexto-ciclo {
+  margin: 0 0 24px;
+  color: #090909;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.2rem, 3.2vw, 3rem);
+  line-height: 1.1;
+}
+
+.Texto-Contexto-Ciclo {
+  max-width: 1000px;
+  padding-left: 22px;
+  color: #38373b;
+  font-size: clamp(1rem, 1.55vw, 1.25rem);
+  line-height: 1.5;
+}
+
+.Texto-Contexto-Ciclo p {
+  margin: 0 0 24px;
+}
+
+.Texto-Contexto-Ciclo p:last-child {
+  margin-bottom: 0;
+}
+
+.Texto-Contexto-Ciclo strong {
+  color: #111111;
+  font-weight: 700;
+}
+
+.Diagrama-Ciclo-Vida {
+  flex: 0 0 clamp(170px, 19vw, 230px);
+  width: clamp(170px, 19vw, 230px);
+}
+
+.Diagrama-Ciclo-Vida img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.Antetitulo-Etapas-SDLC {
+  margin: 0 0 8px;
+  color: #80649c;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+#titulo-etapas-sdlc {
+  margin: 0 0 32px;
+  color: #0b0d1a;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+}
+
+.Selector-Etapas-SDLC {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  width: calc(100% + var(--sdlc-side-padding) + var(--sdlc-side-padding) - 70px);
+  margin: 0 0 38px calc(35px - var(--sdlc-side-padding));
+}
+
+.Selector-Etapas-SDLC::before {
+  position: absolute;
+  top: 25px;
+  right: 7%;
+  left: 7%;
+  height: 2px;
+  background: #d8c9b6;
+  content: "";
+}
+
+.Boton-Etapa-SDLC {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  padding: 0 4px;
+  border: 0;
+  background: transparent;
+  color: #55515c;
+  cursor: pointer;
+  font: inherit;
+}
+
+.Icono-Boton-Etapa {
+  display: grid;
+  width: 60px;
+  height: 60px;
+  place-items: center;
+  border: 2px solid #d8c9b6;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #80649c;
+  font-size: 1.2rem;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.Boton-Etapa-SDLC:hover .Icono-Boton-Etapa,
+.Boton-Etapa-SDLC:focus-visible .Icono-Boton-Etapa {
+  transform: translateY(-2px);
+  border-color: #80649c;
+}
+
+.Boton-Etapa-SDLC.activo {
+  color: #47326b;
+}
+
+.Boton-Etapa-SDLC.activo .Icono-Boton-Etapa {
+  border-color: #80649c;
+  background: #80649c;
+  color: #ffffff;
+}
+
+.Boton-Etapa-SDLC:focus-visible {
+  outline: 3px solid #c084fc;
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.Numero-Boton-Etapa {
+  color: #80649c;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.Nombre-Boton-Etapa {
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.Panel-Etapa-SDLC {
+  max-width: 1000px;
+  margin: 0 auto;
+  perspective: 1200px;
+}
+
+.Tarjeta-Etapa-Volteable {
+  min-height: 300px;
+}
+
+.Interior-Etapa-SDLC {
+  position: relative;
+  min-height: 300px;
+  transform-style: preserve-3d;
+  transition: transform 0.65s ease;
+}
+
+.Tarjeta-Etapa-Volteable.mostrar-detalle .Interior-Etapa-SDLC {
+  transform: rotateY(180deg);
+}
+
+.Cara-Etapa-SDLC {
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  min-height: 300px;
+  align-items: center;
+  gap: clamp(16px, 3vw, 36px);
+  padding: clamp(20px, 3vw, 32px);
+  border: 1px solid #d8c9b6;
+  border-radius: 18px;
+  background: #f7f3ed;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.Cara-Etapa-Posterior {
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 10px;
+  transform: rotateY(180deg);
+}
+
+.Cara-Etapa-Posterior .Detalle-Texto-Etapa {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  align-self: stretch;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.Icono-Panel-Etapa {
+  display: grid;
+  flex: 0 0 88px;
+  align-self: flex-start;
+  width: 88px;
+  height: 88px;
+  margin-top: 8px;
+  place-items: center;
+  border-radius: 24px;
+  background: #e7dcf0;
+  color: #80649c;
+  font-size: 2.5rem;
+}
+
+.Contenido-Panel-Etapa {
+  min-width: 0;
+}
+
+.Etiqueta-Panel-Etapa {
+  margin: 0 0 8px;
+  color: #80649c;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.Titulo-Panel-Etapa {
+  margin: 0 0 12px;
+  color: #181d2a;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+}
+
+.Descripcion-Panel-Etapa,
+.Detalle-Texto-Etapa {
+  margin: 0 0 18px;
+  color: #38373b;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.Objetivo-Panel-Etapa {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 0 20px;
+  color: #38373b;
+  line-height: 1.5;
+}
+
+.Objetivo-Panel-Etapa > i {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: #80649c;
+}
+
+@media (max-width: 700px) {
+  .Seccion-Contexto-Ciclo {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 28px;
+  padding: 38px 20px;
+  }
+
+  .Antetitulo-Contexto-Ciclo {
+  margin-bottom: 18px;
+  }
+
+  #titulo-contexto-ciclo {
+  margin-bottom: 18px;
+  font-size: clamp(2rem, 8vw, 2.6rem);
+  }
+
+  .Texto-Contexto-Ciclo {
+  padding-left: 0;
+  font-size: 1rem;
+  }
+
+  .Texto-Contexto-Ciclo p {
+  margin-bottom: 18px;
+  }
+
+  .Diagrama-Ciclo-Vida {
+  flex-basis: auto;
+  width: min(190px, 60vw);
+  align-self: center;
+  }
+
+  .Seccion-Etapas-SDLC {
+  --sdlc-side-padding: 16px;
+  padding-right: 16px;
+  padding-left: 16px;
+  }
+
+  .Selector-Etapas-SDLC {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px 8px;
+  }
+
+  .Selector-Etapas-SDLC::before {
+  content: none;
+  }
+
+  .Cara-Etapa-Frontal,
+  .Cara-Etapa-Posterior {
+  flex-direction: column;
+  align-items: flex-start;
+  }
+
+  .Cara-Etapa-SDLC {
+  min-height: 390px;
+  }
+
+  .Tarjeta-Etapa-Volteable,
+  .Interior-Etapa-SDLC {
+  min-height: 390px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Icono-Boton-Etapa,
+  .Interior-Etapa-SDLC {
+  transition: none;
+  }
+}
+
 
 
 
@@ -1041,8 +1394,7 @@ body {
   min-width: 0;
 }
 
-.Titulo-A,
-.Titulo-B {
+.Contenedor-Titulos h1 {
   width: auto;
   max-width: 100%;
   font-size: clamp(2.75rem, 7vw, 5rem);
@@ -1086,8 +1438,7 @@ body {
   margin-left: 0;
   }
 
-  .Titulo-A,
-  .Titulo-B {
+  .Contenedor-Titulos h1 {
   padding-left: 0;
   font-size: clamp(2.5rem, 12vw, 4rem);
   line-height: 0.98;

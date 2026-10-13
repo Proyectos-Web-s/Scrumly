@@ -35,7 +35,7 @@
                     <div class="Item-Menu">
 
                         <!-- Con un click se despliega -->
-                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                        <div class="Titulo-Menu">
                             <i class="bi bi-patch-check"></i>
 
                             <span>
@@ -49,13 +49,13 @@
                         <div class="Submenu">
                             <a href="Gestion-de-Calidad-del-Software.html#fundamentos-calidad">Fundamentos</a>
                             <a href="Gestion-de-Calidad-del-Software.html#calidad-agil">Técnicas de Aseguramiento de la Calidad</a>
-                            <a href="Gestion-de-Calidad-del-Software.html#estandares-calidad">Herramientas de Calidad</a>
+                            <a href="Gestion-de-Calidad-del-Software.html#herramientas-calidad">Herramientas de Calidad</a>
                         </div>
 
                     </div>
 
                     <div class="Item-Menu">
-                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                        <div class="Titulo-Menu">
                             <i class="bi bi-bezier2"></i>
                             <span>Procesos de Desarrollo<br>de Software</span>
                             <i class="bi bi-chevron-down"></i>
@@ -69,7 +69,7 @@
                     </div>
 
                     <div class="Item-Menu">
-                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                        <div class="Titulo-Menu">
                             <i class="bi bi-lightning-charge"></i>
                             <span>Metodologías Ágiles</span>
                             <i class="bi bi-chevron-down"></i>
@@ -83,7 +83,7 @@
                     </div>
 
                     <div class="Item-Menu">
-                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                        <div class="Titulo-Menu">
                             <i class="bi bi-book"></i>
                             <span>Recursos y Aprendizajes</span>
                             <i class="bi bi-chevron-down"></i>
@@ -92,7 +92,7 @@
                             <a href="Recursos-y-Aprendizajes.html#glosario">Glosario</a>
                             <a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
                             <a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
-                            <a href="#">Ejercicios y Casos Prácticos</a>
+                            <a href="Recursos-y-Aprendizajes.html#ejercicios-practicos">Ejercicios y Casos Prácticos</a>
                         </div>
                     </div>
 
@@ -101,8 +101,18 @@
                 </nav>
             </div>
 
+
+
+
+
+
+
+
+
+
+
 		<!-- Sección principal del glosario -->
-		<main class="Pagina-Glosario">
+		<div class="Pagina-Glosario">
 			<section class="Seccion-Principal">
 				<p class="Antetitulo-Principal">RECURSOS Y APRENDIZAJES / 01</p>
 				<h1>GLOSARIO<span>.</span></h1>
@@ -157,7 +167,7 @@
 				<!-- Resultados actualizados por JavaScript -->
 				<div class="Resultados-Glosario" id="Resultados-Glosario" aria-live="polite"></div>
 			</section>
-		</main>
+		</div>
 
 
 
@@ -180,7 +190,7 @@
 
 
 		<!-- Sección principal de preguntas frecuentes -->
-		<main class="Pagina-PF">
+		<div class="Pagina-PF">
 			<section id="inicio-preguntas" class="Seccion-Principal-PF">
 				<p class="Antetitulo-PF">RECURSOS Y APRENDIZAJES / 02</p>
 				<h1>PREGUNTAS FRECUENTES<span>.</span></h1>
@@ -265,7 +275,7 @@
 					</article>
 				</div>
 			</section>
-		</main>
+		</div>
 
 
 
@@ -288,7 +298,7 @@
 
 
 		<!-- Sección principal de enlaces de interés -->
-		<main class="Pagina-EDI">
+		<div class="Pagina-EDI">
 			<section id="inicio-enlaces" class="Seccion-Principal-EDI">
 				<p class="Antetitulo-EDI">RECURSOS Y APRENDIZAJES / 03</p>
 				<h1>ENLACES DE INTERÉS<span>.</span></h1>
@@ -320,7 +330,157 @@
 					<p>Todos los enlaces se abren en una pestaña nueva de forma segura, para que no pierdas tu lugar en Scrumly.</p>
 				</div>
 			</section>
-		</main>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+		<div class="Pagina-ECP">
+			<section id="inicio-Ejercicios" class="Seccion-Principal-ECP">
+				<p class="Antetitulo-ECP">RECURSOS Y APRENDIZAJES / 04</p>
+				<h1>Ejercicios y casos <span>prácticos.</span></h1>
+				<p class="Descripcion-ECP">
+					En esta sección encontrarás ejercicios y casos prácticos para poner en práctica los conocimientos sobre
+					calidad del software, procesos de desarrollo y metodologías ágiles. Cada actividad presenta una situación o
+					consigna para resolver y una solución orientativa que podrás consultar una vez que hayas intentado
+					responder.
+				</p>
+			</section>
+
+			<section id="ejercicios-practicos" class="Seccion-Ejercicios" aria-labelledby="titulo-lista-ejercicios">
+				<h2 id="titulo-lista-ejercicios" class="Texto-Oculto">Ejercicios prácticos con soluciones orientativas</h2>
+				<p class="Encabezado-Ejercicios"><i class="bi bi-hammer" aria-hidden="true"></i>4 ejercicios · intentá resolverlos antes de ver la solución</p>
+
+				<div class="Lista-Ejercicios">
+					<article class="Tarjeta-Ejercicio">
+						<div class="Cabecera-Ejercicio">
+							<div>
+								<p class="Antetitulo-Ejercicio">EJERCICIO 01 · MODELO EN CASCADA E INCREMENTAL</p>
+								<h3>Modelos de desarrollo</h3>
+							</div>
+							<span class="Numero-Ejercicio">01</span>
+						</div>
+						<div class="Enunciado-Ejercicio">
+							<strong>ENUNCIADO</strong>
+							<p>Una empresa necesita desarrollar un sistema cuyos requisitos están claramente definidos y es poco probable que cambien durante el proyecto. ¿Qué modelo podría utilizar y por qué?</p>
+						</div>
+						<button class="Boton-Solucion" type="button" aria-expanded="false" aria-controls="solucion-ejercicio-1">
+							<i class="bi bi-lightbulb" aria-hidden="true"></i><span>Mostrar solución</span><i class="bi bi-chevron-down" aria-hidden="true"></i>
+						</button>
+						<div class="Solucion-Ejercicio" id="solucion-ejercicio-1" hidden>
+							<p class="Etiqueta-Solucion-Ejercicio"><i class="bi bi-check-circle" aria-hidden="true"></i>SOLUCIÓN ORIENTATIVA</p>
+							<p>El modelo más adecuado es Cascada. Como los requisitos están bien definidos y son estables, el equipo puede avanzar de una etapa a la siguiente —requisitos, diseño, implementación, pruebas y mantenimiento— sin volver constantemente sobre decisiones anteriores. Si los requisitos fueran inciertos o cambiaran con frecuencia, convendría un enfoque incremental que permita incorporar ajustes entre entregas.</p>
+						</div>
+					</article>
+
+					<article class="Tarjeta-Ejercicio">
+						<div class="Cabecera-Ejercicio">
+							<div>
+								<p class="Antetitulo-Ejercicio">EJERCICIO 02 · NIVELES DE PRUEBA</p>
+								<h3>Pruebas de software</h3>
+							</div>
+							<span class="Numero-Ejercicio">02</span>
+						</div>
+						<div class="Enunciado-Ejercicio">
+							<strong>ENUNCIADO</strong>
+							<p>Un equipo desarrolla una aplicación de turnos. Primero comprueba que el formulario valide correctamente los datos, después verifica que el formulario y la base de datos funcionen juntos y, finalmente, prueba toda la aplicación. Identificá los tres niveles de prueba en orden.</p>
+						</div>
+						<button class="Boton-Solucion" type="button" aria-expanded="false" aria-controls="solucion-ejercicio-2">
+							<i class="bi bi-lightbulb" aria-hidden="true"></i><span>Mostrar solución</span><i class="bi bi-chevron-down" aria-hidden="true"></i>
+						</button>
+						<div class="Solucion-Ejercicio" id="solucion-ejercicio-2" hidden>
+							<p class="Etiqueta-Solucion-Ejercicio"><i class="bi bi-check-circle" aria-hidden="true"></i>SOLUCIÓN ORIENTATIVA</p>
+							<p>En orden: prueba unitaria, prueba de integración y prueba de sistema. La primera revisa el formulario de manera aislada; la segunda comprueba la interacción entre el formulario y la base de datos; y la última evalúa la aplicación completa como un producto integrado.</p>
+						</div>
+					</article>
+
+					<article class="Tarjeta-Ejercicio">
+						<div class="Cabecera-Ejercicio">
+							<div>
+								<p class="Antetitulo-Ejercicio">EJERCICIO 03 · EVENTOS DE SCRUM</p>
+								<h3>Scrum</h3>
+							</div>
+							<span class="Numero-Ejercicio">03</span>
+						</div>
+						<div class="Enunciado-Ejercicio">
+							<strong>ENUNCIADO</strong>
+							<p>Durante un Sprint, el equipo se reúne diariamente para revisar el avance e identificar impedimentos. Al finalizar, presenta el incremento desarrollado y luego reflexiona sobre cómo mejorar su forma de trabajar. ¿Qué eventos está realizando?</p>
+						</div>
+						<button class="Boton-Solucion" type="button" aria-expanded="false" aria-controls="solucion-ejercicio-3">
+							<i class="bi bi-lightbulb" aria-hidden="true"></i><span>Mostrar solución</span><i class="bi bi-chevron-down" aria-hidden="true"></i>
+						</button>
+						<div class="Solucion-Ejercicio" id="solucion-ejercicio-3" hidden>
+							<p class="Etiqueta-Solucion-Ejercicio"><i class="bi bi-check-circle" aria-hidden="true"></i>SOLUCIÓN ORIENTATIVA</p>
+							<p>Primero realiza el Daily Scrum para inspeccionar el progreso y adaptar el plan de trabajo. Al terminar el Sprint, lleva a cabo la Sprint Review para inspeccionar el incremento con las partes interesadas y, después, la Retrospectiva para acordar mejoras en la forma de trabajar.</p>
+						</div>
+					</article>
+
+					<article class="Tarjeta-Ejercicio">
+						<div class="Cabecera-Ejercicio">
+							<div>
+								<p class="Antetitulo-Ejercicio">EJERCICIO 04 · GESTIÓN VISUAL DEL TRABAJO</p>
+								<h3>Kanban y límite WIP</h3>
+							</div>
+							<span class="Numero-Ejercicio">04</span>
+						</div>
+						<div class="Enunciado-Ejercicio">
+							<strong>ENUNCIADO</strong>
+							<p>Un tablero Kanban tiene un límite WIP de 2 tareas en la columna “En proceso”. Ya hay dos tareas en esa columna y un integrante quiere comenzar una tercera. ¿Qué debería hacer el equipo?</p>
+						</div>
+						<button class="Boton-Solucion" type="button" aria-expanded="false" aria-controls="solucion-ejercicio-4">
+							<i class="bi bi-lightbulb" aria-hidden="true"></i><span>Mostrar solución</span><i class="bi bi-chevron-down" aria-hidden="true"></i>
+						</button>
+						<div class="Solucion-Ejercicio" id="solucion-ejercicio-4" hidden>
+							<p class="Etiqueta-Solucion-Ejercicio"><i class="bi bi-check-circle" aria-hidden="true"></i>SOLUCIÓN ORIENTATIVA</p>
+							<p>El equipo no debería iniciar una tercera tarea porque ya alcanzó el límite WIP. Conviene colaborar para terminar o desbloquear una de las tareas en curso; cuando una pase a la siguiente columna y haya espacio disponible, podrán tomar nuevo trabajo. Así se limita el trabajo simultáneo y se favorece un flujo más constante.</p>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<section class="Seccion-Pauta-Evaluacion" aria-labelledby="titulo-pauta-evaluacion">
+				<p class="Antetitulo-ECP">PAUTA DE EVALUACIÓN</p>
+				<h2 id="titulo-pauta-evaluacion">¿Cómo saber si tu respuesta está bien?</h2>
+				<p class="Descripcion-Pauta-Evaluacion">La solución no tiene que ser necesariamente idéntica a la propuesta. Se puede evaluar si:</p>
+				<ul class="Lista-Criterios-Evaluacion">
+					<li><i class="bi bi-check-circle" aria-hidden="true"></i><span>Identifica correctamente el concepto estudiado.</span></li>
+					<li><i class="bi bi-check-circle" aria-hidden="true"></i><span>Aplica la teoría a la situación planteada.</span></li>
+					<li><i class="bi bi-check-circle" aria-hidden="true"></i><span>Justifica su respuesta con una explicación clara.</span></li>
+					<li><i class="bi bi-check-circle" aria-hidden="true"></i><span>Utiliza adecuadamente los términos técnicos.</span></li>
+				</ul>
+			</section>
+
+			<section class="Seccion-Sobre-Ejercicios" aria-labelledby="titulo-sobre-ejercicios">
+				<div class="Tarjeta-Sobre-Ejercicios">
+					<i class="bi bi-mortarboard" aria-hidden="true"></i>
+					<div>
+						<h2 id="titulo-sobre-ejercicios">Sobre estos ejercicios</h2>
+						<p>Los ejercicios anteriores son propuestas didácticas elaboradas a partir de los temas del proyecto; no son preguntas copiadas literalmente de los libros. La sección busca reforzar lo aprendido en las demás páginas de Scrumly.</p>
+						<nav class="Enlaces-Temas-Ejercicios" aria-label="Temas relacionados con los ejercicios">
+							<a href="Gestion-de-Calidad-del-Software.html#fundamentos-calidad">Fundamentos de calidad <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+							<a href="Metodologias-Agiles.html#scrum-en-profundidad">Scrum <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+							<a href="Metodologias-Agiles.html#kanban">Kanban <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+						</nav>
+					</div>
+				</div>
+			</section>
+		</div>
+
+
+
+
+
+
+
+
+
 
 		<!-- Pie de página -->
 		<div class="Seccion-footer">

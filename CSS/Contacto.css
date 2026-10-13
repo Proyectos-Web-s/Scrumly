@@ -1,0 +1,276 @@
+/* Incluye bordes y rellenos dentro del ancho declarado de los elementos. */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Apariencia base y fondo general de la página de contacto. */
+body {
+	margin: 0;
+	background: #f8f0e3;
+	color: #151515;
+	font-family: 'Public Sans', sans-serif;
+}
+
+/* Variables de color locales para reutilizar acentos y bordes. */
+.Pagina-Contacto {
+	--color-acento-contacto: #80649c;
+	--color-borde-contacto: rgba(164, 135, 101, 0.42);
+}
+
+/* Ancho máximo común y centrado de la portada y el formulario. */
+.Seccion-Principal-Contacto,
+.Seccion-Formulario-Contacto {
+	width: min(100% - 64px, 1200px);
+	margin: 0 auto;
+}
+
+/* Espaciado de la portada superior. */
+.Seccion-Principal-Contacto {
+	padding: 48px 0 38px;
+}
+
+/* Antetítulo que identifica la página actual. */
+.Antetitulo-Contacto {
+	margin: 0 0 20px;
+	color: var(--color-acento-contacto);
+	font-size: 16px;
+	font-weight: 800;
+}
+
+/* Título principal; la palabra dentro de span recibe el color violeta. */
+.Seccion-Principal-Contacto h1 {
+	margin: 0;
+	color: #050505;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: clamp(56px, 6vw, 72px);
+	font-weight: 400;
+	line-height: 0.98;
+}
+
+/* Resaltado de la marca dentro del título principal. */
+.Seccion-Principal-Contacto h1 span {
+	color: var(--color-acento-contacto);
+}
+
+/* Texto que explica para qué se puede usar el formulario. */
+.Descripcion-Principal-Contacto {
+	max-width: 1120px;
+	margin: 16px 0 0;
+	color: #38373b;
+	font-size: 22px;
+	line-height: 1.4;
+}
+
+/* Distribución en dos columnas: presentación a la izquierda y formulario a la derecha. */
+.Seccion-Formulario-Contacto {
+	display: grid;
+	grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+	gap: 72px;
+	padding: 28px 0 52px;
+}
+
+/* Alinea verticalmente el mensaje introductorio con los campos. */
+.Introduccion-Formulario-Contacto {
+	padding-top: 42px;
+}
+
+/* Ícono de correo de la introducción del formulario. */
+.Introduccion-Formulario-Contacto > i {
+	color: var(--color-acento-contacto);
+	font-size: 40px;
+}
+
+/* Encabezado de la columna introductoria. */
+.Introduccion-Formulario-Contacto h2 {
+	margin: 8px 0 4px;
+	color: #050505;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 42px;
+	font-weight: 400;
+	line-height: 1;
+}
+
+/* Texto breve debajo del encabezado del formulario. */
+.Introduccion-Formulario-Contacto p {
+	margin: 0;
+	color: #38373b;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+/* Evita que el formulario desborde la columna que lo contiene. */
+.Formulario-Contacto {
+	min-width: 0;
+}
+
+/* Dos campos por fila en escritorio, con separación uniforme. */
+.Campos-Contacto {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 28px 56px;
+}
+
+/* Apila la etiqueta y el control de cada campo. */
+.Campo-Contacto {
+	display: flex;
+	min-width: 0;
+	flex-direction: column;
+	gap: 8px;
+}
+
+/* Hace que los campos de motivo y mensaje ocupen toda la fila. */
+.Campo-Contacto-Completo {
+	grid-column: 1 / -1;
+}
+
+/* Apariencia de las etiquetas del formulario. */
+.Campo-Contacto label {
+	color: #111;
+	font-size: 17px;
+	font-weight: 700;
+}
+
+/* Mantiene visibles los indicadores de campo obligatorio. */
+.Campo-Contacto label span,
+.Nota-Campos-Contacto span {
+	color: #111;
+}
+
+/* Estilo compartido para entradas, selector y área de texto. */
+.Campo-Contacto input,
+.Campo-Contacto select,
+.Campo-Contacto textarea {
+	width: 100%;
+	border: 1px solid #c9c4bd;
+	border-radius: 10px;
+	background: #fff;
+	color: #38373b;
+	font: inherit;
+	font-size: 16px;
+	box-shadow: 0 2px 5px rgba(32, 27, 22, 0.08);
+}
+
+/* Altura y relleno de los controles de una sola línea. */
+.Campo-Contacto input,
+.Campo-Contacto select {
+	height: 48px;
+	padding: 0 16px;
+}
+
+/* Indica que las opciones del motivo pueden seleccionarse. */
+.Campo-Contacto select {
+	cursor: pointer;
+}
+
+/* Área amplia para redactar el mensaje. */
+.Campo-Contacto textarea {
+	min-height: 198px;
+	padding: 14px 16px;
+	resize: vertical;
+}
+
+/* Resalta los controles al navegar con teclado o darles foco. */
+.Campo-Contacto input:focus-visible,
+.Campo-Contacto select:focus-visible,
+.Campo-Contacto textarea:focus-visible {
+	border-color: var(--color-acento-contacto);
+	outline: 3px solid rgba(128, 100, 156, 0.2);
+	outline-offset: 1px;
+}
+
+/* Nota que explica el significado del asterisco. */
+.Nota-Campos-Contacto {
+	margin: 10px 0 24px;
+	color: #55515a;
+	font-size: 15px;
+}
+
+/* Botón principal para enviar el formulario. */
+.Boton-Enviar-Contacto {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	min-height: 48px;
+	padding: 10px 18px;
+	border: 0;
+	border-radius: 10px;
+	background: var(--color-acento-contacto);
+	color: #fff;
+	cursor: pointer;
+	font: inherit;
+	font-size: 17px;
+	font-weight: 700;
+	box-shadow: 0 3px 7px rgba(32, 27, 22, 0.2);
+	transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Cambio visual del botón cuando el puntero pasa por encima. */
+.Boton-Enviar-Contacto:hover {
+	transform: translateY(-2px);
+	background: #654b80;
+}
+
+/* Indicador visible de foco para navegación accesible por teclado. */
+.Boton-Enviar-Contacto:focus-visible {
+	outline: 3px solid #c8b5e4;
+	outline-offset: 3px;
+}
+
+/* En tablet y móvil, apila introducción y formulario y reduce márgenes. */
+@media (max-width: 760px) {
+	.Seccion-Principal-Contacto,
+	.Seccion-Formulario-Contacto {
+		width: min(100% - 36px, 1200px);
+	}
+
+	.Seccion-Principal-Contacto {
+		padding: 36px 0 22px;
+	}
+
+	.Antetitulo-Contacto {
+		margin-bottom: 16px;
+		font-size: 14px;
+	}
+
+	.Seccion-Principal-Contacto h1 {
+		font-size: clamp(46px, 11vw, 62px);
+	}
+
+	.Descripcion-Principal-Contacto {
+		font-size: 18px;
+		line-height: 1.5;
+	}
+
+	.Seccion-Formulario-Contacto {
+		grid-template-columns: 1fr;
+		gap: 28px;
+		padding: 20px 0 40px;
+	}
+
+	.Introduccion-Formulario-Contacto {
+		padding-top: 0;
+	}
+}
+
+/* En teléfonos estrechos, organiza cada campo en una sola columna. */
+@media (max-width: 520px) {
+	.Campos-Contacto {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	.Campo-Contacto-Completo {
+		grid-column: auto;
+	}
+
+	.Campo-Contacto textarea {
+		min-height: 170px;
+	}
+
+	.Boton-Enviar-Contacto {
+		width: 100%;
+	}
+}

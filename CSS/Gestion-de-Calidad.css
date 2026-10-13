@@ -40,20 +40,16 @@ body {
     margin-top: 10px;
     margin-left: 20px;
 }
-.Titulo-A,
-.Titulo-B{
+.Contenedor-Titulos h1 {
     font-size: 65px;
-    width: 280px;
+    width: 100%;
     padding-left: 20px;
     margin: 5px 0;
     font-family: 'Bebas Neue', sans-serif;
-}
-
-.Titulo-A{
     color: #0B0D1A;
 }
-.Titulo-B{
-    
+
+.Contenedor-Titulos h1 span {
     color: #C084FC ;
 }
 
@@ -591,6 +587,8 @@ body {
     border-width: 1px;
     border-style: solid;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #faf6f0;
+
 }
 .Tarjeta-Conclusion:hover {
     transform: translateY(-8px);
@@ -953,6 +951,280 @@ body {
 
 
 
+/* Herramientas de calidad */
+.Seccion-Herramientas .Contenedor-Conceptos {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 18px 36px;
+}
+
+.Texto-Introduccion-Herramientas {
+    margin: 8px 30px 18px;
+    color: #555;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 16px;
+}
+
+.Pestanas-Herramientas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 24px;
+    margin-left: 30px;
+}
+
+.Boton-Herramienta {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 16px;
+    border: 1px solid #d8c8f2;
+    border-radius: 22px;
+    background: #fff;
+    color: #292333;
+    cursor: pointer;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.Boton-Herramienta span {
+    color: #80649e;
+    font-size: 12px;
+}
+
+.Boton-Herramienta:hover,
+.Boton-Herramienta.activo {
+    border-color: #80649e;
+    background: #e9e1f2;
+}
+
+.Boton-Herramienta:focus-visible,
+.Boton-Mas-Herramienta:focus-visible {
+    outline: 2px solid #80649e;
+    outline-offset: 3px;
+}
+
+.Panel-Herramienta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.Panel-Herramienta[hidden],
+.Detalle-Herramienta[hidden] {
+    display: none;
+}
+
+.Tarjeta-Herramienta {
+    width: min(600px, 100%);
+    height: 250px;
+    overflow: hidden;
+    border: 1px solid #dfd4c4;
+    border-radius: 14px;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.Tarjeta-Herramienta.abierta {
+    height: auto;
+}
+
+.Contenido-Tarjeta-Herramienta {
+    position: relative;
+    height: 250px;
+    padding: 18px 22px 16px;
+    box-sizing: border-box;
+}
+
+.Icono-Herramienta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 7px;
+    background: #e2d9f0;
+    color: #80649e;
+    font-size: 25px;
+}
+
+.Numero-Herramienta {
+    position: absolute;
+    top: 23px;
+    right: 20px;
+    color: #80649e;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.Contenido-Tarjeta-Herramienta h2 {
+    margin: 18px 0 2px;
+    color: #0b0d1a;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.Subtitulo-Herramienta {
+    margin: 4px 0 16px;
+    color: #555;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 16px;
+}
+
+.Descripcion-Herramienta {
+    margin: 0 0 22px;
+    color: #555;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.Boton-Mas-Herramienta {
+    position: absolute;
+    right: 22px;
+    bottom: 16px;
+    left: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 44px);
+    padding: 11px 2px 0;
+    border: 0;
+    border-top: 1px solid #e5dbce;
+    background: transparent;
+    color: #80649e;
+    cursor: pointer;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.Detalle-Herramienta {
+    padding: 22px 32px 28px;
+    border-top: 1px solid #dfd4c4;
+    color: #555;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.Detalle-Herramienta .Etiqueta-Analisis-Prueba {
+    margin: 0 0 10px;
+    color: #171717;
+    font-weight: 700;
+}
+
+.Detalle-Herramienta ul {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.Detalle-Herramienta li {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.Detalle-Herramienta li i {
+    flex: 0 0 auto;
+    color: #80649e;
+    font-size: 22px;
+}
+
+.Cierre-Detalle-Herramienta {
+    margin: 30px 0 0;
+}
+
+.Cierre-Detalle-Herramienta strong {
+    color: #80649e;
+}
+
+.Seccion-Herramientas-Conjunto .Contenedor-Otras-Tecnicas {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.Tarjeta-Otra-Herramienta {
+    min-width: 0;
+    color: #555;
+    font-family: 'Public Sans', sans-serif;
+    margin-bottom: 40px;
+}
+
+.Icono-Otra-Herramienta {
+    color: #80649e;
+    font-size: 28px;
+}
+
+.Tarjeta-Otra-Herramienta h2 {
+    margin: 6px 0 14px;
+    color: #0b0d1a;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.Tarjeta-Otra-Herramienta p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.45;
+}
+
+@media (max-width: 600px) {
+    .Seccion-Herramientas .Contenedor-Conceptos {
+        padding: 0 16px 28px;
+    }
+
+    .Texto-Introduccion-Herramientas {
+        margin-right: 16px;
+        margin-left: 16px;
+        font-size: 14px;
+    }
+
+    .Pestanas-Herramientas {
+        gap: 8px;
+    }
+
+    .Boton-Herramienta {
+        padding: 9px 11px;
+        font-size: 12px;
+    }
+
+    .Tarjeta-Herramienta.abierta {
+        width: 100%;
+    }
+
+    .Detalle-Herramienta {
+        padding: 20px 16px 24px;
+        font-size: 14px;
+    }
+
+    .Seccion-Herramientas-Conjunto .Contenedor-Otras-Tecnicas {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -967,7 +1239,6 @@ body {
 .Seccion-footer {
     background-color: #faf6f0;
     width: 100%;
-    margin: 0;
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
@@ -1039,8 +1310,7 @@ body {
     flex-wrap: wrap;
 }
 
-.Titulo-A,
-.Titulo-B {
+.Contenedor-Titulos h1 {
     width: auto;
     max-width: 100%;
     font-size: clamp(2.5rem, 5vw, 4.1rem);
@@ -1155,8 +1425,7 @@ body {
         margin-left: 0;
     }
 
-    .Titulo-A,
-    .Titulo-B {
+    .Contenedor-Titulos h1 {
         padding-left: 0;
         font-size: clamp(2rem, 10vw, 3rem);
         line-height: 1;

@@ -33,7 +33,7 @@
                     <div class="Item-Menu">
 
                         <!-- Con un click se despliega -->
-                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                        <div class="Titulo-Menu">
                             <i class="bi bi-patch-check"></i>
 
                             <span>
@@ -45,15 +45,15 @@
                         </div>
 
                         <div class="Submenu">
-                            <a href="Gestion-de-Calidad-del-Software.html#fundamentos-calidad">Fundamentos</a>
-                            <a href="Gestion-de-Calidad-del-Software.html#calidad-agil">Técnicas de Aseguramiento de la Calidad</a>
-                            <a href="Gestion-de-Calidad-del-Software.html#estandares-calidad">Herramientas de Calidad</a>
+                            <a href="Gestion-de-Calidad-del-Software.html#inicio-Calidad">Fundamentos</a>
+                            <a href="Gestion-de-Calidad-del-Software.html#inicio-Tecnicas">Técnicas de Aseguramiento de la Calidad</a>
+                            <a href="Gestion-de-Calidad-del-Software.html#inicio-Herramientas">Herramientas de Calidad</a>
                         </div>
 
                     </div>
 
                     <div class="Item-Menu">
-                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                        <div class="Titulo-Menu">
                             <i class="bi bi-bezier2"></i>
                             <span>Procesos de Desarrollo<br>de Software</span>
                             <i class="bi bi-chevron-down"></i>
@@ -67,7 +67,7 @@
                     </div>
 
                     <div class="Item-Menu">
-                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                        <div class="Titulo-Menu">
                             <i class="bi bi-lightning-charge"></i>
                             <span>Metodologías Ágiles</span>
                             <i class="bi bi-chevron-down"></i>
@@ -81,7 +81,7 @@
                     </div>
 
                     <div class="Item-Menu">
-                        <div class="Titulo-Menu" onclick="desplegar(this)">
+                        <div class="Titulo-Menu">
                             <i class="bi bi-book"></i>
                             <span>Recursos y Aprendizajes</span>
                             <i class="bi bi-chevron-down"></i>
@@ -90,7 +90,7 @@
                             <a href="Recursos-y-Aprendizajes.html#glosario">Glosario</a>
                             <a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
                             <a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
-                            <a href="#">Ejercicios y Casos Prácticos</a>
+                            <a href="Recursos-y-Aprendizajes.html#ejercicios-practicos">Ejercicios y Casos Prácticos</a>
                         </div>
                     </div>
 
@@ -99,13 +99,143 @@
                 </nav>
             </div>
 
-      <section id="inicio-procesos" class="Seccion-Principal">
+
+
+
+
+
+
+
+
+
+      <!-- Seccion 1: Ciclo de vida de software -->
+        <section id="inicio-procesos" class="Seccion-Principal">
+          <p class="Antetitulo">Procesos y desarrollo de software</p>
+            <div class="Contenedor-Titulos">
+              <h1>Ciclo de vida <span>de software</span></h1>
+            </div>
+          <p class="Parrafo-Principal">
+            El ciclo de vida del desarrollo de software representa las diferentes 
+            etapas por las que pasa un sistema desde la definición de sus necesidades 
+            hasta su mantenimiento. Estas actividades permiten organizar el proceso de 
+            desarrollo y asegurar que el software cumpla con los objetivos establecidos.
+          </p>
+      </section>
+
+      <section id="etapas-sdlc" class="Seccion-Etapas-SDLC" aria-labelledby="titulo-etapas-sdlc">
+        <p class="Antetitulo-Etapas-SDLC">01 · RECORRIDO</p>
+        <h2 id="titulo-etapas-sdlc">Etapas del SDLC</h2>
+
+        <div class="Selector-Etapas-SDLC" role="tablist" aria-label="Etapas del ciclo de vida del software">
+          <button class="Boton-Etapa-SDLC activo" id="boton-etapa-1" type="button" role="tab" aria-selected="true" aria-controls="panel-etapa-sdlc" data-etapa-sdlc="0">
+            <span class="Icono-Boton-Etapa"><i class="bi bi-clipboard2-check" aria-hidden="true"></i></span>
+            <span class="Numero-Boton-Etapa">01</span>
+            <span class="Nombre-Boton-Etapa">Requisitos</span>
+          </button>
+          <button class="Boton-Etapa-SDLC" id="boton-etapa-2" type="button" role="tab" aria-selected="false" aria-controls="panel-etapa-sdlc" data-etapa-sdlc="1" tabindex="-1">
+            <span class="Icono-Boton-Etapa"><i class="bi bi-vector-pen" aria-hidden="true"></i></span>
+            <span class="Numero-Boton-Etapa">02</span>
+            <span class="Nombre-Boton-Etapa">Diseño</span>
+          </button>
+          <button class="Boton-Etapa-SDLC" id="boton-etapa-3" type="button" role="tab" aria-selected="false" aria-controls="panel-etapa-sdlc" data-etapa-sdlc="2" tabindex="-1">
+            <span class="Icono-Boton-Etapa"><i class="bi bi-code-slash" aria-hidden="true"></i></span>
+            <span class="Numero-Boton-Etapa">03</span>
+            <span class="Nombre-Boton-Etapa">Desarrollo</span>
+          </button>
+          <button class="Boton-Etapa-SDLC" id="boton-etapa-4" type="button" role="tab" aria-selected="false" aria-controls="panel-etapa-sdlc" data-etapa-sdlc="3" tabindex="-1">
+            <span class="Icono-Boton-Etapa"><i class="bi bi-clipboard2-check" aria-hidden="true"></i></span>
+            <span class="Numero-Boton-Etapa">04</span>
+            <span class="Nombre-Boton-Etapa">Pruebas</span>
+          </button>
+          <button class="Boton-Etapa-SDLC" id="boton-etapa-5" type="button" role="tab" aria-selected="false" aria-controls="panel-etapa-sdlc" data-etapa-sdlc="4" tabindex="-1">
+            <span class="Icono-Boton-Etapa"><i class="bi bi-rocket-takeoff" aria-hidden="true"></i></span>
+            <span class="Numero-Boton-Etapa">05</span>
+            <span class="Nombre-Boton-Etapa">Despliegue</span>
+          </button>
+          <button class="Boton-Etapa-SDLC" id="boton-etapa-6" type="button" role="tab" aria-selected="false" aria-controls="panel-etapa-sdlc" data-etapa-sdlc="5" tabindex="-1">
+            <span class="Icono-Boton-Etapa"><i class="bi bi-wrench" aria-hidden="true"></i></span>
+            <span class="Numero-Boton-Etapa">06</span>
+            <span class="Nombre-Boton-Etapa">Mantenimiento</span>
+          </button>
+        </div>
+
+        <div id="panel-etapa-sdlc" class="Panel-Etapa-SDLC" role="tabpanel" aria-labelledby="boton-etapa-1">
+          <div class="Tarjeta-Etapa-Volteable">
+            <div class="Interior-Etapa-SDLC">
+              <div class="Cara-Etapa-SDLC Cara-Etapa-Frontal" aria-hidden="false">
+                <span class="Icono-Panel-Etapa"><i class="bi bi-clipboard2-check" aria-hidden="true"></i></span>
+                <div class="Contenido-Panel-Etapa">
+                  <p class="Etiqueta-Panel-Etapa">ETAPA 01 DE 06</p>
+                  <h3 class="Titulo-Panel-Etapa">Requisitos</h3>
+                  <p class="Descripcion-Panel-Etapa">Se identifican y documentan las necesidades del usuario y las funcionalidades que debe tener el sistema.</p>
+                  <p class="Objetivo-Panel-Etapa"><i class="bi bi-check-circle" aria-hidden="true"></i><span><strong>Objetivo:</strong> <span class="Texto-Objetivo-Etapa">Determinar qué debe hacer el software.</span></span></p>
+                </div>
+              </div>
+              <div id="detalle-etapa-sdlc" class="Cara-Etapa-SDLC Cara-Etapa-Posterior" aria-hidden="true" inert>
+                <p class="Detalle-Texto-Etapa">En esta etapa se conversa con usuarios, clientes y otras personas interesadas para entender qué problema debe resolver el sistema. Se documentan los requisitos funcionales, que describen tareas y respuestas esperadas, y los no funcionales, como seguridad, rendimiento y accesibilidad. También se aclaran prioridades, restricciones y criterios de aceptación. Validar esta información con las partes involucradas ayuda a evitar malentendidos y cambios costosos en las siguientes etapas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- Seccion 2: Contexto e importancia del ciclo de vida -->
+      <section id="contexto-ciclo-vida" class="Seccion-Contexto-Ciclo" aria-labelledby="titulo-contexto-ciclo">
+        <div class="Contenido-Contexto-Ciclo">
+          <p class="Antetitulo-Contexto-Ciclo">02 · CONTEXTO</p>
+          <h2 id="titulo-contexto-ciclo">¿Por qué importa el ciclo de vida?</h2>
+          <div class="Texto-Contexto-Ciclo">
+            <p>
+              El ciclo de vida permite <strong>organizar las actividades del desarrollo</strong>,
+              definir qué se realiza en cada etapa y facilitar el seguimiento del proyecto.
+            </p>
+            <p>
+              Según Sommerville, las actividades principales son
+              <strong>especificación, desarrollo, validación y evolución</strong>. Estas pueden
+              organizarse de distintas formas según el modelo de desarrollo. En
+              <strong>Cascada</strong>, se realizan principalmente de forma secuencial, mientras
+              que en el <strong>desarrollo incremental</strong> se encuentran más relacionadas
+              y pueden repetirse en cada incremento.
+            </p>
+            <p>
+              Esto permite adaptar el proceso a las necesidades de cada proyecto y mantener un
+              desarrollo más organizado.
+            </p>
+          </div>
+        </div>
+        <div class="Diagrama-Ciclo-Vida">
+          <img src="IMG/Imagen-Principal-Ciclo-Scrum.png" alt="Diagrama circular que representa las etapas del ciclo de vida del software">
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      <!-- Seccion 2: Introducción a los modelos de desarrollo -->
+      <section id="modelos-desarrollo" class="Seccion-Principal">
 
         <p class="Antetitulo">Procesos y desarrollo de software</p>
 
           <div class="Contenedor-Titulos">
-            <h1 class="Titulo-A">Modelos</h1>
-            <h1 class="Titulo-B">Tradicionales</h1>
+            <h1>Modelos <span>Tradicionales</span></h1>
           </div>
 
         <p class="Parrafo-Principal">
@@ -126,6 +256,15 @@
       </div>
 
     
+
+
+
+
+
+
+
+
+
       <!-- Seccion 1: Modelo en Cascada -->
       <section id="modelo-cascada" class="Seccion-Modelo">
 
@@ -303,6 +442,12 @@
 
 
 
+
+
+
+
+
+
       <!-- Seccion 2: Modelo en V -->
       <section id="modelo-v" class="Seccion-Modelo">
         <div class="Contenedor-Titulo-Modelo">
@@ -469,6 +614,13 @@
 
 
 
+
+
+
+
+
+
+
       <!-- Seccion 3: Modelo Iterativo e Incremental -->
       <section id="modelo-iterativo" class="Seccion-Modelo">
         <div class="Contenedor-Titulo-Modelo">
@@ -567,7 +719,7 @@
         </div>
       </section>
 
-    </main>
+    </div>
       <section id="comparacion-modelos" class="Seccion-Comparacion">
         <div class="Cabecera-Comparacion">
           <span class="Etiqueta-Comparacion">COMPARACIÓN</span>
@@ -639,44 +791,22 @@
         </p>
       </div>
 
+
+
+
+
+
+
+
+
+
+      
       <div class="Seccion-footer">
         <footer>
           <p class="Parrafo-Pie">Scrumly . Sistema de gestión de calidad del software</p>
         </footer>
       </div>
 
-    <script>
-      // Permite abrir y cerrar las tarjetas de los diagramas con clic, Enter o barra espaciadora.
-      document.querySelectorAll(".Tarjeta-V-Diagrama").forEach(function (tarjeta) {
-        function alternar() {
-          var abierta = tarjeta.getAttribute("aria-expanded") === "true";
-          tarjeta.setAttribute("aria-expanded", String(!abierta));
-        }
-
-        tarjeta.addEventListener("click", alternar);
-        tarjeta.addEventListener("keydown", function (evento) {
-          if (evento.key === "Enter" || evento.key === " ") {
-            evento.preventDefault();
-            alternar();
-          }
-        });
-      });
-
-      document.querySelectorAll(".Tarjeta-Iterativa").forEach(function (tarjeta) {
-        function alternar() {
-          var abierta = tarjeta.getAttribute("aria-expanded") === "true";
-          tarjeta.setAttribute("aria-expanded", String(!abierta));
-        }
-
-        tarjeta.addEventListener("click", alternar);
-        tarjeta.addEventListener("keydown", function (evento) {
-          if (evento.key === "Enter" || evento.key === " ") {
-            evento.preventDefault();
-            alternar();
-          }
-        });
-      });
-    </script>
     <script src="JS/script.js"></script>
   </body>
 </html>
