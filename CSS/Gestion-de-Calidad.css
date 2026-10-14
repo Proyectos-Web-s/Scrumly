@@ -10,7 +10,8 @@ body {
 
 /* Degradado de la portada de Fundamentos, como en la página de Inicio. */
 #inicio-calidad {
-    background: linear-gradient(105deg, #fff8ed 0%, #f2eaf4 100%);
+    display: flow-root;
+    background: linear-gradient(105deg, #F8F0E3 0%, #f2eaf4 100%);
 }
 
 /* Secciones de contenido */
@@ -1467,6 +1468,11 @@ body {
         padding-left: 0;
         font-size: 16px;
         line-height: 1.5;
+    }
+
+    /* Oculta la imagen ilustrativa de Fundamentos solo en pantallas pequeñas. */
+    .seccion-01 > .Contenedor-Imagen {
+        display: none;
     }
 
     .Titulo-Conceptos,

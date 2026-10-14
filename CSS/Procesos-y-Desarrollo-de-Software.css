@@ -19,7 +19,8 @@ body {
 
 /* Limita el degradado a la portada del ciclo de vida. */
 #inicio-procesos {
-  background: linear-gradient(105deg, #fff8ed 0%, #f2eaf4 100%);
+  display: flow-root;
+  background: linear-gradient(105deg, #efeae1 0%, #f2eaf4 100%);
 }
 
 .Antetitulo{

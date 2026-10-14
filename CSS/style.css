@@ -441,6 +441,11 @@ body {
         line-height: 1;
     }
 
+    /* Oculta solo el logo grande de la portada, no el logo de navegación. */
+    #Seccion-Principal > .Contenedor-Imagen {
+        display: none;
+    }
+
     .Contenedor-Areas {
         width: 100%;
     }

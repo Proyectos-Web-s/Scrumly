@@ -31,10 +31,9 @@ body {
 	position: absolute;
 	z-index: -1;
 	inset: -70px 0 0;
-	left: 50%;
-	width: 100vw;
-	transform: translateX(-50%);
-	background: linear-gradient(105deg, #fff8ed 0%, #f2eaf4 100%);
+	left: calc((100vw - 100%) / -2);
+	right: calc((100vw - 100%) / -2);
+	background: linear-gradient(105deg, #efeae1 0%, #f2eaf4 100%);
 	content: "";
 }
 
