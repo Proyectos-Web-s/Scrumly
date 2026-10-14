@@ -229,14 +229,19 @@ function mostrarEstandar(clave) {
     const nuevasCaracteristicas = cuadroEstandar.querySelectorAll(".Caracteristica-Estandar");
     nuevasCaracteristicas.forEach((caracteristica) => {
         caracteristica.addEventListener("click", function () {
-            const activa = caracteristica.classList.toggle("activa");
-            const flecha = caracteristica.querySelector("i");
+            const abrir = !caracteristica.classList.contains("activa");
 
-            if (!flecha) return;
+            // Mantiene abierta como máximo una característica del estándar visible.
+            nuevasCaracteristicas.forEach((otraCaracteristica) => {
+                const activa = otraCaracteristica === caracteristica && abrir;
+                const flecha = otraCaracteristica.querySelector("i");
 
-            if (activa) {
-                flecha.classList.remove("bi-chevron-down");
-                flecha.classList.add("bi-chevron-up");
+                otraCaracteristica.classList.toggle("activa", activa);
+                flecha?.classList.toggle("bi-chevron-up", activa);
+                flecha?.classList.toggle("bi-chevron-down", !activa);
+            });
+
+            if (abrir) {
                 // Espera al despliegue visual antes de desplazar la característica a la vista.
                 setTimeout(() => {
                     caracteristica.scrollIntoView({
@@ -244,9 +249,6 @@ function mostrarEstandar(clave) {
                         block: "center"
                     });
                 }, 120);
-            } else {
-                flecha.classList.remove("bi-chevron-up");
-                flecha.classList.add("bi-chevron-down");
             }
         });
     });
@@ -646,7 +648,18 @@ function normalizarTexto(texto) {
 function mostrarResultadosGlosario(texto = "", letra = "") {
     if (!resultadosGlosario) return;
 
-    const busqueda = normalizarTexto(texto.trim());
+    const consulta = texto.trim();
+    const tieneTerminoAceptable = /[\p{L}\p{N}]/u.test(consulta);
+
+    // Pide palabras o números cuando la consulta contiene únicamente símbolos.
+    if (consulta && !tieneTerminoAceptable) {
+        campoGlosario?.setAttribute("aria-invalid", "true");
+        resultadosGlosario.innerHTML = `<p class="Sin-Resultados Error-Busqueda-Glosario" role="alert"><strong>Ingresá términos aceptables</strong><br />Escribí una palabra o término con letras o números para buscar en el glosario.</p>`;
+        return;
+    }
+
+    campoGlosario?.setAttribute("aria-invalid", "false");
+    const busqueda = normalizarTexto(consulta);
     const resultados = datosGlosario.filter((elemento) => {
         const coincideTexto = !busqueda || normalizarTexto(`${elemento.termino} ${elemento.descripcion}`).includes(busqueda);
         const coincideLetra = !letra || normalizarTexto(elemento.termino).startsWith(normalizarTexto(letra));
@@ -715,18 +728,27 @@ if (campoGlosario && botonesLetra.length && resultadosGlosario) {
     mostrarResultadosGlosario();
 }
 
-// Preguntas frecuentes: cada respuesta se puede abrir o cerrar sin afectar a las demás.
+// Preguntas frecuentes: mantiene abierta una sola respuesta a la vez.
 const botonesPregunta = document.querySelectorAll(".Boton-Pregunta");
 
 botonesPregunta.forEach((boton) => {
     boton.addEventListener("click", () => {
         const pregunta = boton.closest(".Pregunta-Frecuente");
-        const abierta = pregunta.classList.toggle("abierta");
-        const flecha = boton.querySelector("i");
+        const listaPreguntas = pregunta?.closest(".Lista-Preguntas");
 
-        boton.setAttribute("aria-expanded", String(abierta));
-        flecha.classList.toggle("bi-chevron-up", abierta);
-        flecha.classList.toggle("bi-chevron-down", !abierta);
+        if (!pregunta || !listaPreguntas) return;
+
+        const abrir = !pregunta.classList.contains("abierta");
+        listaPreguntas.querySelectorAll(".Pregunta-Frecuente").forEach((otraPregunta) => {
+            const abierta = otraPregunta === pregunta && abrir;
+            const botonPregunta = otraPregunta.querySelector(".Boton-Pregunta");
+            const flecha = botonPregunta?.querySelector("i");
+
+            otraPregunta.classList.toggle("abierta", abierta);
+            botonPregunta?.setAttribute("aria-expanded", String(abierta));
+            flecha?.classList.toggle("bi-chevron-up", abierta);
+            flecha?.classList.toggle("bi-chevron-down", !abierta);
+        });
     });
 });
 

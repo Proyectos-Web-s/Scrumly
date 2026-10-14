@@ -67,17 +67,38 @@
 .Menu > a {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 12px;
+    width: 100%;
     padding: 15px 20px;
     color: white;
     text-decoration: none;
     font-family: 'Public Sans', sans-serif;
     font-size: 14px;
     border-bottom: 1px solid #333;
+    transition: background-color 0.2s ease;
 }
 
-.Menu > a:hover {
+.Menu > a:hover,
+.Menu > a:focus-visible,
+.Menu > a:active,
+.Item-Menu:hover > .Titulo-Menu,
+.Item-Menu:focus-within > .Titulo-Menu,
+.Titulo-Menu:hover,
+.Titulo-Menu:focus-visible,
+.Titulo-Menu:active,
+.Submenu a:hover,
+.Submenu a:focus-visible,
+.Submenu a:active {
     background-color: #171a2d;
+}
+
+.Menu > a > i {
+    flex: 0 0 18px;
+}
+
+.Menu > a > span {
+    flex: 1;
 }
 
 .Menu i {
@@ -101,6 +122,7 @@
     font-size: 13px;
     cursor: pointer;
     border-bottom: 1px solid #333;
+    transition: background-color 0.2s ease;
 }
 
 .Titulo-Menu span {
@@ -123,9 +145,11 @@
     font-family: 'Public Sans', sans-serif;
     font-size: 11px;
     border-bottom: 1px solid #222;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.Submenu a:hover {
+.Submenu a:hover,
+.Submenu a:focus-visible {
     color: #D8C8F2;
 }
 
@@ -157,7 +181,11 @@
     }
 
     .logo-SCRUMLY {
-        width: 60px;
+        display: none;
+    }
+
+    .Enlace-Logo {
+        display: none;
     }
 
     .Titulo-Barra {

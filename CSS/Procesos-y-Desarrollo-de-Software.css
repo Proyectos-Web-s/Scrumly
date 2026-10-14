@@ -17,6 +17,11 @@ body {
   margin: 0 auto;
 }
 
+/* Limita el degradado a la portada del ciclo de vida. */
+#inicio-procesos {
+  background: linear-gradient(105deg, #fff8ed 0%, #f2eaf4 100%);
+}
+
 .Antetitulo{
     color: #C084FC ;
     font-size: 20px;
@@ -564,54 +569,6 @@ body {
     grid-template-columns: minmax(0, 1fr);
   }
 }
-
-@media (max-width: 560px) {
-  /* Reduce espacios y tipografia para que las dos columnas entren en el celular. */
-  .Diagrama-V {
-    padding: 10px;
-  }
-
-  .Etapas-V-Diagrama {
-    grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1fr);
-    gap: 5px;
-  }
-
-  .Columna-V-Diagrama {
-    gap: 8px;
-  }
-
-  .Tarjeta-V-Diagrama {
-    min-height: 62px;
-    padding: 8px 4px;
-  }
-
-  .Tarjeta-V-Diagrama h4 {
-    font-size: 0.68rem;
-  }
-
-  .Tarjeta-V-Diagrama p {
-    font-size: 0.65rem;
-  }
-
-  .Numeros-V-Diagrama {
-    font-size: 1rem;
-  }
-
-  .Implementacion-V-Diagrama {
-    width: 65%;
-    min-width: 0;
-  }
-}
-
-
-
-
-
-
-
-
-
-
 
 /* Modelo Iterativo e Incremental */
 /* El marco usa el ancho disponible de la columna, sin medidas fijas. */
@@ -1424,95 +1381,212 @@ body {
 }
 
 @media (max-width: 760px) {
+  /* Deja un margen consistente para el texto de las secciones principales. */
   .Seccion-Principal {
-  padding: 0 16px;
+    padding: 0 16px;
   }
 
+  /* Reduce el antetítulo para que no se pegue a los bordes en pantallas estrechas. */
   .Antetitulo {
-  margin: 40px 0 0;
-  padding-left: 0;
-  font-size: 16px;
+    margin: 40px 0 0;
+    padding-left: 0;
+    font-size: 15px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
   }
 
+  /* Alinea el título con el margen del resto del contenido y permite que envuelva. */
   .Contenedor-Titulos {
-  margin-left: 0;
+    margin-left: 0;
   }
 
   .Contenedor-Titulos h1 {
-  padding-left: 0;
-  font-size: clamp(2.5rem, 12vw, 4rem);
-  line-height: 0.98;
+    padding-left: 0;
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    line-height: 0.98;
+    overflow-wrap: anywhere;
   }
 
+  /* Mantiene los párrafos legibles y dentro del ancho de la pantalla. */
   .Parrafo-Principal {
-  padding: 8px 0;
-  font-size: 16px;
-  line-height: 1.5;
+    padding: 8px 0;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
   }
 
+  /* Mantiene el selector dentro de los márgenes del teléfono. */
   .Selector-Modelos {
-  gap: 10px;
-  margin: 20px 16px;
-  max-width: calc(100% - 32px);
+    gap: 10px;
+    margin: 20px 16px;
+    max-width: calc(100% - 32px);
   }
 
   .Boton-Modelo {
-  padding: 12px;
-  font-size: 14px;
+    min-width: 0;
+    padding: 12px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
   }
 
+  /* Reduce los títulos de cada modelo sin cambiar su contenido. */
   .Seccion-Modelo {
-  padding: 14px 16px;
+    padding: 14px 16px;
   }
 
   .Titulo-Modelo {
-  align-items: flex-start;
-  gap: 10px;
-  font-size: clamp(2rem, 9vw, 3rem);
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: clamp(1.75rem, 8.5vw, 2.5rem);
+    line-height: 1;
+    overflow-wrap: anywhere;
   }
 
+  /* Apila la explicación y el diagrama de cada modelo en una sola columna. */
   .Contenido-Modelo {
-  grid-template-columns: minmax(0, 1fr);
-  gap: 16px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
   }
 
   .Texto-Modelo {
-  font-size: 17px;
-  line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
   }
 
+  /* Evita que los diagramas se salgan de su tarjeta en pantallas pequeñas. */
   .Diagrama-Modelo,
   .Diagrama-Cascada,
   .Diagrama-V,
   .Diagrama-Iterativo {
-  width: 100%;
-  max-width: 100%;
-  padding-right: 8px;
-  padding-left: 8px;
+    width: 100%;
+    max-width: 100%;
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  /* Presenta las seis etapas de Cascada como una lista vertical del 01 al 06. */
+  .Diagrama-Cascada-Canvas {
+    min-height: 0;
+    padding: 12px 0;
   }
 
   .Etapas-Cascada {
-  gap: 5px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
   }
 
   .Tramo-Cascada {
-  min-width: 0;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    transform: none;
   }
 
+  .Etapa-Cascada {
+    min-height: 60px;
+    padding: 10px;
+  }
+
+  .Etapa-Cascada h4 {
+    font-size: 15px;
+    overflow-wrap: anywhere;
+  }
+
+  /* Sustituye las flechas laterales del diagrama por conectores hacia abajo. */
+  .Flecha-Cascada {
+    flex-basis: 22px;
+    align-self: center;
+    margin-top: 0;
+  }
+
+  .Flecha-Cascada i {
+    display: none;
+  }
+
+  .Flecha-Cascada::after {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    content: "";
+    transform: rotate(45deg);
+  }
+
+  .Tramo-Cascada:last-child .Flecha-Cascada {
+    display: none;
+  }
+
+  /* Separa visualmente los lados de desarrollo y pruebas del modelo en V. */
+  .Etapas-V-Diagrama {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  /* Apila también las tarjetas explicativas de Cascada y del modelo en V. */
+  .Etapas-Modelo,
+  .Listas-Modelo {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .Numeros-V-Diagrama {
+    display: none;
+  }
+
+  .Columna-V-Diagrama {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .Columna-V-Diagrama::before {
+    color: #796293;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .Columna-V-Diagrama:first-child::before {
+    content: "Desarrollo";
+  }
+
+  .Columna-V-Diagrama:last-child::before {
+    content: "Pruebas";
+  }
+
+  .Tarjeta-V-Diagrama {
+    min-height: 58px;
+    padding: 10px 12px;
+  }
+
+  .Tarjeta-V-Diagrama h4 {
+    font-size: 15px;
+    overflow-wrap: anywhere;
+  }
+
+  .Implementacion-V-Diagrama {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Apila la comparativa y mantiene sus tarjetas dentro del área visible. */
   .Comparativa-Modelo {
-  grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .Seccion-Comparacion {
-  margin-right: 16px;
-  margin-left: 16px;
+    margin-right: 16px;
+    margin-left: 16px;
   }
 
+  /* Conserva un margen legible para el aviso al final de las secciones. */
   .Info-Importante {
-  gap: 10px;
-  margin-right: 16px;
-  margin-left: 16px;
-  padding: 14px;
+    gap: 10px;
+    margin-right: 16px;
+    margin-left: 16px;
+    padding: 14px;
+    overflow-wrap: anywhere;
   }
 }
 

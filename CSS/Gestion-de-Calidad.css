@@ -8,6 +8,11 @@ body {
     padding: 0;
 }
 
+/* Degradado de la portada de Fundamentos, como en la página de Inicio. */
+#inicio-calidad {
+    background: linear-gradient(105deg, #fff8ed 0%, #f2eaf4 100%);
+}
+
 /* Secciones de contenido */
 
 
@@ -377,8 +382,8 @@ body {
     display: flex;
     align-items: center;
     background-color: #faf6f0;
-    width: 200px;
-    height: 35px;
+    width: 280px;
+    height: 42px;
     padding: 3px;
     border-radius: 25px;
     margin-left: 30px;
@@ -386,21 +391,30 @@ body {
     border-width: 1px;
     border-style: solid;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 /* Botones */
 .Boton-Estandar {
     position: relative;
+    flex: 1 1 50%;
     z-index: 2;
-    width: 50%;
+    min-width: 0;
     height: 100%;
+    padding: 0 8px;
     border: none;
     background-color: transparent;
-    color: #0B0D1A;
+    color: #38373b;
     font-family: 'Public Sans', sans-serif;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 700;
     border-radius: 20px;
     cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.Boton-Estandar.activo {
+    color: #fff;
 }
 
 /* Fondo violeta */
@@ -409,11 +423,11 @@ body {
     position: absolute;
     top: 3px;
     left: 3px;
-    width: 50%;
-    height: 34px;
-    background-color: #7850d3;
+    width: calc(50% - 3px);
+    height: calc(100% - 6px);
+    background-color: #80649c;
     border-radius: 20px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
     z-index: 1;
 }
 
@@ -1416,6 +1430,12 @@ body {
 }
 
 @media (max-width: 600px) {
+    /* Da margen lateral a la portada de fundamentos en teléfonos. */
+    #inicio-calidad {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
     #Seccion-Principal,
     .seccion-01 {
         padding: 0 16px;

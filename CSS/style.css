@@ -441,14 +441,6 @@ body {
         line-height: 1;
     }
 
-    .Contenedor-Imagen {
-        width: 100%;
-    }
-
-    .Imagen-Principal {
-        width: min(70%, 300px);
-    }
-
     .Contenedor-Areas {
         width: 100%;
     }

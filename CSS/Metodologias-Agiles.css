@@ -22,6 +22,20 @@ body {
 
 .Encabezado-Scrum {
 	margin-bottom: 54px;
+	position: relative;
+	isolation: isolate;
+}
+
+/* Extiende el degradado del encabezado de Scrum hasta los bordes de la pantalla. */
+.Encabezado-Scrum::before {
+	position: absolute;
+	z-index: -1;
+	inset: -70px 0 0;
+	left: 50%;
+	width: 100vw;
+	transform: translateX(-50%);
+	background: linear-gradient(105deg, #fff8ed 0%, #f2eaf4 100%);
+	content: "";
 }
 
 .Encabezado-Scrum h1,
@@ -665,7 +679,15 @@ body {
 	}
 
 	.Ciclo-Resumen {
+		/* Reordena el resumen en una cuadrícula para evitar desbordes horizontales. */
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 8px;
 		align-items: flex-start;
+	}
+
+	.Ciclo-Resumen i {
+		display: none;
 	}
 
 	.Encabezado-Seccion h2 {
