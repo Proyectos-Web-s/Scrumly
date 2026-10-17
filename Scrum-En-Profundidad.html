@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SCRUMLY - Scrum</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="CSS/Scrum-En-Profundidad.css" />
+		<link rel="stylesheet" href="CSS/menu.css" />
+	</head>
+	<body>
+		<!-- Barra de navegación principal -->
+		<div class="Barra-de-Navegacion">
+			<a href="index.html" class="Enlace-Logo">
+				<img src="IMG/Logo-SCRUMLY.jpeg" alt="SCRUMLY Logo" class="logo-SCRUMLY" />
+			</a>
+			<p class="Titulo-Barra">SCRUMLY</p>
+			<i class="Hambu bi-list" id="boton-menu"></i>
+
+            <!-- Menu hamburgesa -->
+                <nav class="Menu" id="menu">
+                    <div class="Menu-Titulo">
+                        <span>MENÚ</span>
+                    </div>
+
+                    <a href="index.html">
+                        <i class="bi bi-house"></i>
+                        <span>Inicio</span>
+                    </a>
+
+                    <!-- Gestión de Calidad -->
+                    <div class="Item-Menu">
+
+                        <!-- Con un click se despliega -->
+                        <div class="Titulo-Menu">
+                            <i class="bi bi-patch-check"></i>
+
+                            <span>
+                                Gestión de la Calidad<br>
+                                del Software
+                            </span>
+
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+
+                        <div class="Submenu">
+                            <a href="Gestion-de-Calidad-del-Software.html#fundamentos-calidad">Fundamentos</a>
+                            <a href="Gestion-de-Calidad-del-Software.html#calidad-agil">Técnicas de Aseguramiento de la Calidad</a>
+                            <a href="Gestion-de-Calidad-del-Software.html#herramientas-calidad">Herramientas de Calidad</a>
+                        </div>
+
+                    </div>
+
+                    <div class="Item-Menu">
+                        <div class="Titulo-Menu">
+                            <i class="bi bi-bezier2"></i>
+                            <span>Procesos de Desarrollo<br>de Software</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="Submenu">
+                            <a href="Procesos-y-Desarrollo-de-Software.html#inicio-procesos">Ciclo de Vida del Desarrollo (SDLC)</a>
+                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-cascada">Modelo en Cascada</a>
+                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-v">Modelo en V</a>
+                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-iterativo">Modelo Iterativo e Incremental</a>
+                        </div>
+                    </div>
+
+                    <div class="Item-Menu">
+                        <div class="Titulo-Menu">
+                            <i class="bi bi-lightning-charge"></i>
+                            <span>Metodologías Ágiles</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="Submenu">
+                            <a href="Metodologias-Agiles.html#scrum">Scrum</a>
+                            <a href="Metodologias-Agiles.html#kanban">Kanban</a>
+                            <a href="Metodologias-Agiles.html#xp">XP (Extreme Programming)</a>
+                            <a href="Metodologias-Agiles.html#comparativa">Comparador de metodologías</a>
+                        </div>
+                    </div>
+
+                    <div class="Item-Menu">
+                        <div class="Titulo-Menu">
+                            <i class="bi bi-book"></i>
+                            <span>Recursos y Aprendizajes</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="Submenu">
+                            <a href="Recursos-y-Aprendizajes.html#glosario">Glosario</a>
+                            <a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
+                            <a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
+                            <a href="Recursos-y-Aprendizajes.html#ejercicios-practicos">Ejercicios y Casos Prácticos</a>
+                        </div>
+                    </div>
+
+                    <a href="Sobre-Nosotros.html"><i class="bi bi-people"></i><span>Sobre Nosotros</span></a>
+                    <a href="Contacto.html"><i class="bi bi-envelope"></i><span>Contacto</span></a>
+                </nav>
+            </div>
+
+		<!-- Contenido principal de Scrum -->
+		<div class="Pagina-Scrum">
+			<!-- Presentación de la página y recorrido del ciclo Scrum -->
+			<div class="Encabezado-Scrum">
+				<p class="Antetitulo-Scrum">METODOLOGÍAS ÁGILES / 01</p>
+				<h1>SCRUM <span>EN PROFUNDIDAD.</span></h1>
+				<p class="Descripcion-Scrum">Scrum organiza el desarrollo en ciclos llamados <strong>Sprints</strong>. Roles, eventos y artefactos ayudan al equipo a entregar un incremento del producto al finalizar cada ciclo.</p>
+				<div class="Ciclo-Resumen" aria-label="Recorrido de Scrum">
+					<span>ROLES</span>
+					<i class="bi bi-arrow-right"></i>
+					<span>EVENTOS</span>
+					<i class="bi bi-arrow-right"></i>
+					<span>ARTEFACTOS</span>
+					<i class="bi bi-arrow-right"></i>
+					<span>INCREMENTO</span>
+				</div>
+			</div>
+
+			<!-- Sección 1: roles, eventos y artefactos -->
+			<section id="scrum-en-profundidad" class="Seccion-Scrum" aria-labelledby="titulo-ciclo">
+				<div class="Encabezado-Seccion">
+					<p class="Antetitulo-Scrum">EL MARCO DE TRABAJO</p>
+					<h2 id="titulo-ciclo">Tres piezas de un mismo ciclo</h2>
+				</div>
+
+				<!-- Botones que cambian el contenido de la sección sin recargar la página -->
+				<div class="Pestanas-Scrum" role="tablist" aria-label="Piezas de Scrum">
+					<button class="Boton-Pestana activo" type="button" role="tab" aria-selected="true" data-tab="roles"><i class="bi bi-person"></i><span>01</span> Roles</button>
+					<button class="Boton-Pestana" type="button" role="tab" aria-selected="false" data-tab="eventos"><i class="bi bi-calendar3"></i><span>02</span> Eventos</button>
+					<button class="Boton-Pestana" type="button" role="tab" aria-selected="false" data-tab="artefactos"><i class="bi bi-clipboard-data"></i><span>03</span> Artefactos</button>
+				</div>
+
+				<!-- Paneles de Roles, Eventos y Artefactos -->
+				<div class="Contenido-Pestanas">
+					<article class="Panel-Pestana activo" role="tabpanel" data-panel="roles">
+						<p>El equipo Scrum reúne a quienes construyen el producto, priorizan su valor y facilitan el trabajo.</p>
+						<div class="Tarjetas-Scrum Tarjetas-Roles">
+							<div class="Tarjeta-Scrum Tarjeta-Rol">
+								<div class="Cabecera-Tarjeta"><i class="bi bi-code-square"></i><span>01</span></div>
+								<h4>Desarrolladores</h4>
+								<p>Construyen el incremento del producto a partir del trabajo seleccionado para el Sprint.</p>
+								<ul><li>En el equipo pueden participar programadores, diseñadores y testers.</li><li>Organizan su trabajo y colaboran para entregar un resultado útil y terminado.</li></ul>
+							</div>
+							<div class="Tarjeta-Scrum Tarjeta-Rol">
+								<div class="Cabecera-Tarjeta"><i class="bi bi-bullseye"></i><span>02</span></div>
+								<h4>Product Owner</h4>
+								<p>Se ocupa de las necesidades y prioridades del producto, representando sus intereses ante el equipo.</p>
+								<ul><li>Presenta las historias de usuario prioritarias y explica qué valor se espera obtener.</li><li>Mantiene el foco en construir aquello que necesita el cliente.</li></ul>
+							</div>
+							<div class="Tarjeta-Scrum Tarjeta-Rol">
+								<div class="Cabecera-Tarjeta"><i class="bi bi-stars"></i><span>03</span></div>
+								<h4>Scrum Master</h4>
+								<p>Ayuda al equipo a comprender y aplicar el marco Scrum.</p>
+								<ul><li>Asesora al Product Owner y a los desarrolladores; facilita las prácticas ágiles.</li><li>Ayuda a resolver impedimentos y favorece la autonomía del equipo.</li></ul>
+							</div>
+						</div>
+					</article>
+
+					<article class="Panel-Pestana" role="tabpanel" data-panel="eventos" hidden>
+						<p>Cada evento crea un momento para planificar, inspeccionar el avance o mejorar el trabajo.</p>
+						<div class="Tarjetas-Scrum Tarjetas-Eventos">
+							<div class="Tarjeta-Scrum Tarjeta-Evento">
+								<div class="Cabecera-Tarjeta"><i class="bi bi-calendar3"></i><span>01</span></div>
+								<h4>Planificación del Sprint</h4>
+								<p>Marca el inicio del Sprint. Se decide qué se hará, por qué es valioso y cómo organizar el trabajo.</p>
+								<ul><li>El Product Owner explica el valor del Sprint.</li><li>Los desarrolladores seleccionan elementos del Product Backlog y los dividen en tareas.</li></ul>
+							</div>
+							<div class="Tarjeta-Scrum Tarjeta-Evento">
+								<div class="Cabecera-Tarjeta"><i class="bi bi-arrow-repeat"></i><span>02</span></div>
+								<h4>Sprint</h4>
+								<p>Es el ciclo de trabajo de 1 a 4 semanas en el que se construye un incremento operativo y útil.</p>
+								<ul><li>Se trabaja sobre el Sprint Backlog.</li><li>Al finalizar, el equipo cuenta con un incremento terminado.</li></ul>
+							</div>
+							<div class="Tarjeta-Scrum Tarjeta-Evento">
+								<div class="Cabecera-Tarjeta"><i class="bi bi-search"></i><span>03</span></div>
+								<h4>Scrum Diario · Daily</h4>
+								<p>Encuentro breve para revisar el avance hacia el objetivo del Sprint y detectar impedimentos.</p>
+								<ul><li>El equipo puede compartir lo realizado, lo previsto y los obstáculos.</li><li>Se actualiza el trabajo pendiente y se adapta el plan.</li></ul>
+							</div>
+							<div class="Tarjeta-Scrum Tarjeta-Evento">
+								<div class="Cabecera-Tarjeta"><i class="bi bi-search"></i><span>04</span></div>
+								<h4>Revisión del Sprint · Review</h4>
+								<p>Al final del Sprint se inspecciona el incremento y se recoge información para orientar los siguientes pasos.</p>
+								<ul><li>Los desarrolladores muestran las funcionalidades y pueden hacer una demostración.</li><li>Las preguntas y sugerencias pueden adaptar el Product Backlog.</li></ul>
+							</div>
+							<div class="Tarjeta-Scrum Tarjeta-Evento">
+								<div class="Cabecera-Tarjeta"><i class="bi bi-arrow-repeat"></i><span>05</span></div>
+								<h4>Retrospectiva del Sprint</h4>
+								<p>Después de la Review, el equipo reflexiona sobre cómo trabajó y acuerda mejoras para el próximo Sprint.</p>
+								<ul><li>Identifica fortalezas, problemas y oportunidades de mejora.</li><li>La Review muestra qué se construyó; la retrospectiva observa cómo se trabajó.</li></ul>
+							</div>
+						</div>
+					</article>
+
+					<article class="Panel-Pestana" role="tabpanel" data-panel="artefactos" hidden>
+						<p>Los artefactos hacen visible el trabajo y el resultado que se construye en cada Sprint.</p>
+						<div class="Tarjetas-Scrum Tarjetas-Artefactos">
+							<div class="Tarjeta-Scrum Tarjeta-Artefacto">
+								<div class="Cabecera-Tarjeta"><i class="bi bi-list-ul"></i><span>01</span></div>
+								<h4>Pila del producto</h4>
+								<strong>Product Backlog</strong>
+								<p>Lista ordenada y priorizada de lo que necesita el producto, desde el punto de vista de su valor.</p>
+								<div class="Detalle-Artefacto">Los requisitos pueden expresarse como historias de usuario y luego dividirse en tareas.</div>
+							</div>
+							<div class="Tarjeta-Scrum Tarjeta-Artefacto">
+								<div class="Cabecera-Tarjeta"><i class="bi bi-clipboard2-check"></i><span>02</span></div>
+								<h4>Pila del Sprint</h4>
+								<strong>Sprint Backlog</strong>
+								<p>Trabajo seleccionado y organizado por los desarrolladores para alcanzar el objetivo del Sprint.</p>
+								<div class="Detalle-Artefacto">Hace visible lo que se realizará durante ese ciclo.</div>
+							</div>
+							<div class="Tarjeta-Scrum Tarjeta-Artefacto">
+								<div class="Cabecera-Tarjeta"><i class="bi bi-box-seam"></i><span>03</span></div>
+								<h4>Incremento</h4>
+								<strong>Increment</strong>
+								<p>Resultado obtenido al finalizar el Sprint: terminado, operativo y útil.</p>
+								<div class="Detalle-Artefacto">Debe estar en condiciones de ser desplegado o distribuido.</div>
+							</div>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<!-- Sección 2: duración y etapas del Sprint -->
+			<section id="ciclo-sprint" class="Seccion-Scrum" aria-labelledby="titulo-sprint">
+				<div class="Encabezado-Seccion">
+					<p class="Antetitulo-Scrum">DEL PRODUCT BACKLOG AL INCREMENTO</p>
+					<h2 id="titulo-sprint">El ciclo del Sprint</h2>
+					<p class="Descripcion-Seccion">Seleccioná la duración y explorá cada encuentro del Sprint.</p>
+				</div>
+
+				<!-- Botones que seleccionan la duración del Sprint -->
+				<div class="Selector-Sprint" role="tablist" aria-label="Duración del Sprint">
+					<strong class="Etiqueta-Sprint">Duración del Sprint:</strong>
+					<button class="Boton-Sprint activo" type="button" role="tab" aria-selected="true" data-sprint="1">1</button>
+					<button class="Boton-Sprint" type="button" role="tab" aria-selected="false" data-sprint="2">2</button>
+					<button class="Boton-Sprint" type="button" role="tab" aria-selected="false" data-sprint="3">3</button>
+					<button class="Boton-Sprint" type="button" role="tab" aria-selected="false" data-sprint="4">4</button>
+					<strong id="Duracion-Sprint">1 semana</strong>
+				</div>
+
+				<!-- Timeline y tarjeta informativa actualizados por JavaScript -->
+				<div class="Contenido-Sprint">
+					<div id="Timeline-Sprint" class="Timeline-Sprint" aria-live="polite"></div>
+					<aside id="Tarjeta-Sprint" class="Tarjeta-Sprint-Info" aria-live="polite"></aside>
+				</div>
+				<p class="Nuevo-Sprint"><i class="bi bi-arrow-repeat"></i><strong>Nuevo Sprint: el ciclo vuelve a comenzar</strong></p>
+				<p class="Nota-Sprint">Los tiempos de Planificación y Review son referencias proporcionales a la duración elegida. Cada equipo puede ajustar sus encuentros; el Sprint no supera las cuatro semanas.</p>
+			</section>
+		</div>
+
+		<!-- Pie de página -->
+		<div class="Seccion-footer">
+			<footer><p class="Parrafo-Pie">Scrumly . Sistema de gestión de calidad del software</p></footer>
+		</div>
+
+		<script src="JS/script.js"></script>
+	</body>
+</html>

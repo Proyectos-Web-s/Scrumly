@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>SCRUMLY - Scrum</title>
+		<title>SCRUMLY - Metodologías Ágiles</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -75,10 +75,10 @@
                             <i class="bi bi-chevron-down"></i>
                         </div>
                         <div class="Submenu">
-                            <a href="Metodologias-Agiles.html#scrum-en-profundidad">Scrum en profundidad</a>
+                            <a href="Metodologias-Agiles.html#scrum">Scrum</a>
                             <a href="Metodologias-Agiles.html#kanban">Kanban</a>
                             <a href="Metodologias-Agiles.html#xp">XP (Extreme Programming)</a>
-                            <a href="Procesos-y-Desarrollo-de-Software.html#comparacion-modelos">Comparativa con modelos tradicionales</a>
+                            <a href="Metodologias-Agiles.html#comparativa">Comparador de metodologías</a>
                         </div>
                     </div>
 
@@ -101,156 +101,202 @@
                 </nav>
             </div>
 
-		<!-- Contenido principal de Scrum -->
-		<div class="Pagina-Scrum">
-			<!-- Presentación de la página y recorrido del ciclo Scrum -->
-			<div class="Encabezado-Scrum">
-				<p class="Antetitulo-Scrum">METODOLOGÍAS ÁGILES / 01</p>
-				<h1>SCRUM <span>EN PROFUNDIDAD.</span></h1>
-				<p class="Descripcion-Scrum">Scrum organiza el desarrollo en ciclos llamados <strong>Sprints</strong>. Roles, eventos y artefactos ayudan al equipo a entregar un incremento del producto al finalizar cada ciclo.</p>
-				<div class="Ciclo-Resumen" aria-label="Recorrido de Scrum">
-					<span>ROLES</span>
-					<i class="bi bi-arrow-right"></i>
-					<span>EVENTOS</span>
-					<i class="bi bi-arrow-right"></i>
-					<span>ARTEFACTOS</span>
-					<i class="bi bi-arrow-right"></i>
-					<span>INCREMENTO</span>
+
+		<!-- Portada y accesos a cada parte del recorrido ágil -->
+		<div class="Pagina-Agil">
+			<header class="Encabezado-Agil" id="introduccion-agil">
+				<div class="Contenedor-Agil">
+					<p class="Antetitulo-Agil">METODOLOGÍAS ÁGILES · INTRODUCCIÓN</p>
+					<h1>Metodologías <span>Ágiles.</span></h1>
+					<p class="Descripcion-Agil">
+						Las metodologías ágiles son enfoques de desarrollo que permiten trabajar de manera iterativa e incremental,
+						adaptándose a los cambios y entregando software de forma frecuente. Entre ellas se encuentran
+						<strong>Scrum, Kanban y Extreme Programming (XP)</strong>.
+					</p>
 				</div>
-			</div>
+			</header>
 
-			<!-- Sección 1: roles, eventos y artefactos -->
-			<section id="scrum-en-profundidad" class="Seccion-Scrum" aria-labelledby="titulo-ciclo">
-				<div class="Encabezado-Seccion">
-					<p class="Antetitulo-Scrum">EL MARCO DE TRABAJO</p>
-					<h2 id="titulo-ciclo">Tres piezas de un mismo ciclo</h2>
+			<nav class="Navegacion-Agil" aria-label="Secciones de metodologías ágiles">
+				<a class="Boton-Navegacion-Agil activo" href="#manifiesto-agil">Manifiesto Ágil</a>
+				<a class="Boton-Navegacion-Agil" href="#principios-agiles">Principios</a>
+				<a class="Boton-Navegacion-Agil" href="#scrum">Scrum</a>
+				<a class="Boton-Navegacion-Agil" href="#kanban">Kanban</a>
+				<a class="Boton-Navegacion-Agil" href="#xp">XP</a>
+			</nav>
+
+			<!-- Primera sección: valores compartidos del Manifiesto Ágil -->
+			<section id="manifiesto-agil" class="Seccion-Agil" aria-labelledby="titulo-manifiesto">
+				<p class="Antetitulo-Agil">01 · UNA BASE COMPARTIDA</p>
+				<h2 id="titulo-manifiesto">Manifiesto Ágil</h2>
+				<p class="Introduccion-Seccion-Agil">
+					Los métodos ágiles se basan en cuatro valores y doce principios, que priorizan la colaboración,
+					la entrega de software funcional y la capacidad de responder a los cambios.
+				</p>
+
+				<h3 class="Subtitulo-Agil">Los 4 valores</h3>
+				<div class="Tarjetas-Valores">
+					<article class="Tarjeta-Valor">
+						<i class="bi bi-people" aria-hidden="true"></i>
+						<h4>Individuos e interacciones</h4>
+						<p>Por encima de los procesos y las herramientas.</p>
+					</article>
+					<article class="Tarjeta-Valor">
+						<i class="bi bi-code-slash" aria-hidden="true"></i>
+						<h4>Software funcionando</h4>
+						<p>Por encima de la documentación exhaustiva.</p>
+					</article>
+					<article class="Tarjeta-Valor">
+						<i class="bi bi-person-workspace" aria-hidden="true"></i>
+						<h4>Colaboración con el cliente</h4>
+						<p>Por encima de la negociación contractual.</p>
+					</article>
+					<article class="Tarjeta-Valor">
+						<i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+						<h4>Respuesta al cambio</h4>
+						<p>Por encima del seguimiento de un plan.</p>
+					</article>
 				</div>
+				<p class="Nota-Agil">
+					Aunque valoramos los elementos de la derecha, valoramos más los de la izquierda:
+					los procesos, la documentación, los contratos y los planes siguen teniendo valor.
+				</p>
+			</section>
 
-				<!-- Botones que cambian el contenido de la sección sin recargar la página -->
-				<div class="Pestanas-Scrum" role="tablist" aria-label="Piezas de Scrum">
-					<button class="Boton-Pestana activo" type="button" role="tab" aria-selected="true" data-tab="roles"><i class="bi bi-person"></i><span>01</span> Roles</button>
-					<button class="Boton-Pestana" type="button" role="tab" aria-selected="false" data-tab="eventos"><i class="bi bi-calendar3"></i><span>02</span> Eventos</button>
-					<button class="Boton-Pestana" type="button" role="tab" aria-selected="false" data-tab="artefactos"><i class="bi bi-clipboard-data"></i><span>03</span> Artefactos</button>
-				</div>
-
-				<!-- Paneles de Roles, Eventos y Artefactos -->
-				<div class="Contenido-Pestanas">
-					<article class="Panel-Pestana activo" role="tabpanel" data-panel="roles">
-						<p>El equipo Scrum reúne a quienes construyen el producto, priorizan su valor y facilitan el trabajo.</p>
-						<div class="Tarjetas-Scrum Tarjetas-Roles">
-							<div class="Tarjeta-Scrum Tarjeta-Rol">
-								<div class="Cabecera-Tarjeta"><i class="bi bi-code-square"></i><span>01</span></div>
-								<h4>Desarrolladores</h4>
-								<p>Construyen el incremento del producto a partir del trabajo seleccionado para el Sprint.</p>
-								<ul><li>En el equipo pueden participar programadores, diseñadores y testers.</li><li>Organizan su trabajo y colaboran para entregar un resultado útil y terminado.</li></ul>
-							</div>
-							<div class="Tarjeta-Scrum Tarjeta-Rol">
-								<div class="Cabecera-Tarjeta"><i class="bi bi-bullseye"></i><span>02</span></div>
-								<h4>Product Owner</h4>
-								<p>Se ocupa de las necesidades y prioridades del producto, representando sus intereses ante el equipo.</p>
-								<ul><li>Presenta las historias de usuario prioritarias y explica qué valor se espera obtener.</li><li>Mantiene el foco en construir aquello que necesita el cliente.</li></ul>
-							</div>
-							<div class="Tarjeta-Scrum Tarjeta-Rol">
-								<div class="Cabecera-Tarjeta"><i class="bi bi-stars"></i><span>03</span></div>
-								<h4>Scrum Master</h4>
-								<p>Ayuda al equipo a comprender y aplicar el marco Scrum.</p>
-								<ul><li>Asesora al Product Owner y a los desarrolladores; facilita las prácticas ágiles.</li><li>Ayuda a resolver impedimentos y favorece la autonomía del equipo.</li></ul>
-							</div>
-						</div>
-					</article>
-
-					<article class="Panel-Pestana" role="tabpanel" data-panel="eventos" hidden>
-						<p>Cada evento crea un momento para planificar, inspeccionar el avance o mejorar el trabajo.</p>
-						<div class="Tarjetas-Scrum Tarjetas-Eventos">
-							<div class="Tarjeta-Scrum Tarjeta-Evento">
-								<div class="Cabecera-Tarjeta"><i class="bi bi-calendar3"></i><span>01</span></div>
-								<h4>Planificación del Sprint</h4>
-								<p>Marca el inicio del Sprint. Se decide qué se hará, por qué es valioso y cómo organizar el trabajo.</p>
-								<ul><li>El Product Owner explica el valor del Sprint.</li><li>Los desarrolladores seleccionan elementos del Product Backlog y los dividen en tareas.</li></ul>
-							</div>
-							<div class="Tarjeta-Scrum Tarjeta-Evento">
-								<div class="Cabecera-Tarjeta"><i class="bi bi-arrow-repeat"></i><span>02</span></div>
-								<h4>Sprint</h4>
-								<p>Es el ciclo de trabajo de 1 a 4 semanas en el que se construye un incremento operativo y útil.</p>
-								<ul><li>Se trabaja sobre el Sprint Backlog.</li><li>Al finalizar, el equipo cuenta con un incremento terminado.</li></ul>
-							</div>
-							<div class="Tarjeta-Scrum Tarjeta-Evento">
-								<div class="Cabecera-Tarjeta"><i class="bi bi-search"></i><span>03</span></div>
-								<h4>Scrum Diario · Daily</h4>
-								<p>Encuentro breve para revisar el avance hacia el objetivo del Sprint y detectar impedimentos.</p>
-								<ul><li>El equipo puede compartir lo realizado, lo previsto y los obstáculos.</li><li>Se actualiza el trabajo pendiente y se adapta el plan.</li></ul>
-							</div>
-							<div class="Tarjeta-Scrum Tarjeta-Evento">
-								<div class="Cabecera-Tarjeta"><i class="bi bi-search"></i><span>04</span></div>
-								<h4>Revisión del Sprint · Review</h4>
-								<p>Al final del Sprint se inspecciona el incremento y se recoge información para orientar los siguientes pasos.</p>
-								<ul><li>Los desarrolladores muestran las funcionalidades y pueden hacer una demostración.</li><li>Las preguntas y sugerencias pueden adaptar el Product Backlog.</li></ul>
-							</div>
-							<div class="Tarjeta-Scrum Tarjeta-Evento">
-								<div class="Cabecera-Tarjeta"><i class="bi bi-arrow-repeat"></i><span>05</span></div>
-								<h4>Retrospectiva del Sprint</h4>
-								<p>Después de la Review, el equipo reflexiona sobre cómo trabajó y acuerda mejoras para el próximo Sprint.</p>
-								<ul><li>Identifica fortalezas, problemas y oportunidades de mejora.</li><li>La Review muestra qué se construyó; la retrospectiva observa cómo se trabajó.</li></ul>
-							</div>
-						</div>
-					</article>
-
-					<article class="Panel-Pestana" role="tabpanel" data-panel="artefactos" hidden>
-						<p>Los artefactos hacen visible el trabajo y el resultado que se construye en cada Sprint.</p>
-						<div class="Tarjetas-Scrum Tarjetas-Artefactos">
-							<div class="Tarjeta-Scrum Tarjeta-Artefacto">
-								<div class="Cabecera-Tarjeta"><i class="bi bi-list-ul"></i><span>01</span></div>
-								<h4>Pila del producto</h4>
-								<strong>Product Backlog</strong>
-								<p>Lista ordenada y priorizada de lo que necesita el producto, desde el punto de vista de su valor.</p>
-								<div class="Detalle-Artefacto">Los requisitos pueden expresarse como historias de usuario y luego dividirse en tareas.</div>
-							</div>
-							<div class="Tarjeta-Scrum Tarjeta-Artefacto">
-								<div class="Cabecera-Tarjeta"><i class="bi bi-clipboard2-check"></i><span>02</span></div>
-								<h4>Pila del Sprint</h4>
-								<strong>Sprint Backlog</strong>
-								<p>Trabajo seleccionado y organizado por los desarrolladores para alcanzar el objetivo del Sprint.</p>
-								<div class="Detalle-Artefacto">Hace visible lo que se realizará durante ese ciclo.</div>
-							</div>
-							<div class="Tarjeta-Scrum Tarjeta-Artefacto">
-								<div class="Cabecera-Tarjeta"><i class="bi bi-box-seam"></i><span>03</span></div>
-								<h4>Incremento</h4>
-								<strong>Increment</strong>
-								<p>Resultado obtenido al finalizar el Sprint: terminado, operativo y útil.</p>
-								<div class="Detalle-Artefacto">Debe estar en condiciones de ser desplegado o distribuido.</div>
-							</div>
-						</div>
-					</article>
+			<!-- Segunda sección: los doce principios del Manifiesto Ágil -->
+			<section id="principios-agiles" class="Seccion-Agil Seccion-Principios" aria-labelledby="titulo-principios">
+				<p class="Antetitulo-Agil">02 · DEL VALOR DE LA PRÁCTICA</p>
+				<h2 id="titulo-principios">Los 12 principios</h2>
+				<div class="Tarjetas-Principios">
+					<article class="Tarjeta-Principio"><span>01</span><p>Satisfacer al cliente mediante entregas tempranas y continuas.</p></article>
+					<article class="Tarjeta-Principio"><span>02</span><p>Aceptar cambios en los requisitos, incluso en etapas tardías.</p></article>
+					<article class="Tarjeta-Principio"><span>03</span><p>Entregar software funcionando frecuentemente.</p></article>
+					<article class="Tarjeta-Principio"><span>04</span><p>Colaborar entre desarrolladores y responsables del negocio.</p></article>
+					<article class="Tarjeta-Principio"><span>05</span><p>Construir proyectos alrededor de personas motivadas.</p></article>
+					<article class="Tarjeta-Principio"><span>06</span><p>Favorecer la comunicación directa.</p></article>
+					<article class="Tarjeta-Principio"><span>07</span><p>El software funcionando es la medida principal del progreso.</p></article>
+					<article class="Tarjeta-Principio"><span>08</span><p>Mantener un ritmo de trabajo sostenible.</p></article>
+					<article class="Tarjeta-Principio"><span>09</span><p>Buscar la excelencia técnica y el buen diseño continuamente.</p></article>
+					<article class="Tarjeta-Principio"><span>10</span><p>Mantener la simplicidad y evitar el trabajo innecesario.</p></article>
+					<article class="Tarjeta-Principio"><span>11</span><p>Favorecer equipos autoorganizados.</p></article>
+					<article class="Tarjeta-Principio"><span>12</span><p>Reflexionar y mejorar periódicamente.</p></article>
 				</div>
 			</section>
 
-			<!-- Sección 2: duración y etapas del Sprint -->
-			<section id="ciclo-sprint" class="Seccion-Scrum" aria-labelledby="titulo-sprint">
-				<div class="Encabezado-Seccion">
-					<p class="Antetitulo-Scrum">DEL PRODUCT BACKLOG AL INCREMENTO</p>
-					<h2 id="titulo-sprint">El ciclo del Sprint</h2>
-					<p class="Descripcion-Seccion">Seleccioná la duración y explorá cada encuentro del Sprint.</p>
+			<!-- Tercera sección: resumen visual de Scrum y acceso a su página detallada -->
+			<section id="scrum" class="Seccion-Agil Seccion-Metodologia" aria-labelledby="titulo-scrum">
+				<p class="Antetitulo-Agil">03 · CICLOS E INCREMENTOS</p>
+				<h2 id="titulo-scrum">Scrum</h2>
+				<p class="Introduccion-Seccion-Agil">
+					Scrum organiza el trabajo en ciclos llamados <strong>Sprints</strong> y coordina responsabilidades,
+					artefactos y eventos para entregar un incremento del producto.
+				</p>
+				<div class="Resumen-Metodologia">
+					<p><strong>Roles / responsabilidades</strong><br>Product Owner · Scrum Master · Desarrolladores</p>
+					<p><strong>Artefactos</strong><br>Product Backlog · Sprint Backlog · Incremento</p>
+					<p><strong>Eventos</strong><br>Sprint Planning · Daily Scrum · Sprint Review · Sprint Retrospective</p>
 				</div>
-
-				<!-- Botones que seleccionan la duración del Sprint -->
-				<div class="Selector-Sprint" role="tablist" aria-label="Duración del Sprint">
-					<strong class="Etiqueta-Sprint">Duración del Sprint:</strong>
-					<button class="Boton-Sprint activo" type="button" role="tab" aria-selected="true" data-sprint="1">1</button>
-					<button class="Boton-Sprint" type="button" role="tab" aria-selected="false" data-sprint="2">2</button>
-					<button class="Boton-Sprint" type="button" role="tab" aria-selected="false" data-sprint="3">3</button>
-					<button class="Boton-Sprint" type="button" role="tab" aria-selected="false" data-sprint="4">4</button>
-					<strong id="Duracion-Sprint">1 semana</strong>
-				</div>
-
-				<!-- Timeline y tarjeta informativa actualizados por JavaScript -->
-				<div class="Contenido-Sprint">
-					<div id="Timeline-Sprint" class="Timeline-Sprint" aria-live="polite"></div>
-					<aside id="Tarjeta-Sprint" class="Tarjeta-Sprint-Info" aria-live="polite"></aside>
-				</div>
-				<p class="Nuevo-Sprint"><i class="bi bi-arrow-repeat"></i><strong>Nuevo Sprint: el ciclo vuelve a comenzar</strong></p>
-				<p class="Nota-Sprint">Los tiempos de Planificación y Review son referencias proporcionales a la duración elegida. Cada equipo puede ajustar sus encuentros; el Sprint no supera las cuatro semanas.</p>
+				<figure class="Figura-Agil">
+					<button class="Boton-Diagrama" type="button" data-titulo-diagrama="Ciclo simplificado del Sprint" aria-label="Ampliar diagrama del ciclo de Scrum">
+						<svg class="Diagrama-Scrum" viewBox="0 0 760 330" role="img" aria-labelledby="titulo-diagrama-scrum">
+							<title id="titulo-diagrama-scrum">Planificar, desarrollar, revisar y mejorar durante un Sprint</title>
+							<defs><marker id="flecha-scrum" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#80649c" stroke-width="1.5"/></marker></defs>
+							<rect class="Fondo-Diagrama" x="1" y="1" width="758" height="328" rx="18"/>
+							<g class="Nodos-Scrum">
+								<rect x="42" y="32" width="160" height="56" rx="14"/><text x="122" y="67">Planificar</text>
+								<rect x="558" y="32" width="160" height="56" rx="14"/><text x="638" y="67">Desarrollar</text>
+								<rect x="558" y="242" width="160" height="56" rx="14"/><text x="638" y="277">Revisar</text>
+								<rect x="42" y="242" width="160" height="56" rx="14"/><text x="122" y="277">Mejorar</text>
+							</g>
+							<g class="Flechas-Diagrama"><path d="M210 60 H545" marker-end="url(#flecha-scrum)"/><path d="M638 98 V225" marker-end="url(#flecha-scrum)"/><path d="M550 270 H215" marker-end="url(#flecha-scrum)"/><path d="M122 230 V103" marker-end="url(#flecha-scrum)"/></g>
+							<text class="Centro-Diagrama" x="380" y="151">Sprint</text>
+							<text class="Subcentro-Diagrama" x="380" y="181">Daily Scrum · cada día</text>
+						</svg>
+						<span class="Icono-Ampliar bi bi-zoom-in" aria-hidden="true"></span>
+					</button>
+					<figcaption>Figura 1. Ciclo simplificado del Sprint: planificación, desarrollo con Daily Scrum, revisión y retrospectiva.</figcaption>
+				</figure>
+				<a class="Boton-Detalle-Agil" href="Scrum-En-Profundidad.html#scrum-en-profundidad">Ver Scrum en profundidad <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 			</section>
+
+			<!-- Cuarta sección: tablero Kanban y acceso a su página detallada -->
+			<section id="kanban" class="Seccion-Agil Seccion-Metodologia" aria-labelledby="titulo-kanban">
+				<p class="Antetitulo-Agil">04 · VISUALIZAR EL FLUJO</p>
+				<h2 id="titulo-kanban">Kanban</h2>
+				<p class="Introduccion-Seccion-Agil">
+					Kanban representa visualmente el trabajo para facilitar su seguimiento y mejorar el flujo de las actividades.
+					Un tablero básico organiza las tareas en <strong>Por hacer → En proceso → Hecho</strong>.
+				</p>
+				<figure class="Figura-Agil">
+					<button class="Boton-Diagrama" type="button" data-titulo-diagrama="Tablero básico Kanban" aria-label="Ampliar diagrama de Kanban">
+						<svg class="Diagrama-Kanban" viewBox="0 0 1040 350" role="img" aria-labelledby="titulo-diagrama-kanban">
+							<title id="titulo-diagrama-kanban">Tablero Kanban con las columnas Por hacer, En proceso y Hecho</title>
+							<rect class="Fondo-Diagrama" x="1" y="1" width="1038" height="348" rx="18"/>
+							<g class="Columnas-Kanban">
+								<rect x="42" y="28" width="275" height="292" rx="16"/><text x="179" y="66">Por hacer</text>
+								<rect x="382" y="28" width="275" height="292" rx="16"/><text x="519" y="66">En proceso</text>
+								<rect x="722" y="28" width="275" height="292" rx="16"/><text x="859" y="66">Hecho</text>
+							</g>
+							<g class="Tarjetas-Kanban">
+								<rect x="64" y="110" width="230" height="72" rx="12"/><text x="179" y="154">Pendiente</text>
+								<rect x="404" y="110" width="230" height="72" rx="12"/><text x="519" y="154">En desarrollo</text>
+								<rect x="744" y="110" width="230" height="72" rx="12"/><text x="859" y="154">Terminado</text>
+							</g>
+							<text class="Etiqueta-Kanban" x="519" y="272">Límite WIP</text>
+						</svg>
+						<span class="Icono-Ampliar bi bi-zoom-in" aria-hidden="true"></span>
+					</button>
+					<figcaption>Figura 2. Flujo básico Kanban; el límite WIP restringe el trabajo simultáneo en «En proceso».</figcaption>
+				</figure>
+				<a class="Boton-Detalle-Agil" href="Kanban-En-Profundidad.html">Ver Kanban en profundidad <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+			</section>
+
+			<!-- Quinta sección: prácticas XP y diagrama cíclico ampliable -->
+			<section id="xp" class="Seccion-Agil Seccion-Metodologia" aria-labelledby="titulo-xp">
+				<p class="Antetitulo-Agil">05 · CALIDAD TÉCNICA Y RETROALIMENTACIÓN</p>
+				<h2 id="titulo-xp">Extreme Programming (XP)</h2>
+				<p class="Introduccion-Seccion-Agil">
+					Extreme Programming es un enfoque ágil que pone énfasis en la calidad del software,
+					la adaptación continua y la retroalimentación frecuente.
+				</p>
+				<div class="Tarjetas-Practicas-XP">
+					<article><h3>Programación en parejas</h3><p>Dos personas colaboran en el mismo código, revisando y compartiendo conocimiento.</p></article>
+					<article><h3>Desarrollo dirigido por pruebas</h3><p>Se escribe una prueba antes del código que permite superarla.</p></article>
+					<article><h3>Integración continua</h3><p>Los cambios se integran y verifican con frecuencia.</p></article>
+					<article><h3>Refactorización</h3><p>Se mejora la estructura interna del código sin cambiar su comportamiento.</p></article>
+				</div>
+				<figure class="Figura-Agil">
+					<button class="Boton-Diagrama" type="button" data-titulo-diagrama="Bucle de prácticas XP" aria-label="Ampliar diagrama de Extreme Programming">
+						<svg class="Diagrama-XP" viewBox="0 0 760 330" role="img" aria-labelledby="titulo-diagrama-xp">
+							<title id="titulo-diagrama-xp">Bucle XP de pruebas, código, refactorización e integración continua</title>
+							<defs><marker id="flecha-xp" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#80649c" stroke-width="1.5"/></marker></defs>
+							<rect class="Fondo-Diagrama" x="1" y="1" width="758" height="328" rx="18"/>
+							<g class="Nodos-Scrum">
+								<rect x="42" y="32" width="160" height="56" rx="14"/><text x="122" y="67">Pruebas</text>
+								<rect x="558" y="32" width="160" height="56" rx="14"/><text x="638" y="67">Código</text>
+								<rect x="558" y="242" width="160" height="56" rx="14"/><text x="638" y="277">Refactorización</text>
+								<rect x="42" y="242" width="160" height="56" rx="14"/><text x="122" y="277">Integración</text>
+							</g>
+							<g class="Flechas-Diagrama"><path d="M210 60 H545" marker-end="url(#flecha-xp)"/><path d="M638 98 V225" marker-end="url(#flecha-xp)"/><path d="M550 270 H215" marker-end="url(#flecha-xp)"/><path d="M122 230 V103" marker-end="url(#flecha-xp)"/></g>
+							<text class="Centro-Diagrama" x="380" y="151">XP</text>
+							<text class="Subcentro-Diagrama" x="380" y="181">Retroalimentación continua</text>
+						</svg>
+						<span class="Icono-Ampliar bi bi-zoom-in" aria-hidden="true"></span>
+					</button>
+					<figcaption>Figura 3. Prácticas complementarias de XP con retroalimentación continua; no son fases rígidas ni una secuencia única.</figcaption>
+				</figure>
+			</section>
+
+
 		</div>
+
+		<!-- Visor accesible compartido por los tres diagramas -->
+		<dialog class="Visor-Diagrama" aria-labelledby="titulo-visor-diagrama">
+			<div class="Cabecera-Visor">
+				<h2 id="titulo-visor-diagrama">Diagrama ampliado</h2>
+				<button class="Cerrar-Visor" type="button" aria-label="Cerrar diagrama ampliado"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+			</div>
+			<div class="Contenido-Visor"></div>
+		</dialog>
 
 		<!-- Pie de página -->
 		<div class="Seccion-footer">

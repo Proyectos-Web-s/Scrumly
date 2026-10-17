@@ -1,751 +1,698 @@
-/* 
-   SCRUM EN PROFUNDIDAD
-    */
+/* Estilos de la página introductoria de metodologías ágiles. */
 html {
 	scroll-behavior: smooth;
 }
 
-/* Estilos generales de la página */
 body {
 	margin: 0;
 	background: #efeae1;
 	color: #181d2a;
-	font-family: 'Public Sans', Arial, sans-serif;
+	font-family: "Public Sans", Arial, sans-serif;
 }
 
-/* Contenedor principal y encabezado de Scrum */
-.Pagina-Scrum {
-	max-width: 1180px;
-	margin: 0 auto;
-	padding: 70px 20px 40px;
-}
-
-.Encabezado-Scrum {
-	margin-bottom: 54px;
+/* La portada usa el degradado de la identidad visual y ocupa todo el ancho. */
+.Encabezado-Agil {
 	position: relative;
 	isolation: isolate;
+	padding: 42px 0 52px;
 }
 
-/* Extiende el degradado del encabezado de Scrum hasta los bordes de la pantalla. */
-.Encabezado-Scrum::before {
+.Encabezado-Agil::before {
 	position: absolute;
 	z-index: -1;
-	inset: -70px 0 0;
-	left: calc((100vw - 100%) / -2);
-	right: calc((100vw - 100%) / -2);
+	inset: 0;
+	left: calc(50% + max(0px, (100vw - 100%) / 2) - 50vw);
+	width: 100vw;
 	background: linear-gradient(105deg, #efeae1 0%, #f2eaf4 100%);
 	content: "";
 }
 
-.Encabezado-Scrum h1,
-.Encabezado-Seccion h2 {
-	margin: 0;
-	font-family: 'Bebas Neue', sans-serif;
-	color: #171b24;
+.Contenedor-Agil,
+.Navegacion-Agil,
+.Seccion-Agil {
+	width: min(100% - 64px, 1180px);
+	margin-right: auto;
+	margin-left: auto;
 }
 
-.Encabezado-Scrum h1 {
-	font-size: 80px;
+.Contenedor-Agil {
+	max-width: 1210px;
 }
 
-.Encabezado-Scrum h1 span {
-	color: #765a91;
-}
-
-.Descripcion-Scrum {
-	max-width: 680px;
-	font-size: 20px;
-}
-
-.Ciclo-Resumen {
-	display: flex;
-	align-items: center;
-	gap: 12px;
-	margin-top: 20px;
-	padding-top: 18px;
-	border-top: 1px solid rgba(120, 102, 150, 0.25);
-	color: #303039;
-	font-size: 14px;
-}
-
-.Ciclo-Resumen i {
-	color: #765a91;
-	font-size: 22px;
-}
-
-.Antetitulo-Scrum {
-	margin: 0 0 10px;
-	color: #C084FC;
+.Antetitulo-Agil {
+	margin: 0 0 14px;
+	color: #80649c;
 	font-size: 15px;
 	font-weight: 800;
-	letter-spacing: 0.08em;
+	letter-spacing: 0.04em;
 	text-transform: uppercase;
 }
 
-/* Separación entre las secciones interactivas */
-.Seccion-Scrum {
-	margin-bottom: 60px;
-}
-
-.Encabezado-Seccion {
-	margin-bottom: 18px;
-}
-
-.Encabezado-Seccion h2 {
-	font-size: 55px;
-}
-
-.Descripcion-Seccion {
-	margin: 12px 0 0;
-	font-size: 16px;
-}
-
-/* Selector de pestañas y selector de duración */
-.Pestanas-Scrum,
-.Selector-Sprint {
-	display: flex;
-	align-items: center;
-	gap: 12px;
-	flex-wrap: wrap;
-	margin: 24px 0;
-}
-
-.Boton-Pestana,
-.Boton-Sprint {
-	border: 1px solid rgba(95, 93, 108, 0.4);
-	background: rgba(255, 255, 255, 0.12);
-	color: #1a1d22;
-	border-radius: 10px;
-	padding: 14px 18px;
-	font: inherit;
-	font-weight: 700;
-	cursor: pointer;
-}
-
-.Boton-Pestana {
-	display: inline-flex;
-	align-items: center;
-	gap: 10px;
-}
-
-.Boton-Pestana i {
-	color: #765a91;
-	font-size: 16px;
-}
-
-.Boton-Pestana span {
-	color: #765a91;
-}
-
-.Boton-Pestana.activo,
-.Boton-Sprint.activo {
-	background: #e7dff5;
-	border-color: rgba(120, 92, 166, 0.48);
-}
-
-.Boton-Pestana:hover,
-.Boton-Sprint:hover {
-	background: #eadff8;
-}
-
-/* Estados visibles y ocultos de los paneles */
-.Panel-Pestana[hidden] {
-	display: none;
-}
-
-.Panel-Pestana,
-.Tarjeta-Sprint-Info,
-.Tarjeta-Scrum {
-	padding: 20px;
-	border: 1px solid rgba(116, 94, 142, 0.22);
-	border-radius: 12px;
-	background: rgba(255, 255, 255, 0.15);
-}
-
-.Panel-Pestana {
-	padding: 0;
-	border: 0;
-	background: transparent;
-}
-
-.Panel-Pestana > p {
-	margin: 40px 0 24px;
-	font-size: 18px;
-}
-
-.Panel-Pestana h3,
-.Tarjeta-Sprint-Info h3,
-.Tarjeta-Scrum h4 {
-	margin-top: 0;
-}
-
-/* Distribución general de las tarjetas de Scrum */
-.Tarjetas-Scrum {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 16px;
-	margin-top: 20px;
-}
-
-.Tarjeta-Scrum {
-	background: rgba(255, 255, 255, 0.25);
-	transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-#piezas-scrum .Tarjeta-Scrum:hover {
-	transform: scale(1.03);
-	box-shadow: 0 8px 20px rgba(43, 35, 52, 0.12);
-}
-
-@media (prefers-reduced-motion: reduce) {
-	#piezas-scrum .Tarjeta-Scrum {
-		transition: none;
-	}
-}
-
-/* Tarjetas de los roles del equipo */
-.Tarjetas-Roles {
-	gap: 58px;
-}
-
-.Tarjeta-Rol {
-	min-height: 310px;
-	padding: 16px 18px;
-	background: #fffdf9;
-	border-color: rgba(164, 135, 101, 0.42);
-}
-
-.Cabecera-Tarjeta {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-bottom: 16px;
-	color: #765a91;
-	font-size: 20px;
-}
-
-.Cabecera-Tarjeta span {
-	font-weight: 800;
-}
-
-.Tarjeta-Rol h4 {
-	margin-bottom: 14px;
-	font-family: 'Bebas Neue', sans-serif;
-	font-size: 28px;
+.Encabezado-Agil h1,
+.Seccion-Agil h2,
+.Subtitulo-Agil {
+	margin: 0;
+	color: #090909;
+	font-family: "Bebas Neue", sans-serif;
 	font-weight: 400;
 }
 
-.Tarjeta-Rol p {
-	line-height: 1.4;
+.Encabezado-Agil h1 {
+	max-width: 750px;
+	font-size: clamp(3.5rem, 6vw, 5rem);
+	line-height: 0.94;
 }
 
-.Tarjeta-Rol ul {
-	margin: 18px 0 0;
-	padding: 16px 0 0 30px;
-	border-top: 1px solid rgba(164, 135, 101, 0.35);
-	color: #55515a;
+.Encabezado-Agil h1 span {
+	color: #80649c;
 }
 
-.Tarjeta-Rol li {
-	margin-bottom: 14px;
-	padding-left: 4px;
+.Descripcion-Agil {
+	max-width: 1120px;
+	margin: 22px 0 0;
+	color: #38373b;
+	font-size: 20px;
+	line-height: 1.45;
 }
 
-/* Tarjetas de los eventos del marco Scrum */
-.Tarjetas-Eventos {
-	grid-template-columns: repeat(2, 1fr);
-	gap: 20px;
+/* Botones que llevan directamente a cada sección de esta página. */
+.Navegacion-Agil {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	flex-wrap: wrap;
+	padding-top: 24px;
+	padding-bottom: 26px;
 }
 
-.Tarjeta-Evento {
-	min-height: 220px;
-	padding: 16px 18px;
-	background: #fffdf9;
-	border-color: rgba(164, 135, 101, 0.32);
-}
-
-.Tarjeta-Evento .Cabecera-Tarjeta {
-	margin-bottom: 16px;
-	font-size: 16px;
-}
-
-.Tarjeta-Evento .Cabecera-Tarjeta i {
+.Boton-Navegacion-Agil,
+.Boton-Detalle-Agil {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: 40px;
-	height: 40px;
-	border-radius: 8px;
-	background: #e7dff5;
-	font-size: 22px;
+	gap: 10px;
+	padding: 9px 12px;
+	border: 1px solid #cdbfae;
+	border-radius: 12px;
+	background: #fffaf2;
+	box-shadow: 0 2px 4px rgba(50, 40, 30, 0.12);
+	color: #171717;
+	font: inherit;
+	text-align: center;
+	text-decoration: none;
+	transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.Tarjeta-Evento h4 {
-	margin-bottom: 8px;
-	font-family: 'Bebas Neue', sans-serif;
-	font-size: 26px;
-	font-weight: 400;
+.Boton-Navegacion-Agil:hover,
+.Boton-Navegacion-Agil:focus-visible {
+	background: #80649c;
+	color: #fff;
 }
 
-.Tarjeta-Evento p {
-	margin: 0;
-	font-size: 14px;
-	line-height: 1.4;
+.Boton-Navegacion-Agil.activo {
+	border-color: #80649c;
+	background: #80649c;
+	color: #fff;
 }
 
-.Tarjeta-Evento ul {
-	margin: 16px 0 0;
-	padding-left: 18px;
-	color: #55515a;
-	font-size: 14px;
+/* Secciones de contenido y encabezados. */
+.Seccion-Agil {
+	padding: 34px 0 48px;
+	scroll-margin-top: 24px;
 }
 
-.Tarjeta-Evento li {
-	margin-bottom: 12px;
+.Seccion-Agil h2 {
+	font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+	line-height: 1;
 }
 
-/* Tarjetas de los artefactos del producto */
-.Tarjeta-Artefacto {
-	min-height: 270px;
-	padding: 16px 18px;
-	background: #fffdf9;
-	border-color: rgba(164, 135, 101, 0.42);
-}
-
-.Tarjeta-Artefacto .Cabecera-Tarjeta {
-	margin-bottom: 16px;
-}
-
-.Tarjeta-Artefacto h4 {
-	margin-bottom: 4px;
-	font-family: 'Bebas Neue', sans-serif;
+.Seccion-Agil h3 {
+	margin: 28px 0 14px;
+	color: #111;
+	font-family: "Bebas Neue", sans-serif;
 	font-size: 28px;
 	font-weight: 400;
 }
 
-.Tarjeta-Artefacto strong {
-	color: #765a91;
-	font-size: 14px;
+.Introduccion-Seccion-Agil {
+	max-width: 1000px;
+	margin: 12px 0 22px;
+	color: #38373b;
+	font-size: 19px;
+	line-height: 1.45;
 }
 
-.Tarjeta-Artefacto p {
-	line-height: 1.4;
+.Seccion-Principios {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: none;
+	padding: 42px max(32px, calc((100% - 1180px) / 2)) 52px;
+	background: #fffaf2;
 }
 
-.Detalle-Artefacto {
+.Seccion-Principios > .Antetitulo-Agil,
+.Seccion-Principios > h2,
+.Seccion-Principios > .Tarjetas-Principios {
+	box-sizing: border-box;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* Cuatro valores del Manifiesto Ágil. */
+.Sutitulo-Agil {
+	margin-top: 30px;
+	font-size: 28px;
+}
+
+.Tarjetas-Valores {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 16px 32px;
 	margin-top: 16px;
-	padding-top: 16px;
-	border-top: 1px solid rgba(164, 135, 101, 0.35);
-	color: #55515a;
-	line-height: 1.4;
 }
 
-/* Timeline y tarjeta informativa del Sprint */
-.Selector-Sprint strong {
+.Tarjeta-Valor {
+	min-width: 0;
+	min-height: 126px;
+	padding: 18px 22px;
+	border: 1px solid #d9cbb9;
+	border-radius: 20px;
+	background: #fff;
+}
+
+.Tarjeta-Valor > i {
+	color: #80649c;
 	font-size: 20px;
 }
 
-.Etiqueta-Sprint {
-	font-size: 14px !important;
+.Tarjeta-Valor h4 {
+	margin: 8px 0 4px;
+	color: #111;
+	font-size: 17px;
 }
 
-.Contenido-Sprint {
+.Tarjeta-Valor p,
+.Nota-Agil {
+	margin: 0;
+	color: #38373b;
+	font-size: 16px;
+	line-height: 1.45;
+}
+
+.Nota-Agil {
+	margin-top: 16px;
+	color: #5f5b65;
+}
+
+/* Rejilla numerada con los doce principios. */
+.Tarjetas-Principios {
 	display: grid;
-	grid-template-columns: minmax(0, 1fr) 300px;
-	gap: 24px;
-	align-items: start;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 12px;
+	margin-top: 24px;
 }
 
-.Timeline-Sprint {
+.Tarjeta-Principio {
+	min-width: 0;
+	padding: 12px 16px;
+	border: 1px solid #d9cbb9;
+	border-radius: 18px;
+	background: #fff;
+}
+
+.Tarjeta-Principio span {
+	color: #80649c;
+	font-size: 18px;
+	font-weight: 800;
+}
+
+.Tarjeta-Principio p {
+	margin: 8px 0 0;
+	color: #38373b;
+	font-size: 15px;
+	line-height: 1.4;
+}
+
+/* Información resumen para cada metodología. */
+.Seccion-Metodologia {
+	padding-top: 42px;
+}
+
+.Resumen-Metodologia {
 	display: grid;
-	gap: 0;
-	position: relative;
-	padding-left: 26px;
-}
-
-.Timeline-Sprint::before {
-	position: absolute;
-	top: 8px;
-	bottom: 8px;
-	left: 8px;
-	width: 1px;
-	background: #8b789f;
-	content: "";
-}
-
-.Mini-Seccion-Sprint {
-	position: relative;
-	padding-bottom: 22px;
-}
-
-.Mini-Seccion-Sprint::before {
-	position: absolute;
-	top: 2px;
-	left: 3px;
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	background: #765a91;
-	content: "";
-}
-
-.Mini-Seccion-Sprint h4 {
-	margin: 0 0 8px 20px;
-	color: #765a91;
-	font-size: 12px;
-	text-transform: uppercase;
-}
-
-.Cierre-Sprint {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 8px;
-}
-
-.Cierre-Sprint h4 {
-	flex-basis: 100%;
-}
-
-.Item-Sprint {
-	display: flex;
-	align-items: center;
 	gap: 10px;
-	margin-bottom: 8px;
+	margin: 24px 0;
 }
 
-.Item-Sprint button {
+.Resumen-Metodologia p {
+	margin: 0;
+	color: #181818;
+	font-size: 17px;
+	line-height: 1.45;
+}
+
+.Resumen-Metodologia strong {
+	font-weight: 800;
+}
+
+.Tarjetas-Practicas-XP {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 14px 28px;
+	margin: 24px 0;
+}
+
+.Tarjetas-Practicas-XP article {
+	min-width: 0;
+	min-height: 118px;
+	padding: 18px 22px;
+	border: 1px solid #d9cbb9;
+	border-radius: 18px;
+	background: #fff;
+}
+
+.Tarjetas-Practicas-XP h3 {
+	margin: 0 0 8px;
+	font-size: 21px;
+}
+
+.Tarjetas-Practicas-XP p {
+	margin: 0;
+	color: #38373b;
+	font-size: 15px;
+	line-height: 1.45;
+}
+
+/* Portadas y texto explicativo de las páginas específicas de Kanban y XP. */
+.Pagina-Detalle-Metodo {
+	width: min(100% - 64px, 1180px);
+	margin: 0 auto;
+	padding: 38px 0 64px;
+}
+
+.Encabezado-Detalle-Metodo {
+	padding: 30px 32px 34px;
+	border-radius: 18px;
+	background: linear-gradient(105deg, #efeae1 0%, #f2eaf4 100%);
+}
+
+.Encabezado-Detalle-Metodo h1 {
+	margin: 0;
+	color: #090909;
+	font-family: "Bebas Neue", sans-serif;
+	font-size: clamp(3.25rem, 6vw, 5rem);
+	font-weight: 400;
+	line-height: 0.98;
+}
+
+.Encabezado-Detalle-Metodo h1 span {
+	color: #80649c;
+}
+
+.Encabezado-Detalle-Metodo .Descripcion-Agil {
+	max-width: 900px;
+	margin: 18px 0;
+}
+
+.Boton-Volver-Agil {
 	display: inline-flex;
 	align-items: center;
 	gap: 8px;
-	padding: 8px 14px;
-	border: 1px solid rgba(116, 94, 142, 0.35);
-	border-radius: 8px;
-	background: #fffdf9;
-	color: #1a1d22;
-	font: inherit;
-	font-size: 13px;
+	color: #6d5488;
+	font-weight: 700;
+	text-decoration: none;
 }
 
-.Item-Sprint button.activo {
-	background: #765a91;
-	color: white;
+.Boton-Volver-Agil:hover,
+.Boton-Volver-Agil:focus-visible {
+	text-decoration: underline;
 }
 
-.Item-Sprint button i {
-	font-size: 15px;
+.Seccion-Detalle-Metodo {
+	padding: 38px 0 18px;
 }
 
-.Paso-Sprint h3 {
+.Seccion-Detalle-Metodo h2 {
 	margin: 0;
-}
-
-.Paso-Sprint p {
-	margin: 6px 0 0;
-}
-
-.Tarjeta-Sprint-Info {
-	display: flex;
-	flex-direction: column;
-	gap: 14px;
-	box-sizing: border-box;
-	padding: 24px;
-	border: 1px solid #a99c8e;
-	border-top: 6px solid #765a91;
-	border-radius: 0;
-	background: #fffdf9;
-}
-
-.Cabecera-Tarjeta-Sprint {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 12px;
-}
-
-.Cabecera-Tarjeta-Sprint .Antetitulo-Scrum {
-	margin: 0;
-	color: #765a91;
-	font-size: 12px;
-}
-
-.Cabecera-Tarjeta-Sprint i {
-	flex: 0 0 auto;
-	color: #765a91;
-	font-size: 24px;
-}
-
-.Tarjeta-Sprint-Info h3 {
-	margin: 0;
-	color: #050505;
-	font-family: 'Bebas Neue', sans-serif;
-	font-size: 32px;
+	color: #090909;
+	font-family: "Bebas Neue", sans-serif;
+	font-size: clamp(2.5rem, 4.5vw, 3.5rem);
 	font-weight: 400;
-	line-height: 1.1;
+	line-height: 1;
 }
 
-.Detalle-Sprint strong,
-.Duracion-Sugerida-Sprint strong {
+.Seccion-Detalle-Metodo > p:not(.Antetitulo-Agil) {
+	max-width: 950px;
 	color: #38373b;
-	font-size: 14px;
+	font-size: 17px;
+	line-height: 1.5;
 }
 
-.Detalle-Sprint p,
-.Duracion-Sugerida-Sprint p {
-	margin: 4px 0 0;
-	color: #55515a;
+/* Diagramas SVG: al pulsar se presentan ampliados en el visor oscuro. */
+.Figura-Agil {
+	margin: 22px 0 14px;
+}
+
+.Boton-Diagrama {
+	position: relative;
+	display: block;
+	width: 60%;
+	padding: 12px;
+	border: 1px solid #d9cbb9;
+	border-radius: 14px;
+	background: #fff;
+	cursor: zoom-in;
+}
+
+.Boton-Diagrama:focus-visible {
+	outline: 3px solid #80649c;
+	outline-offset: 3px;
+}
+
+.Boton-Diagrama svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.Fondo-Diagrama {
+	fill: #fff;
+	stroke: #d9cbb9;
+	stroke-width: 1;
+}
+
+.Nodos-Scrum rect {
+	fill: #e5def1;
+	stroke: #e5def1;
+}
+
+.Nodos-Scrum text,
+.Columnas-Kanban text,
+.Tarjetas-Kanban text {
+	fill: #171717;
+	font-family: "Public Sans", Arial, sans-serif;
+	font-size: 17px;
+	font-weight: 700;
+	text-anchor: middle;
+}
+
+.Flechas-Diagrama path {
+	fill: none;
+	stroke: #80649c;
+	stroke-width: 2;
+}
+
+.Centro-Diagrama {
+	fill: #80649c;
+	font-family: "Public Sans", Arial, sans-serif;
+	font-size: 28px;
+	font-weight: 800;
+	text-anchor: middle;
+}
+
+.Subcentro-Diagrama {
+	fill: #171717;
+	font-family: "Public Sans", Arial, sans-serif;
+	font-size: 16px;
+	text-anchor: middle;
+}
+
+.Columnas-Kanban rect {
+	fill: #e5def1;
+}
+
+.Columnas-Kanban text {
+	font-size: 18px;
+}
+
+.Tarjetas-Kanban rect {
+	fill: #fff;
+	stroke: #d9cbb9;
+}
+
+.Tarjetas-Kanban text {
+	font-size: 15px;
+	font-weight: 500;
+}
+
+.Etiqueta-Kanban {
+	fill: #80649c;
+	font-family: "Public Sans", Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	text-anchor: middle;
+}
+
+.Icono-Ampliar {
+	position: absolute;
+	right: 12px;
+	bottom: 12px;
+	display: grid;
+	width: 34px;
+	height: 34px;
+	place-items: center;
+	border-radius: 5px;
+	background: #f3eff8;
+	color: #171717;
+	font-size: 18px;
+}
+
+.Figura-Agil figcaption {
+	margin-top: 8px;
+	color: #5f5b65;
 	font-size: 14px;
 	line-height: 1.4;
 }
 
-.Duracion-Sugerida-Sprint {
-	display: grid;
-	grid-template-columns: 20px 1fr;
-	align-items: center;
-	column-gap: 6px;
-	margin-top: auto;
+.Boton-Detalle-Agil {
+	border-color: #80649c;
+	background: #80649c;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 700;
 }
 
-.Duracion-Sugerida-Sprint > i {
-	color: #38373b;
-	font-size: 18px;
+.Boton-Detalle-Agil:hover,
+.Boton-Detalle-Agil:focus-visible {
+	background: #6d5488;
+	transform: translateY(-1px);
 }
 
-.Duracion-Sugerida-Sprint p {
-	grid-column: 1 / -1;
+/* Tabla de referencia; en móvil permite desplazamiento horizontal interno. */
+.Seccion-Comparativa {
+	margin-bottom: 24px;
 }
 
-.Nuevo-Sprint {
+.Tabla-Agil-Desplazable {
+	margin-top: 22px;
+	overflow-x: auto;
+	border: 1px solid #d9cbb9;
+	border-radius: 12px;
+	background: #fff;
+}
+
+.Tabla-Agil {
+	width: 100%;
+	min-width: 700px;
+	border-collapse: collapse;
+}
+
+.Tabla-Agil th,
+.Tabla-Agil td {
+	padding: 14px 16px;
+	border-bottom: 1px solid #e4d9cb;
+	text-align: left;
+	line-height: 1.4;
+}
+
+.Tabla-Agil thead th {
+	background: #e5def1;
+}
+
+.Tabla-Agil tbody th {
+	white-space: nowrap;
+}
+
+.Tabla-Agil tr:last-child th,
+.Tabla-Agil tr:last-child td {
+	border-bottom: 0;
+}
+
+/* Visor modal reutilizable para ampliar los diagramas. */
+.Visor-Diagrama {
+	width: min(92vw, 1000px);
+	max-width: none;
+	max-height: 90vh;
+	padding: 18px 22px 22px;
+	overflow: auto;
+	border: 0;
+	border-radius: 12px;
+	background: transparent;
+	color: #fff;
+}
+
+.Visor-Diagrama::backdrop {
+	background: rgba(27, 25, 27, 0.78);
+}
+
+.Cabecera-Visor {
 	display: flex;
 	align-items: center;
-	gap: 10px;
-	margin: 18px 0 0;
-	font-size: 15px;
+	justify-content: space-between;
+	gap: 16px;
+	margin-bottom: 16px;
 }
 
-.Nuevo-Sprint i {
-	color: #765a91;
-	font-size: 20px;
-}
-
-.Nota-Sprint {
-	margin: 34px 0 0;
-	color: #55515a;
-	font-size: 12px;
-}
-
-/* Pie de página */
-.Seccion-footer {
+.Cabecera-Visor h2 {
 	margin: 0;
-	padding: 20px;
-	background-color: #faf6f0;
+	color: #fff;
+	font-family: "Bebas Neue", sans-serif;
+	font-size: 30px;
 	text-align: center;
 }
 
-.Parrafo-Pie {
-	margin: 0;
+.Cerrar-Visor {
+	flex: 0 0 auto;
+	width: 40px;
+	height: 40px;
+	border: 0;
+	border-radius: 4px;
+	background: #fff;
+	color: #171717;
+	font-size: 20px;
+	cursor: pointer;
 }
 
-/* Pie de página */
-.Seccion-footer {
-    background-color: #faf6f0;
-    width: 100%;
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
+.Contenido-Visor {
+	padding: 16px;
+	border-radius: 10px;
+	background: #fff;
 }
 
-.Parrafo-Pie {
-    font-family: 'Public Sans', sans-serif;
+.Contenido-Visor svg {
+	display: block;
+	width: 100%;
+	max-height: 70vh;
+	margin: auto;
 }
-/* Ajustes para pantallas pequeñas */
+
+/* Diseño de una columna para teléfonos y tabletas estrechas. */
 @media (max-width: 760px) {
-	.Pagina-Scrum {
-		padding-top: 40px;
+	.Encabezado-Agil {
+		padding: 36px 0 38px;
 	}
 
-	.Encabezado-Scrum h1 {
-		font-size: 64px;
+	.Contenedor-Agil,
+	.Navegacion-Agil,
+	.Seccion-Agil {
+		width: calc(100% - 32px);
 	}
 
-	.Encabezado-Seccion h2 {
-		font-size: 44px;
+	.Encabezado-Agil h1 {
+		font-size: clamp(3rem, 12vw, 4.5rem);
 	}
 
-	.Tarjetas-Scrum,
-	.Contenido-Sprint {
-		grid-template-columns: 1fr;
-	}
-
-	.Tarjeta-Sprint-Info {
-		height: auto;
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   SCRUM: AJUSTES RESPONSIVOS PARA TELÉFONOS
-   Las tarjetas agrupadas se apilan verticalmente en móvil.
-   ========================================================= */
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
-html,
-body {
-	max-width: 100%;
-	overflow-x: clip;
-}
-
-body {
-	min-width: 0;
-}
-
-.Pagina-Scrum,
-.Seccion-Scrum,
-.Panel-Pestana,
-.Contenido-Sprint {
-	min-width: 0;
-}
-
-.Encabezado-Scrum h1 {
-	font-size: clamp(2.75rem, 7vw, 5rem);
-	overflow-wrap: anywhere;
-}
-
-.Encabezado-Seccion h2 {
-	font-size: clamp(2rem, 5vw, 3.45rem);
-	overflow-wrap: anywhere;
-}
-
-.Tarjetas-Scrum {
-	grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.Tarjeta-Scrum,
-.Tarjeta-Sprint-Info {
-	min-width: 0;
-	overflow-wrap: anywhere;
-}
-
-@media (max-width: 760px) {
-	.Pagina-Scrum {
-		padding: 40px 16px 32px;
-	}
-
-	.Encabezado-Scrum {
-		margin-bottom: 36px;
-	}
-
-	.Encabezado-Scrum h1 {
-		font-size: clamp(2.5rem, 12vw, 4rem);
-		line-height: 0.98;
-	}
-
-	.Descripcion-Scrum,
-	.Descripcion-Seccion {
+	.Descripcion-Agil,
+	.Introduccion-Seccion-Agil {
 		font-size: 16px;
 		line-height: 1.5;
 	}
 
-	.Ciclo-Resumen {
-		/* Reordena el resumen en una cuadrícula para evitar desbordes horizontales. */
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+	.Navegacion-Agil {
 		gap: 8px;
-		align-items: flex-start;
+		padding-top: 16px;
+		padding-bottom: 12px;
 	}
 
-	.Ciclo-Resumen i {
-		display: none;
-	}
-
-	.Encabezado-Seccion h2 {
-		font-size: clamp(2rem, 9vw, 2.75rem);
-	}
-
-	.Pestanas-Scrum,
-	.Selector-Sprint {
-		gap: 8px;
-	}
-
-	.Boton-Pestana,
-	.Boton-Sprint {
-		max-width: 100%;
-		padding: 11px 12px;
+	.Boton-Navegacion-Agil {
+		flex: 1 1 auto;
+		padding: 8px 11px;
 		font-size: 14px;
 	}
 
-	.Panel-Pestana > p {
-		margin-top: 24px;
-		font-size: 16px;
-		line-height: 1.5;
+	.Seccion-Agil {
+		padding-top: 28px;
+		padding-bottom: 38px;
 	}
 
-	.Tarjetas-Scrum,
-	.Tarjetas-Eventos {
-		display: grid;
-		grid-template-columns: minmax(0, 1fr);
-		gap: 14px;
-		padding: 8px 0 18px;
-	}
-
-	.Tarjetas-Scrum > .Tarjeta-Scrum {
+	.Seccion-Principios {
 		width: 100%;
-		min-width: 0;
+		padding: 32px 16px 38px;
 	}
 
-	.Tarjetas-Roles {
-		gap: 14px;
-	}
-
-	.Contenido-Sprint {
+	.Tarjetas-Valores,
+	.Tarjetas-Practicas-XP {
 		grid-template-columns: minmax(0, 1fr);
+		gap: 12px;
 	}
 
-	.Tarjeta-Sprint-Info {
-		padding: 18px;
+	.Tarjetas-Principios {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 10px;
 	}
 
-	.Tarjeta-Sprint-Info h3 {
-		font-size: 28px;
+	.Tarjeta-Principio {
+		box-sizing: border-box;
+		min-height: 100px;
+		padding: 10px;
 	}
 
-	.Item-Sprint {
-		align-items: flex-start;
-		flex-wrap: wrap;
+	.Tarjeta-Principio p {
+		font-size: 14px;
 	}
 
-	.Item-Sprint button {
-		max-width: 100%;
+	.Resumen-Metodologia p {
+		font-size: 15px;
+	}
+
+	.Seccion-Comparativa {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	.Visor-Diagrama {
+		width: 96vw;
+		padding: 10px;
+	}
+
+	.Pagina-Detalle-Metodo {
+		width: calc(100% - 32px);
+		padding-top: 20px;
+	}
+
+	.Encabezado-Detalle-Metodo {
+		padding: 24px 18px;
+	}
+
+	.Encabezado-Detalle-Metodo h1 {
+		font-size: clamp(2.75rem, 11vw, 4rem);
+	}
+
+	.Seccion-Detalle-Metodo {
+		padding-top: 30px;
+	}
+
+	.Seccion-Detalle-Metodo > p:not(.Antetitulo-Agil) {
+		font-size: 16px;
+	}
+
+	.Cabecera-Visor h2 {
+		font-size: 24px;
+	}
+
+	.Contenido-Visor {
+		padding: 6px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		transition-duration: 0.01ms !important;
 	}
 }

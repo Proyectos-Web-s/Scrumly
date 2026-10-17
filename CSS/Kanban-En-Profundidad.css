@@ -1,0 +1,597 @@
+/* Estilos de la página Kanban en profundidad. */
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	background: #fffaf2;
+	color: #181d2a;
+	font-family: "Public Sans", Arial, sans-serif;
+}
+
+html,
+body {
+	max-width: 100%;
+	overflow-x: clip;
+}
+
+/* Mantiene las secciones centradas y limita la longitud de lectura. */
+.Pagina-Kanban {
+	width: min(100% - 64px, 1180px);
+	margin: 0 auto;
+}
+
+/* Portada de Kanban con el degradado compartido por Scrumly. */
+.Encabezado-Kanban {
+	position: relative;
+	isolation: isolate;
+	padding: 52px max(32px, calc((100% - 1180px) / 2)) 40px;
+}
+
+.Encabezado-Kanban::before {
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+	left: calc((100% - 100vw) / 2);
+	width: 100vw;
+	background: linear-gradient(105deg, #efeae1 0%, #f2eaf4 100%);
+	content: "";
+}
+
+.Antetitulo-Kanban {
+	margin: 0 0 12px;
+	color: #80649c;
+	font-size: 14px;
+	font-weight: 800;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.Encabezado-Kanban h1,
+.Seccion-Kanban h2,
+.Cierre-Kanban h2 {
+	margin: 0;
+	color: #090909;
+	font-family: "Bebas Neue", sans-serif;
+	font-weight: 400;
+	line-height: 0.98;
+}
+
+.Encabezado-Kanban h1 {
+	max-width: 760px;
+	font-size: clamp(3.5rem, 6vw, 5rem);
+}
+
+.Encabezado-Kanban h1 span {
+	color: #80649c;
+}
+
+.Encabezado-Kanban > p:last-child {
+	max-width: 1120px;
+	margin: 18px 0 0;
+	color: #38373b;
+	font-size: 20px;
+	line-height: 1.5;
+}
+
+/* Espaciado común para las secciones principales. */
+.Seccion-Kanban {
+	padding: 42px 0 28px;
+	scroll-margin-top: 24px;
+}
+
+.Seccion-Kanban h2,
+.Cierre-Kanban h2 {
+	font-size: clamp(2.4rem, 4vw, 3.25rem);
+}
+
+.Seccion-Kanban > .Antetitulo-Kanban {
+	margin-bottom: 12px;
+}
+
+.Seccion-Ideas {
+	padding-top: 38px;
+}
+
+/* Tres principios básicos de gestión del flujo. */
+.Tarjetas-Ideas-Kanban {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 16px;
+	margin-top: 22px;
+}
+
+.Tarjeta-Idea-Kanban {
+	min-width: 0;
+	padding: 18px;
+	border: 1px solid #d9cbb9;
+	border-radius: 16px;
+	background: #fff;
+}
+
+.Tarjeta-Idea-Kanban h3,
+.Explicacion-WIP-Kanban h3 {
+	margin: 0 0 10px;
+	color: #111;
+	font-family: "Bebas Neue", sans-serif;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 1.1;
+}
+
+.Tarjeta-Idea-Kanban p,
+.Explicacion-WIP-Kanban p,
+.Descripcion-Tablero-Kanban,
+.Cierre-Kanban p {
+	margin: 0;
+	color: #4a4849;
+	font-size: 15px;
+	line-height: 1.5;
+}
+
+/* El diagrama es un botón para que se pueda ampliar con teclado o ratón. */
+.Figura-Kanban {
+	margin: 28px 0 0;
+}
+
+.Boton-Diagrama {
+	position: relative;
+	display: block;
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #d9cbb9;
+	border-radius: 12px;
+	background: #fff;
+	cursor: zoom-in;
+}
+
+.Boton-Diagrama:focus-visible {
+	outline: 3px solid #80649c;
+	outline-offset: 3px;
+}
+
+.Diagrama-Kanban {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.Fondo-Diagrama-Kanban {
+	fill: #fff;
+	stroke: #d9cbb9;
+	stroke-width: 1;
+}
+
+.Columna-Diagrama-Kanban rect {
+	fill: #e5def1;
+}
+
+.Columna-Diagrama-Kanban text {
+	fill: #171717;
+	font-family: "Public Sans", Arial, sans-serif;
+	font-size: 18px;
+	font-weight: 700;
+	text-anchor: middle;
+}
+
+.Tarea-Diagrama-Kanban rect {
+	fill: #fff;
+	stroke: #d9cbb9;
+}
+
+.Tarea-Diagrama-Kanban text {
+	fill: #171717;
+	font-family: "Public Sans", Arial, sans-serif;
+	font-size: 15px;
+	text-anchor: middle;
+}
+
+.Flecha-Diagrama-Kanban path {
+	fill: none;
+	stroke: #80649c;
+	stroke-width: 3;
+}
+
+.Limite-Diagrama-Kanban {
+	fill: #80649c;
+	font-family: "Public Sans", Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	text-anchor: middle;
+}
+
+.Icono-Ampliar-Kanban {
+	position: absolute;
+	right: 12px;
+	bottom: 12px;
+	display: grid;
+	width: 32px;
+	height: 32px;
+	place-items: center;
+	border-radius: 5px;
+	background: #f1edf6;
+	color: #171717;
+	font-size: 17px;
+}
+
+.Figura-Kanban figcaption {
+	margin: 8px 8px 0;
+	color: #625e61;
+	font-size: 13px;
+	line-height: 1.45;
+}
+
+/* Área del ejemplo interactivo con el contador del límite WIP. */
+.Seccion-Tablero {
+	padding-top: 40px;
+}
+
+.Descripcion-Tablero-Kanban {
+	max-width: 950px;
+	margin-top: 10px;
+}
+
+.Controles-Tablero-Kanban {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin: 18px 0 14px;
+}
+
+.Controles-Tablero-Kanban p {
+	margin: 0;
+	color: #171717;
+	font-size: 14px;
+}
+
+.Boton-Reiniciar-Kanban {
+	display: inline-flex;
+	flex: 0 0 auto;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+	min-height: 34px;
+	padding: 6px 11px;
+	border: 1px solid #cfc3b3;
+	border-radius: 8px;
+	background: #fff;
+	color: #29262a;
+	font: inherit;
+	font-size: 13px;
+	cursor: pointer;
+}
+
+.Boton-Reiniciar-Kanban:hover,
+.Boton-Reiniciar-Kanban:focus-visible {
+	border-color: #80649c;
+	color: #6d5488;
+}
+
+.Tablero-Kanban {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 28px;
+}
+
+.Columna-Kanban {
+	display: flex;
+	min-width: 0;
+	min-height: 350px;
+	flex-direction: column;
+	padding: 14px;
+	border: 1px solid #d9cbb9;
+	border-radius: 14px;
+	background: #fff;
+}
+
+.Cabecera-Columna-Kanban {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 8px;
+	margin-bottom: 16px;
+}
+
+.Cabecera-Columna-Kanban h3 {
+	margin: 0;
+	color: #111;
+	font-family: "Bebas Neue", sans-serif;
+	font-size: 23px;
+	font-weight: 400;
+	line-height: 1.05;
+}
+
+.Cabecera-Columna-Kanban p {
+	margin: 4px 0 0;
+	color: #625e61;
+	font-size: 11px;
+	line-height: 1.35;
+}
+
+.Contador-Columna-Kanban {
+	flex: 0 0 auto;
+	color: #80649c;
+	font-size: 14px;
+	font-weight: 800;
+}
+
+.Lista-Tareas-Kanban {
+	display: flex;
+	min-height: 0;
+	flex: 1;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.Tarjeta-Tarea-Kanban {
+	padding: 12px;
+	border: 1px solid #d9cbb9;
+	border-radius: 12px;
+	background: #f5eddf;
+}
+
+.Tarjeta-Tarea-Kanban h4 {
+	margin: 0;
+	color: #171717;
+	font-size: 13px;
+	line-height: 1.35;
+}
+
+.Tarjeta-Tarea-Kanban p {
+	margin: 4px 0 10px;
+	color: #5c5858;
+	font-size: 11px;
+	line-height: 1.4;
+}
+
+.Acciones-Tarea-Kanban {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.Boton-Mover-Tarea {
+	display: grid;
+	width: 28px;
+	height: 28px;
+	place-items: center;
+	border: 1px solid #d4c8b9;
+	border-radius: 7px;
+	background: #fff;
+	color: #80649c;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.Boton-Mover-Tarea[data-direccion="1"] {
+	border-color: #80649c;
+	background: #80649c;
+	color: #fff;
+}
+
+.Boton-Mover-Tarea:disabled {
+	opacity: 0.4;
+	cursor: not-allowed;
+}
+
+.Boton-Mover-Tarea:not(:disabled):hover,
+.Boton-Mover-Tarea:not(:disabled):focus-visible {
+	outline: 2px solid #80649c;
+	outline-offset: 2px;
+}
+
+.Sin-Tareas-Kanban {
+	display: grid;
+	min-height: 110px;
+	flex: 1;
+	place-items: center;
+	color: #6e696b;
+	font-size: 12px;
+}
+
+.Estado-Tablero-Kanban {
+	min-height: 20px;
+	margin: 9px 0 0;
+	color: #5c5858;
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+.Explicacion-WIP-Kanban {
+	max-width: 900px;
+	margin-top: 30px;
+}
+
+.Explicacion-WIP-Kanban h3 {
+	margin-bottom: 8px;
+}
+
+/* Cierre y navegación a la introducción general. */
+.Cierre-Kanban {
+	margin: 28px 0 56px;
+	padding: 28px 0 0;
+	border-top: 1px solid #d9cbb9;
+}
+
+.Cierre-Kanban h2 {
+	font-size: 30px;
+}
+
+.Cierre-Kanban p {
+	max-width: 850px;
+	margin-top: 10px;
+}
+
+.Enlace-Volver-Kanban {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 12px;
+	color: #80649c;
+	font-size: 14px;
+	font-weight: 800;
+	text-decoration: none;
+}
+
+.Enlace-Volver-Kanban:hover,
+.Enlace-Volver-Kanban:focus-visible {
+	text-decoration: underline;
+}
+
+/* Fondo oscuro y controles para la ampliación del diagrama. */
+.Visor-Diagrama {
+	width: min(92vw, 1000px);
+	max-width: none;
+	max-height: 90vh;
+	padding: 18px 22px 22px;
+	overflow: auto;
+	border: 0;
+	border-radius: 12px;
+	background: transparent;
+	color: #fff;
+}
+
+.Visor-Diagrama::backdrop {
+	background: rgba(27, 25, 27, 0.78);
+}
+
+.Cabecera-Visor {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin-bottom: 16px;
+}
+
+.Cabecera-Visor h2 {
+	margin: 0;
+	color: #fff;
+	font-family: "Bebas Neue", sans-serif;
+	font-size: 30px;
+}
+
+.Cerrar-Visor {
+	flex: 0 0 auto;
+	width: 40px;
+	height: 40px;
+	border: 0;
+	border-radius: 4px;
+	background: #fff;
+	color: #171717;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.Contenido-Visor {
+	padding: 16px;
+	border-radius: 10px;
+	background: #fff;
+}
+
+.Contenido-Visor svg {
+	display: block;
+	width: 100%;
+	max-height: 70vh;
+	margin: auto;
+}
+
+/* Adapta las ideas, columnas y tareas a pantallas pequeñas. */
+@media (max-width: 760px) {
+	.Pagina-Kanban {
+		width: calc(100% - 32px);
+	}
+
+	.Encabezado-Kanban {
+		padding: 38px 16px 30px;
+	}
+
+	.Encabezado-Kanban h1 {
+		font-size: clamp(3.25rem, 12vw, 4.5rem);
+	}
+
+	.Encabezado-Kanban > p:last-child {
+		font-size: 16px;
+	}
+
+	.Seccion-Kanban {
+		padding-top: 30px;
+		padding-bottom: 22px;
+	}
+
+	.Tarjetas-Ideas-Kanban {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 10px;
+		margin-top: 16px;
+	}
+
+	.Tarjeta-Idea-Kanban {
+		padding: 15px;
+	}
+
+	.Tarjeta-Idea-Kanban h3 {
+		font-size: 22px;
+	}
+
+	.Boton-Diagrama {
+		padding: 6px;
+	}
+
+	.Controles-Tablero-Kanban {
+		align-items: flex-start;
+	}
+
+	.Tablero-Kanban {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 12px;
+	}
+
+	.Columna-Kanban {
+		min-height: 250px;
+		padding: 13px;
+	}
+
+	.Sin-Tareas-Kanban {
+		min-height: 60px;
+	}
+
+	.Cierre-Kanban {
+		margin-bottom: 38px;
+	}
+
+	.Visor-Diagrama {
+		width: 96vw;
+		padding: 10px;
+	}
+
+	.Cabecera-Visor h2 {
+		font-size: 24px;
+	}
+
+	.Contenido-Visor {
+		padding: 6px;
+	}
+}
+
+@media (max-width: 420px) {
+	.Controles-Tablero-Kanban {
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.Boton-Reiniciar-Kanban {
+		align-self: flex-end;
+	}
+
+	.Visor-Diagrama {
+		width: 98vw;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}

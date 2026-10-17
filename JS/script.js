@@ -795,3 +795,175 @@ botonesDetalleNivel.forEach((boton) => {
         icono.classList.toggle("bi-chevron-down", !abierto);
     });
 });
+
+// Permite ampliar los diagramas ágiles en un visor modal y cerrarlo con Escape.
+const visorDiagrama = document.querySelector(".Visor-Diagrama");
+const tituloVisorDiagrama = document.getElementById("titulo-visor-diagrama");
+const contenidoVisorDiagrama = document.querySelector(".Contenido-Visor");
+const botonCerrarVisor = document.querySelector(".Cerrar-Visor");
+
+if (visorDiagrama && tituloVisorDiagrama && contenidoVisorDiagrama && botonCerrarVisor) {
+    document.querySelectorAll(".Boton-Diagrama").forEach((boton) => {
+        boton.addEventListener("click", () => {
+            const diagrama = boton.querySelector("svg");
+            if (!diagrama) return;
+
+            const ampliado = diagrama.cloneNode(true);
+            const elementosConId = [
+                ...(ampliado.id ? [ampliado] : []),
+                ...ampliado.querySelectorAll("[id]")
+            ];
+            const ids = new Map();
+
+            elementosConId.forEach((elemento) => {
+                const anterior = elemento.id;
+                const nuevo = `visor-${anterior}`;
+                ids.set(anterior, nuevo);
+                elemento.id = nuevo;
+            });
+
+            [ampliado, ...ampliado.querySelectorAll("*")].forEach((elemento) => {
+                [...elemento.attributes].forEach((atributo) => {
+                    atributo.value = atributo.value
+                        .replace(/url\(#([^)]+)\)/g, (referencia, id) => `url(#${ids.get(id) || id})`)
+                        .split(/\s+/)
+                        .map((referencia) => ids.get(referencia) || referencia)
+                        .join(" ");
+                });
+            });
+
+            tituloVisorDiagrama.textContent = boton.dataset.tituloDiagrama || "Diagrama ampliado";
+            contenidoVisorDiagrama.replaceChildren(ampliado);
+            visorDiagrama.showModal();
+        });
+    });
+
+    botonCerrarVisor.addEventListener("click", () => visorDiagrama.close());
+    visorDiagrama.addEventListener("click", (evento) => {
+        if (evento.target === visorDiagrama) visorDiagrama.close();
+    });
+}
+
+// Tablero Kanban didáctico: mueve tareas entre columnas y aplica un límite WIP.
+const tableroKanban = document.getElementById("tablero-kanban");
+const botonReiniciarKanban = document.getElementById("reiniciar-kanban");
+
+if (tableroKanban && botonReiniciarKanban) {
+    const limiteWipKanban = 2;
+    const estadoTableroKanban = document.getElementById("estado-tablero-kanban");
+    const tareasKanban = [
+        {
+            id: "perfil",
+            titulo: "Diseñar el perfil",
+            descripcion: "Mostrar los datos de la persona.",
+            columnaInicial: 0,
+            columna: 0
+        },
+        {
+            id: "sesion",
+            titulo: "Crear el inicio de sesión",
+            descripcion: "Permitir el acceso de una persona registrada.",
+            columnaInicial: 1,
+            columna: 1
+        },
+        {
+            id: "buscador",
+            titulo: "Agregar un buscador",
+            descripcion: "Encontrar contenidos por su nombre.",
+            columnaInicial: 1,
+            columna: 1
+        }
+    ];
+    const nombresColumnasKanban = ["Por Hacer", "En Proceso", "Hecho"];
+    const listasKanban = [...tableroKanban.querySelectorAll("[data-lista-kanban]")];
+    const contadoresKanban = [...tableroKanban.querySelectorAll("[data-contador-kanban]")];
+
+    // Actualiza las tarjetas, los contadores y las flechas disponibles del tablero.
+    function renderizarTableroKanban(mensaje = "") {
+        const tareasEnProceso = tareasKanban.filter((tarea) => tarea.columna === 1).length;
+
+        listasKanban.forEach((lista, indiceColumna) => {
+            const tareasColumna = tareasKanban.filter((tarea) => tarea.columna === indiceColumna);
+            lista.replaceChildren();
+
+            if (!tareasColumna.length) {
+                const vacio = document.createElement("p");
+                vacio.className = "Sin-Tareas-Kanban";
+                vacio.textContent = "Sin tareas";
+                lista.append(vacio);
+                return;
+            }
+
+            tareasColumna.forEach((tarea) => {
+                const tarjeta = document.createElement("article");
+                tarjeta.className = "Tarjeta-Tarea-Kanban";
+                tarjeta.dataset.tareaKanban = tarea.id;
+
+                const titulo = document.createElement("h4");
+                titulo.textContent = tarea.titulo;
+
+                const descripcion = document.createElement("p");
+                descripcion.textContent = tarea.descripcion;
+
+                const acciones = document.createElement("div");
+                acciones.className = "Acciones-Tarea-Kanban";
+
+                [-1, 1].forEach((direccion) => {
+                    const destino = tarea.columna + direccion;
+                    const boton = document.createElement("button");
+                    const puedeMover = destino >= 0
+                        && destino < listasKanban.length
+                        && !(destino === 1 && tareasEnProceso >= limiteWipKanban);
+                    const simbolo = direccion < 0 ? "bi-arrow-left" : "bi-arrow-right";
+
+                    boton.type = "button";
+                    boton.className = "Boton-Mover-Tarea";
+                    boton.dataset.direccion = String(direccion);
+                    boton.disabled = !puedeMover;
+                    boton.setAttribute(
+                        "aria-label",
+                        destino < 0 || destino >= listasKanban.length
+                            ? `${tarea.titulo} ya está en ${nombresColumnasKanban[tarea.columna]}`
+                            : `Mover ${tarea.titulo} a ${nombresColumnasKanban[destino]}`
+                    );
+                    boton.innerHTML = `<i class="bi ${simbolo}" aria-hidden="true"></i>`;
+                    boton.addEventListener("click", () => {
+                        if (!puedeMover) return;
+
+                        tarea.columna = destino;
+                        const aviso = destino === 1 && tareasEnProceso + 1 === limiteWipKanban
+                            ? `Límite WIP alcanzado: hay ${limiteWipKanban} tareas En Proceso. Terminá o devolvé una antes de iniciar otra.`
+                            : `${tarea.titulo} pasó a ${nombresColumnasKanban[destino]}.`;
+                        renderizarTableroKanban(aviso);
+                    });
+                    acciones.append(boton);
+                });
+
+                tarjeta.append(titulo, descripcion, acciones);
+                lista.append(tarjeta);
+            });
+        });
+
+        contadoresKanban.forEach((contador, indiceColumna) => {
+            const cantidad = tareasKanban.filter((tarea) => tarea.columna === indiceColumna).length;
+            contador.textContent = indiceColumna === 1
+                ? `${cantidad}/${limiteWipKanban}`
+                : String(cantidad);
+        });
+
+        if (estadoTableroKanban) {
+            estadoTableroKanban.textContent = mensaje || (tareasEnProceso >= limiteWipKanban
+                ? `Límite WIP alcanzado: hay ${limiteWipKanban} tareas En Proceso. Terminá o devolvé una antes de iniciar otra.`
+                : `Hay ${tareasEnProceso} de ${limiteWipKanban} tareas En Proceso.`);
+        }
+    }
+
+    botonReiniciarKanban.addEventListener("click", () => {
+        tareasKanban.forEach((tarea) => {
+            tarea.columna = tarea.columnaInicial;
+        });
+        renderizarTableroKanban("Tablero reiniciado.");
+    });
+
+    renderizarTableroKanban();
+}
