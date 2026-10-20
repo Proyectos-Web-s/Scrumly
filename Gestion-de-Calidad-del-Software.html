@@ -10,6 +10,7 @@
         <title>Gestion de Calidad de Software</title>
         <link rel='stylesheet' href='CSS/Gestion-de-Calidad.css'>
         <link rel="stylesheet" href="CSS/menu.css">
+        <link rel="stylesheet" href="CSS/footer.css">
     </head>
     <body>
 
@@ -20,7 +21,8 @@
                 <i class="Hambu bi-list" id="boton-menu"></i>
 
             <!-- Menu hamburgesa -->
-                <nav class="Menu" id="menu">
+                <div id="menu-container">
+                    <nav class="Menu" id="menu">
                     <div class="Menu-Titulo">
                         <span>MENÚ</span>
                     </div>
@@ -92,12 +94,14 @@
                             <a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
                             <a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
                             <a href="Recursos-y-Aprendizajes.html#ejercicios-practicos">Ejercicios y Casos Prácticos</a>
+                            <a href="Recursos-y-Aprendizajes.html#encuesta-metodología">Encuesta sobre Metodologías</a>
                         </div>
                     </div>
 
                     <a href="Sobre-Nosotros.html"><i class="bi bi-people"></i><span>Sobre Nosotros</span></a>
                     <a href="Contacto.html"><i class="bi bi-envelope"></i><span>Contacto</span></a>
-                </nav>
+                    </nav>
+                </div>
             </div>
 
 
@@ -1049,12 +1053,11 @@
 
 
 
-            <!-- Seccion Pie -->
-            <div class="Seccion-footer">
-                <footer>
-                    <p class="Parrafo-Pie"> Scrumly . Sistema de gestión de calidad del software</p>               
-                </footer>
-            </div>
+         <!-- Sección pie -->
+		<div id="footer-container"></div>
+
+		<script src="JS/footer.js"></script>
+        
             <script src="JS/script.js"></script>
     </body>
 </html>

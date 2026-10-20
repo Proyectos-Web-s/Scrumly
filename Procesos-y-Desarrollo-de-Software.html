@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="CSS/Procesos-y-Desarrollo-de-Software.css" />
     <link rel="stylesheet" href="CSS/menu.css" />
+    <link rel="stylesheet" href="CSS/footer.css">
   </head>
   <body>
 
@@ -19,7 +20,8 @@
                 <p class="Titulo-Barra">SCRUMLY</p>
                 <i class="Hambu bi-list" id="boton-menu"></i>
             <!-- Menu hamburgesa -->
-                <nav class="Menu" id="menu">
+                <div id="menu-container">
+                    <nav class="Menu" id="menu">
                     <div class="Menu-Titulo">
                         <span>MENÚ</span>
                     </div>
@@ -91,14 +93,15 @@
                             <a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
                             <a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
                             <a href="Recursos-y-Aprendizajes.html#ejercicios-practicos">Ejercicios y Casos Prácticos</a>
+              							<a href="Recursos-y-Aprendizajes.html#encuesta-metodología">Encuesta sobre Metodologías</a>
                         </div>
                     </div>
 
                     <a href="Sobre-Nosotros.html"><i class="bi bi-people"></i><span>Sobre Nosotros</span></a>
                     <a href="Contacto.html"><i class="bi bi-envelope"></i><span>Contacto</span></a>
-                </nav>
+                    </nav>
+                </div>
             </div>
-
 
 
 
@@ -720,76 +723,91 @@
       </section>
 
     </div>
+
       <section id="comparacion-modelos" class="Seccion-Comparacion">
         <div class="Cabecera-Comparacion">
-          <span class="Etiqueta-Comparacion">COMPARACIÓN</span>
-          <h2>Tres formas de organizar el desarrollo</h2>
+          <span class="Etiqueta-Comparacion">MODELOS DE PROCESO . ILUSTRACIONES</span>
+          <h2>Los modelos, paso a paso</h2>
+          <P>Tres esquemas basados en los modelos de proceso generales presentados por Sommerville</P>
         </div>
+        <!-- Visor para ampliar los diagramas -->
+        <dialog class="Visor-Diagrama" aria-labelledby="titulo-visor-diagrama">
+            <div class="Cabecera-Visor">
+                <h2 id="titulo-visor-diagrama">Diagrama ampliado</h2>
 
-        <table class="Tabla-Comparacion">
-          <thead>
-            <tr>
-              <th>Característica</th>
-              <th>Cascada</th>
-              <th>Modelo en V</th>
-              <th>Iterativo / Incremental</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Organización</td>
-              <td>Secuencial</td>
-              <td>Secuencial + pruebas relacionadas</td>
-              <td>Por ciclos e incrementos</td>
-            </tr>
-            <tr>
-              <td>Cambios</td>
-              <td>Difíciles</td>
-              <td>Difíciles</td>
-              <td>Más fáciles</td>
-            </tr>
-            <tr>
-              <td>Entrega</td>
-              <td>Principalmente al final</td>
-              <td>Principalmente al final</td>
-              <td>Por versiones</td>
-            </tr>
-            <tr>
-              <td>Pruebas</td>
-              <td>Después de implementar</td>
-              <td>Planificadas desde etapas tempranas</td>
-              <td>En cada incremento</td>
-            </tr>
-            <tr>
-              <td>Participación del usuario</td>
-              <td>Principalmente al inicio</td>
-              <td>Principalmente al inicio</td>
-              <td>Continua</td>
-            </tr>
-            <tr>
-              <td>Requisitos</td>
-              <td>Estables</td>
-              <td>Estables</td>
-              <td>Pueden continuar</td>
-            </tr>
-            <tr>
-              <td>Enfoque</td>
-              <td>Planificado</td>
-              <td>Verificación y validación</td>
-              <td>Evolución progresiva</td>
-            </tr>
-          </tbody>
-        </table>
+                <button class="Cerrar-Visor" type="button"
+                        aria-label="Cerrar diagrama ampliado">
+                    <i class="bi bi-x-lg" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="Contenido-Visor"></div>
+        </dialog>
+        <div class="Contenedor-Diagramas">
+            <!-- DIAGRAMA 1 -->
+            <figure class="Figura-Agil">
+                <button
+                    class="Boton-Diagrama"
+                    type="button"
+                    data-titulo-diagrama="Modelo en Cascada"
+                    aria-label="Ampliar modelo en Cascada">
+
+                    <img class="IMG-Modelos" src="IMG/Modelo-Cascada-Diagrama.jpeg"
+                        alt="Diagrama del modelo en Cascada">
+
+                    <span class="Icono-Ampliar bi bi-zoom-in"
+                          aria-hidden="true"></span>
+                </button>
+
+                <figcaption>
+                    Figura 1. Modelo en Cascada. Las actividades se organizan
+                    en fases separadas y principalmente secuenciales.
+                </figcaption>
+            </figure>
+
+            <!-- DIAGRAMA 2 -->
+            <figure class="Figura-Agil">
+                <button
+                    class="Boton-Diagrama"
+                    type="button"
+                    data-titulo-diagrama="Modelo en V"
+                    aria-label="Ampliar modelo en V">
+
+                    <img class="IMG-Modelos" src="IMG/Modelo-V-Diagrama.jpeg"
+                        alt="Diagrama del modelo en V">
+
+                    <span class="Icono-Ampliar bi bi-zoom-in"
+                          aria-hidden="true"></span>
+                </button>
+
+                <figcaption>
+                    Figura 2. Modelo en V. Las etapas de desarrollo se relacionan
+                    con sus correspondientes fases de prueba.
+                </figcaption>
+            </figure>
+
+            <!-- DIAGRAMA 3 -->
+            <figure class="Figura-Agil">
+                <button
+                    class="Boton-Diagrama"
+                    type="button"
+                    data-titulo-diagrama="Modelo Iterativo e Incremental"
+                    aria-label="Ampliar modelo Iterativo e Incremental">
+
+                    <img class="IMG-Modelos iterativo" src="IMG/Modelo-Iterativo-Diagrama.jpeg"
+                        alt="Diagrama del modelo Iterativo e Incremental">
+                    <span class="Icono-Ampliar bi bi-zoom-in"
+                          aria-hidden="true"></span>
+                </button>
+
+                <figcaption>
+                    Figura 3. Modelo Iterativo e Incremental. Cada ciclo permite
+                    mejorar el producto y agregar funcionalidades.
+                </figcaption>
+            </figure>
+
+        </div>
       </section>
-
-      <div class="Info-Importante">
-        <span class="Icono-Informacion">i</span>
-        <p>
-          Los modelos no son mutuamente excluyentes. En proyectos grandes pueden combinarse: algunas partes
-          pueden desarrollarse mediante cascada y otras mediante un enfoque incremental, según las
-          características de cada parte del sistema.
-        </p>
-      </div>
 
 
 
@@ -801,11 +819,10 @@
 
 
       
-      <div class="Seccion-footer">
-        <footer>
-          <p class="Parrafo-Pie">Scrumly . Sistema de gestión de calidad del software</p>
-        </footer>
-      </div>
+        <!-- Sección pie -->
+		<div id="footer-container"></div>
+
+		<script src="JS/footer.js"></script>
 
     <script src="JS/script.js"></script>
   </body>

@@ -1,16 +1,95 @@
 // Este archivo reúne las interacciones compartidas por las páginas de Scrumly.
 // Cada bloque busca sus elementos en el HTML y solo se activa en las páginas que los contienen.
 
-// Abre o cierra el menú principal al pulsar su botón.
+function inicializarMenu() {
+    const botonMenu = document.getElementById("boton-menu");
+    const menu = document.getElementById("menu");
 
-const botonMenu = document.getElementById("boton-menu");
-const menu = document.getElementById("menu");
+    if (botonMenu && menu) {
+        botonMenu.onclick = () => {
+            menu.classList.toggle("activo");
+        };
+    }
+}
 
-if (botonMenu && menu) {
-    botonMenu.addEventListener("click", () => {
-        menu.classList.toggle("activo");
+function bindSubmenuEvents() {
+    document.querySelectorAll(".Titulo-Menu").forEach((titulo) => {
+        titulo.onclick = () => desplegar(titulo);
     });
 }
+
+async function cargarMenu() {
+    const menuExistente = document.getElementById("menu");
+    if (!menuExistente) return;
+
+    const fallbackMenu = `
+        <div class="Menu-Titulo"><span>MENÚ</span></div>
+        <a href="index.html"><i class="bi bi-house"></i><span>Inicio</span></a>
+        <div class="Item-Menu">
+            <div class="Titulo-Menu"><i class="bi bi-patch-check"></i><span>Gestión de la Calidad<br>del Software</span><i class="bi bi-chevron-down"></i></div>
+            <div class="Submenu">
+                <a href="Gestion-de-Calidad-del-Software.html#fundamentos-calidad">Fundamentos</a>
+                <a href="Gestion-de-Calidad-del-Software.html#calidad-agil">Técnicas de Aseguramiento de la Calidad</a>
+                <a href="Gestion-de-Calidad-del-Software.html#herramientas-calidad">Herramientas de Calidad</a>
+            </div>
+        </div>
+        <div class="Item-Menu">
+            <div class="Titulo-Menu"><i class="bi bi-bezier2"></i><span>Procesos de Desarrollo<br>de Software</span><i class="bi bi-chevron-down"></i></div>
+            <div class="Submenu">
+                <a href="Procesos-y-Desarrollo-de-Software.html#inicio-procesos">Ciclo de Vida del Desarrollo (SDLC)</a>
+                <a href="Procesos-y-Desarrollo-de-Software.html#modelo-cascada">Modelo en Cascada</a>
+                <a href="Procesos-y-Desarrollo-de-Software.html#modelo-v">Modelo en V</a>
+                <a href="Procesos-y-Desarrollo-de-Software.html#modelo-iterativo">Modelo Iterativo e Incremental</a>
+            </div>
+        </div>
+        <div class="Item-Menu">
+            <div class="Titulo-Menu"><i class="bi bi-lightning-charge"></i><span>Metodologías Ágiles</span><i class="bi bi-chevron-down"></i></div>
+            <div class="Submenu">
+                <a href="Metodologias-Agiles.html#scrum">Scrum</a>
+                <a href="Metodologias-Agiles.html#kanban">Kanban</a>
+                <a href="Metodologias-Agiles.html#xp">XP (Extreme Programming)</a>
+                <a href="Metodologias-Agiles.html#comparativa">Comparador de metodologías</a>
+            </div>
+        </div>
+        <div class="Item-Menu">
+            <div class="Titulo-Menu"><i class="bi bi-book"></i><span>Recursos y Aprendizajes</span><i class="bi bi-chevron-down"></i></div>
+            <div class="Submenu">
+                <a href="Recursos-y-Aprendizajes.html#glosario">Glosario</a>
+                <a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
+                <a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
+                <a href="Recursos-y-Aprendizajes.html#ejercicios-practicos">Ejercicios y Casos Prácticos</a>
+                <a href="Recursos-y-Aprendizajes.html#encuesta-metodología">Encuesta sobre Metodologías</a>
+            </div>
+        </div>
+        <a href="Sobre-Nosotros.html"><i class="bi bi-people"></i><span>Sobre Nosotros</span></a>
+        <a href="Contacto.html"><i class="bi bi-envelope"></i><span>Contacto</span></a>
+    `;
+
+    try {
+        const respuesta = await fetch("menu.html");
+        if (!respuesta.ok) throw new Error("No se pudo cargar el menú.");
+
+        const html = await respuesta.text();
+        const template = document.createElement("template");
+        template.innerHTML = html.trim();
+        const nuevoMenu = template.content.querySelector("nav");
+
+        if (!nuevoMenu) throw new Error("No se encontró el nav del menú.");
+
+        menuExistente.replaceWith(nuevoMenu);
+        inicializarMenu();
+        bindSubmenuEvents();
+    } catch (error) {
+        console.warn("Error al cargar menú desde menu.html; usando fallback inline.", error);
+        menuExistente.innerHTML = fallbackMenu;
+        inicializarMenu();
+        bindSubmenuEvents();
+    }
+}
+
+inicializarMenu();
+bindSubmenuEvents();
+cargarMenu();
 
 // Abre el submenú del título pulsado y cierra los demás submenús abiertos.
 function desplegar(elemento) {
@@ -42,10 +121,6 @@ function desplegar(elemento) {
         flecha.classList.toggle("girada");
     }
 }
-
-document.querySelectorAll(".Titulo-Menu").forEach((titulo) => {
-    titulo.addEventListener("click", () => desplegar(titulo));
-});
 
 // Recorrido interactivo del SDLC: cada objeto contiene el contenido de una etapa
 // y la clase de Bootstrap Icons que se muestra en su botón y en la tarjeta.
@@ -796,7 +871,7 @@ botonesDetalleNivel.forEach((boton) => {
     });
 });
 
-// Permite ampliar los diagramas ágiles en un visor modal y cerrarlo con Escape.
+// Permite ampliar diagramas SVG e imágenes en un visor modal.
 const visorDiagrama = document.querySelector(".Visor-Diagrama");
 const tituloVisorDiagrama = document.getElementById("titulo-visor-diagrama");
 const contenidoVisorDiagrama = document.querySelector(".Contenido-Visor");
@@ -805,42 +880,64 @@ const botonCerrarVisor = document.querySelector(".Cerrar-Visor");
 if (visorDiagrama && tituloVisorDiagrama && contenidoVisorDiagrama && botonCerrarVisor) {
     document.querySelectorAll(".Boton-Diagrama").forEach((boton) => {
         boton.addEventListener("click", () => {
-            const diagrama = boton.querySelector("svg");
+            // Busca tanto imágenes como diagramas SVG.
+            const diagrama = boton.querySelector("img, svg");
             if (!diagrama) return;
 
             const ampliado = diagrama.cloneNode(true);
-            const elementosConId = [
-                ...(ampliado.id ? [ampliado] : []),
-                ...ampliado.querySelectorAll("[id]")
-            ];
-            const ids = new Map();
 
-            elementosConId.forEach((elemento) => {
-                const anterior = elemento.id;
-                const nuevo = `visor-${anterior}`;
-                ids.set(anterior, nuevo);
-                elemento.id = nuevo;
-            });
+            // Ajusta el tamaño según el tipo de diagrama.
+            ampliado.style.display = "block";
+            ampliado.style.width = "100%";
+            ampliado.style.maxWidth = "100%";
+            ampliado.style.maxHeight = "75vh";
+            ampliado.style.height = "auto";
+            ampliado.style.objectFit = "contain";
 
-            [ampliado, ...ampliado.querySelectorAll("*")].forEach((elemento) => {
-                [...elemento.attributes].forEach((atributo) => {
-                    atributo.value = atributo.value
-                        .replace(/url\(#([^)]+)\)/g, (referencia, id) => `url(#${ids.get(id) || id})`)
-                        .split(/\s+/)
-                        .map((referencia) => ids.get(referencia) || referencia)
-                        .join(" ");
+            // Evita conflictos entre los ID de los SVG originales y duplicados.
+            if (ampliado.tagName.toLowerCase() === "svg") {
+                const elementosConId = [
+                    ...(ampliado.id ? [ampliado] : []),
+                    ...ampliado.querySelectorAll("[id]")
+                ];
+                const ids = new Map();
+
+                elementosConId.forEach((elemento) => {
+                    const anterior = elemento.id;
+                    const nuevo = `visor-${anterior}`;
+                    ids.set(anterior, nuevo);
+                    elemento.id = nuevo;
                 });
-            });
 
-            tituloVisorDiagrama.textContent = boton.dataset.tituloDiagrama || "Diagrama ampliado";
+                [ampliado, ...ampliado.querySelectorAll("*")].forEach((elemento) => {
+                    [...elemento.attributes].forEach((atributo) => {
+                        atributo.value = atributo.value
+                            .replace(/url\(#([^)]+)\)/g, (referencia, id) =>
+                                `url(#${ids.get(id) || id})`
+                            )
+                            .split(/\s+/)
+                            .map((referencia) => ids.get(referencia) || referencia)
+                            .join(" ");
+                    });
+                });
+            }
+
+            tituloVisorDiagrama.textContent =
+                boton.dataset.tituloDiagrama || "Diagrama ampliado";
+
             contenidoVisorDiagrama.replaceChildren(ampliado);
             visorDiagrama.showModal();
         });
     });
 
-    botonCerrarVisor.addEventListener("click", () => visorDiagrama.close());
+    botonCerrarVisor.addEventListener("click", () => {
+        visorDiagrama.close();
+    });
+
     visorDiagrama.addEventListener("click", (evento) => {
-        if (evento.target === visorDiagrama) visorDiagrama.close();
+        if (evento.target === visorDiagrama) {
+            visorDiagrama.close();
+        }
     });
 }
 
@@ -966,4 +1063,438 @@ if (tableroKanban && botonReiniciarKanban) {
     });
 
     renderizarTableroKanban();
+}
+
+/* Comparador interactivo de modelos y metodologías de desarrollo. */
+const opcionesComparador = document.querySelector("#opciones-comparador");
+const contadorComparador = document.querySelector("#contador-comparador");
+const limpiarComparador = document.querySelector("#limpiar-comparador");
+const resultadoComparador = document.querySelector("#resultado-comparador");
+
+if (
+    opcionesComparador &&
+    contadorComparador &&
+    limpiarComparador &&
+    resultadoComparador
+) {
+    const datosComparador = {
+        cascada: {
+            nombre: "Cascada",
+            enfoque: "Secuencial",
+            organizacion: "Etapas consecutivas",
+            planificacion: "Principalmente anticipada",
+            cambios: "Más difíciles de incorporar en etapas avanzadas",
+            roles: "Dependen del proceso y del equipo",
+            pruebas: "Generalmente después de la implementación",
+            entregas: "Habitualmente al finalizar el desarrollo",
+            ventaja: "Claridad de etapas y documentación",
+            limitacion: "Menor flexibilidad ante cambios"
+        },
+        v: {
+            nombre: "Modelo en V",
+            enfoque: "Secuencial con verificación y validación",
+            organizacion: "Desarrollo y pruebas relacionados por niveles",
+            planificacion: "Definida desde etapas tempranas",
+            cambios: "Pueden requerir revisar etapas y pruebas relacionadas",
+            roles: "Responsabilidades de desarrollo y pruebas",
+            pruebas: "Planificadas en paralelo con las etapas de desarrollo",
+            entregas: "Generalmente al completar el proceso",
+            ventaja: "Relación clara entre requisitos y pruebas",
+            limitacion: "Adaptarse a cambios puede resultar costoso"
+        },
+        iterativo: {
+            nombre: "Iterativo e incremental",
+            enfoque: "Ciclos repetidos y entregas progresivas",
+            organizacion: "Iteraciones que refinan y amplían el producto",
+            planificacion: "Inicial y revisada en cada iteración",
+            cambios: "Se incorporan en ciclos posteriores",
+            roles: "Dependen del equipo y del proyecto",
+            pruebas: "En cada iteración",
+            entregas: "Incrementos sucesivos",
+            ventaja: "Permite aprender y ajustar progresivamente",
+            limitacion: "Requiere coordinar y revisar cada iteración"
+        },
+        scrum: {
+            nombre: "Scrum",
+            enfoque: "Trabajo iterativo e incremental",
+            organizacion: "Sprints con objetivos definidos",
+            planificacion: "Al inicio de cada Sprint y durante el trabajo",
+            cambios: "Se priorizan para futuros Sprints; se protege el objetivo del Sprint",
+            roles: "Product Owner, Scrum Master y Developers",
+            pruebas: "Durante el Sprint para obtener un incremento usable",
+            entregas: "Incrementos potencialmente utilizables",
+            ventaja: "Inspección frecuente y adaptación",
+            limitacion: "Necesita colaboración y disciplina del equipo"
+        },
+        kanban: {
+            nombre: "Kanban",
+            enfoque: "Flujo continuo",
+            organizacion: "Tablero visual y límites de trabajo en curso",
+            planificacion: "Continua según la capacidad y las prioridades",
+            cambios: "Se incorporan ajustando prioridades y flujo",
+            roles: "No exige roles específicos propios",
+            pruebas: "Integradas en el flujo de trabajo",
+            entregas: "Cuando los elementos están terminados",
+            ventaja: "Visibilidad del trabajo y detección de bloqueos",
+            limitacion: "Sin una gestión adecuada, pueden cambiar constantemente las prioridades"
+        },
+        xp: {
+            nombre: "XP",
+            enfoque: "Desarrollo iterativo con énfasis técnico",
+            organizacion: "Prácticas de programación y entregas pequeñas",
+            planificacion: "Frecuente y adaptada a la retroalimentación",
+            cambios: "Se aceptan y gestionan con ciclos cortos",
+            roles: "Colaboración estrecha entre desarrolladores y cliente",
+            pruebas: "Pruebas frecuentes y automatizadas",
+            entregas: "Pequeñas entregas frecuentes",
+            ventaja: "Calidad técnica y retroalimentación continua",
+            limitacion: "Exige compromiso con sus prácticas técnicas"
+        }
+    };
+
+    const caracteristicasComparador = [
+        ["enfoque", "Enfoque"],
+        ["organizacion", "Organización"],
+        ["planificacion", "Planificación"],
+        ["cambios", "Cambios"],
+        ["roles", "Roles y responsabilidades"],
+        ["pruebas", "Pruebas y calidad"],
+        ["entregas", "Entregas"],
+        ["ventaja", "Ventaja principal"],
+        ["limitacion", "Posible limitación"]
+    ];
+
+    function actualizarComparador() {
+        const seleccionadas = [
+            ...opcionesComparador.querySelectorAll('input[type="checkbox"]:checked')
+        ];
+
+        const cantidad = seleccionadas.length;
+        contadorComparador.textContent =
+            `${cantidad} ${cantidad === 1 ? "seleccionada" : "seleccionadas"}`;
+
+        opcionesComparador.querySelectorAll(".Tarjeta-Comparador").forEach((tarjeta) => {
+            const input = tarjeta.querySelector('input[type="checkbox"]');
+            tarjeta.classList.toggle("seleccionada", input.checked);
+        });
+
+        if (cantidad < 2) {
+            resultadoComparador.innerHTML = `
+                <div class="Estado-Vacio-Comparador">
+                    <i class="bi bi-check2" aria-hidden="true"></i>
+                    <p>Seleccioná al menos dos metodologías para ver la tabla comparativa.</p>
+                </div>
+            `;
+            return;
+        }
+
+        const metodologias = seleccionadas
+            .map((input) => datosComparador[input.value])
+            .filter(Boolean);
+
+        const tabla = document.createElement("div");
+        tabla.className = "Tabla-Comparador-Desplazable";
+
+        const tablaHTML = `
+            <table class="Tabla-Comparador">
+                <thead>
+                    <tr>
+                        <th scope="col">Característica</th>
+                        ${metodologias.map((metodologia) =>
+                            `<th scope="col">${metodologia.nombre}</th>`
+                        ).join("")}
+                    </tr>
+                </thead>
+                <tbody>
+                    ${caracteristicasComparador.map(([clave, nombre]) => `
+                        <tr>
+                            <th scope="row">${nombre}</th>
+                            ${metodologias.map((metodologia) =>
+                                `<td>${metodologia[clave]}</td>`
+                            ).join("")}
+                        </tr>
+                    `).join("")}
+                </tbody>
+            </table>
+        `;
+
+        tabla.innerHTML = tablaHTML;
+        resultadoComparador.replaceChildren(tabla);
+    }
+
+    opcionesComparador.addEventListener("change", actualizarComparador);
+
+    limpiarComparador.addEventListener("click", () => {
+        opcionesComparador
+            .querySelectorAll('input[type="checkbox"]')
+            .forEach((input) => {
+                input.checked = false;
+            });
+
+        actualizarComparador();
+    });
+
+    actualizarComparador();
+}
+
+/* Encuesta para sugerir una metodología según las respuestas del usuario. */
+const tarjetaEncuesta = document.querySelector("#tarjeta-encuesta");
+
+if (tarjetaEncuesta) {
+    const pantallaPreguntas = tarjetaEncuesta.querySelector("#pantalla-preguntas");
+    const pantallaResultado = tarjetaEncuesta.querySelector("#resultado-encuesta");
+    const numeroPregunta = tarjetaEncuesta.querySelector("#numero-pregunta");
+    const porcentajeProgreso = tarjetaEncuesta.querySelector("#porcentaje-progreso");
+    const barraProgreso = tarjetaEncuesta.querySelector("#barra-progreso");
+    const progresoEncuesta = tarjetaEncuesta.querySelector("#progreso-encuesta");
+    const tituloPregunta = tarjetaEncuesta.querySelector("#titulo-pregunta");
+    const opcionesPregunta = tarjetaEncuesta.querySelector("#opciones-pregunta");
+    const avisoEncuesta = tarjetaEncuesta.querySelector("#aviso-encuesta");
+    const botonAnterior = tarjetaEncuesta.querySelector("#anterior-pregunta");
+    const botonSiguiente = tarjetaEncuesta.querySelector("#siguiente-pregunta");
+    const botonReiniciar = tarjetaEncuesta.querySelector("#reiniciar-encuesta");
+
+    const preguntasEncuesta = [
+        {
+            pregunta: "¿Qué tan definidos están los requisitos del proyecto?",
+            opciones: [
+                {
+                    texto: "Están definidos y se espera que cambien poco.",
+                    puntos: { cascada: 3, kanban: 0, scrum: 0 }
+                },
+                {
+                    texto: "Pueden cambiar a medida que avanzamos.",
+                    puntos: { cascada: 0, kanban: 1, scrum: 3 }
+                },
+                {
+                    texto: "Cambian frecuentemente según las prioridades.",
+                    puntos: { cascada: 0, kanban: 3, scrum: 2 }
+                }
+            ]
+        },
+        {
+            pregunta: "¿Cómo prefieren planificar el trabajo?",
+            opciones: [
+                {
+                    texto: "Con un plan completo antes de empezar.",
+                    puntos: { cascada: 3, kanban: 0, scrum: 0 }
+                },
+                {
+                    texto: "En ciclos cortos con un objetivo para cada uno.",
+                    puntos: { cascada: 0, kanban: 1, scrum: 3 }
+                },
+                {
+                    texto: "De forma continua, tomando la siguiente tarea prioritaria.",
+                    puntos: { cascada: 0, kanban: 3, scrum: 1 }
+                }
+            ]
+        },
+        {
+            pregunta: "¿Cómo se espera entregar los resultados?",
+            opciones: [
+                {
+                    texto: "Una entrega final cuando todo esté terminado.",
+                    puntos: { cascada: 3, kanban: 0, scrum: 0 }
+                },
+                {
+                    texto: "Incrementos revisados periódicamente con los interesados.",
+                    puntos: { cascada: 0, kanban: 1, scrum: 3 }
+                },
+                {
+                    texto: "Cada tarea se entrega apenas se completa.",
+                    puntos: { cascada: 0, kanban: 3, scrum: 1 }
+                }
+            ]
+        },
+        {
+            pregunta: "¿Qué es lo más importante para el seguimiento del equipo?",
+            opciones: [
+                {
+                    texto: "Cumplir el orden de las etapas y la documentación.",
+                    puntos: { cascada: 3, kanban: 0, scrum: 0 }
+                },
+                {
+                    texto: "Revisar y mejorar al final de cada ciclo.",
+                    puntos: { cascada: 0, kanban: 1, scrum: 3 }
+                },
+                {
+                    texto: "Ver el estado de las tareas y evitar acumular trabajo en curso.",
+                    puntos: { cascada: 0, kanban: 3, scrum: 1 }
+                }
+            ]
+        }
+    ];
+
+    const nombresMetodologias = {
+        scrum: "Scrum",
+        kanban: "Kanban",
+        cascada: "Cascada"
+    };
+
+    const descripcionesMetodologias = {
+        scrum: "Tus respuestas priorizan ciclos de trabajo, objetivos por Sprint y revisiones periódicas, características propias de Scrum.",
+        kanban: "Tus respuestas priorizan el flujo continuo, la visualización de tareas y el ajuste de prioridades, características propias de Kanban.",
+        cascada: "Tus respuestas priorizan la planificación anticipada, las etapas definidas y una entrega organizada, características del modelo en Cascada."
+    };
+
+    let preguntaActual = 0;
+    let respuestasEncuesta = Array(preguntasEncuesta.length).fill(null);
+
+    function mostrarPregunta() {
+        const pregunta = preguntasEncuesta[preguntaActual];
+        const progreso = Math.round((preguntaActual / preguntasEncuesta.length) * 100);
+
+        numeroPregunta.textContent =
+            `PREGUNTA ${preguntaActual + 1} DE ${preguntasEncuesta.length}`;
+        porcentajeProgreso.textContent = `${progreso}%`;
+        progresoEncuesta.style.width = `${progreso}%`;
+        barraProgreso.setAttribute("aria-valuenow", String(progreso));
+
+        tituloPregunta.textContent = pregunta.pregunta;
+        opcionesPregunta.replaceChildren();
+        avisoEncuesta.textContent = "";
+
+        pregunta.opciones.forEach((opcion, indice) => {
+            const etiqueta = document.createElement("label");
+            etiqueta.className = "Opcion-Encuesta";
+
+            const radio = document.createElement("input");
+            radio.type = "radio";
+            radio.name = `respuesta-pregunta-${preguntaActual}`;
+            radio.value = String(indice);
+            radio.checked = respuestasEncuesta[preguntaActual] === indice;
+
+            const texto = document.createElement("span");
+            texto.textContent = opcion.texto;
+
+            radio.addEventListener("change", () => {
+                respuestasEncuesta[preguntaActual] = indice;
+                avisoEncuesta.textContent = "";
+            });
+
+            etiqueta.append(radio, texto);
+            opcionesPregunta.appendChild(etiqueta);
+        });
+
+        botonAnterior.disabled = preguntaActual === 0;
+        botonSiguiente.textContent =
+            preguntaActual === preguntasEncuesta.length - 1
+                ? "Ver resultado"
+                : "Siguiente";
+    }
+
+    function calcularResultado() {
+        const puntajes = { scrum: 0, kanban: 0, cascada: 0 };
+
+        respuestasEncuesta.forEach((respuesta, indicePregunta) => {
+            if (respuesta === null) return;
+
+            const opcion = preguntasEncuesta[indicePregunta].opciones[respuesta];
+
+            Object.entries(opcion.puntos).forEach(([metodologia, puntos]) => {
+                puntajes[metodologia] += puntos;
+            });
+        });
+
+        const total = Object.values(puntajes).reduce((suma, puntos) => suma + puntos, 0);
+
+        const ordenadas = Object.entries(puntajes)
+            .map(([clave, puntos]) => ({
+                clave,
+                puntos,
+                porcentaje: total > 0 ? Math.round((puntos / total) * 100) : 0
+            }))
+            .sort((a, b) => b.puntos - a.puntos);
+
+        // Ajusta los porcentajes para que sumen exactamente 100.
+        let porcentajeAcumulado = 0;
+        ordenadas.forEach((metodologia, indice) => {
+            if (indice === ordenadas.length - 1) {
+                metodologia.porcentaje = 100 - porcentajeAcumulado;
+            } else {
+                porcentajeAcumulado += metodologia.porcentaje;
+            }
+        });
+
+        return ordenadas;
+    }
+
+    function mostrarResultado() {
+        const ordenadas = calcularResultado();
+        const mejor = ordenadas[0];
+
+        pantallaPreguntas.hidden = true;
+        pantallaResultado.hidden = false;
+
+        pantallaResultado.querySelector(".Cabecera-Progreso span:last-child").textContent = "100%";
+        tarjetaEncuesta.querySelector(".Barra-Progreso-Final > div").style.width = "100%";
+
+        tarjetaEncuesta.querySelector("#titulo-resultado").textContent =
+            `${nombresMetodologias[mejor.clave]} · ${mejor.porcentaje}%`;
+
+        tarjetaEncuesta.querySelector("#descripcion-resultado").textContent =
+            descripcionesMetodologias[mejor.clave];
+
+        const lista = tarjetaEncuesta.querySelector("#lista-resultados");
+        lista.replaceChildren();
+
+        ordenadas.forEach((metodologia) => {
+            const fila = document.createElement("div");
+            fila.className = "Resultado-Metodologia";
+
+            const cabecera = document.createElement("div");
+            cabecera.className = "Resultado-Metodologia-Cabecera";
+
+            const nombre = document.createElement("span");
+            nombre.textContent = nombresMetodologias[metodologia.clave];
+
+            const porcentaje = document.createElement("span");
+            porcentaje.textContent = `${metodologia.porcentaje}%`;
+
+            cabecera.append(nombre, porcentaje);
+
+            const barra = document.createElement("div");
+            barra.className = "Barra-Puntaje";
+
+            const relleno = document.createElement("div");
+            relleno.style.width = `${metodologia.porcentaje}%`;
+            barra.appendChild(relleno);
+
+            fila.append(cabecera, barra);
+            lista.appendChild(fila);
+        });
+    }
+
+    botonAnterior.addEventListener("click", () => {
+        if (preguntaActual === 0) return;
+
+        preguntaActual--;
+        mostrarPregunta();
+    });
+
+    botonSiguiente.addEventListener("click", () => {
+        if (respuestasEncuesta[preguntaActual] === null) {
+            avisoEncuesta.textContent =
+                "Elegí una opción para continuar.";
+            return;
+        }
+
+        if (preguntaActual < preguntasEncuesta.length - 1) {
+            preguntaActual++;
+            mostrarPregunta();
+        } else {
+            mostrarResultado();
+        }
+    });
+
+    botonReiniciar.addEventListener("click", () => {
+        preguntaActual = 0;
+        respuestasEncuesta = Array(preguntasEncuesta.length).fill(null);
+
+        pantallaResultado.hidden = true;
+        pantallaPreguntas.hidden = false;
+        mostrarPregunta();
+    });
+
+    mostrarPregunta();
 }

@@ -1,3 +1,15 @@
+/* Variables globales de color */
+:root {
+    --color-fondo: #F8F0E3;
+    --color-fondo-tarjeta: #faf6f0;
+    --color-lila-claro: #D8C8F2;
+    --color-violeta: #8B5CF6;
+    --color-violeta-oscuro: #80649c;
+    --color-texto: #0B0D1A;
+    --color-borde: #e4dccf;
+}
+
+/* Estilos generales y componentes de la página */
 /* 
    GESTIÓN DE LA CALIDAD DEL SOFTWARE
   */
@@ -869,28 +881,7 @@ body {
     font-size: 20px;
 }
 
-@media (max-width: 900px) {
-    .Contenedor-Niveles {
-        flex-direction: column;
-        gap: 14px;
-    }
 
-    .Tarjeta-Nivel {
-        width: 100%;
-    }
-
-    .Flecha-Nivel {
-        align-self: center;
-        margin: 0;
-        transform: rotate(90deg);
-    }
-}
-
-@media (max-width: 600px) {
-    .Seccion-Niveles .Contenedor-Concepto {
-        padding: 0 16px 28px;
-    }
-}
 
 
 
@@ -947,14 +938,7 @@ body {
     font-weight: 700;
 }
 
-@media (max-width: 600px) {
-    .Contenedor-Otras-Tecnicas {
-        grid-template-columns: 1fr;
-        gap: 22px;
-        margin: 12px 16px 0;
-        padding: 18px 0 0;
-    }
-}
+
 
 
 
@@ -1196,39 +1180,7 @@ body {
     line-height: 1.45;
 }
 
-@media (max-width: 600px) {
-    .Seccion-Herramientas .Contenedor-Conceptos {
-        padding: 0 16px 28px;
-    }
 
-    .Texto-Introduccion-Herramientas {
-        margin-right: 16px;
-        margin-left: 16px;
-        font-size: 14px;
-    }
-
-    .Pestanas-Herramientas {
-        gap: 8px;
-    }
-
-    .Boton-Herramienta {
-        padding: 9px 11px;
-        font-size: 12px;
-    }
-
-    .Tarjeta-Herramienta.abierta {
-        width: 100%;
-    }
-
-    .Detalle-Herramienta {
-        padding: 20px 16px 24px;
-        font-size: 14px;
-    }
-
-    .Seccion-Herramientas-Conjunto .Contenedor-Otras-Tecnicas {
-        grid-template-columns: 1fr;
-    }
-}
 
 
 
@@ -1363,6 +1315,74 @@ body {
 
 .Cuadro-Estandar {
     max-width: calc(100% - 60px);
+}
+
+
+/* Media queries: ajustes para tablets y teléfonos */
+@media (max-width: 900px) {
+    .Contenedor-Niveles {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .Tarjeta-Nivel {
+        width: 100%;
+    }
+
+    .Flecha-Nivel {
+        align-self: center;
+        margin: 0;
+        transform: rotate(90deg);
+    }
+}
+
+@media (max-width: 600px) {
+    .Seccion-Niveles .Contenedor-Concepto {
+        padding: 0 16px 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .Contenedor-Otras-Tecnicas {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        margin: 12px 16px 0;
+        padding: 18px 0 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .Seccion-Herramientas .Contenedor-Conceptos {
+        padding: 0 16px 28px;
+    }
+
+    .Texto-Introduccion-Herramientas {
+        margin-right: 16px;
+        margin-left: 16px;
+        font-size: 14px;
+    }
+
+    .Pestanas-Herramientas {
+        gap: 8px;
+    }
+
+    .Boton-Herramienta {
+        padding: 9px 11px;
+        font-size: 12px;
+    }
+
+    .Tarjeta-Herramienta.abierta {
+        width: 100%;
+    }
+
+    .Detalle-Herramienta {
+        padding: 20px 16px 24px;
+        font-size: 14px;
+    }
+
+    .Seccion-Herramientas-Conjunto .Contenedor-Otras-Tecnicas {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 900px) {

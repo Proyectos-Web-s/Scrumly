@@ -220,6 +220,13 @@ body {
 }
 
 /* En tablet y móvil, apila introducción y formulario y reduce márgenes. */
+
+
+
+/* En teléfonos estrechos, organiza cada campo en una sola columna. */
+
+
+/* Media queries: ajustes para tablets y teléfonos */
 @media (max-width: 760px) {
 	.Seccion-Principal-Contacto,
 	.Seccion-Formulario-Contacto {
@@ -255,7 +262,6 @@ body {
 	}
 }
 
-/* En teléfonos estrechos, organiza cada campo en una sola columna. */
 @media (max-width: 520px) {
 	.Campos-Contacto {
 		grid-template-columns: 1fr;

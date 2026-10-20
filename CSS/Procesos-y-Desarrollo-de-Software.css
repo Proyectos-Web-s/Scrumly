@@ -1,13 +1,21 @@
+:root {
+  --color-fondo: #efeae1;
+  --color-texto: #181d2a;
+  --color-acento: #C084FC;
+}
+
+/* Estilos globales */
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  background: #efeae1;
-  color: #181d2a;
+  background: var(--color-fondo);
+  color: var(--color-texto);
   font-family: 'Public Sans', Arial, sans-serif;
 }
+
 /* 
    PROCESOS Y DESARROLLO DE SOFTWARE
     */
@@ -20,11 +28,11 @@ body {
 /* Limita el degradado a la portada del ciclo de vida. */
 #inicio-procesos {
   display: flow-root;
-  background: linear-gradient(105deg, #efeae1 0%, #f2eaf4 100%);
+  background: linear-gradient(105deg, var(--color-fondo) 0%, #f2eaf4 100%);
 }
 
 .Antetitulo{
-    color: #C084FC ;
+    color: var(--color-acento) ;
     font-size: 20px;
     padding: 10px;
     padding-left: 20px;
@@ -37,6 +45,7 @@ body {
     margin-top: 10px;
     margin-left: 20px;
 }
+
 .Contenedor-Titulos h1 {
     font-size: 80px;
     width: 100%;
@@ -47,9 +56,8 @@ body {
 }
 
 .Contenedor-Titulos h1 span {
-    color: #C084FC ;
+    color: var(--color-acento) ;
 }
-
 
 .Parrafo-Principal{
     font-size: 20px;
@@ -59,9 +67,6 @@ body {
     margin-top: 5px;
     font-family: 'Public Sans', sans-serif;
 }
-
-
-
 
 /* Selector de modelos */
 .Selector-Modelos {
@@ -83,13 +88,9 @@ body {
   text-decoration: none;
 }
 
-
 .Boton-Modelo:hover {
   background: #eadff8;
 }
-
-
-
 
 /* Estructura compartida de las secciones de modelos */
 .Seccion-Modelo {
@@ -107,7 +108,7 @@ body {
   padding: 5px 8px;
   border-radius: 6px;
   font-size: 15px;
-  color: #C084FC;
+  color: var(--color-acento);
   margin-bottom: 8px;
 }
 
@@ -134,8 +135,6 @@ body {
   font-size: 26px;
 }
 
-
-
 /* Contenido común de los modelos */
 .Contenido-Modelo {
   display: grid;
@@ -147,16 +146,6 @@ body {
 .Texto-Modelo{
   font-size: 25px;
 }
-
-
-
-
-
-
-
-
-
-
 
 /* Modelo en Cascada: diagrama */
 .Diagrama-Modelo {
@@ -209,10 +198,15 @@ body {
 }
 
 .Tramo-Cascada-1 { --desnivel: -45px; }
+
 .Tramo-Cascada-2 { --desnivel: -15px; }
+
 .Tramo-Cascada-3 { --desnivel: 15px; }
+
 .Tramo-Cascada-4 { --desnivel: 45px; }
+
 .Tramo-Cascada-5 { --desnivel: 75px; }
+
 .Tramo-Cascada-6 { --desnivel: 105px; }
 
 /* Bloques de etapa con ancho flexible para que compartan el espacio disponible. */
@@ -352,26 +346,6 @@ body {
   opacity: 1;
 }
 
-@media (hover: none) {
-  .Paso-Contenido .Paso-Detalle {
-    max-height: none;
-    margin-top: 8px;
-    opacity: 1;
-  }
-  .Etapa-V p {
-    max-height: none;
-    margin-top: 6px;
-    opacity: 1;
-  }
-}
-
-
-
-
-
-
-
-
 /* Modelo en V: etapas de desarrollo y pruebas */
 .Lista-Modelo {
   margin-top: 14px;
@@ -382,6 +356,7 @@ body {
   text-align: left;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
+
 .Lista-Modelo:hover{
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(43, 35, 52, 0.12);
@@ -421,7 +396,7 @@ body {
 
 .Etapa-V strong {
   display: block;
-  color: #181d2a;
+  color: var(--color-texto);
 }
 
 .Etapa-V p {
@@ -564,13 +539,6 @@ body {
   line-height: 1.4;
 }
 
-@media (max-width: 900px) {
-  /* En pantallas angostas el texto explicativo queda arriba del diagrama. */
-  #modelo-v .Contenido-Modelo {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
 /* Modelo Iterativo e Incremental */
 /* El marco usa el ancho disponible de la columna, sin medidas fijas. */
 .Diagrama-Iterativo {
@@ -583,8 +551,6 @@ body {
   border: 1px solid #d8c9b6;
   border-radius: 12px;
 }
-
-
 
 /* Cada fila es una grilla para alternar tarjetas y flechas. */
 .Fila-Iterativa {
@@ -699,66 +665,6 @@ body {
 @keyframes Ciclo-Iterativo-Girar {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
-
-@media (max-width: 900px) {
-  /* Apila el texto explicativo y el diagrama cuando falta ancho. */
-  #modelo-iterativo .Contenido-Modelo {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-@media (max-width: 560px) {
-  /* Ajustes de filas, flechas y texto para pantallas de celular. */
-  .Diagrama-Iterativo {
-    padding: 8px;
-  }
-
-  .Panel-Iterativo {
-    padding: 8px;
-  }
-
-  .Fila-Iterativa:first-child {
-    grid-template-columns: minmax(0, 1fr) 13px minmax(0, 1fr) 13px minmax(0, 1fr) 13px;
-    gap: 2px;
-  }
-
-  .Fila-Iterativa:nth-child(2) {
-    grid-template-columns: minmax(0, 1fr) 13px minmax(0, 1fr) 20px;
-    gap: 2px;
-  }
-
-  .Tarjeta-Iterativa {
-    min-height: 56px;
-    padding: 7px 3px;
-  }
-
-  .Tarjeta-Iterativa h4 {
-    font-size: 0.64rem;
-  }
-
-  .Tarjeta-Iterativa p {
-    font-size: 0.62rem;
-  }
-
-  .Flecha-Iterativa {
-    font-size: 0.95rem;
-  }
-
-  .Ciclo-Iterativo {
-    font-size: 1.4rem;
-  }
-
-  .Nota-Iterativa {
-    font-size: 0.72rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  /* Respeta la preferencia del sistema por menos animaciones. */
-  .Ciclo-Iterativo {
-    animation: none;
-  }
 }
 
 .Funcion-Modelo {
@@ -952,7 +858,7 @@ body {
   justify-content: space-between;
   gap: clamp(32px, 5vw, 72px);
   padding: 48px clamp(35px, 4.2vw, 56px);
-  background: #efeae1;
+  background: var(--color-fondo);
 }
 
 .Contenido-Contexto-Ciclo {
@@ -1195,7 +1101,7 @@ body {
 
 .Titulo-Panel-Etapa {
   margin: 0 0 12px;
-  color: #181d2a;
+  color: var(--color-texto);
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 400;
@@ -1222,6 +1128,332 @@ body {
   flex: 0 0 auto;
   margin-top: 2px;
   color: #80649c;
+}
+
+/* Contenedor del diagrama */
+.Figura-Agil {
+    margin: 22px 0 14px;
+}
+
+/* Botón que permite ampliar */
+.Boton-Diagrama {
+    position: relative;
+    display: block;
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #d9cbb9;
+    border-radius: 14px;
+    background: #fff;
+    cursor: zoom-in;
+}
+
+.Boton-Diagrama:focus-visible {
+    outline: 3px solid #80649c;
+    outline-offset: 3px;
+}
+
+.Boton-Diagrama svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Ícono de lupa */
+.Icono-Ampliar {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: #e5def1;
+    color: #171717;
+    font-size: 20px;
+    pointer-events: none;
+}
+
+/* Ventana ampliada */
+.Visor-Diagrama {
+    width: min(92vw, 1000px);
+    max-width: none;
+    max-height: 90vh;
+    padding: 18px 22px 22px;
+    overflow: auto;
+    border: 0;
+    border-radius: 12px;
+    background: transparent;
+    color: #fff;
+}
+
+.Visor-Diagrama::backdrop {
+    background: rgba(27, 25, 27, 0.78);
+}
+
+/* Encabezado y botón de cierre */
+.Cabecera-Visor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.Cabecera-Visor h2 {
+    margin: 0;
+    color: #fff;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+.Cerrar-Visor {
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 4px;
+    background: #fff;
+    color: #171717;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Contenido ampliado */
+.Contenido-Visor {
+    padding: 16px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.Contenido-Visor svg {
+    display: block;
+    width: 100%;
+    max-height: 70vh;
+    margin: auto;
+}
+
+/* Contenedor de los tres diagramas */
+.Contenedor-Diagramas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+    width: 100%;
+}
+
+/* Cada diagrama */
+.Figura-Agil {
+    min-width: 0;
+    margin: 0;
+}
+
+/* El diagrama ocupa todo el ancho de su columna */
+.Figura-Agil .Boton-Diagrama {
+    width: 100%;
+}
+
+/* Descripción debajo de cada diagrama */
+.Figura-Agil figcaption {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.IMG-Modelos {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.IMG-Modelos.iterativo {
+  width: 100%;
+  max-width: 100%;
+  height: 260px;
+  object-fit: contain;
+}
+
+/* =========================================================
+   PROCESOS: AJUSTES RESPONSIVOS PARA TELÉFONOS
+   Los diagramas y tablas mantienen su estructura sin desbordar.
+   ========================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  min-width: 0;
+}
+
+.Seccion-Principal,
+.Seccion-Modelo,
+.Contenido-Modelo,
+.Diagrama-Modelo {
+  min-width: 0;
+}
+
+.Contenedor-Titulos h1 {
+  width: auto;
+  max-width: 100%;
+  font-size: clamp(2.75rem, 7vw, 5rem);
+  overflow-wrap: anywhere;
+}
+
+.Parrafo-Principal {
+  width: auto;
+  max-width: 100%;
+}
+
+.Selector-Modelos {
+  flex-wrap: wrap;
+  max-width: calc(100% - 60px);
+}
+
+.Tabla-Comparacion {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.Tabla-Comparacion th,
+.Tabla-Comparacion td {
+  min-width: 120px;
+}
+
+.Info-Importante {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #e8dcc4;
+  border: 1px solid rgba(120, 102, 150, 0.25);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin: 24px 20px 30px;
+}
+
+.Icono-Informacion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #d9c9ef;
+  color: #47326b;
+  font-weight: 900;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.Info-Importante p {
+  margin: 0;
+  line-height: 1.5;
+  color: #1a1d22;
+}
+
+/* Pie de página */
+.Seccion-footer {
+    background-color: #faf6f0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.Parrafo-Pie {
+    font-family: 'Public Sans', sans-serif;
+}
+
+/* Adaptaciones responsive y preferencias del usuario */
+@media (hover: none) {
+  .Paso-Contenido .Paso-Detalle {
+    max-height: none;
+    margin-top: 8px;
+    opacity: 1;
+  }
+  .Etapa-V p {
+    max-height: none;
+    margin-top: 6px;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  /* En pantallas angostas el texto explicativo queda arriba del diagrama. */
+  #modelo-v .Contenido-Modelo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  /* Apila el texto explicativo y el diagrama cuando falta ancho. */
+  #modelo-iterativo .Contenido-Modelo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  /* Ajustes de filas, flechas y texto para pantallas de celular. */
+  .Diagrama-Iterativo {
+    padding: 8px;
+  }
+
+  .Panel-Iterativo {
+    padding: 8px;
+  }
+
+  .Fila-Iterativa:first-child {
+    grid-template-columns: minmax(0, 1fr) 13px minmax(0, 1fr) 13px minmax(0, 1fr) 13px;
+    gap: 2px;
+  }
+
+  .Fila-Iterativa:nth-child(2) {
+    grid-template-columns: minmax(0, 1fr) 13px minmax(0, 1fr) 20px;
+    gap: 2px;
+  }
+
+  .Tarjeta-Iterativa {
+    min-height: 56px;
+    padding: 7px 3px;
+  }
+
+  .Tarjeta-Iterativa h4 {
+    font-size: 0.64rem;
+  }
+
+  .Tarjeta-Iterativa p {
+    font-size: 0.62rem;
+  }
+
+  .Flecha-Iterativa {
+    font-size: 0.95rem;
+  }
+
+  .Ciclo-Iterativo {
+    font-size: 1.4rem;
+  }
+
+  .Nota-Iterativa {
+    font-size: 0.72rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Respeta la preferencia del sistema por menos animaciones. */
+  .Ciclo-Iterativo {
+    animation: none;
+  }
 }
 
 @media (max-width: 700px) {
@@ -1295,90 +1527,38 @@ body {
   }
 }
 
+/* Adaptación a celulares */
+@media (max-width: 760px) {
+    .Boton-Diagrama {
+        width: 100%;
+    }
 
+    .Visor-Diagrama {
+        width: 96vw;
+        padding: 12px;
+    }
 
+    .Cabecera-Visor h2 {
+        font-size: 24px;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   PROCESOS: AJUSTES RESPONSIVOS PARA TELÉFONOS
-   Los diagramas y tablas mantienen su estructura sin desbordar.
-   ========================================================= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+    .Contenido-Visor {
+        padding: 8px;
+    }
 }
 
-html,
-body {
-  max-width: 100%;
-  overflow-x: clip;
+/* Tablets: dos por fila */
+@media (max-width: 900px) {
+    .Contenedor-Diagramas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
-body {
-  min-width: 0;
-}
-
-.Seccion-Principal,
-.Seccion-Modelo,
-.Contenido-Modelo,
-.Diagrama-Modelo {
-  min-width: 0;
-}
-
-.Contenedor-Titulos h1 {
-  width: auto;
-  max-width: 100%;
-  font-size: clamp(2.75rem, 7vw, 5rem);
-  overflow-wrap: anywhere;
-}
-
-.Parrafo-Principal {
-  width: auto;
-  max-width: 100%;
-}
-
-.Selector-Modelos {
-  flex-wrap: wrap;
-  max-width: calc(100% - 60px);
-}
-
-.Tabla-Comparacion {
-  display: block;
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.Tabla-Comparacion th,
-.Tabla-Comparacion td {
-  min-width: 120px;
+/* Celulares: uno debajo del otro */
+@media (max-width: 600px) {
+    .Contenedor-Diagramas {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 760px) {
@@ -1589,55 +1769,4 @@ body {
     padding: 14px;
     overflow-wrap: anywhere;
   }
-}
-
-.Info-Importante {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  background: #e8dcc4;
-  border: 1px solid rgba(120, 102, 150, 0.25);
-  border-radius: 14px;
-  padding: 18px 20px;
-  margin: 24px 20px 30px;
-}
-
-.Icono-Informacion {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #d9c9ef;
-  color: #47326b;
-  font-weight: 900;
-  font-size: 0.9rem;
-  flex-shrink: 0;
-}
-
-.Info-Importante p {
-  margin: 0;
-  line-height: 1.5;
-  color: #1a1d22;
-}
-
-
-
-
-
-
-
-/* Pie de página */
-.Seccion-footer {
-    background-color: #faf6f0;
-    width: 100%;
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.Parrafo-Pie {
-    font-family: 'Public Sans', sans-serif;
 }

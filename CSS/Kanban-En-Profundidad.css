@@ -1,11 +1,22 @@
+/* Variables globales de la paleta de SCRUMLY. */
+:root {
+	--color-fondo: #fffaf2;
+	--color-superficie: #ffffff;
+	--color-texto: #181d2a;
+	--color-acento: #80649c;
+	--color-borde: #d9cbb9;
+	--color-titulo: #090909;
+}
+
 /* Estilos de la página Kanban en profundidad. */
+
 html {
 	scroll-behavior: smooth;
 }
 
 body {
 	margin: 0;
-	background: #fffaf2;
+	background: var(--color-fondo);
 	color: #181d2a;
 	font-family: "Public Sans", Arial, sans-serif;
 }
@@ -17,12 +28,14 @@ body {
 }
 
 /* Mantiene las secciones centradas y limita la longitud de lectura. */
+
 .Pagina-Kanban {
 	width: min(100% - 64px, 1180px);
 	margin: 0 auto;
 }
 
 /* Portada de Kanban con el degradado compartido por Scrumly. */
+
 .Encabezado-Kanban {
 	position: relative;
 	isolation: isolate;
@@ -41,7 +54,7 @@ body {
 
 .Antetitulo-Kanban {
 	margin: 0 0 12px;
-	color: #80649c;
+	color: var(--color-acento);
 	font-size: 14px;
 	font-weight: 800;
 	letter-spacing: 0.04em;
@@ -52,7 +65,7 @@ body {
 .Seccion-Kanban h2,
 .Cierre-Kanban h2 {
 	margin: 0;
-	color: #090909;
+	color: var(--color-titulo);
 	font-family: "Bebas Neue", sans-serif;
 	font-weight: 400;
 	line-height: 0.98;
@@ -64,7 +77,7 @@ body {
 }
 
 .Encabezado-Kanban h1 span {
-	color: #80649c;
+	color: var(--color-acento);
 }
 
 .Encabezado-Kanban > p:last-child {
@@ -76,6 +89,7 @@ body {
 }
 
 /* Espaciado común para las secciones principales. */
+
 .Seccion-Kanban {
 	padding: 42px 0 28px;
 	scroll-margin-top: 24px;
@@ -95,6 +109,7 @@ body {
 }
 
 /* Tres principios básicos de gestión del flujo. */
+
 .Tarjetas-Ideas-Kanban {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -105,9 +120,9 @@ body {
 .Tarjeta-Idea-Kanban {
 	min-width: 0;
 	padding: 18px;
-	border: 1px solid #d9cbb9;
+	border: 1px solid var(--color-borde);
 	border-radius: 16px;
-	background: #fff;
+	background: var(--color-superficie);
 }
 
 .Tarjeta-Idea-Kanban h3,
@@ -131,6 +146,7 @@ body {
 }
 
 /* El diagrama es un botón para que se pueda ampliar con teclado o ratón. */
+
 .Figura-Kanban {
 	margin: 28px 0 0;
 }
@@ -140,14 +156,14 @@ body {
 	display: block;
 	width: 100%;
 	padding: 12px;
-	border: 1px solid #d9cbb9;
+	border: 1px solid var(--color-borde);
 	border-radius: 12px;
-	background: #fff;
+	background: var(--color-superficie);
 	cursor: zoom-in;
 }
 
 .Boton-Diagrama:focus-visible {
-	outline: 3px solid #80649c;
+	outline: 3px solid var(--color-acento);
 	outline-offset: 3px;
 }
 
@@ -158,8 +174,8 @@ body {
 }
 
 .Fondo-Diagrama-Kanban {
-	fill: #fff;
-	stroke: #d9cbb9;
+	fill: var(--color-superficie);
+	stroke: var(--color-borde);
 	stroke-width: 1;
 }
 
@@ -176,8 +192,8 @@ body {
 }
 
 .Tarea-Diagrama-Kanban rect {
-	fill: #fff;
-	stroke: #d9cbb9;
+	fill: var(--color-superficie);
+	stroke: var(--color-borde);
 }
 
 .Tarea-Diagrama-Kanban text {
@@ -189,12 +205,12 @@ body {
 
 .Flecha-Diagrama-Kanban path {
 	fill: none;
-	stroke: #80649c;
+	stroke: var(--color-acento);
 	stroke-width: 3;
 }
 
 .Limite-Diagrama-Kanban {
-	fill: #80649c;
+	fill: var(--color-acento);
 	font-family: "Public Sans", Arial, sans-serif;
 	font-size: 16px;
 	font-weight: 700;
@@ -223,6 +239,7 @@ body {
 }
 
 /* Área del ejemplo interactivo con el contador del límite WIP. */
+
 .Seccion-Tablero {
 	padding-top: 40px;
 }
@@ -256,7 +273,7 @@ body {
 	padding: 6px 11px;
 	border: 1px solid #cfc3b3;
 	border-radius: 8px;
-	background: #fff;
+	background: var(--color-superficie);
 	color: #29262a;
 	font: inherit;
 	font-size: 13px;
@@ -265,7 +282,7 @@ body {
 
 .Boton-Reiniciar-Kanban:hover,
 .Boton-Reiniciar-Kanban:focus-visible {
-	border-color: #80649c;
+	border-color: var(--color-acento);
 	color: #6d5488;
 }
 
@@ -281,9 +298,9 @@ body {
 	min-height: 350px;
 	flex-direction: column;
 	padding: 14px;
-	border: 1px solid #d9cbb9;
+	border: 1px solid var(--color-borde);
 	border-radius: 14px;
-	background: #fff;
+	background: var(--color-superficie);
 }
 
 .Cabecera-Columna-Kanban {
@@ -312,7 +329,7 @@ body {
 
 .Contador-Columna-Kanban {
 	flex: 0 0 auto;
-	color: #80649c;
+	color: var(--color-acento);
 	font-size: 14px;
 	font-weight: 800;
 }
@@ -327,7 +344,7 @@ body {
 
 .Tarjeta-Tarea-Kanban {
 	padding: 12px;
-	border: 1px solid #d9cbb9;
+	border: 1px solid var(--color-borde);
 	border-radius: 12px;
 	background: #f5eddf;
 }
@@ -360,15 +377,15 @@ body {
 	place-items: center;
 	border: 1px solid #d4c8b9;
 	border-radius: 7px;
-	background: #fff;
-	color: #80649c;
+	background: var(--color-superficie);
+	color: var(--color-acento);
 	font-size: 14px;
 	cursor: pointer;
 }
 
 .Boton-Mover-Tarea[data-direccion="1"] {
-	border-color: #80649c;
-	background: #80649c;
+	border-color: var(--color-acento);
+	background: var(--color-acento);
 	color: #fff;
 }
 
@@ -379,7 +396,7 @@ body {
 
 .Boton-Mover-Tarea:not(:disabled):hover,
 .Boton-Mover-Tarea:not(:disabled):focus-visible {
-	outline: 2px solid #80649c;
+	outline: 2px solid var(--color-acento);
 	outline-offset: 2px;
 }
 
@@ -410,10 +427,11 @@ body {
 }
 
 /* Cierre y navegación a la introducción general. */
+
 .Cierre-Kanban {
 	margin: 28px 0 56px;
 	padding: 28px 0 0;
-	border-top: 1px solid #d9cbb9;
+	border-top: 1px solid var(--color-borde);
 }
 
 .Cierre-Kanban h2 {
@@ -430,7 +448,7 @@ body {
 	align-items: center;
 	gap: 8px;
 	margin-top: 12px;
-	color: #80649c;
+	color: var(--color-acento);
 	font-size: 14px;
 	font-weight: 800;
 	text-decoration: none;
@@ -442,6 +460,7 @@ body {
 }
 
 /* Fondo oscuro y controles para la ampliación del diagrama. */
+
 .Visor-Diagrama {
 	width: min(92vw, 1000px);
 	max-width: none;
@@ -479,7 +498,7 @@ body {
 	height: 40px;
 	border: 0;
 	border-radius: 4px;
-	background: #fff;
+	background: var(--color-superficie);
 	color: #171717;
 	font-size: 20px;
 	cursor: pointer;
@@ -488,7 +507,7 @@ body {
 .Contenido-Visor {
 	padding: 16px;
 	border-radius: 10px;
-	background: #fff;
+	background: var(--color-superficie);
 }
 
 .Contenido-Visor svg {
@@ -499,6 +518,9 @@ body {
 }
 
 /* Adapta las ideas, columnas y tareas a pantallas pequeñas. */
+
+/* Adaptaciones responsive y preferencias de movimiento. */
+
 @media (max-width: 760px) {
 	.Pagina-Kanban {
 		width: calc(100% - 32px);

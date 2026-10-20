@@ -10,6 +10,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="CSS/Scrum-En-Profundidad.css" />
 		<link rel="stylesheet" href="CSS/menu.css" />
+		<link rel="stylesheet" href="CSS/footer.css">
 	</head>
 	<body>
 		<!-- Barra de navegación principal -->
@@ -21,7 +22,8 @@
 			<i class="Hambu bi-list" id="boton-menu"></i>
 
             <!-- Menu hamburgesa -->
-                <nav class="Menu" id="menu">
+                <div id="menu-container">
+                    <nav class="Menu" id="menu">
                     <div class="Menu-Titulo">
                         <span>MENÚ</span>
                     </div>
@@ -93,19 +95,22 @@
                             <a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
                             <a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
                             <a href="Recursos-y-Aprendizajes.html#ejercicios-practicos">Ejercicios y Casos Prácticos</a>
+							<a href="Recursos-y-Aprendizajes.html#encuesta-metodología">Encuesta sobre Metodologías</a>
                         </div>
                     </div>
 
                     <a href="Sobre-Nosotros.html"><i class="bi bi-people"></i><span>Sobre Nosotros</span></a>
                     <a href="Contacto.html"><i class="bi bi-envelope"></i><span>Contacto</span></a>
-                </nav>
+                        </nav>
+                    </div>
+            
             </div>
 
 		<!-- Contenido principal de Scrum -->
 		<div class="Pagina-Scrum">
 			<!-- Presentación de la página y recorrido del ciclo Scrum -->
 			<div class="Encabezado-Scrum">
-				<p class="Antetitulo-Scrum">METODOLOGÍAS ÁGILES / 01</p>
+				<p class="Antetitulo-Principal">METODOLOGÍAS ÁGILES / 01</p>
 				<h1>SCRUM <span>EN PROFUNDIDAD.</span></h1>
 				<p class="Descripcion-Scrum">Scrum organiza el desarrollo en ciclos llamados <strong>Sprints</strong>. Roles, eventos y artefactos ayudan al equipo a entregar un incremento del producto al finalizar cada ciclo.</p>
 				<div class="Ciclo-Resumen" aria-label="Recorrido de Scrum">
@@ -122,7 +127,7 @@
 			<!-- Sección 1: roles, eventos y artefactos -->
 			<section id="scrum-en-profundidad" class="Seccion-Scrum" aria-labelledby="titulo-ciclo">
 				<div class="Encabezado-Seccion">
-					<p class="Antetitulo-Scrum">EL MARCO DE TRABAJO</p>
+					<p class="Antetitulo-Principal">EL MARCO DE TRABAJO</p>
 					<h2 id="titulo-ciclo">Tres piezas de un mismo ciclo</h2>
 				</div>
 
@@ -227,7 +232,7 @@
 			<!-- Sección 2: duración y etapas del Sprint -->
 			<section id="ciclo-sprint" class="Seccion-Scrum" aria-labelledby="titulo-sprint">
 				<div class="Encabezado-Seccion">
-					<p class="Antetitulo-Scrum">DEL PRODUCT BACKLOG AL INCREMENTO</p>
+					<p class="Antetitulo-Principal">DEL PRODUCT BACKLOG AL INCREMENTO</p>
 					<h2 id="titulo-sprint">El ciclo del Sprint</h2>
 					<p class="Descripcion-Seccion">Seleccioná la duración y explorá cada encuentro del Sprint.</p>
 				</div>
@@ -252,10 +257,10 @@
 			</section>
 		</div>
 
-		<!-- Pie de página -->
-		<div class="Seccion-footer">
-			<footer><p class="Parrafo-Pie">Scrumly . Sistema de gestión de calidad del software</p></footer>
-		</div>
+        <!-- Sección pie -->
+		<div id="footer-container"></div>
+
+		<script src="JS/footer.js"></script>
 
 		<script src="JS/script.js"></script>
 	</body>

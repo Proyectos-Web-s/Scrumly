@@ -10,6 +10,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="CSS/Metodologias-Agiles.css" />
 		<link rel="stylesheet" href="CSS/menu.css" />
+		<link rel="stylesheet" href="CSS/footer.css">
 	</head>
 	<body>
 		<!-- Barra de navegación principal -->
@@ -21,7 +22,8 @@
 			<i class="Hambu bi-list" id="boton-menu"></i>
 
             <!-- Menu hamburgesa -->
-                <nav class="Menu" id="menu">
+                <div id="menu-container">
+                    <nav class="Menu" id="menu">
                     <div class="Menu-Titulo">
                         <span>MENÚ</span>
                     </div>
@@ -93,12 +95,14 @@
                             <a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
                             <a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
                             <a href="Recursos-y-Aprendizajes.html#ejercicios-practicos">Ejercicios y Casos Prácticos</a>
+							<a href="Recursos-y-Aprendizajes.html#encuesta-metodología">Encuesta sobre Metodologías</a>
                         </div>
                     </div>
 
                     <a href="Sobre-Nosotros.html"><i class="bi bi-people"></i><span>Sobre Nosotros</span></a>
                     <a href="Contacto.html"><i class="bi bi-envelope"></i><span>Contacto</span></a>
-                </nav>
+                    </nav>
+                </div>
             </div>
 
 
@@ -287,7 +291,121 @@
 			</section>
 
 
+			<section id="comparativa" class="Seccion-Agil Seccion-Comparativa" aria-labelledby="titulo-comparador">
+				<p class="Antetitulo-Agil">06 · COMPARAR Y ELEGIR</p>
+				<h2 id="titulo-comparador">Compará metodologías<span>.</span></h2>
+				<p class="Introduccion-Seccion-Agil">
+					Elegí al menos dos para generar la comparación.
+				</p>
+
+				<div class="Opciones-Comparador" id="opciones-comparador">
+					<label class="Tarjeta-Comparador">
+						<input type="checkbox" value="cascada">
+						<span class="Checkbox-Visual" aria-hidden="true"></span>
+						<span class="Texto-Tarjeta-Comparador">
+							<strong>Cascada</strong>
+							<span>Organiza el desarrollo en etapas principalmente secuenciales.</span>
+						</span>
+					</label>
+
+					<label class="Tarjeta-Comparador">
+						<input type="checkbox" value="v">
+						<span class="Checkbox-Visual" aria-hidden="true"></span>
+						<span class="Texto-Tarjeta-Comparador">
+							<strong>Modelo en V</strong>
+							<span>Relaciona las etapas de desarrollo con sus correspondientes niveles de prueba.</span>
+						</span>
+					</label>
+
+					<label class="Tarjeta-Comparador">
+						<input type="checkbox" value="iterativo">
+						<span class="Checkbox-Visual" aria-hidden="true"></span>
+						<span class="Texto-Tarjeta-Comparador">
+							<strong>Iterativo e incremental</strong>
+							<span>Construye el producto mediante ciclos y entregas progresivas.</span>
+						</span>
+					</label>
+
+					<label class="Tarjeta-Comparador">
+						<input type="checkbox" value="scrum">
+						<span class="Checkbox-Visual" aria-hidden="true"></span>
+						<span class="Texto-Tarjeta-Comparador">
+							<strong>Scrum</strong>
+							<span>Organiza el trabajo en Sprints con roles, eventos y artefactos.</span>
+						</span>
+					</label>
+
+					<label class="Tarjeta-Comparador">
+						<input type="checkbox" value="kanban">
+						<span class="Checkbox-Visual" aria-hidden="true"></span>
+						<span class="Texto-Tarjeta-Comparador">
+							<strong>Kanban</strong>
+							<span>Visualiza las tareas y busca mantener un flujo continuo de trabajo.</span>
+						</span>
+					</label>
+
+					<label class="Tarjeta-Comparador">
+						<input type="checkbox" value="xp">
+						<span class="Checkbox-Visual" aria-hidden="true"></span>
+						<span class="Texto-Tarjeta-Comparador">
+							<strong>XP</strong>
+							<span>Prioriza la calidad técnica, las pruebas frecuentes y la integración continua.</span>
+						</span>
+					</label>
+				</div>
+
+				<div class="Barra-Comparador">
+					<p id="contador-comparador" aria-live="polite">0 seleccionados</p>
+					<button type="button" id="limpiar-comparador" class="Boton-Limpiar-Comparador">
+						Limpiar selección
+					</button>
+				</div>
+
+				<div id="resultado-comparador" class="Resultado-Comparador" aria-live="polite">
+					<div class="Estado-Vacio-Comparador">
+						<i class="bi bi-check2" aria-hidden="true"></i>
+						<p>Seleccioná al menos dos metodologías para ver la tabla comparativa.</p>
+					</div>
+				</div>
+			</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		<!-- Visor accesible compartido por los tres diagramas -->
 		<dialog class="Visor-Diagrama" aria-labelledby="titulo-visor-diagrama">
@@ -298,10 +416,10 @@
 			<div class="Contenido-Visor"></div>
 		</dialog>
 
-		<!-- Pie de página -->
-		<div class="Seccion-footer">
-			<footer><p class="Parrafo-Pie">Scrumly . Sistema de gestión de calidad del software</p></footer>
-		</div>
+        <!-- Sección pie -->
+		<div id="footer-container"></div>
+
+		<script src="JS/footer.js"></script>
 
 		<script src="JS/script.js"></script>
 	</body>

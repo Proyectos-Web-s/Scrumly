@@ -1,3 +1,20 @@
+/* =========================================================
+   BASE GLOBAL Y ESTILOS COMPARTIDOS
+   ========================================================= */
+:root {
+    --color-fondo: #efeae1;
+    --color-superficie: #fffdf9;
+    --color-titulo: #050505;
+    --color-texto: #38373b;
+    --color-texto-secundario: #55515a;
+    --color-acento: #765a91;
+    --color-acento-oscuro: #4d3d7a;
+    --color-borde: rgba(164, 135, 101, 0.42);
+    --fuente-texto: 'Public Sans', Arial, sans-serif;
+    --fuente-titulos: 'Bebas Neue', sans-serif;
+    --ancho-pagina: 1200px;
+    --ancho-contenido: 1120px;
+}
 
 html {
 	scroll-behavior: smooth;
@@ -177,13 +194,6 @@ body {
 	cursor: default;
 }
 
-@media (prefers-reduced-motion: reduce) {
-	.Boton-Letra,
-	.Tarjeta-Glosario {
-		transition: none;
-	}
-}
-
 .Resultados-Glosario {
 	margin-top: 28px;
 }
@@ -289,63 +299,6 @@ body {
 .Campo-Busqueda input[aria-invalid="true"] {
 	color: #8a3030;
 }
-
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 760px) {
-	.Pagina-Glosario {
-		padding-top: 44px;
-	}
-
-	.Seccion-Principal h1 {
-		font-size: 60px;
-	}
-
-	.Seccion-Principal h2 {
-		font-size: 20px;
-	}
-
-	.Descripcion-Principal {
-		font-size: 18px;
-	}
-
-	.Campo-Busqueda input {
-		font-size: 18px;
-	}
-
-	.Filtros-Letras {
-		gap: 8px;
-	}
-
-	.Resultados-Glosario {
-		margin-top: 20px;
-	}
-
-	.Tarjetas-Resultados {
-		grid-template-columns: 1fr;
-	}
-
-	.Encabezado-Letra {
-		gap: 10px;
-	}
-
-	.Encabezado-Letra h2 {
-		font-size: 25px;
-	}
-
-	.Tarjeta-Glosario p {
-		font-size: 16px;
-	}
-}
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -482,43 +435,6 @@ body {
 	padding: 16px 18px 20px;
 	border-top-color: rgba(164, 135, 101, 0.3);
 }
-
-@media (max-width: 760px) {
-	/* Presentación y preguntas */
-	.Pagina-PF {
-		padding-top: 44px;
-	}
-
-	.Seccion-Principal-PF h1 {
-		font-size: 58px;
-	}
-
-	.Descripcion-PF {
-		font-size: 18px;
-	}
-
-	.Seccion-Preguntas {
-		margin-top: 32px;
-	}
-
-	.Boton-Pregunta {
-		font-size: 21px;
-	}
-
-	.Respuesta-Pregunta p {
-		font-size: 16px;
-	}
-}
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -890,7 +806,7 @@ body {
 }
 
 .Seccion-Sobre-Ejercicios {
-	padding: 48px 0 0;
+	padding: 60px 0;
 }
 
 .Tarjeta-Sobre-Ejercicios {
@@ -955,7 +871,566 @@ body {
 	outline-offset: 3px;
 }
 
+
+
+
+
+
+
+
+
+
+
+/* ========================================
+   PRESENTACIÓN DE METODOLOGÍAS
+   ======================================== */
+
+/* Sección principal */
+
+.Seccion-Principal-Metodologia {
+    width: 100%;
+    max-width: var(--ancho-contenido);
+    margin: 0 auto;
+}
+
+/* Antetítulo */
+
+.Antetitulo-Metodologia {
+    margin: 0 0 18px;
+    color: var(--color-acento);
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+/* Título principal */
+
+.Seccion-Principal-Metodologia h1 {
+    margin: 0;
+    color: var(--color-titulo);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.75rem, 7vw, 4.875rem);
+    font-weight: 400;
+    line-height: 0.95;
+    overflow-wrap: anywhere;
+}
+
+/* Palabra destacada */
+
+.Seccion-Principal-Metodologia h1 span {
+    color: var(--color-acento);
+}
+
+/* Descripción */
+
+.Descripcion-Metodologia {
+    max-width: 1100px;
+    margin: 24px 0 0;
+    color: var(--color-texto);
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+
+
+
 /* Ajustes para pantallas pequeñas */
+/* =========================================================
+   RECURSOS: AJUSTES RESPONSIVOS PARA TELÉFONOS
+   Las tarjetas de resultados y enlaces se apilan en vertical.
+   ========================================================= */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	max-width: 100%;
+	overflow-x: clip;
+}
+
+body {
+	min-width: 0;
+}
+
+.Pagina-Glosario,
+.Pagina-PF,
+.Pagina-EDI,
+.Pagina-ECP {
+	min-width: 0;
+}
+
+.Seccion-Principal h1,
+.Seccion-Principal-PF h1,
+.Seccion-Principal-EDI h1,
+.Seccion-Principal-ECP h1 {
+	font-size: clamp(2.75rem, 7vw, 4.875rem);
+	overflow-wrap: anywhere;
+}
+
+.Tarjetas-Resultados,
+.Tarjetas-Enlaces {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.Tarjeta-Glosario,
+.Tarjeta-Enlace,
+.Pregunta-Frecuente {
+	min-width: 0;
+	overflow-wrap: anywhere;
+}
+
+/* Encuesta interactiva de metodologías */
+.Encuesta-Metodologia {
+    padding: 36px 16px 52px;
+}
+
+.Tarjeta-Encuesta {
+    width: min(100%, 680px);
+    margin: 0 auto;
+    padding: 32px 30px;
+    border: 1px solid #dfd0bd;
+    border-radius: 18px;
+    background: #fff;
+    color: #111;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.Cabecera-Progreso {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    color: #80649c;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.Barra-Progreso {
+    width: 100%;
+    height: 6px;
+    margin: 5px 0 22px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #f0f0f0;
+}
+
+.Barra-Progreso > div {
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: #80649c;
+    transition: width 0.25s ease;
+}
+
+.Tarjeta-Encuesta h2 {
+    margin: 0 0 22px;
+    color: #111;
+    font-size: 23px;
+    line-height: 1.5;
+}
+
+.Opciones-Pregunta {
+    display: grid;
+    gap: 12px;
+}
+
+.Opcion-Encuesta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-height: 58px;
+    padding: 15px 18px;
+    border: 1.5px solid #bdbdbd;
+    border-radius: 12px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 1.5;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.Opcion-Encuesta:hover {
+    border-color: #80649c;
+}
+
+.Opcion-Encuesta:has(input:checked) {
+    border: 2px solid #80649c;
+    padding: 7.5px 9.5px;
+    background: #f8f5fb;
+}
+
+.Opcion-Encuesta input {
+    flex: 0 0 14px;
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    accent-color: #80649c;
+}
+
+.Opcion-Encuesta:focus-within {
+    outline: 2px solid #c8b4dc;
+    outline-offset: 2px;
+}
+
+.Aviso-Encuesta {
+    min-height: 0;
+    margin: 0;
+    color: #b42318;
+    font-size: 10px;
+}
+
+.Aviso-Encuesta:not(:empty) {
+    margin-top: 4px;
+}
+
+.Botones-Encuesta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.Boton-Encuesta {
+    min-height: 29px;
+    padding: 7px 17px;
+    border: 1.5px solid #80649c;
+    border-radius: 24px;
+    background: #80649c;
+    color: #fff;
+    font: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.Boton-Encuesta:hover:not(:disabled) {
+    background: #6b5286;
+}
+
+.Boton-Anterior,
+.Boton-Reiniciar {
+    background: #fff;
+    color: #80649c;
+}
+
+.Boton-Encuesta:disabled {
+    border-color: #ded3e7;
+    background: #fff;
+    color: #cbbdd8;
+    cursor: not-allowed;
+}
+
+.Boton-Encuesta:focus-visible {
+    outline: 3px solid #c8b4dc;
+    outline-offset: 3px;
+}
+
+#resultado-encuesta[hidden],
+#pantalla-preguntas[hidden] {
+    display: none !important;
+}
+
+#resultado-encuesta .Barra-Progreso {
+    margin-bottom: 25px;
+}
+
+.Barra-Progreso-Final > div {
+    width: 100%;
+}
+
+.Etiqueta-Resultado {
+    margin: 0 0 5px;
+    color: #777;
+    font-size: 11px;
+}
+
+#resultado-encuesta #titulo-resultado {
+    margin: 0;
+    color: #80649c;
+    font-size: 25px;
+}
+
+#resultado-encuesta #descripcion-resultado {
+    margin: 5px 0 16px;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.Lista-Resultados {
+    display: grid;
+    gap: 11px;
+    margin-bottom: 16px;
+}
+
+.Resultado-Metodologia {
+    display: grid;
+    gap: 5px;
+}
+
+.Resultado-Metodologia-Cabecera {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.Barra-Puntaje {
+    height: 6px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #f0f0f0;
+}
+
+.Barra-Puntaje > div {
+    height: 100%;
+    border-radius: inherit;
+    background: #80649c;
+    transition: width 0.3s ease;
+}
+
+/* Encuesta: tarjeta y opciones más grandes */
+.Tarjeta-Encuesta {
+    width: min(100%, 620px);
+    padding: 26px 22px;
+    border-radius: 16px;
+}
+
+.Encuesta-Metodologia {
+    padding: 45px 20px 60px;
+}
+
+.Cabecera-Progreso {
+    font-size: 12px;
+}
+
+.Barra-Progreso {
+    height: 8px;
+    margin: 8px 0 28px;
+}
+
+.Tarjeta-Encuesta h2 {
+    margin-bottom: 18px;
+    font-size: 20px;
+    line-height: 1.45;
+}
+
+.Opciones-Pregunta {
+    gap: 10px;
+}
+
+.Opcion-Encuesta {
+    min-height: 48px;
+    padding: 12px 14px;
+    gap: 14px;
+    border-radius: 11px;
+    font-size: 14px;
+}
+
+.Opcion-Encuesta:has(input:checked) {
+    padding: 11.5px 13.5px;
+}
+
+.Opcion-Encuesta input {
+    width: 17px;
+    height: 17px;
+    flex-basis: 17px;
+}
+
+.Aviso-Encuesta {
+    font-size: 12px;
+}
+
+.Botones-Encuesta {
+    margin-top: 22px;
+}
+
+.Boton-Encuesta {
+    min-height: 36px;
+    padding: 9px 22px;
+    font-size: 12px;
+}
+
+#resultado-encuesta #titulo-resultado {
+    font-size: 30px;
+}
+
+#resultado-encuesta #descripcion-resultado {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.Resultado-Metodologia-Cabecera {
+    font-size: 12px;
+}
+
+.Barra-Puntaje {
+    height: 8px;
+}
+
+
+
+
+
+
+
+
+
+/* Adaptación para celulares */
+/* =========================================================
+   ENCABEZADOS COMPARTIDOS ENTRE LAS SECCIONES
+   Se conservan los nombres de clase del HTML para no romperlo.
+   ========================================================= */
+.Antetitulo-Principal,
+.Antetitulo-PF,
+.Antetitulo-EDI,
+.Antetitulo-ECP,
+.Antetitulo-Metodologia {
+    margin: 0 0 18px;
+    color: var(--color-acento);
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.Seccion-Principal h1,
+.Seccion-Principal-PF h1,
+.Seccion-Principal-EDI h1,
+.Seccion-Principal-ECP h1,
+.Seccion-Principal-Metodologia h1 {
+    margin: 0;
+    color: var(--color-titulo);
+    font-family: var(--fuente-titulos);
+    font-size: clamp(2.75rem, 7vw, 4.875rem);
+    font-weight: 400;
+    line-height: 0.95;
+    overflow-wrap: anywhere;
+}
+
+.Seccion-Principal h1 span,
+.Seccion-Principal-PF h1 span,
+.Seccion-Principal-EDI h1 span,
+.Seccion-Principal-ECP h1 span,
+.Seccion-Principal-Metodologia h1 span {
+    color: var(--color-acento);
+}
+
+.Descripcion-Principal,
+.Descripcion-PF,
+.Descripcion-EDI,
+.Descripcion-ECP,
+.Descripcion-Metodologia {
+    color: var(--color-texto);
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   DISEÑO RESPONSIVO 
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+	.Boton-Letra,
+	.Tarjeta-Glosario {
+		transition: none;
+	}
+}
+
+@media (max-width: 760px) {
+	.Pagina-Glosario {
+		padding-top: 44px;
+	}
+
+	.Seccion-Principal h1 {
+		font-size: 60px;
+	}
+
+	.Seccion-Principal h2 {
+		font-size: 20px;
+	}
+
+	.Descripcion-Principal {
+		font-size: 18px;
+	}
+
+	.Campo-Busqueda input {
+		font-size: 18px;
+	}
+
+	.Filtros-Letras {
+		gap: 8px;
+	}
+
+	.Resultados-Glosario {
+		margin-top: 20px;
+	}
+
+	.Tarjetas-Resultados {
+		grid-template-columns: 1fr;
+	}
+
+	.Encabezado-Letra {
+		gap: 10px;
+	}
+
+	.Encabezado-Letra h2 {
+		font-size: 25px;
+	}
+
+	.Tarjeta-Glosario p {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 760px) {
+	/* Presentación y preguntas */
+	.Pagina-PF {
+		padding-top: 44px;
+	}
+
+	.Seccion-Principal-PF h1 {
+		font-size: 58px;
+	}
+
+	.Descripcion-PF {
+		font-size: 18px;
+	}
+
+	.Seccion-Preguntas {
+		margin-top: 32px;
+	}
+
+	.Boton-Pregunta {
+		font-size: 21px;
+	}
+
+	.Respuesta-Pregunta p {
+		font-size: 16px;
+	}
+}
+
 @media (max-width: 760px) {
 	.Pagina-EDI {
 		padding-top: 44px;
@@ -1043,83 +1518,6 @@ body {
 	.Enlaces-Temas-Ejercicios {
 		gap: 8px 12px;
 	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   RECURSOS: AJUSTES RESPONSIVOS PARA TELÉFONOS
-   Las tarjetas de resultados y enlaces se apilan en vertical.
-   ========================================================= */
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
-html,
-body {
-	max-width: 100%;
-	overflow-x: clip;
-}
-
-body {
-	min-width: 0;
-}
-
-.Pagina-Glosario,
-.Pagina-PF,
-.Pagina-EDI,
-.Pagina-ECP {
-	min-width: 0;
-}
-
-.Seccion-Principal h1,
-.Seccion-Principal-PF h1,
-.Seccion-Principal-EDI h1,
-.Seccion-Principal-ECP h1 {
-	font-size: clamp(2.75rem, 7vw, 4.875rem);
-	overflow-wrap: anywhere;
-}
-
-.Tarjetas-Resultados,
-.Tarjetas-Enlaces {
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.Tarjeta-Glosario,
-.Tarjeta-Enlace,
-.Pregunta-Frecuente {
-	min-width: 0;
-	overflow-wrap: anywhere;
 }
 
 @media (max-width: 760px) {
@@ -1213,4 +1611,57 @@ body {
 	.Boton-Pregunta i {
 		flex: 0 0 auto;
 	}
+}
+
+@media (max-width: 480px) {
+    .Encuesta-Metodologia {
+        padding: 24px 12px 36px;
+    }
+
+    .Tarjeta-Encuesta {
+        padding: 17px 12px;
+    }
+
+    .Tarjeta-Encuesta h2 {
+        font-size: 15px;
+    }
+
+    .Opcion-Encuesta {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 560px) {
+    .Tarjeta-Encuesta {
+        padding: 22px 16px;
+    }
+
+    .Encuesta-Metodologia {
+        padding: 30px 12px 40px;
+    }
+
+    .Tarjeta-Encuesta h2 {
+        font-size: 18px;
+    }
+
+    .Opcion-Encuesta {
+        min-height: 48px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 760px) {
+    .Seccion-Principal-Metodologia h1 {
+        font-size: clamp(2.5rem, 12vw, 3.625rem);
+        line-height: 0.98;
+    }
+
+    .Antetitulo-Metodologia {
+        font-size: 13px;
+    }
+
+    .Descripcion-Metodologia {
+        font-size: 16px;
+        line-height: 1.5;
+    }
 }

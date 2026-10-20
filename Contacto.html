@@ -14,6 +14,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="CSS/Contacto.css" />
 		<link rel="stylesheet" href="CSS/menu.css" />
+		<link rel="stylesheet" href="CSS/footer.css">
 	</head>
 	<body>
 		<!-- Barra superior con el logo, el nombre del sitio y el acceso al menú -->
@@ -25,7 +26,8 @@
 			<i class="Hambu bi-list" id="boton-menu"></i>
 
             <!-- Menú principal desplegable para navegar por las secciones del sitio -->
-                <nav class="Menu" id="menu">
+                <div id="menu-container">
+                    <nav class="Menu" id="menu">
 					<!-- Encabezado del panel de navegación -->
                     <div class="Menu-Titulo">
                         <span>MENÚ</span>
@@ -100,13 +102,15 @@
                             <a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
                             <a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
                             <a href="Recursos-y-Aprendizajes.html#ejercicios-practicos">Ejercicios y Casos Prácticos</a>
+							<a href="Recursos-y-Aprendizajes.html#encuesta-metodología">Encuesta sobre Metodologías</a>
                         </div>
                     </div>
 
 					<!-- Enlaces directos a las páginas de equipo y contacto -->
                     <a href="Sobre-Nosotros.html"><i class="bi bi-people"></i><span>Sobre Nosotros</span></a>
                     <a href="Contacto.html" aria-current="page"><i class="bi bi-envelope"></i><span>Contacto</span></a>
-                </nav>
+                    </nav>
+                </div>
             </div>
 
 			<!-- Contenido principal de la página de contacto -->
@@ -165,12 +169,10 @@
 			</section>
 		</div>
 
-        <!-- Pie de página compartido con el resto del sitio -->
-        <div class="Seccion-footer">
-            <footer>
-                <p class="Parrafo-Pie"> Scrumly . Sistema de gestión de calidad del software</p>               
-            </footer>
-        </div>
+        <!-- Sección pie -->
+		<div id="footer-container"></div>
+
+		<script src="JS/footer.js"></script>
 
 		<!-- Lógica general del menú y las interacciones del sitio -->
         <script src="JS/script.js"></script>

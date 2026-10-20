@@ -1,6 +1,23 @@
-/* 
+/* =========================================================
    SCRUM EN PROFUNDIDAD
-    */
+   Estilos globales y variables
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:root {
+	--color-fondo-scrum: #efeae1;
+	--color-texto-scrum: #181d2a;
+	--color-acento-scrum: #765a91;
+	--color-titulo-scrum: #171b24;
+	--color-tarjeta-scrum: #fffdf9;
+	--color-borde-scrum: rgba(164, 135, 101, 0.42);
+}
+
 html {
 	scroll-behavior: smooth;
 }
@@ -8,8 +25,8 @@ html {
 /* Estilos generales de la página */
 body {
 	margin: 0;
-	background: #efeae1;
-	color: #181d2a;
+	background: var(--color-fondo-scrum);
+	color: var(--color-texto-scrum);
 	font-family: 'Public Sans', Arial, sans-serif;
 }
 
@@ -41,7 +58,7 @@ body {
 .Encabezado-Seccion h2 {
 	margin: 0;
 	font-family: 'Bebas Neue', sans-serif;
-	color: #171b24;
+	color: var(--color-titulo-scrum);
 }
 
 .Encabezado-Scrum h1 {
@@ -49,7 +66,7 @@ body {
 }
 
 .Encabezado-Scrum h1 span {
-	color: #765a91;
+	color: var(--color-acento-scrum);
 }
 
 .Descripcion-Scrum {
@@ -69,11 +86,11 @@ body {
 }
 
 .Ciclo-Resumen i {
-	color: #765a91;
+	color: var(--color-acento-scrum);
 	font-size: 22px;
 }
 
-.Antetitulo-Scrum {
+.Antetitulo-Principal {
 	margin: 0 0 10px;
 	color: #C084FC;
 	font-size: 15px;
@@ -129,12 +146,12 @@ body {
 }
 
 .Boton-Pestana i {
-	color: #765a91;
+	color: var(--color-acento-scrum);
 	font-size: 16px;
 }
 
 .Boton-Pestana span {
-	color: #765a91;
+	color: var(--color-acento-scrum);
 }
 
 .Boton-Pestana.activo,
@@ -211,7 +228,7 @@ body {
 .Tarjeta-Rol {
 	min-height: 310px;
 	padding: 16px 18px;
-	background: #fffdf9;
+	background: var(--color-tarjeta-scrum);
 	border-color: rgba(164, 135, 101, 0.42);
 }
 
@@ -220,7 +237,7 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	margin-bottom: 16px;
-	color: #765a91;
+	color: var(--color-acento-scrum);
 	font-size: 20px;
 }
 
@@ -260,7 +277,7 @@ body {
 .Tarjeta-Evento {
 	min-height: 220px;
 	padding: 16px 18px;
-	background: #fffdf9;
+	background: var(--color-tarjeta-scrum);
 	border-color: rgba(164, 135, 101, 0.32);
 }
 
@@ -308,7 +325,7 @@ body {
 .Tarjeta-Artefacto {
 	min-height: 270px;
 	padding: 16px 18px;
-	background: #fffdf9;
+	background: var(--color-tarjeta-scrum);
 	border-color: rgba(164, 135, 101, 0.42);
 }
 
@@ -324,7 +341,7 @@ body {
 }
 
 .Tarjeta-Artefacto strong {
-	color: #765a91;
+	color: var(--color-acento-scrum);
 	font-size: 14px;
 }
 
@@ -391,7 +408,7 @@ body {
 
 .Mini-Seccion-Sprint h4 {
 	margin: 0 0 8px 20px;
-	color: #765a91;
+	color: var(--color-acento-scrum);
 	font-size: 12px;
 	text-transform: uppercase;
 }
@@ -420,7 +437,7 @@ body {
 	padding: 8px 14px;
 	border: 1px solid rgba(116, 94, 142, 0.35);
 	border-radius: 8px;
-	background: #fffdf9;
+	background: var(--color-tarjeta-scrum);
 	color: #1a1d22;
 	font: inherit;
 	font-size: 13px;
@@ -452,7 +469,7 @@ body {
 	border: 1px solid #a99c8e;
 	border-top: 6px solid #765a91;
 	border-radius: 0;
-	background: #fffdf9;
+	background: var(--color-tarjeta-scrum);
 }
 
 .Cabecera-Tarjeta-Sprint {
@@ -462,15 +479,15 @@ body {
 	gap: 12px;
 }
 
-.Cabecera-Tarjeta-Sprint .Antetitulo-Scrum {
+.Cabecera-Tarjeta-Sprint .Antetitulo-Principal {
 	margin: 0;
-	color: #765a91;
+	color: var(--color-acento-scrum);
 	font-size: 12px;
 }
 
 .Cabecera-Tarjeta-Sprint i {
 	flex: 0 0 auto;
-	color: #765a91;
+	color: var(--color-acento-scrum);
 	font-size: 24px;
 }
 
@@ -523,7 +540,7 @@ body {
 }
 
 .Nuevo-Sprint i {
-	color: #765a91;
+	color: var(--color-acento-scrum);
 	font-size: 20px;
 }
 
@@ -535,6 +552,7 @@ body {
 
 /* Pie de página */
 .Seccion-footer {
+	width: 100%;
 	margin: 0;
 	padding: 20px;
 	background-color: #faf6f0;
@@ -543,73 +561,8 @@ body {
 
 .Parrafo-Pie {
 	margin: 0;
+	font-family: 'Public Sans', sans-serif;
 }
-
-/* Pie de página */
-.Seccion-footer {
-    background-color: #faf6f0;
-    width: 100%;
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.Parrafo-Pie {
-    font-family: 'Public Sans', sans-serif;
-}
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 760px) {
-	.Pagina-Scrum {
-		padding-top: 40px;
-	}
-
-	.Encabezado-Scrum h1 {
-		font-size: 64px;
-	}
-
-	.Encabezado-Seccion h2 {
-		font-size: 44px;
-	}
-
-	.Tarjetas-Scrum,
-	.Contenido-Sprint {
-		grid-template-columns: 1fr;
-	}
-
-	.Tarjeta-Sprint-Info {
-		height: auto;
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* =========================================================
    SCRUM: AJUSTES RESPONSIVOS PARA TELÉFONOS
    Las tarjetas agrupadas se apilan verticalmente en móvil.
@@ -734,6 +687,7 @@ body {
 
 	.Tarjeta-Sprint-Info {
 		padding: 18px;
+		height: auto;
 	}
 
 	.Tarjeta-Sprint-Info h3 {

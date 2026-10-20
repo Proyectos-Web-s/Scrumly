@@ -2,8 +2,20 @@
    ESTILOS DE LA PÁGINA DE INICIO
    ========================================================= */
 
+:root {
+    --color-fondo: #F8F0E3;
+    --color-tarjeta: #faf6f0;
+    --color-acento-claro: #D8C8F2;
+    --color-acento: #8B5CF6;
+    --color-titulo: #0B0D1A;
+}
+
+/* =========================================================
+   ESTILOS DE LA PÁGINA DE INICIO
+   ========================================================= */
+
 body {
-    background-color: #F8F0E3;
+    background-color: var(--color-fondo);
     margin: 0;
     padding: 0;
 }
@@ -22,7 +34,7 @@ body {
 }
 
 .Antetitulo{
-    background-color: #D8C8F2;
+    background-color: var(--color-acento-claro);
     border-radius: 20px;
     width: 250px;
     height: 40px;
@@ -40,11 +52,11 @@ body {
     padding-left: 20px;
     margin: 5px 0;
     font-family: 'Bebas Neue', sans-serif;
-    color: #0B0D1A;
+    color: var(--color-titulo);
 }
 
 #Seccion-Principal .Contenedor-Principal > h1 span {
-    color: #8B5CF6;
+    color: var(--color-acento);
 }
 
 .Parrafo-Principal{
@@ -70,8 +82,6 @@ body {
     height: auto;
 }
 
-
-
 /* Sección de áreas */
 .Titulo-Areas{
     font-size: 30px;
@@ -80,7 +90,7 @@ body {
     padding-left: 20px;
     margin: 5px 0;
     margin-top: 160px;
-    color: #0B0D1A;
+    color: var(--color-titulo);
     font-family: 'Oswald', sans-serif;
 }
 
@@ -108,7 +118,7 @@ body {
 .Tarjeta-MA,
 .Tarjeta-RA,
 .Tarjeta-SN{
-    background-color: #faf6f0;
+    background-color: var(--color-tarjeta);
     width: 420px;
     height: 200px;
     border-radius: 20px;
@@ -136,7 +146,7 @@ body {
 .Tarjeta-MA .bi,
 .Tarjeta-RA .bi,
 .Tarjeta-SN .bi {
-    background-color: #D8C8F2;
+    background-color: var(--color-acento-claro);
     border-radius: 5px;
     color: #000000;
     font-size: 20px;
@@ -144,7 +154,7 @@ body {
 }
 
 .A-Ver-Secciones {
-    color: #8B5CF6;
+    color: var(--color-acento);
     text-decoration: none;
     font-family: 'Public Sans', sans-serif;
 }
@@ -159,7 +169,7 @@ body {
 
 /* Pie de página */
 .Seccion-footer {
-    background-color: #faf6f0;
+    background-color: var(--color-tarjeta);
     width: 100%;
     margin: 0;
     padding: 20px;
@@ -172,6 +182,92 @@ body {
 }
 
 /* Ajustes para pantallas pequeñas */
+
+/* Ajustes generales de ancho y contenedores. */
+/* =========================================================
+   INICIO RESPONSIVO: TABLETS Y TELÉFONOS
+   Las tarjetas se apilan verticalmente en teléfonos.
+   ========================================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+body {
+    min-width: 0;
+}
+
+#Seccion-Principal {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    gap: 24px;
+}
+
+.Contenedor-Principal,
+.Contenedor-Imagen,
+.Contenedor-Areas {
+    min-width: 0;
+}
+
+#Seccion-Principal .Contenedor-Principal > h1 {
+    width: auto;
+    max-width: 100%;
+    font-size: clamp(2.5rem, 5.1vw, 4.1rem);
+    overflow-wrap: anywhere;
+}
+
+.Parrafo-Principal {
+    width: auto;
+    max-width: 42rem;
+}
+
+.Imagen-Principal {
+    width: min(100%, 400px);
+}
+
+.Contenedor-Areas {
+    width: calc(100% - 32px);
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.Titulo-Areas {
+    width: auto;
+    max-width: 100%;
+    font-size: clamp(1.5rem, 3vw, 1.875rem);
+    overflow-wrap: anywhere;
+}
+
+.Subtitulo-Areas {
+    overflow-wrap: anywhere;
+}
+
+.Contenedor-Tarjetas-A,
+.Contenedor-Tarjetas-B {
+    min-width: 0;
+}
+
+.Tarjeta-GCS,
+.Tarjeta-PDS,
+.Tarjeta-MA,
+.Tarjeta-RA,
+.Tarjeta-SN {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   AJUSTES RESPONSIVOS: TABLETS Y TELÉFONOS
+   ========================================================= */
+
 @media (max-width: 768px) {
 
     /* Sección Principal */
@@ -317,113 +413,6 @@ body {
         font-size: 12px;
     }
 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   INICIO RESPONSIVO: TABLETS Y TELÉFONOS
-   Las tarjetas se apilan verticalmente en teléfonos.
-   ========================================================= */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    max-width: 100%;
-    overflow-x: clip;
-}
-
-body {
-    min-width: 0;
-}
-
-#Seccion-Principal {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    gap: 24px;
-}
-
-.Contenedor-Principal,
-.Contenedor-Imagen,
-.Contenedor-Areas {
-    min-width: 0;
-}
-
-#Seccion-Principal .Contenedor-Principal > h1 {
-    width: auto;
-    max-width: 100%;
-    font-size: clamp(2.5rem, 5.1vw, 4.1rem);
-    overflow-wrap: anywhere;
-}
-
-.Parrafo-Principal {
-    width: auto;
-    max-width: 42rem;
-}
-
-.Imagen-Principal {
-    width: min(100%, 400px);
-}
-
-.Contenedor-Areas {
-    width: calc(100% - 32px);
-    max-width: 1320px;
-    margin: 0 auto;
-}
-
-.Titulo-Areas {
-    width: auto;
-    max-width: 100%;
-    font-size: clamp(1.5rem, 3vw, 1.875rem);
-    overflow-wrap: anywhere;
-}
-
-.Subtitulo-Areas {
-    overflow-wrap: anywhere;
-}
-
-.Contenedor-Tarjetas-A,
-.Contenedor-Tarjetas-B {
-    min-width: 0;
-}
-
-.Tarjeta-GCS,
-.Tarjeta-PDS,
-.Tarjeta-MA,
-.Tarjeta-RA,
-.Tarjeta-SN {
-    min-width: 0;
-    overflow-wrap: anywhere;
 }
 
 @media (max-width: 768px) {

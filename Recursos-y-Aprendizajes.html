@@ -10,6 +10,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="CSS/Recursos-y-Aprendizajes.css" />
 		<link rel="stylesheet" href="CSS/menu.css" />
+		<link rel="stylesheet" href="CSS/footer.css">
 	</head>
 	<body>
 		<!-- Barra de navegación principal -->
@@ -21,7 +22,8 @@
 			<i class="Hambu bi-list" id="boton-menu"></i>
 
             <!-- Menu hamburgesa -->
-                <nav class="Menu" id="menu">
+                <div id="menu-container">
+                    <nav class="Menu" id="menu">
                     <div class="Menu-Titulo">
                         <span>MENÚ</span>
                     </div>
@@ -93,6 +95,7 @@
                             <a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
                             <a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
                             <a href="Recursos-y-Aprendizajes.html#ejercicios-practicos">Ejercicios y Casos Prácticos</a>
+							<a href="Recursos-y-Aprendizajes.html#encuesta-metodología">Encuesta sobre Metodologías</a>
                         </div>
                     </div>
 
@@ -191,10 +194,10 @@
 
 		<!-- Sección principal de preguntas frecuentes -->
 		<div class="Pagina-PF">
-			<section id="inicio-preguntas" class="Seccion-Principal-PF">
-				<p class="Antetitulo-PF">RECURSOS Y APRENDIZAJES / 02</p>
+			<section id="inicio-preguntas" class="Seccion-Principal">
+				<p class="Antetitulo-Principal">RECURSOS Y APRENDIZAJES / 02</p>
 				<h1>PREGUNTAS FRECUENTES<span>.</span></h1>
-				<p class="Descripcion-PF">
+				<p class="Descripcion-Principal">
 					¿Tenés alguna duda? En esta sección encontrarás respuestas a las preguntas más frecuentes sobre calidad
 					de software, procesos de desarrollo y metodologías ágiles.
 				</p>
@@ -299,10 +302,10 @@
 
 		<!-- Sección principal de enlaces de interés -->
 		<div class="Pagina-EDI">
-			<section id="inicio-enlaces" class="Seccion-Principal-EDI">
-				<p class="Antetitulo-EDI">RECURSOS Y APRENDIZAJES / 03</p>
+			<section id="inicio-enlaces" class="Seccion-Principal">
+				<p class="Antetitulo-Principal">RECURSOS Y APRENDIZAJES / 03</p>
 				<h1>ENLACES DE INTERÉS<span>.</span></h1>
-				<p class="Descripcion-EDI">Sitios web, estándares, libros y guías oficiales para seguir aprendiendo sobre calidad del software y metodologías ágiles.</p>
+				<p class="Descripcion-Principal">Sitios web, estándares, libros y guías oficiales para seguir aprendiendo sobre calidad del software y metodologías ágiles.</p>
 			</section>
 
 			<!-- Sección 1: libros y guías recomendadas -->
@@ -343,10 +346,10 @@
 
 
 		<div class="Pagina-ECP">
-			<section id="inicio-Ejercicios" class="Seccion-Principal-ECP">
-				<p class="Antetitulo-ECP">RECURSOS Y APRENDIZAJES / 04</p>
+			<section id="inicio-Ejercicios" class="Seccion-Principal">
+				<p class="Antetitulo-Principal">RECURSOS Y APRENDIZAJES / 04</p>
 				<h1>Ejercicios y casos <span>prácticos.</span></h1>
-				<p class="Descripcion-ECP">
+				<p class="Descripcion-Principal">
 					En esta sección encontrarás ejercicios y casos prácticos para poner en práctica los conocimientos sobre
 					calidad del software, procesos de desarrollo y metodologías ágiles. Cada actividad presenta una situación o
 					consigna para resolver y una solución orientativa que podrás consultar una vez que hayas intentado
@@ -446,7 +449,7 @@
 			</section>
 
 			<section class="Seccion-Pauta-Evaluacion" aria-labelledby="titulo-pauta-evaluacion">
-				<p class="Antetitulo-ECP">PAUTA DE EVALUACIÓN</p>
+				<p class="Antetitulo-Principal">PAUTA DE EVALUACIÓN</p>
 				<h2 id="titulo-pauta-evaluacion">¿Cómo saber si tu respuesta está bien?</h2>
 				<p class="Descripcion-Pauta-Evaluacion">La solución no tiene que ser necesariamente idéntica a la propuesta. Se puede evaluar si:</p>
 				<ul class="Lista-Criterios-Evaluacion">
@@ -471,21 +474,91 @@
 					</div>
 				</div>
 			</section>
+
+
+
+
+
+
+
+
+
+
+
+			<section id="inicio-metodologia" class="Seccion-Principal">
+				<p class="Antetitulo-Principal">RECURSOS Y APRENDIZAJES / 05</p>
+
+				<h1>Encontrá una <span>Metodología.</span></h1>
+
+				<p class="Descripcion-Principal">
+					¿No sabés qué metodología podría adaptarse mejor a tu proyecto?
+					Respondé unas preguntas sobre sus características, la organización
+					del equipo y los cambios esperados. Al finalizar, recibirás una
+					sugerencia orientativa entre Scrum, Kanban y el modelo en Cascada.
+				</p>
+			</section>
+
+			<section id="encuesta-metodología" class="Encuesta-Metodologia">
+				<div class="Tarjeta-Encuesta" id="tarjeta-encuesta">
+					<div id="pantalla-preguntas">
+						<div class="Cabecera-Progreso">
+							<span id="numero-pregunta">PREGUNTA 1 DE 4</span>
+							<span id="porcentaje-progreso">0%</span>
+						</div>
+
+						<div
+							class="Barra-Progreso"
+							role="progressbar"
+							aria-label="Progreso de la encuesta"
+							aria-valuemin="0"
+							aria-valuemax="100"
+							aria-valuenow="0"
+							id="barra-progreso"
+						>
+							<div id="progreso-encuesta"></div>
+						</div>
+
+						<h2 id="titulo-pregunta"></h2>
+						<div id="opciones-pregunta" class="Opciones-Pregunta"></div>
+						<p id="aviso-encuesta" class="Aviso-Encuesta" aria-live="polite"></p>
+
+						<div class="Botones-Encuesta">
+							<button type="button" id="anterior-pregunta" class="Boton-Encuesta Boton-Anterior">
+								Anterior
+							</button>
+							<button type="button" id="siguiente-pregunta" class="Boton-Encuesta Boton-Siguiente">
+								Siguiente
+							</button>
+						</div>
+					</div>
+
+					<div id="resultado-encuesta" hidden>
+						<div class="Cabecera-Progreso">
+							<span>RESULTADO</span>
+							<span>100%</span>
+						</div>
+
+						<div class="Barra-Progreso Barra-Progreso-Final">
+							<div></div>
+						</div>
+
+						<p class="Etiqueta-Resultado">Sugerencia orientativa</p>
+						<h2 id="titulo-resultado"></h2>
+						<p id="descripcion-resultado"></p>
+						<div id="lista-resultados" class="Lista-Resultados"></div>
+
+						<button type="button" id="reiniciar-encuesta" class="Boton-Encuesta Boton-Reiniciar">
+							Reiniciar encuesta
+						</button>
+					</div>
+				</div>
+			</section>
 		</div>
 
+        <!-- Sección pie -->
+		<div id="footer-container"></div>
 
-
-
-
-
-
-
-
-
-		<!-- Pie de página -->
-		<div class="Seccion-footer">
-			<footer><p class="Parrafo-Pie">Scrumly . Sistema de gestión de calidad del software</p></footer>
-		</div>
+		<script src="JS/footer.js"></script>
 
 		<script src="JS/script.js"></script>
 	</body>

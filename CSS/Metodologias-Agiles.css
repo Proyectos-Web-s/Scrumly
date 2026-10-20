@@ -1,16 +1,25 @@
+/* Variables compartidas de la identidad visual. */
+:root {
+    --color-fondo: #efeae1;
+    --color-texto: #181d2a;
+    --color-acento: #80649c;
+}
+
 /* Estilos de la página introductoria de metodologías ágiles. */
+
 html {
 	scroll-behavior: smooth;
 }
 
 body {
 	margin: 0;
-	background: #efeae1;
-	color: #181d2a;
+	background: var(--color-fondo);
+	color: var(--color-texto);
 	font-family: "Public Sans", Arial, sans-serif;
 }
 
 /* La portada usa el degradado de la identidad visual y ocupa todo el ancho. */
+
 .Encabezado-Agil {
 	position: relative;
 	isolation: isolate;
@@ -23,7 +32,7 @@ body {
 	inset: 0;
 	left: calc(50% + max(0px, (100vw - 100%) / 2) - 50vw);
 	width: 100vw;
-	background: linear-gradient(105deg, #efeae1 0%, #f2eaf4 100%);
+	background: linear-gradient(105deg, var(--color-fondo) 0%, #f2eaf4 100%);
 	content: "";
 }
 
@@ -41,7 +50,7 @@ body {
 
 .Antetitulo-Agil {
 	margin: 0 0 14px;
-	color: #80649c;
+	color: var(--color-acento);
 	font-size: 15px;
 	font-weight: 800;
 	letter-spacing: 0.04em;
@@ -64,7 +73,7 @@ body {
 }
 
 .Encabezado-Agil h1 span {
-	color: #80649c;
+	color: var(--color-acento);
 }
 
 .Descripcion-Agil {
@@ -76,6 +85,7 @@ body {
 }
 
 /* Botones que llevan directamente a cada sección de esta página. */
+
 .Navegacion-Agil {
 	display: flex;
 	align-items: center;
@@ -105,17 +115,18 @@ body {
 
 .Boton-Navegacion-Agil:hover,
 .Boton-Navegacion-Agil:focus-visible {
-	background: #80649c;
+	background: var(--color-acento);
 	color: #fff;
 }
 
 .Boton-Navegacion-Agil.activo {
-	border-color: #80649c;
-	background: #80649c;
+	border-color: var(--color-acento);
+	background: var(--color-acento);
 	color: #fff;
 }
 
 /* Secciones de contenido y encabezados. */
+
 .Seccion-Agil {
 	padding: 34px 0 48px;
 	scroll-margin-top: 24px;
@@ -159,7 +170,8 @@ body {
 }
 
 /* Cuatro valores del Manifiesto Ágil. */
-.Sutitulo-Agil {
+
+.Subtitulo-Agil {
 	margin-top: 30px;
 	font-size: 28px;
 }
@@ -181,7 +193,7 @@ body {
 }
 
 .Tarjeta-Valor > i {
-	color: #80649c;
+	color: var(--color-acento);
 	font-size: 20px;
 }
 
@@ -205,6 +217,7 @@ body {
 }
 
 /* Rejilla numerada con los doce principios. */
+
 .Tarjetas-Principios {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -221,7 +234,7 @@ body {
 }
 
 .Tarjeta-Principio span {
-	color: #80649c;
+	color: var(--color-acento);
 	font-size: 18px;
 	font-weight: 800;
 }
@@ -234,6 +247,7 @@ body {
 }
 
 /* Información resumen para cada metodología. */
+
 .Seccion-Metodologia {
 	padding-top: 42px;
 }
@@ -284,6 +298,7 @@ body {
 }
 
 /* Portadas y texto explicativo de las páginas específicas de Kanban y XP. */
+
 .Pagina-Detalle-Metodo {
 	width: min(100% - 64px, 1180px);
 	margin: 0 auto;
@@ -293,7 +308,7 @@ body {
 .Encabezado-Detalle-Metodo {
 	padding: 30px 32px 34px;
 	border-radius: 18px;
-	background: linear-gradient(105deg, #efeae1 0%, #f2eaf4 100%);
+	background: linear-gradient(105deg, var(--color-fondo) 0%, #f2eaf4 100%);
 }
 
 .Encabezado-Detalle-Metodo h1 {
@@ -306,7 +321,7 @@ body {
 }
 
 .Encabezado-Detalle-Metodo h1 span {
-	color: #80649c;
+	color: var(--color-acento);
 }
 
 .Encabezado-Detalle-Metodo .Descripcion-Agil {
@@ -349,6 +364,7 @@ body {
 }
 
 /* Diagramas SVG: al pulsar se presentan ampliados en el visor oscuro. */
+
 .Figura-Agil {
 	margin: 22px 0 14px;
 }
@@ -365,7 +381,7 @@ body {
 }
 
 .Boton-Diagrama:focus-visible {
-	outline: 3px solid #80649c;
+	outline: 3px solid var(--color-acento);
 	outline-offset: 3px;
 }
 
@@ -398,12 +414,12 @@ body {
 
 .Flechas-Diagrama path {
 	fill: none;
-	stroke: #80649c;
+	stroke: var(--color-acento);
 	stroke-width: 2;
 }
 
 .Centro-Diagrama {
-	fill: #80649c;
+	fill: var(--color-acento);
 	font-family: "Public Sans", Arial, sans-serif;
 	font-size: 28px;
 	font-weight: 800;
@@ -436,7 +452,7 @@ body {
 }
 
 .Etiqueta-Kanban {
-	fill: #80649c;
+	fill: var(--color-acento);
 	font-family: "Public Sans", Arial, sans-serif;
 	font-size: 16px;
 	font-weight: 700;
@@ -465,8 +481,8 @@ body {
 }
 
 .Boton-Detalle-Agil {
-	border-color: #80649c;
-	background: #80649c;
+	border-color: var(--color-acento);
+	background: var(--color-acento);
 	color: #fff;
 	font-size: 14px;
 	font-weight: 700;
@@ -479,6 +495,7 @@ body {
 }
 
 /* Tabla de referencia; en móvil permite desplazamiento horizontal interno. */
+
 .Seccion-Comparativa {
 	margin-bottom: 24px;
 }
@@ -519,6 +536,7 @@ body {
 }
 
 /* Visor modal reutilizable para ampliar los diagramas. */
+
 .Visor-Diagrama {
 	width: min(92vw, 1000px);
 	max-width: none;
@@ -577,6 +595,222 @@ body {
 }
 
 /* Diseño de una columna para teléfonos y tabletas estrechas. */
+
+/* Comparador interactivo de modelos y metodologías. */
+
+.Seccion-Comparativa {
+    margin-bottom: 24px;
+}
+
+.Seccion-Comparativa .Introduccion-Seccion-Agil {
+    margin-bottom: 24px;
+}
+
+.Opciones-Comparador {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.Tarjeta-Comparador {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    min-width: 0;
+    min-height: 142px;
+    padding: 20px;
+    border: 1px solid #d9cbb9;
+    border-radius: 14px;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Tarjeta-Comparador:hover {
+    border-color: #a58cbd;
+}
+
+.Tarjeta-Comparador:has(input:checked) {
+    border: 2px solid var(--color-acento);
+    padding: 19px;
+    box-shadow: 0 0 0 1px rgba(128, 100, 156, 0.08);
+}
+
+.Tarjeta-Comparador input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.Checkbox-Visual {
+    display: grid;
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+    margin-top: 1px;
+    place-items: center;
+    border: 2px solid var(--color-acento);
+    border-radius: 6px;
+    color: #fff;
+}
+
+.Tarjeta-Comparador input:checked + .Checkbox-Visual {
+    background: var(--color-acento);
+}
+
+.Tarjeta-Comparador input:checked + .Checkbox-Visual::after {
+    content: "✓";
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.Tarjeta-Comparador input:focus-visible + .Checkbox-Visual {
+    outline: 3px solid #bca8d1;
+    outline-offset: 3px;
+}
+
+.Texto-Tarjeta-Comparador {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.Texto-Tarjeta-Comparador strong {
+    color: #111;
+    font-size: 17px;
+    line-height: 1.25;
+}
+
+.Texto-Tarjeta-Comparador > span {
+    color: #55515a;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.Barra-Comparador {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 14px 0;
+}
+
+.Barra-Comparador p {
+    margin: 0;
+    color: #38373b;
+    font-size: 14px;
+}
+
+.Boton-Limpiar-Comparador {
+    padding: 9px 18px;
+    border: 2px solid #d9c9e5;
+    border-radius: 24px;
+    background: transparent;
+    color: var(--color-acento);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.Boton-Limpiar-Comparador:hover {
+    background: var(--color-acento);
+    color: #fff;
+}
+
+.Boton-Limpiar-Comparador:focus-visible {
+    outline: 3px solid #bca8d1;
+    outline-offset: 3px;
+}
+
+.Resultado-Comparador {
+    min-width: 0;
+}
+
+.Estado-Vacio-Comparador {
+    display: flex;
+    min-height: 140px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 24px;
+    border: 1px dashed #d9cbb9;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.Estado-Vacio-Comparador i {
+    color: var(--color-acento);
+    font-size: 32px;
+}
+
+.Estado-Vacio-Comparador p {
+    margin: 0;
+    color: #38373b;
+    line-height: 1.5;
+}
+
+.Tabla-Comparador-Desplazable {
+    overflow-x: auto;
+    border: 1px solid #e3d9ce;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.Tabla-Comparador {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: #302d32;
+    font-size: 14px;
+}
+
+.Tabla-Comparador th,
+.Tabla-Comparador td {
+    padding: 14px 16px;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.Tabla-Comparador thead th {
+    background: #e5def1;
+    color: #705789;
+    font-weight: 800;
+}
+
+.Tabla-Comparador thead th:first-child {
+    color: #171717;
+}
+
+.Tabla-Comparador tbody th {
+    width: 190px;
+    color: #171717;
+    font-weight: 800;
+}
+
+.Tabla-Comparador tbody tr:nth-child(even) {
+    background: #f3ede4;
+}
+
+.Tabla-Comparador tbody tr:nth-child(odd) {
+    background: #fff;
+}
+
+.Tabla-Comparador tbody tr:last-child th,
+.Tabla-Comparador tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+/* Adaptaciones responsive y preferencias de movimiento. */
+
 @media (max-width: 760px) {
 	.Encabezado-Agil {
 		padding: 36px 0 38px;
@@ -695,4 +929,40 @@ body {
 	*::after {
 		transition-duration: 0.01ms !important;
 	}
+}
+
+@media (max-width: 900px) {
+    .Opciones-Comparador {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .Opciones-Comparador {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .Tarjeta-Comparador {
+        min-height: 0;
+        padding: 16px;
+    }
+
+    .Tarjeta-Comparador:has(input:checked) {
+        padding: 15px;
+    }
+
+    .Barra-Comparador {
+        align-items: flex-start;
+    }
+
+    .Boton-Limpiar-Comparador {
+        padding: 8px 12px;
+    }
+
+    .Tabla-Comparador th,
+    .Tabla-Comparador td {
+        padding: 12px;
+        font-size: 13px;
+    }
 }
