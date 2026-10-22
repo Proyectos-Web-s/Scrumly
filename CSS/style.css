@@ -2,20 +2,8 @@
    ESTILOS DE LA PÁGINA DE INICIO
    ========================================================= */
 
-:root {
-    --color-fondo: #F8F0E3;
-    --color-tarjeta: #faf6f0;
-    --color-acento-claro: #D8C8F2;
-    --color-acento: #8B5CF6;
-    --color-titulo: #0B0D1A;
-}
-
-/* =========================================================
-   ESTILOS DE LA PÁGINA DE INICIO
-   ========================================================= */
-
 body {
-    background-color: var(--color-fondo);
+    background-color: #F2EEE9;
     margin: 0;
     padding: 0;
 }
@@ -26,6 +14,12 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
+    background: linear-gradient(
+        to bottom right,
+        #fffaf4 0%,
+        #F2E8DC 50%,
+        #dcd0eb 100%
+    );
 }
 
 /* Contenedor de texto */
@@ -34,7 +28,7 @@ body {
 }
 
 .Antetitulo{
-    background-color: var(--color-acento-claro);
+    background-color: #e7d8fc; 
     border-radius: 20px;
     width: 250px;
     height: 40px;
@@ -52,11 +46,11 @@ body {
     padding-left: 20px;
     margin: 5px 0;
     font-family: 'Bebas Neue', sans-serif;
-    color: var(--color-titulo);
+    color: #000000;
 }
 
 #Seccion-Principal .Contenedor-Principal > h1 span {
-    color: var(--color-acento);
+    color: #75618F ;
 }
 
 .Parrafo-Principal{
@@ -70,7 +64,7 @@ body {
 
 /* Contenedor de imagen */
 .Contenedor-Imagen{
-    width: 40%;
+    width: 420px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,19 +72,27 @@ body {
 
 /* Imagen principal */
 .Imagen-Principal{
-    width: 400px;
-    height: auto;
+    margin-right: 200px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 100%;
 }
 
+
+
+
 /* Sección de áreas */
+#Seccion-Areas{
+    background-color: #F2E8DC;
+    width: 100%;
+    padding: 40px 0;
+}
 .Titulo-Areas{
     font-size: 30px;
     width: 810px;
     padding: 8px;
     padding-left: 20px;
     margin: 5px 0;
-    margin-top: 160px;
-    color: var(--color-titulo);
+    color: #0B0D1A;
     font-family: 'Oswald', sans-serif;
 }
 
@@ -99,6 +101,7 @@ body {
     padding-left: 20px;
     margin-top: 5px;
     margin-bottom: 60px;
+    font-family: 'Public Sans', sans-serif;
 }
 
 .Contenedor-Tarjetas-A,
@@ -118,7 +121,7 @@ body {
 .Tarjeta-MA,
 .Tarjeta-RA,
 .Tarjeta-SN{
-    background-color: var(--color-tarjeta);
+    background-color: #fdf9f4;
     width: 420px;
     height: 200px;
     border-radius: 20px;
@@ -146,7 +149,7 @@ body {
 .Tarjeta-MA .bi,
 .Tarjeta-RA .bi,
 .Tarjeta-SN .bi {
-    background-color: var(--color-acento-claro);
+    background-color: #e7d8fc;
     border-radius: 5px;
     color: #000000;
     font-size: 20px;
@@ -154,7 +157,7 @@ body {
 }
 
 .A-Ver-Secciones {
-    color: var(--color-acento);
+    color: #a465fd;
     text-decoration: none;
     font-family: 'Public Sans', sans-serif;
 }
@@ -301,7 +304,7 @@ body {
     #Seccion-Principal .Contenedor-Principal > h1 {
         width: 100%;
         box-sizing: border-box;
-        font-size: 42px;
+        font-size: 22px;
         line-height: 0.95;
         padding: 5px 0;
         margin: 5px 0;
@@ -338,7 +341,7 @@ body {
     .Titulo-Areas {
         width: 100%;
         box-sizing: border-box;
-        font-size: 280px;
+        font-size: 25px;
         padding: 0 20px;
         margin-top: 70px;
     }

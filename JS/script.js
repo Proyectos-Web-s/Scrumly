@@ -379,73 +379,71 @@ if (botonesPestana.length && panelesPestana.length) {
 
     activarPestana("roles");
 }
-
-// Pestañas de herramientas de calidad; aria-controls enlaza cada botón con su panel.
+// Pestañas de herramientas de calidad.
 const botonesCategoriaHerramienta = document.querySelectorAll(".Boton-Herramienta");
 const panelesHerramienta = document.querySelectorAll(".Panel-Herramienta");
 
-// Activa la categoría enlazada con el botón recibido y oculta las demás categorías.
+// Activa una categoría y oculta las demás.
 function activarCategoriaHerramienta(boton) {
     const panelId = boton.getAttribute("aria-controls");
     const panelActivo = panelId ? document.getElementById(panelId) : null;
 
     if (!panelActivo) return;
 
-    // Mantiene una sola pestaña activa y enfocable en el grupo.
+    // Actualiza el botón seleccionado.
     botonesCategoriaHerramienta.forEach((otroBoton) => {
         const activo = otroBoton === boton;
+
         otroBoton.classList.toggle("activo", activo);
         otroBoton.setAttribute("aria-selected", String(activo));
         otroBoton.tabIndex = activo ? 0 : -1;
     });
 
+    // Oculta todos los paneles excepto el seleccionado.
     panelesHerramienta.forEach((panel) => {
         panel.hidden = panel !== panelActivo;
     });
+
+    // Si es el cuarto botón, muestra las tres tarjetas.
+    const indiceBoton = Array.from(botonesCategoriaHerramienta).indexOf(boton);
+
+    if (indiceBoton === 3) {
+        const tarjetas = panelActivo.querySelectorAll(".Tarjeta-Herramienta");
+
+        tarjetas.forEach((tarjeta) => {
+            tarjeta.hidden = false;
+        });
+    }
 }
 
+// Agrega los eventos de clic y navegación con teclado.
 botonesCategoriaHerramienta.forEach((boton, indice) => {
     boton.addEventListener("click", () => activarCategoriaHerramienta(boton));
+
     boton.addEventListener("keydown", (evento) => {
         let nuevoIndice = indice;
 
-        // Añade navegación con teclado entre las categorías de herramientas.
-        if (evento.key === "ArrowRight") nuevoIndice = (indice + 1) % botonesCategoriaHerramienta.length;
-        else if (evento.key === "ArrowLeft") nuevoIndice = (indice - 1 + botonesCategoriaHerramienta.length) % botonesCategoriaHerramienta.length;
-        else if (evento.key === "Home") nuevoIndice = 0;
-        else if (evento.key === "End") nuevoIndice = botonesCategoriaHerramienta.length - 1;
-        else return;
+        if (evento.key === "ArrowRight") {
+            nuevoIndice = (indice + 1) % botonesCategoriaHerramienta.length;
+        } else if (evento.key === "ArrowLeft") {
+            nuevoIndice =
+                (indice - 1 + botonesCategoriaHerramienta.length) %
+                botonesCategoriaHerramienta.length;
+        } else if (evento.key === "Home") {
+            nuevoIndice = 0;
+        } else if (evento.key === "End") {
+            nuevoIndice = botonesCategoriaHerramienta.length - 1;
+        } else {
+            return;
+        }
 
         evento.preventDefault();
+
         const nuevoBoton = botonesCategoriaHerramienta[nuevoIndice];
         nuevoBoton.focus();
         activarCategoriaHerramienta(nuevoBoton);
     });
 });
-
-const botonesMasHerramienta = document.querySelectorAll(".Boton-Mas-Herramienta");
-
-// Expande o contrae la información adicional de cada tarjeta de herramienta.
-botonesMasHerramienta.forEach((boton) => {
-    boton.addEventListener("click", () => {
-        const tarjeta = boton.closest(".Tarjeta-Herramienta");
-        const detalleId = boton.getAttribute("aria-controls");
-        const detalle = detalleId ? document.getElementById(detalleId) : null;
-        const icono = boton.querySelector("i");
-        const texto = boton.querySelector("span");
-
-        if (!tarjeta || !detalle || !icono || !texto) return;
-
-        const abierta = boton.getAttribute("aria-expanded") !== "true";
-        boton.setAttribute("aria-expanded", String(abierta));
-        tarjeta.classList.toggle("abierta", abierta);
-        detalle.hidden = !abierta;
-        texto.textContent = abierta ? "Ocultar" : "Ver más";
-        icono.classList.toggle("bi-chevron-up", abierta);
-        icono.classList.toggle("bi-chevron-down", !abierta);
-    });
-});
-
 // Agrega apertura por clic, Enter o espacio a las tarjetas explicativas de modelos.
 function configurarTarjetasInteractivas(selectorTarjeta) {
     document.querySelectorAll(selectorTarjeta).forEach((tarjeta) => {

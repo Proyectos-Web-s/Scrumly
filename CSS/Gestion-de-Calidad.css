@@ -1,15 +1,3 @@
-/* Variables globales de color */
-:root {
-    --color-fondo: #F8F0E3;
-    --color-fondo-tarjeta: #faf6f0;
-    --color-lila-claro: #D8C8F2;
-    --color-violeta: #8B5CF6;
-    --color-violeta-oscuro: #80649c;
-    --color-texto: #0B0D1A;
-    --color-borde: #e4dccf;
-}
-
-/* Estilos generales y componentes de la página */
 /* 
    GESTIÓN DE LA CALIDAD DEL SOFTWARE
   */
@@ -20,21 +8,20 @@ body {
     padding: 0;
 }
 
-/* Degradado de la portada de Fundamentos, como en la página de Inicio. */
-#inicio-calidad {
-    display: flow-root;
-    background: linear-gradient(105deg, #F8F0E3 0%, #f2eaf4 100%);
-}
 
 /* Secciones de contenido */
-
-
 /* Contenedor principal */
-#Seccion-Principal{
+#inicio-calidad{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
+        background: linear-gradient(
+        to bottom right,
+        #fffaf4 50%,
+        #dcd0eb 100%
+    );
+    
 }
 
 /* Contenedor de texto */
@@ -68,7 +55,7 @@ body {
 }
 
 .Contenedor-Titulos h1 span {
-    color: #C084FC ;
+    color: #75618F ;
 }
 
 .Parrafo-Principal{
@@ -84,18 +71,24 @@ body {
 /* Secciones de conceptos - Fundamentos*/
 
 
+#fundamentos-calidad{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px 50px 0;
+    background-color: #fffaf4;
+}
 /* Antetítulo */
 
 .Antetitulo-Conceptos {
-    color: #C084FC;
-    width: 225px;
+    color: #75618F;
     height: 16px;
     padding: 10px;
-    padding-left: 20px;
+    padding-left: 10px;
     margin-top: 70px;
     margin-left: 20px;
     font-family: 'Public Sans', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 /* Título */
@@ -132,12 +125,12 @@ body {
 
 .Imagen-Principal {
     width: 100%;
+    border-radius: 20px;
 }
 
 .seccion-01{
     display: flex;
     align-items: center;
-
 }
 
 
@@ -147,6 +140,13 @@ body {
 
 
 /* Tarjetas sección 2 */
+#caracteristicas-calidad{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px 50px 30px;
+    background-color: #F8F0E3;
+}
 
 .Contenedor-Tarjetas-Caracteristicas {
     display: flex;
@@ -226,6 +226,14 @@ body {
 
 
 /*Tarjeta seccion 3*/
+
+#metricas-calidad{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px 50px 30px;
+    background-color: #fffaf4;
+}
 
 /* Filas de métricas */
 
@@ -331,6 +339,14 @@ body {
 
 
 /*Tarjetas sección 4 */
+#calidad-agil{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px 50px 30px;
+    background-color: #F8F0E3;
+}
+
 .Contenedor-Calidad-Agil {
     display: flex;
     justify-content: center;
@@ -388,6 +404,14 @@ body {
 
 
 /* Sección estándares - Fundamentos */
+#estandares-calidad{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px 50px 30px;
+    background-color: #fffaf4;
+}
+
 
 /* Selector de estándares */
 .Selector-Estandares {
@@ -567,6 +591,14 @@ body {
 
 
 /* Sección de conclusión - Fundamentos */
+#Seccion-Conclusion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px 50px 30px;
+    background-color: #F8F0E3;
+}
+
 .Seccion-Conclusion {
     padding-bottom: 40px;
 }
@@ -580,8 +612,7 @@ body {
     margin-bottom: 18px;
 }
 
-.Titulo-Conclusion::after {
-    content: " software.";
+.Titulo-Conceptos span {
     color: #C084FC;
 }
 
@@ -653,7 +684,7 @@ body {
 .Texto-Pie-Conclusion {
     font-family: 'Public Sans', sans-serif;
     font-size: 14px;
-    margin: 10px 35px;
+    margin-top: 35px;
     color: #333;
 }
 
@@ -678,6 +709,12 @@ body {
 
 
 /* Seccion Niveles - Tecnicas*/
+#niveles-prueba{
+    background-color: #fffaf4;
+    padding-bottom: 30px;
+    padding: 10px 30px 50px 30px;
+}
+
 /* Niveles de prueba */
 .Seccion-Niveles .Contenedor-Concepto {
     box-sizing: border-box;
@@ -814,9 +851,10 @@ body {
 
 
 /* Seccion Pruebas - Tecnicas*/
-.Seccion-Pruebas .Detalle-Nivel {
-    padding: 0;
-    border-top: 0;
+#tipos-prueba{
+    background-color: #F8F0E3;
+    padding-bottom: 30px;
+    padding: 10px 30px 50px 30px;
 }
 
 .Panel-Tipo-Prueba {
@@ -894,6 +932,14 @@ body {
 
 
 /* Seccion Otras Tecnicas - Tecnicas*/
+#otras-tecnicas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px 50px 30px;
+    background-color: #fffaf4;
+}
+
 .Seccion-Mas-Tecnicas .Contenedor-Conceptos {
     width: 100%;
     margin: 0 auto;
