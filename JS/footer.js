@@ -1,3 +1,4 @@
+// Carga el pie compartido y conserva una versión local si el archivo no está disponible.
 document.addEventListener("DOMContentLoaded", async function () {
     const contenedor = document.getElementById("footer-container");
 

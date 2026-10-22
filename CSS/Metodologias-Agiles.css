@@ -18,6 +18,13 @@ body {
 	font-family: "Public Sans", Arial, sans-serif;
 }
 
+/* Recorta el ancho del fondo de portada para evitar desplazamiento lateral en móvil. */
+html,
+body {
+	max-width: 100%;
+	overflow-x: clip;
+}
+
 /* La portada usa el degradado de la identidad visual y ocupa todo el ancho. */
 
 .Encabezado-Agil {

@@ -18,78 +18,9 @@ function bindSubmenuEvents() {
     });
 }
 
-async function cargarMenu() {
-    const menuExistente = document.getElementById("menu");
-    if (!menuExistente) return;
-
-    const fallbackMenu = `
-        <div class="Menu-Titulo"><span>MENÚ</span></div>
-        <a href="index.html"><i class="bi bi-house"></i><span>Inicio</span></a>
-        <div class="Item-Menu">
-            <div class="Titulo-Menu"><i class="bi bi-patch-check"></i><span>Gestión de la Calidad<br>del Software</span><i class="bi bi-chevron-down"></i></div>
-            <div class="Submenu">
-                <a href="Gestion-de-Calidad-del-Software.html#fundamentos-calidad">Fundamentos</a>
-                <a href="Gestion-de-Calidad-del-Software.html#calidad-agil">Técnicas de Aseguramiento de la Calidad</a>
-                <a href="Gestion-de-Calidad-del-Software.html#herramientas-calidad">Herramientas de Calidad</a>
-            </div>
-        </div>
-        <div class="Item-Menu">
-            <div class="Titulo-Menu"><i class="bi bi-bezier2"></i><span>Procesos de Desarrollo<br>de Software</span><i class="bi bi-chevron-down"></i></div>
-            <div class="Submenu">
-                <a href="Procesos-y-Desarrollo-de-Software.html#inicio-procesos">Ciclo de Vida del Desarrollo (SDLC)</a>
-                <a href="Procesos-y-Desarrollo-de-Software.html#modelo-cascada">Modelo en Cascada</a>
-                <a href="Procesos-y-Desarrollo-de-Software.html#modelo-v">Modelo en V</a>
-                <a href="Procesos-y-Desarrollo-de-Software.html#modelo-iterativo">Modelo Iterativo e Incremental</a>
-            </div>
-        </div>
-        <div class="Item-Menu">
-            <div class="Titulo-Menu"><i class="bi bi-lightning-charge"></i><span>Metodologías Ágiles</span><i class="bi bi-chevron-down"></i></div>
-            <div class="Submenu">
-                <a href="Metodologias-Agiles.html#scrum">Scrum</a>
-                <a href="Metodologias-Agiles.html#kanban">Kanban</a>
-                <a href="Metodologias-Agiles.html#xp">XP (Extreme Programming)</a>
-                <a href="Metodologias-Agiles.html#comparativa">Comparador de metodologías</a>
-            </div>
-        </div>
-        <div class="Item-Menu">
-            <div class="Titulo-Menu"><i class="bi bi-book"></i><span>Recursos y Aprendizajes</span><i class="bi bi-chevron-down"></i></div>
-            <div class="Submenu">
-                <a href="Recursos-y-Aprendizajes.html#glosario">Glosario</a>
-                <a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
-                <a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
-                <a href="Recursos-y-Aprendizajes.html#ejercicios-practicos">Ejercicios y Casos Prácticos</a>
-                <a href="Recursos-y-Aprendizajes.html#encuesta-metodología">Encuesta sobre Metodologías</a>
-            </div>
-        </div>
-        <a href="Sobre-Nosotros.html"><i class="bi bi-people"></i><span>Sobre Nosotros</span></a>
-        <a href="Contacto.html"><i class="bi bi-envelope"></i><span>Contacto</span></a>
-    `;
-
-    try {
-        const respuesta = await fetch("menu.html");
-        if (!respuesta.ok) throw new Error("No se pudo cargar el menú.");
-
-        const html = await respuesta.text();
-        const template = document.createElement("template");
-        template.innerHTML = html.trim();
-        const nuevoMenu = template.content.querySelector("nav");
-
-        if (!nuevoMenu) throw new Error("No se encontró el nav del menú.");
-
-        menuExistente.replaceWith(nuevoMenu);
-        inicializarMenu();
-        bindSubmenuEvents();
-    } catch (error) {
-        console.warn("Error al cargar menú desde menu.html; usando fallback inline.", error);
-        menuExistente.innerHTML = fallbackMenu;
-        inicializarMenu();
-        bindSubmenuEvents();
-    }
-}
-
+// La navegación ya está declarada en cada HTML; se conectan sus controles al cargar el script.
 inicializarMenu();
 bindSubmenuEvents();
-cargarMenu();
 
 // Abre el submenú del título pulsado y cierra los demás submenús abiertos.
 function desplegar(elemento) {
@@ -381,14 +312,17 @@ if (botonesPestana.length && panelesPestana.length) {
 }
 // Pestañas de herramientas de calidad.
 const botonesCategoriaHerramienta = document.querySelectorAll(".Boton-Herramienta");
-const panelesHerramienta = document.querySelectorAll(".Panel-Herramienta");
+const contenedorPanelesHerramienta = document.querySelector(".Paneles-Herramientas");
+
+const panelesHerramienta = contenedorPanelesHerramienta
+    ? [...contenedorPanelesHerramienta.children].filter((panel) =>
+        panel.classList.contains("Panel-Herramienta"))
+    : [];
 
 // Activa una categoría y oculta las demás.
 function activarCategoriaHerramienta(boton) {
-    const panelId = boton.getAttribute("aria-controls");
-    const panelActivo = panelId ? document.getElementById(panelId) : null;
-
-    if (!panelActivo) return;
+    const categoria = boton.dataset.herramienta;
+    if (!categoria || !panelesHerramienta.length) return;
 
     // Actualiza el botón seleccionado.
     botonesCategoriaHerramienta.forEach((otroBoton) => {
@@ -399,21 +333,19 @@ function activarCategoriaHerramienta(boton) {
         otroBoton.tabIndex = activo ? 0 : -1;
     });
 
-    // Oculta todos los paneles excepto el seleccionado.
+    // "Todos" muestra cada categoría; los otros botones filtran un único panel.
     panelesHerramienta.forEach((panel) => {
-        panel.hidden = panel !== panelActivo;
+        panel.hidden = categoria !== "Todos"
+            && panel.dataset.panelHerramienta !== categoria;
     });
 
-    // Si es el cuarto botón, muestra las tres tarjetas.
-    const indiceBoton = Array.from(botonesCategoriaHerramienta).indexOf(boton);
-
-    if (indiceBoton === 3) {
-        const tarjetas = panelActivo.querySelectorAll(".Tarjeta-Herramienta");
-
-        tarjetas.forEach((tarjeta) => {
-            tarjeta.hidden = false;
-        });
-    }
+    const idsPaneles = panelesHerramienta.map((panel) => panel.id).join(" ");
+    boton.setAttribute(
+        "aria-controls",
+        categoria === "Todos"
+            ? idsPaneles
+            : panelesHerramienta.find((panel) => panel.dataset.panelHerramienta === categoria)?.id || idsPaneles
+    );
 }
 
 // Agrega los eventos de clic y navegación con teclado.
@@ -442,6 +374,34 @@ botonesCategoriaHerramienta.forEach((boton, indice) => {
         const nuevoBoton = botonesCategoriaHerramienta[nuevoIndice];
         nuevoBoton.focus();
         activarCategoriaHerramienta(nuevoBoton);
+    });
+});
+
+if (botonesCategoriaHerramienta.length) {
+    activarCategoriaHerramienta(
+        [...botonesCategoriaHerramienta].find((boton) => boton.classList.contains("activo"))
+            || botonesCategoriaHerramienta[0]
+    );
+}
+
+// Las tarjetas de herramientas muestran sus detalles dentro de la misma tarjeta.
+document.querySelectorAll(".Boton-Mas-Herramienta").forEach((boton) => {
+    boton.addEventListener("click", () => {
+        const detalleId = boton.getAttribute("aria-controls");
+        const detalle = detalleId ? document.getElementById(detalleId) : null;
+        const tarjeta = boton.closest(".Tarjeta-Herramienta");
+        const texto = boton.querySelector("span");
+        const icono = boton.querySelector("i");
+
+        if (!detalle || !tarjeta || !texto || !icono) return;
+
+        const abierta = boton.getAttribute("aria-expanded") !== "true";
+        boton.setAttribute("aria-expanded", String(abierta));
+        detalle.hidden = !abierta;
+        tarjeta.classList.toggle("abierta", abierta);
+        texto.textContent = abierta ? "Ver menos" : "Ver más";
+        icono.classList.toggle("bi-chevron-up", abierta);
+        icono.classList.toggle("bi-chevron-down", !abierta);
     });
 });
 // Agrega apertura por clic, Enter o espacio a las tarjetas explicativas de modelos.

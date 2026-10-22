@@ -58,6 +58,10 @@ body {
     color: #75618F ;
 }
 
+.Salto-Titulo-Movil {
+    display: none;
+}
+
 .Parrafo-Principal{
     font-size: 20px;
     width: 660px;
@@ -742,6 +746,11 @@ body {
     background: #fff;
 }
 
+.Tarjeta-Nivel.abierta {
+    flex: 0 0 auto;
+    height: auto;
+}
+
 .Contenido-Nivel {
     position: relative;
     padding: 18px 18px 12px;
@@ -1057,6 +1066,12 @@ body {
     width: 100%;
 }
 
+.Paneles-Herramientas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 18px;
+}
+
 .Panel-Herramienta[hidden],
 .Detalle-Herramienta[hidden] {
     display: none;
@@ -1064,7 +1079,7 @@ body {
 
 .Tarjeta-Herramienta {
     width: min(600px, 100%);
-    height: 250px;
+    height: auto;
     overflow: hidden;
     border: 1px solid #dfd4c4;
     border-radius: 14px;
@@ -1078,7 +1093,7 @@ body {
 
 .Contenido-Tarjeta-Herramienta {
     position: relative;
-    height: 250px;
+    height: auto;
     padding: 18px 22px 16px;
     box-sizing: border-box;
 }
@@ -1131,14 +1146,12 @@ body {
 }
 
 .Boton-Mas-Herramienta {
-    position: absolute;
-    right: 22px;
-    bottom: 16px;
-    left: 22px;
+    position: static;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: calc(100% - 44px);
+    width: 100%;
+    margin-top: 16px;
     padding: 11px 2px 0;
     border: 0;
     border-top: 1px solid #e5dbce;
@@ -1194,59 +1207,6 @@ body {
 .Cierre-Detalle-Herramienta strong {
     color: #80649e;
 }
-
-.Seccion-Herramientas-Conjunto .Contenedor-Otras-Tecnicas {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-}
-
-.Tarjeta-Otra-Herramienta {
-    min-width: 0;
-    color: #555;
-    font-family: 'Public Sans', sans-serif;
-    margin-bottom: 40px;
-}
-
-.Icono-Otra-Herramienta {
-    color: #80649e;
-    font-size: 28px;
-}
-
-.Tarjeta-Otra-Herramienta h2 {
-    margin: 6px 0 14px;
-    color: #0b0d1a;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 35px;
-    font-weight: 400;
-}
-
-.Tarjeta-Otra-Herramienta p {
-    margin: 0;
-    font-size: 18px;
-    line-height: 1.45;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Pie de página */
 .Seccion-footer {
@@ -1403,8 +1363,7 @@ body {
     }
 
     .Texto-Introduccion-Herramientas {
-        margin-right: 16px;
-        margin-left: 16px;
+        margin-right: 10px;
         font-size: 14px;
     }
 
@@ -1426,9 +1385,6 @@ body {
         font-size: 14px;
     }
 
-    .Seccion-Herramientas-Conjunto .Contenedor-Otras-Tecnicas {
-        grid-template-columns: 1fr;
-    }
 }
 
 @media (max-width: 900px) {
@@ -1497,6 +1453,117 @@ body {
 }
 
 @media (max-width: 600px) {
+    /* Mantiene el tamaño de portada y alinea el contenido a 20 px en teléfonos. */
+    #inicio-Tecnicas,
+    #inicio-Herramientas {
+        padding: 0 20px 24px;
+    }
+
+    #inicio-Tecnicas .Contenedor-Principal,
+    #inicio-Herramientas .Contenedor-Principal {
+        width: 100%;
+    }
+
+    #inicio-Tecnicas .Antetitulo,
+    #inicio-Herramientas .Antetitulo {
+        width: fit-content;
+        height: auto;
+        max-width: 100%;
+        margin: 40px 0 0;
+        padding: 0;
+        font-size: 14px;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+
+    #inicio-Tecnicas .Contenedor-Titulos,
+    #inicio-Herramientas .Contenedor-Titulos {
+        margin: 10px 0 0;
+    }
+
+    #inicio-Tecnicas .Contenedor-Titulos h1,
+    #inicio-Herramientas .Contenedor-Titulos h1 {
+        width: 100%;
+        padding: 0;
+        font-size: 35px;
+        line-height: 1.05;
+    }
+
+    #inicio-Tecnicas .Salto-Titulo-Movil,
+    #inicio-Herramientas .Salto-Titulo-Movil {
+        display: block;
+    }
+
+    #inicio-Tecnicas .Parrafo-Principal,
+    #inicio-Herramientas .Parrafo-Principal {
+        width: 100%;
+        margin: 12px 0 0;
+        padding: 0;
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    .Contenedor-Niveles {
+        width: 100%;
+        margin-left: 0;
+        align-items: stretch;
+    }
+
+    .Tarjeta-Nivel {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    #niveles-prueba {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    #niveles-prueba .Antetitulo-Conceptos,
+    #niveles-prueba .Titulo-Conceptos {
+        margin-left: 0;
+    }
+
+    .Seccion-Herramientas .Contenedor-Conceptos {
+        padding: 0 20px 28px;
+    }
+
+    #herramientas-calidad .Antetitulo-Conceptos {
+        margin-left: 0;
+    }
+
+    .Seccion-Herramientas .Titulo-Conceptos,
+    .Seccion-Herramientas .Texto-Introduccion-Herramientas,
+    .Seccion-Herramientas .Pestanas-Herramientas {
+        margin-left: 0;
+    }
+
+    .Seccion-Herramientas .Titulo-Conceptos {
+        font-size: 35px;
+        line-height: 1.05;
+    }
+
+    .Seccion-Herramientas .Texto-Introduccion-Herramientas {
+        margin-right: 0;
+        font-size: 16px;
+    }
+
+    .Paneles-Herramientas {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .Tarjeta-Herramienta {
+        width: 100%;
+    }
+
+    .Contenido-Tarjeta-Herramienta {
+        padding: 18px 20px;
+    }
+
+    .Contenido-Tarjeta-Herramienta h2 {
+        white-space: normal;
+    }
+
     /* Da margen lateral a la portada de fundamentos en teléfonos. */
     #inicio-calidad {
         padding-right: 16px;
@@ -1523,9 +1590,24 @@ body {
         width: fit-content;
         max-width: 100%;
         height: auto;
-        margin-left: 0;
+        margin-left: 10px;
+        padding-left: 0;
         font-size: 15px;
         overflow-wrap: anywhere;
+    }
+
+    #inicio-calidad .Contenedor-Titulos,
+    #inicio-calidad .Parrafo-Principal,
+    .Seccion-Concepto .Titulo-Conceptos,
+    .Seccion-Concepto .Parrafo-Conceptos,
+    .Texto-Introduccion-Herramientas {
+        margin-left: 10px;
+    }
+
+    #inicio-calidad .Contenedor-Titulos h1,
+    .Seccion-Concepto .Titulo-Conceptos {
+        width: calc(100% - 10px);
+        padding-left: 0;
     }
 
     .Parrafo-Principal,
@@ -1545,6 +1627,22 @@ body {
     .Titulo-Conclusion {
         padding: 0 16px;
         font-size: clamp(1.7rem, 8vw, 2.3rem);
+    }
+
+    .Titulo-Conceptos {
+        padding-left: 0;
+    }
+
+    .Seccion-Herramientas .Titulo-Conceptos {
+        width: 100%;
+        margin-left: 0;
+        padding: 0;
+        font-size: 35px;
+        line-height: 1.05;
+    }
+
+    .Seccion-Herramientas .Texto-Introduccion-Herramientas {
+        margin-left: 0;
     }
 
     .Selector-Estandares {

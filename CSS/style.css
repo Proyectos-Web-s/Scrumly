@@ -267,159 +267,11 @@ body {
     overflow-wrap: anywhere;
 }
 
-/* =========================================================
-   AJUSTES RESPONSIVOS: TABLETS Y TELÉFONOS
-   ========================================================= */
-
+/* Ajustes de tabletas y teléfonos: apila la portada y las tarjetas. */
 @media (max-width: 768px) {
-
-    /* Sección Principal */
-
     #Seccion-Principal {
-        display: flex;
-        flex-direction: column;
         align-items: stretch;
-        padding: 0 20px;
-    }
-
-    .Contenedor-Principal {
-        width: 100%;
-    }
-
-
-    /* Antetítulo */
-
-    .Antetitulo {
-        width: fit-content;
-        height: auto;
-        padding: 8px 15px;
-        margin-top: 35px;
-        margin-left: 0;
-        font-size: 12px;
-    }
-
-
-    /* Títulos principales */
-
-    #Seccion-Principal .Contenedor-Principal > h1 {
-        width: 100%;
-        box-sizing: border-box;
-        font-size: 22px;
-        line-height: 0.95;
-        padding: 5px 0;
-        margin: 5px 0;
-    }
-
-
-    /* Párrafo principal */
-
-    .Parrafo-Principal {
-        width: 100%;
-        box-sizing: border-box;
-        font-size: 14px;
-        line-height: 1.4;
-        padding: 5px 0;
-        margin-top: 10px;
-    }
-
-
-    /* Imagen principal */
-
-    .Contenedor-Imagen {
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .Imagen-Principal {
-        width: 70%;
-        max-width: 300px;
-    }
-
-
-    /* Sección Áreas */
-
-    .Titulo-Areas {
-        width: 100%;
-        box-sizing: border-box;
-        font-size: 25px;
-        padding: 0 20px;
-        margin-top: 70px;
-    }
-
-    .Subtitulo-Areas {
-        font-size: 14px;
-        padding: 0 20px;
-        margin-bottom: 30px;
-    }
-
-
-    /* Tarjetas de áreas */
-
-    .Contenedor-Tarjetas-A,
-    .Contenedor-Tarjetas-B {
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-
-    /* Tarjetas */
-
-    .Tarjeta-GCS,
-    .Tarjeta-PDS,
-    .Tarjeta-MA,
-    .Tarjeta-RA,
-    .Tarjeta-SN {
-        width: 90%;
-        height: auto;
-        min-height: 180px;
-        padding: 18px;
-        margin-bottom: 0;
-    }
-
-
-    /* Títulos de las tarjetas */
-
-    .Titulo-Tarjetas-Areas {
-        font-size: 18px;
-    }
-
-
-    /* Texto de las tarjetas */
-
-    .Texto-Tarjetas {
-        font-size: 14px;
-    }
-
-
-    /* Iconos de las tarjetas */
-
-    .Tarjeta-GCS .bi,
-    .Tarjeta-PDS .bi,
-    .Tarjeta-MA .bi,
-    .Tarjeta-RA .bi,
-    .Tarjeta-SN .bi {
-        font-size: 18px;
-        padding: 5px;
-    }
-
-
-    /* Pie de página */
-
-    .Seccion-footer {
-        margin-top: 30px;
-        padding: 15px;
-    }
-
-    .Parrafo-Pie {
-        font-size: 12px;
-    }
-
-}
-
-@media (max-width: 768px) {
-    #Seccion-Principal {
         padding: 0 16px;
         gap: 12px;
     }
@@ -428,37 +280,70 @@ body {
         width: 100%;
     }
 
+    .Antetitulo {
+        width: fit-content;
+        max-width: 100%;
+        height: auto;
+        margin: 35px 0 0;
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
     #Seccion-Principal .Contenedor-Principal > h1 {
+        width: 100%;
+        margin: 5px 0;
+        padding: 5px 0;
         font-size: clamp(2rem, 8vw, 2.625rem);
         line-height: 1;
+        overflow-wrap: anywhere;
     }
 
-    /* Oculta solo el logo grande de la portada, no el logo de navegación. */
-    #Seccion-Principal > .Contenedor-Imagen {
-        display: none;
-    }
-
-    .Contenedor-Areas {
+    .Parrafo-Principal {
         width: 100%;
+        margin-top: 10px;
+        padding: 5px 0;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .Contenedor-Imagen {
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    .Imagen-Principal {
+        display: block;
+        width: min(70%, 280px);
+        margin: 0 auto;
     }
 
     .Titulo-Areas {
+        width: 100%;
         padding: 0 16px;
         margin-top: 70px;
+        font-size: clamp(1.5rem, 5vw, 1.875rem);
     }
 
     .Subtitulo-Areas {
         padding: 0 16px;
+        margin-bottom: 30px;
+        font-size: 14px;
     }
 
     .Contenedor-Tarjetas-A,
     .Contenedor-Tarjetas-B {
+        display: flex;
         width: 100%;
         flex-direction: column;
         justify-content: center;
         align-items: stretch;
-        gap: 15px;
+        gap: 18px;
         padding: 0 16px;
+    }
+
+    .Contenedor-Tarjetas-B {
+        margin-top: 18px;
+        margin-bottom: 0;
     }
 
     .Tarjeta-GCS,
@@ -474,6 +359,14 @@ body {
         margin-bottom: 0;
     }
 
+    .Tarjeta-GCS .bi,
+    .Tarjeta-PDS .bi,
+    .Tarjeta-MA .bi,
+    .Tarjeta-RA .bi,
+    .Tarjeta-SN .bi {
+        font-size: 18px;
+    }
+
     .Titulo-Tarjetas-Areas {
         font-size: 18px;
         line-height: 1.25;
@@ -481,5 +374,45 @@ body {
 
     .Texto-Tarjetas {
         font-size: 14px;
+    }
+
+    .Seccion-footer {
+        margin-top: 30px;
+        padding: 15px;
+    }
+
+    .Parrafo-Pie {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    #Seccion-Principal {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .Contenedor-Areas {
+        width: 100%;
+    }
+
+    .Titulo-Areas,
+    .Subtitulo-Areas {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .Contenedor-Tarjetas-A,
+    .Contenedor-Tarjetas-B {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .Tarjeta-GCS,
+    .Tarjeta-PDS,
+    .Tarjeta-MA,
+    .Tarjeta-RA,
+    .Tarjeta-SN {
+        padding: 16px;
     }
 }
