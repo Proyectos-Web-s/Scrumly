@@ -1083,6 +1083,7 @@ section#contexto-ciclo-vida {
 
 .Tarjeta-Etapa-Volteable {
   min-height: 300px;
+  
 }
 
 .Interior-Etapa-SDLC {
@@ -1151,6 +1152,7 @@ section#contexto-ciclo-vida {
 
 .Contenido-Panel-Etapa {
   min-width: 0;
+  
 }
 
 .Etiqueta-Panel-Etapa {

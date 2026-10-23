@@ -129,6 +129,7 @@ body {
     box-sizing: border-box;
     margin-bottom: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow:  0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Contenido e interacción de las tarjetas */
