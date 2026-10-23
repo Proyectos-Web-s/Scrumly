@@ -103,64 +103,250 @@ const etapasSDLC = [
     }
 ];
 
+
 if (botonesEtapaSDLC.length && panelEtapaSDLC) {
+    const selectorEtapasSDLC = document.querySelector(".Selector-Etapas-SDLC");
     const tarjetaEtapa = panelEtapaSDLC.querySelector(".Tarjeta-Etapa-Volteable");
     const caraFrontal = panelEtapaSDLC.querySelector(".Cara-Etapa-Frontal");
     const caraPosterior = panelEtapaSDLC.querySelector(".Cara-Etapa-Posterior");
 
-    // Cambia entre el resumen de la etapa y su cara con información ampliada.
+   let estelaSDLC = null;
+let ecosSDLC = [];
+let indiceAnteriorSDLC = 0;
+let primeraSeleccionSDLC = true;
+
+if (selectorEtapasSDLC) {
+    estelaSDLC = selectorEtapasSDLC.querySelector(".Estela-Avance-SDLC");
+
+    if (!estelaSDLC) {
+        estelaSDLC = document.createElement("span");
+        estelaSDLC.className = "Estela-Avance-SDLC";
+        estelaSDLC.setAttribute("aria-hidden", "true");
+        selectorEtapasSDLC.append(estelaSDLC);
+    }
+
+    // Creamos tres círculos que forman el eco.
+    ecosSDLC = Array.from({ length: 3 }, () => {
+        const eco = document.createElement("span");
+        eco.className = "Estela-Eco-SDLC";
+        eco.setAttribute("aria-hidden", "true");
+        selectorEtapasSDLC.append(eco);
+        return eco;
+    });
+}
+
+function animarEstelaSDLC(indice) {
+    if (!selectorEtapasSDLC || !estelaSDLC) return;
+
+    if (primeraSeleccionSDLC) {
+        primeraSeleccionSDLC = false;
+        return;
+    }
+
+    if (indice === indiceAnteriorSDLC) return;
+
+    const selectorRect = selectorEtapasSDLC.getBoundingClientRect();
+
+    const centro = (i) => {
+        const rect = botonesEtapaSDLC[i].getBoundingClientRect();
+        return rect.left + rect.width / 2 - selectorRect.left - 30;
+    };
+
+    const inicio = centro(indiceAnteriorSDLC);
+    const final = centro(indice);
+    const direccion = final >= inicio ? 1 : -1;
+    const distancia = Math.abs(final - inicio);
+
+    const etapasIntermedias = [];
+
+    for (
+        let i = indiceAnteriorSDLC + direccion;
+        direccion > 0 ? i < indice : i > indice;
+        i += direccion
+    ) {
+        etapasIntermedias.push(centro(i));
+    }
+
+    const duracion = Math.min(
+        1600,
+        Math.max(550, distancia * 1.8)
+    );
+
+    // El círculo principal se desliza y rebota en las etapas.
+    const fotogramas = [
+        {
+            transform: `translate(${inicio}px, -50%) scale(.9)`,
+            opacity: 1,
+            offset: 0
+        }
+    ];
+
+    etapasIntermedias.forEach((x, i) => {
+        const avance = Math.abs(x - inicio) / (distancia || 1);
+
+        fotogramas.push({
+            transform: `translate(${x}px, -50%) scale(1.12)`,
+            opacity: 1,
+            offset: Math.max(0.01, avance - 0.035)
+        });
+
+        fotogramas.push({
+            transform: `translate(${x}px, -50%) scale(.94)`,
+            opacity: 1,
+            offset: Math.min(0.99, avance + 0.035)
+        });
+    });
+
+    fotogramas.push({
+        transform: `translate(${final}px, -50%) scale(1.04)`,
+        opacity: 1,
+        offset: 0.94
+    });
+
+    fotogramas.push({
+        transform: `translate(${final}px, -50%) scale(1)`,
+        opacity: 1,
+        offset: 1
+    });
+
+    estelaSDLC.getAnimations().forEach(a => a.cancel());
+
+    estelaSDLC.animate(fotogramas, {
+        duration: duracion,
+        easing: "cubic-bezier(.22,.8,.25,1)",
+        fill: "forwards"
+    });
+
+    // Cada eco sigue el recorrido con un pequeño retraso.
+    ecosSDLC.forEach((eco, i) => {
+        eco.getAnimations().forEach(a => a.cancel());
+
+        eco.animate(
+            [
+                {
+                    transform: `translate(${inicio}px, -50%) scale(.72)`,
+                    opacity: 0
+                },
+                {
+                    transform: `translate(${inicio}px, -50%) scale(1)`,
+                    opacity: 0.5,
+                    offset: 0.12
+                },
+                {
+                    transform: `translate(${final}px, -50%) scale(.92)`,
+                    opacity: 0
+                }
+            ],
+            {
+                duration: duracion,
+                delay: i * 75,
+                easing: "ease-out",
+                fill: "none"
+            }
+        );
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     function mostrarCaraEtapa(mostrarDetalle) {
         if (!tarjetaEtapa || !caraFrontal || !caraPosterior) return;
 
-        // La clase activa el giro; aria-hidden e inert ocultan la cara no visible también a tecnologías asistivas.
         tarjetaEtapa.classList.toggle("mostrar-detalle", mostrarDetalle);
+
         caraFrontal.setAttribute("aria-hidden", String(mostrarDetalle));
         caraFrontal.inert = mostrarDetalle;
+
         caraPosterior.setAttribute("aria-hidden", String(!mostrarDetalle));
         caraPosterior.inert = !mostrarDetalle;
     }
 
-    // Selecciona una etapa, actualiza la tarjeta y reinicia el giro al lado del resumen.
     function seleccionarEtapaSDLC(indice) {
         const etapa = etapasSDLC[indice];
         const botonActivo = botonesEtapaSDLC[indice];
+
         if (!etapa || !botonActivo) return;
 
-        // Sincroniza selección, apariencia y foco siguiendo el patrón de pestañas accesibles.
+        animarEstelaSDLC(indice);
+
         botonesEtapaSDLC.forEach((boton, botonIndice) => {
             const activa = botonIndice === indice;
+
             boton.classList.toggle("activo", activa);
             boton.setAttribute("aria-selected", String(activa));
             boton.tabIndex = activa ? 0 : -1;
         });
 
-        // Actualiza los textos y los íconos de ambas caras con los datos de la etapa seleccionada.
         panelEtapaSDLC.setAttribute("aria-labelledby", botonActivo.id);
-        panelEtapaSDLC.querySelector(".Etiqueta-Panel-Etapa").textContent = `ETAPA ${String(indice + 1).padStart(2, "0")} DE 06`;
-        panelEtapaSDLC.querySelector(".Titulo-Panel-Etapa").textContent = etapa.nombre;
-        panelEtapaSDLC.querySelector(".Descripcion-Panel-Etapa").textContent = etapa.descripcion;
-        panelEtapaSDLC.querySelector(".Texto-Objetivo-Etapa").textContent = etapa.objetivo;
 
-        const iconoFrontal = panelEtapaSDLC.querySelector(".Icono-Panel-Etapa i");
-        const iconoBoton = botonActivo.querySelector(".Icono-Boton-Etapa i");
-        iconoFrontal.className = `bi ${etapa.icono}`;
-        iconoBoton.className = `bi ${etapa.icono}`;
+        panelEtapaSDLC.querySelector(".Etiqueta-Panel-Etapa").textContent =
+            `ETAPA ${String(indice + 1).padStart(2, "0")} DE 06`;
 
-        caraPosterior.querySelector(".Detalle-Texto-Etapa").textContent = etapa.detalle;
+        panelEtapaSDLC.querySelector(".Titulo-Panel-Etapa").textContent =
+            etapa.nombre;
+
+        panelEtapaSDLC.querySelector(".Descripcion-Panel-Etapa").textContent =
+            etapa.descripcion;
+
+        panelEtapaSDLC.querySelector(".Texto-Objetivo-Etapa").textContent =
+            etapa.objetivo;
+
+        const iconoFrontal = panelEtapaSDLC.querySelector(
+            ".Icono-Panel-Etapa i"
+        );
+
+        const iconoBoton = botonActivo.querySelector(
+            ".Icono-Boton-Etapa i"
+        );
+
+        if (iconoFrontal) {
+            iconoFrontal.className = `bi ${etapa.icono}`;
+        }
+
+        if (iconoBoton) {
+            iconoBoton.className = `bi ${etapa.icono}`;
+        }
+
+        caraPosterior.querySelector(".Detalle-Texto-Etapa").textContent =
+            etapa.detalle;
+
         mostrarCaraEtapa(false);
+        indiceAnteriorSDLC = indice;
     }
 
     botonesEtapaSDLC.forEach((boton, indice) => {
-        boton.addEventListener("click", () => seleccionarEtapaSDLC(indice));
+        boton.addEventListener("click", () => {
+            seleccionarEtapaSDLC(indice);
+        });
+
         boton.addEventListener("keydown", (evento) => {
             let nuevoIndice = indice;
 
-            // Permite recorrer las etapas con flechas y saltar al inicio o al final con Home/End.
-            if (evento.key === "ArrowRight") nuevoIndice = (indice + 1) % botonesEtapaSDLC.length;
-            else if (evento.key === "ArrowLeft") nuevoIndice = (indice - 1 + botonesEtapaSDLC.length) % botonesEtapaSDLC.length;
-            else if (evento.key === "Home") nuevoIndice = 0;
-            else if (evento.key === "End") nuevoIndice = botonesEtapaSDLC.length - 1;
-            else return;
+            if (evento.key === "ArrowRight") {
+                nuevoIndice = (indice + 1) % botonesEtapaSDLC.length;
+            } else if (evento.key === "ArrowLeft") {
+                nuevoIndice =
+                    (indice - 1 + botonesEtapaSDLC.length) %
+                    botonesEtapaSDLC.length;
+            } else if (evento.key === "Home") {
+                nuevoIndice = 0;
+            } else if (evento.key === "End") {
+                nuevoIndice = botonesEtapaSDLC.length - 1;
+            } else {
+                return;
+            }
 
             evento.preventDefault();
             botonesEtapaSDLC[nuevoIndice].focus();
@@ -168,9 +354,13 @@ if (botonesEtapaSDLC.length && panelEtapaSDLC) {
         });
     });
 
-    // El cursor muestra la cara informativa; al salir vuelve a la cara de resumen.
-    tarjetaEtapa.addEventListener("pointerenter", () => mostrarCaraEtapa(true));
-    tarjetaEtapa.addEventListener("pointerleave", () => mostrarCaraEtapa(false));
+    tarjetaEtapa?.addEventListener("pointerenter", () => {
+        mostrarCaraEtapa(true);
+    });
+
+    tarjetaEtapa?.addEventListener("pointerleave", () => {
+        mostrarCaraEtapa(false);
+    });
 
     seleccionarEtapaSDLC(0);
 }
@@ -1456,3 +1646,29 @@ if (tarjetaEncuesta) {
 
     mostrarPregunta();
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const formulario = document.querySelector(".Formulario-Contacto");
+    const aviso = document.getElementById("aviso-mensaje-enviado");
+
+    if (!formulario || !aviso) return;
+
+    let temporizador;
+
+    formulario.addEventListener("submit", (evento) => {
+        // Por ahora, evita recargar la página.
+        // La validación nativa del formulario se mantiene.
+        evento.preventDefault();
+
+        clearTimeout(temporizador);
+
+        aviso.classList.add("visible");
+
+        temporizador = setTimeout(() => {
+            aviso.classList.remove("visible");
+        }, 2800);
+
+        formulario.reset();
+    });
+});

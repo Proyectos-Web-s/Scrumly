@@ -280,3 +280,81 @@ body {
 		width: 100%;
 	}
 }
+
+
+/* Aviso flotante de mensaje enviado */
+.Aviso-Mensaje-Enviado {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 20px;
+    border: 1px solid rgba(66, 145, 91, 0.28);
+    border-radius: 14px;
+
+    background: rgba(220, 245, 226, 0.94);
+    color: #245b36;
+
+    font-family: 'Public Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+
+    box-shadow: 0 8px 28px rgba(26, 65, 39, 0.14);
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translate(-50%, -45%) scale(0.96);
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+/* Ícono verde con fondo translúcido */
+.Icono-Mensaje-Enviado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 27px;
+    height: 27px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    background: rgba(67, 160, 94, 0.16);
+    color: #287844;
+    font-size: 19px;
+}
+
+/* Aparición centrada */
+.Aviso-Mensaje-Enviado.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Ajuste para celulares */
+@media (max-width: 520px) {
+    .Aviso-Mensaje-Enviado {
+        width: max-content;
+        max-width: calc(100% - 32px);
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Respeta la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .Aviso-Mensaje-Enviado {
+        transition: none;
+    }
+}
+
