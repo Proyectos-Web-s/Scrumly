@@ -1,8 +1,3 @@
-:root {
-  --color-fondo: #efeae1;
-  --color-texto: #181d2a;
-  --color-acento: #C084FC;
-}
 
 /* Estilos globales */
 html {
@@ -11,8 +6,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-fondo);
-  color: var(--color-texto);
+  background: #faf6f0;
+  color: #333333;
   font-family: 'Public Sans', Arial, sans-serif;
 }
 
@@ -25,10 +20,15 @@ body {
   margin: 0 auto;
 }
 
-/* Limita el degradado a la portada del ciclo de vida. */
+/* Degradado de portada, igual al de la página de inicio. */
 #inicio-procesos {
   display: flow-root;
-  background: linear-gradient(105deg, var(--color-fondo) 0%, #f2eaf4 100%);
+  background: linear-gradient(
+    to bottom right,
+    #fffaf4 0%,
+    #F2E8DC 50%,
+    #dcd0eb 100%
+  );
 }
 
 .Antetitulo{
@@ -39,6 +39,7 @@ body {
     margin-top: 70px;
     margin-left: 20px;
     font-family: 'Public Sans', sans-serif;
+    text-transform: uppercase;
 }
 
 .Contenedor-Titulos{
@@ -94,8 +95,22 @@ body {
 
 /* Estructura compartida de las secciones de modelos */
 .Seccion-Modelo {
-  padding: 16px 18px 18px;
-  margin-bottom: 18px;
+  width: 100%;
+  margin: 0;
+  padding: 28px clamp(16px, 4vw, 48px);
+  box-sizing: border-box;
+}
+
+section#modelo-cascada {
+  background-color: #F2E8DC;
+}
+
+section#modelo-v {
+  background-color: #fffaf4;
+}
+
+section#modelo-iterativo {
+  background-color: #F2E8DC;
 }
 
 /* Encabezado del modelo */
@@ -110,6 +125,7 @@ body {
   font-size: 15px;
   color: var(--color-acento);
   margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .Titulo-Modelo {
@@ -131,7 +147,7 @@ body {
   flex-shrink: 0;
   border-radius: 8px;
   background: #e4d8f2;
-  color: #745e8e;
+  color: var(--color-acento);
   font-size: 26px;
 }
 
@@ -231,13 +247,13 @@ body {
 
 .Etapa-Cascada:hover {
   transform: translateY(-2px) scale(1.01);
-  box-shadow: 0 10px 20px rgba(128, 100, 156, 0.15);
+  box-shadow: 0 10px 20px rgba(117, 97, 143, 0.15);
   z-index: 5;
 }
 
 .Numero-Cascada {
   margin-bottom: 3px;
-  color: #80649c;
+  color: var(--color-acento);
   font-size: 0.8rem;
   font-weight: 700;
 }
@@ -257,7 +273,7 @@ body {
   justify-content: center;
   align-self: flex-end;
   margin-top: 3px;
-  color: #80649c;
+  color: var(--color-acento);
   font-size: 0.95rem;
   font-weight: 700;
   z-index: 2;
@@ -309,11 +325,11 @@ body {
 .Paso-Modelo:focus-visible {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(43, 35, 52, 0.12);
-  border-color: #80659a;
+  border-color: var(--color-acento);
 }
 
 .Numero-Paso {
-  color: #80659a;
+  color: var(--color-acento);
   font-size: 1rem;
   font-weight: 700;
 }
@@ -360,7 +376,7 @@ body {
 .Lista-Modelo:hover{
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(43, 35, 52, 0.12);
-  border-color: #80659a;
+  border-color: var(--color-acento);
 }
 
 .Listas-Modelo {
@@ -380,7 +396,7 @@ body {
 
 .Etapa-V {
   padding: 10px 12px;
-  border: 1px solid rgba(116, 94, 142, 0.2);
+  border: 1px solid rgba(117, 97, 143, 0.2);
   border-radius: 10px;
   background: #fffdf9;
   cursor: default;
@@ -390,7 +406,7 @@ body {
 .Etapa-V:hover,
 .Etapa-V:focus-visible {
   transform: translateY(-2px);
-  border-color: #80659a;
+  border-color: var(--color-acento);
   box-shadow: 0 6px 16px rgba(43, 35, 52, 0.12);
 }
 
@@ -450,7 +466,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  color: #796293;
+  color: var(--color-acento);
   font-size: 1.1rem;
   font-weight: 700;
 }
@@ -496,7 +512,7 @@ body {
 .Tarjeta-V-Diagrama[aria-expanded="true"] {
   transform: translateY(-2px);
   background: #fffaf5;
-  box-shadow: 0 6px 16px rgba(121, 98, 147, 0.2);
+  box-shadow: 0 6px 16px rgba(117, 97, 143, 0.2);
 }
 
 .Tarjeta-V-Diagrama:hover p,
@@ -517,8 +533,8 @@ body {
   min-width: 150px;
   margin: 16px auto 8px;
   padding: 12px 8px;
-  background: #796293;
-  border-color: #796293;
+  background: var(--color-acento);
+  border-color: var(--color-acento);
   color: #ffffff;
 }
 
@@ -529,7 +545,7 @@ body {
 .Implementacion-V-Diagrama:hover,
 .Implementacion-V-Diagrama:focus-visible,
 .Implementacion-V-Diagrama[aria-expanded="true"] {
-  background: #6d5688;
+  background: var(--color-acento);
 }
 
 .Nota-V-Diagrama {
@@ -610,7 +626,7 @@ body {
 .Tarjeta-Iterativa[aria-expanded="true"] {
   transform: translateY(-2px);
   background: #fffaf5;
-  box-shadow: 0 6px 16px rgba(121, 98, 147, 0.19);
+  box-shadow: 0 6px 16px rgba(117, 97, 143, 0.19);
 }
 
 .Tarjeta-Iterativa:hover p,
@@ -623,7 +639,7 @@ body {
 
 .Flecha-Iterativa,
 .Ciclo-Iterativo {
-  color: #796293;
+  color: var(--color-acento);
   text-align: center;
   line-height: 1;
 }
@@ -634,8 +650,8 @@ body {
 
 .Tarjeta-Mejora-Iterativa {
   min-height: 60px;
-  border-color: #796293;
-  background: #796293;
+  border-color: var(--color-acento);
+  background: var(--color-acento);
   color: #ffffff;
 }
 
@@ -646,7 +662,7 @@ body {
 .Tarjeta-Mejora-Iterativa:hover,
 .Tarjeta-Mejora-Iterativa:focus-visible,
 .Tarjeta-Mejora-Iterativa[aria-expanded="true"] {
-  background: #6b5485;
+  background: var(--color-acento);
 }
 
 .Ciclo-Iterativo {
@@ -681,7 +697,7 @@ body {
 .Funcion-Modelo:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(43, 35, 52, 0.12);
-  border-color: #80659a;
+  border-color: var(--color-acento);
 }
 
 .Funcion-Modelo p {
@@ -738,7 +754,7 @@ body {
   gap: 16px;
   margin-top: 18px;
   background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(116, 94, 142, 0.22);
+  border: 1px solid rgba(117, 97, 143, 0.22);
   border-radius: 10px;
   padding: 16px 18px;
   box-shadow: 0 4px 10px rgba(45, 35, 60, 0.12);
@@ -751,7 +767,7 @@ body {
   width: 26px;
   height: 26px;
   margin-top: 2px;
-  color: #745e8e;
+  color: var(--color-acento);
   font-size: 24px;
   flex-shrink: 0;
 }
@@ -770,7 +786,11 @@ body {
 
 /* Tabla comparativa */
 .Seccion-Comparacion {
-  margin: 10px 20px 20px;
+  width: 100%;
+  margin: 0;
+  padding: 28px clamp(16px, 4vw, 48px);
+  box-sizing: border-box;
+  background-color: #F2E8DC;
 }
 
 .Cabecera-Comparacion {
@@ -782,7 +802,7 @@ body {
 }
 
 .Etiqueta-Comparacion {
-  color: #a979d4;
+  color: var(--color-acento);
   font-size: 14px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -809,12 +829,12 @@ body {
   border-radius: 12px;
   overflow: hidden;
   background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(120, 102, 150, 0.25);
+  border: 1px solid rgba(117, 97, 143, 0.25);
 }
 
 .Tabla-Comparacion th,
 .Tabla-Comparacion td {
-  border: 1px solid rgba(120, 102, 150, 0.22);
+  border: 1px solid rgba(117, 97, 143, 0.22);
   padding: 14px 12px;
   text-align: left;
   font-size: 0.96rem;
@@ -845,20 +865,37 @@ body {
   font-family: 'Public Sans', sans-serif;
 }
 
+#footer-container .footer-scrumly {
+  margin-top: 0;
+}
+
 /* Recorrido interactivo de las etapas del SDLC */
 .Seccion-Etapas-SDLC {
   --sdlc-side-padding: clamp(20px, 5vw, 72px);
+  width: 100%;
+  box-sizing: border-box;
   padding: 28px var(--sdlc-side-padding) 64px;
+  background-color: #fffaf4;
+}
+
+section#etapas-sdlc {
+  background-color: #fffaf4;
 }
 
 /* Contexto e importancia del ciclo de vida */
 .Seccion-Contexto-Ciclo {
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: clamp(32px, 5vw, 72px);
   padding: 48px clamp(35px, 4.2vw, 56px);
-  background: var(--color-fondo);
+  background-color: #F2E8DC;
+}
+
+section#contexto-ciclo-vida {
+  background-color: #F2E8DC;
 }
 
 .Contenido-Contexto-Ciclo {
@@ -868,9 +905,10 @@ body {
 
 .Antetitulo-Contexto-Ciclo {
   margin: 0 0 24px;
-  color: #80649c;
+  color: var(--color-acento);
   font-size: 1rem;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 #titulo-contexto-ciclo {
@@ -916,10 +954,11 @@ body {
 
 .Antetitulo-Etapas-SDLC {
   margin: 0 0 8px;
-  color: #80649c;
+  color: var(--color-acento);
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 #titulo-etapas-sdlc {
@@ -974,7 +1013,7 @@ body {
   border: 2px solid #d8c9b6;
   border-radius: 50%;
   background: #ffffff;
-  color: #80649c;
+  color: var(--color-acento);
   font-size: 1.2rem;
   transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
@@ -982,27 +1021,27 @@ body {
 .Boton-Etapa-SDLC:hover .Icono-Boton-Etapa,
 .Boton-Etapa-SDLC:focus-visible .Icono-Boton-Etapa {
   transform: translateY(-2px);
-  border-color: #80649c;
+  border-color: var(--color-acento);
 }
 
 .Boton-Etapa-SDLC.activo {
-  color: #47326b;
+  color: var(--color-acento);
 }
 
 .Boton-Etapa-SDLC.activo .Icono-Boton-Etapa {
-  border-color: #80649c;
-  background: #80649c;
+  border-color: var(--color-acento);
+  background: var(--color-acento);
   color: #ffffff;
 }
 
 .Boton-Etapa-SDLC:focus-visible {
-  outline: 3px solid #c084fc;
+  outline: 3px solid var(--color-acento);
   outline-offset: 4px;
   border-radius: 8px;
 }
 
 .Numero-Boton-Etapa {
-  color: #80649c;
+  color: var(--color-acento);
   font-size: 0.85rem;
   font-weight: 700;
 }
@@ -1083,7 +1122,7 @@ body {
   place-items: center;
   border-radius: 24px;
   background: #e7dcf0;
-  color: #80649c;
+  color: var(--color-acento);
   font-size: 2.5rem;
 }
 
@@ -1093,7 +1132,7 @@ body {
 
 .Etiqueta-Panel-Etapa {
   margin: 0 0 8px;
-  color: #80649c;
+  color: var(--color-acento);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -1127,7 +1166,7 @@ body {
 .Objetivo-Panel-Etapa > i {
   flex: 0 0 auto;
   margin-top: 2px;
-  color: #80649c;
+  color: var(--color-acento);
 }
 
 /* Contenedor del diagrama */
@@ -1148,7 +1187,7 @@ body {
 }
 
 .Boton-Diagrama:focus-visible {
-    outline: 3px solid #80649c;
+    outline: 3px solid var(--color-acento);
     outline-offset: 3px;
 }
 
@@ -1261,9 +1300,10 @@ body {
 }
 
 .IMG-Modelos {
+  display: block;
   width: 100%;
   max-width: 100%;
-  height: auto;
+  height: 260px;
   object-fit: contain;
 }
 
@@ -1335,7 +1375,7 @@ body {
   align-items: flex-start;
   gap: 12px;
   background: #e8dcc4;
-  border: 1px solid rgba(120, 102, 150, 0.25);
+  border: 1px solid rgba(117, 97, 143, 0.25);
   border-radius: 14px;
   padding: 18px 20px;
   margin: 24px 20px 30px;
@@ -1349,7 +1389,7 @@ body {
   height: 28px;
   border-radius: 50%;
   background: #d9c9ef;
-  color: #47326b;
+  color: var(--color-acento);
   font-weight: 900;
   font-size: 0.9rem;
   flex-shrink: 0;
@@ -1723,7 +1763,7 @@ body {
   }
 
   .Columna-V-Diagrama::before {
-    color: #796293;
+    color: var(--color-acento);
     font-size: 16px;
     font-weight: 700;
   }
@@ -1757,8 +1797,7 @@ body {
   }
 
   .Seccion-Comparacion {
-    margin-right: 16px;
-    margin-left: 16px;
+    margin: 0;
   }
 
   /* Conserva un margen legible para el aviso al final de las secciones. */

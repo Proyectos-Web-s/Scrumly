@@ -39,16 +39,28 @@ body {
 	inset: 0;
 	left: calc(50% + max(0px, (100vw - 100%) / 2) - 50vw);
 	width: 100vw;
-	background: linear-gradient(105deg, var(--color-fondo) 0%, #f2eaf4 100%);
+	background: linear-gradient(
+		to bottom right,
+		#fffaf4 0%,
+		#F2E8DC 50%,
+		#dcd0eb 100%
+	);
 	content: "";
 }
 
-.Contenedor-Agil,
-.Navegacion-Agil,
-.Seccion-Agil {
+.Contenedor-Agil {
 	width: min(100% - 64px, 1180px);
 	margin-right: auto;
 	margin-left: auto;
+}
+
+.Navegacion-Agil {
+	width: 100%;
+	box-sizing: border-box;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 24px max(32px, calc((100% - 1180px) / 2)) 26px;
+	background-color: #fffaf4;
 }
 
 .Contenedor-Agil {
@@ -98,8 +110,6 @@ body {
 	align-items: center;
 	gap: 16px;
 	flex-wrap: wrap;
-	padding-top: 24px;
-	padding-bottom: 26px;
 }
 
 .Boton-Navegacion-Agil,
@@ -111,7 +121,7 @@ body {
 	padding: 9px 12px;
 	border: 1px solid #cdbfae;
 	border-radius: 12px;
-	background: #fffaf2;
+	background: #fffaf4;
 	box-shadow: 0 2px 4px rgba(50, 40, 30, 0.12);
 	color: #171717;
 	font: inherit;
@@ -135,8 +145,24 @@ body {
 /* Secciones de contenido y encabezados. */
 
 .Seccion-Agil {
-	padding: 34px 0 48px;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: none;
+	margin: 0;
+	padding: 34px max(32px, calc((100% - 1180px) / 2)) 48px;
 	scroll-margin-top: 24px;
+}
+
+#manifiesto-agil,
+#scrum,
+#xp {
+	background-color: #fffaf4;
+}
+
+#principios-agiles,
+#kanban,
+#comparativa {
+	background-color: #F2E8DC;
 }
 
 .Seccion-Agil h2 {
@@ -161,11 +187,8 @@ body {
 }
 
 .Seccion-Principios {
-	box-sizing: border-box;
-	width: 100%;
-	max-width: none;
-	padding: 42px max(32px, calc((100% - 1180px) / 2)) 52px;
-	background: #fffaf2;
+	padding-top: 42px;
+	padding-bottom: 52px;
 }
 
 .Seccion-Principios > .Antetitulo-Agil,
@@ -823,10 +846,14 @@ body {
 		padding: 36px 0 38px;
 	}
 
-	.Contenedor-Agil,
-	.Navegacion-Agil,
-	.Seccion-Agil {
+	.Contenedor-Agil {
 		width: calc(100% - 32px);
+	}
+
+	.Seccion-Agil {
+		width: 100%;
+		padding-right: 16px;
+		padding-left: 16px;
 	}
 
 	.Encabezado-Agil h1 {
@@ -841,6 +868,8 @@ body {
 
 	.Navegacion-Agil {
 		gap: 8px;
+		padding-right: 16px;
+		padding-left: 16px;
 		padding-top: 16px;
 		padding-bottom: 12px;
 	}
@@ -857,8 +886,8 @@ body {
 	}
 
 	.Seccion-Principios {
-		width: 100%;
-		padding: 32px 16px 38px;
+		padding-top: 32px;
+		padding-bottom: 38px;
 	}
 
 	.Tarjetas-Valores,
