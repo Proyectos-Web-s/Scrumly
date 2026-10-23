@@ -952,6 +952,29 @@ section#contexto-ciclo-vida {
   object-fit: contain;
 }
 
+.Diagrama-Ciclo-Vida {
+  flex: 0 0 clamp(170px, 19vw, 230px);
+  width: clamp(170px, 19vw, 230px);
+}
+
+.Diagrama-Ciclo-Vida img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  animation: girarDiagrama 12s linear infinite;
+}
+
+@keyframes girarDiagrama {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
 .Antetitulo-Etapas-SDLC {
   margin: 0 0 8px;
   color: var(--color-acento);

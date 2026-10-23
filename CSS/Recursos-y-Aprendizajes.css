@@ -1,21 +1,6 @@
 /* =========================================================
    BASE GLOBAL Y ESTILOS COMPARTIDOS
    ========================================================= */
-:root {
-    --color-fondo: #efeae1;
-    --color-superficie: #fffdf9;
-    --color-titulo: #050505;
-    --color-texto: #38373b;
-    --color-texto-secundario: #55515a;
-    --color-acento: #765a91;
-    --color-acento-oscuro: #4d3d7a;
-    --color-borde: rgba(164, 135, 101, 0.42);
-    --fuente-texto: 'Public Sans', Arial, sans-serif;
-    --fuente-titulos: 'Bebas Neue', sans-serif;
-    --ancho-pagina: 1200px;
-    --ancho-contenido: 1120px;
-}
-
 html {
 	scroll-behavior: smooth;
 }
@@ -47,11 +32,19 @@ body {
    GLOSARIO
 */
 
-/* Presentación y búsqueda */
+/* Presentación y búsqueda: fondo degradado del Glosario */
 .Pagina-Glosario {
+	position: relative;
+	isolation: isolate;
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 68px 20px 80px;
+	background: linear-gradient(
+		to bottom right,
+		#fffaf4 0%,
+		#F2E8DC 50%,
+		#dcd0eb 100%
+	);
 }
 
 .Seccion-Principal {
@@ -68,7 +61,8 @@ body {
 	left: calc(50% + clamp(0px, (100vw - 1160px) / 2, 20px));
 	width: 100vw;
 	transform: translateX(-50%);
-	background: linear-gradient(105deg, #efeae1 0%, #f2eaf4 100%);
+	background: transparent;
+	pointer-events: none;
 	content: "";
 }
 
@@ -889,7 +883,7 @@ body {
 
 .Seccion-Principal-Metodologia {
     width: 100%;
-    max-width: var(--ancho-contenido);
+    max-width: 1120px;
     margin: 0 auto;
 }
 
@@ -897,7 +891,7 @@ body {
 
 .Antetitulo-Metodologia {
     margin: 0 0 18px;
-    color: var(--color-acento);
+    color: #765a91;
     font-size: 15px;
     font-weight: 800;
     letter-spacing: 0.04em;
@@ -907,7 +901,7 @@ body {
 
 .Seccion-Principal-Metodologia h1 {
     margin: 0;
-    color: var(--color-titulo);
+    color: #050505;
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(2.75rem, 7vw, 4.875rem);
     font-weight: 400;
@@ -918,7 +912,7 @@ body {
 /* Palabra destacada */
 
 .Seccion-Principal-Metodologia h1 span {
-    color: var(--color-acento);
+    color: #765a91;
 }
 
 /* Descripción */
@@ -926,7 +920,7 @@ body {
 .Descripcion-Metodologia {
     max-width: 1100px;
     margin: 24px 0 0;
-    color: var(--color-texto);
+    color: #38373b;
     font-size: 22px;
     line-height: 1.4;
 }
@@ -987,6 +981,24 @@ body {
 .Pregunta-Frecuente {
 	min-width: 0;
 	overflow-wrap: anywhere;
+}
+
+/* Fondos alternados de las secciones de Recursos y Aprendizajes */
+.Pagina-PF {
+	background-color: #F2E8DC;
+}
+
+.Pagina-EDI {
+	background-color: #F2E8DC;
+}
+
+.Pagina-ECP {
+	background-color: #F2E8DC;
+}
+
+/* La sección “Encontrá una metodología” también usa el tono cálido. */
+#inicio-metodologia {
+	background-color: #F2E8DC;
 }
 
 /* Encuesta interactiva de metodologías */
@@ -1299,7 +1311,7 @@ body {
 .Antetitulo-ECP,
 .Antetitulo-Metodologia {
     margin: 0 0 18px;
-    color: var(--color-acento);
+    color: #765a91;
     font-size: 15px;
     font-weight: 800;
     letter-spacing: 0.04em;
@@ -1311,8 +1323,8 @@ body {
 .Seccion-Principal-ECP h1,
 .Seccion-Principal-Metodologia h1 {
     margin: 0;
-    color: var(--color-titulo);
-    font-family: var(--fuente-titulos);
+    color: #050505;
+    font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(2.75rem, 7vw, 4.875rem);
     font-weight: 400;
     line-height: 0.95;
@@ -1324,7 +1336,7 @@ body {
 .Seccion-Principal-EDI h1 span,
 .Seccion-Principal-ECP h1 span,
 .Seccion-Principal-Metodologia h1 span {
-    color: var(--color-acento);
+    color: #765a91;
 }
 
 .Descripcion-Principal,
@@ -1332,7 +1344,7 @@ body {
 .Descripcion-EDI,
 .Descripcion-ECP,
 .Descripcion-Metodologia {
-    color: var(--color-texto);
+    color: #38373b;
     font-size: 22px;
     line-height: 1.4;
 }
@@ -1664,4 +1676,52 @@ body {
         font-size: 16px;
         line-height: 1.5;
     }
+}
+
+
+/* AJUSTES FINALES: encabezado a pantalla completa y resto del glosario claro */
+body {
+    background: #fffaf4;
+}
+
+.Pagina-Glosario {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #fffaf4;
+}
+
+/* Solo el bloque del título y la descripción lleva degradado */
+.Pagina-Glosario > .Seccion-Principal {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 40px 16px 24px;
+    background: linear-gradient(
+        to bottom right,
+        #fffaf4 0%,
+        #F2E8DC 50%,
+        #dcd0eb 100%
+    );
+}
+
+/* Búsqueda, letras y tarjetas mantienen el fondo marfil */
+.Pagina-Glosario > .Seccion-Busqueda {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 28px 16px 48px;
+    background: #fffaf4;
+}
+
+.Pagina-Glosario .Campo-Busqueda,
+.Pagina-Glosario .Tarjeta-Glosario {
+    background-color: #fffaf4;
+}
+
+.Pagina-Glosario > .Seccion-Principal::before {
+    content: none;
 }

@@ -9,15 +9,6 @@
 	box-sizing: border-box;
 }
 
-:root {
-	--color-fondo-scrum: #efeae1;
-	--color-texto-scrum: #181d2a;
-	--color-acento-scrum: #765a91;
-	--color-titulo-scrum: #171b24;
-	--color-tarjeta-scrum: #fffdf9;
-	--color-borde-scrum: rgba(164, 135, 101, 0.42);
-}
-
 html {
 	scroll-behavior: smooth;
 }
@@ -25,10 +16,11 @@ html {
 /* Estilos generales de la página */
 body {
 	margin: 0;
-	background: var(--color-fondo-scrum);
-	color: var(--color-texto-scrum);
+	background: #fffaf4;
+	color: #050505;
 	font-family: 'Public Sans', Arial, sans-serif;
 }
+
 
 /* Contenedor principal y encabezado de Scrum */
 .Pagina-Scrum {
@@ -37,28 +29,40 @@ body {
 	padding: 70px 20px 40px;
 }
 
+
+
 .Encabezado-Scrum {
-	margin-bottom: 54px;
-	position: relative;
-	isolation: isolate;
+    position: relative;
+    isolation: isolate;
+    margin-bottom: 54px;
+    background: transparent;
+	margin-bottom: 130px;
 }
 
-/* Extiende el degradado del encabezado de Scrum hasta los bordes de la pantalla. */
 .Encabezado-Scrum::before {
-	position: absolute;
-	z-index: -1;
-	inset: -70px 0 0;
-	left: calc((100vw - 100%) / -2);
-	right: calc((100vw - 100%) / -2);
-	background: linear-gradient(105deg, #efeae1 0%, #f2eaf4 100%);
-	content: "";
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -70px;
+    bottom: -54px;
+    left: calc((1180px - 100vw) / 2);
+    width: 100vw;
+    background: linear-gradient(
+        to bottom right,
+        #fffaf4 0%,
+        #F2E8DC 50%,
+        #dcd0eb 100%
+    );
+    pointer-events: none;
 }
+
+
 
 .Encabezado-Scrum h1,
 .Encabezado-Seccion h2 {
 	margin: 0;
 	font-family: 'Bebas Neue', sans-serif;
-	color: var(--color-titulo-scrum);
+	color: #050505;
 }
 
 .Encabezado-Scrum h1 {
@@ -66,7 +70,7 @@ body {
 }
 
 .Encabezado-Scrum h1 span {
-	color: var(--color-acento-scrum);
+	color: #75618F;
 }
 
 .Descripcion-Scrum {
@@ -86,7 +90,7 @@ body {
 }
 
 .Ciclo-Resumen i {
-	color: var(--color-acento-scrum);
+	color: #C084FC;
 	font-size: 22px;
 }
 
@@ -100,6 +104,7 @@ body {
 }
 
 /* Separación entre las secciones interactivas */
+
 .Seccion-Scrum {
 	margin-bottom: 60px;
 }
@@ -146,12 +151,12 @@ body {
 }
 
 .Boton-Pestana i {
-	color: var(--color-acento-scrum);
+	color: #C084FC ;
 	font-size: 16px;
 }
 
 .Boton-Pestana span {
-	color: var(--color-acento-scrum);
+	color: #C084FC;
 }
 
 .Boton-Pestana.activo,
@@ -228,7 +233,7 @@ body {
 .Tarjeta-Rol {
 	min-height: 310px;
 	padding: 16px 18px;
-	background: var(--color-tarjeta-scrum);
+	background: #fffcf8;
 	border-color: rgba(164, 135, 101, 0.42);
 }
 
@@ -237,7 +242,7 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	margin-bottom: 16px;
-	color: var(--color-acento-scrum);
+	color: #C084FC;
 	font-size: 20px;
 }
 
@@ -277,7 +282,6 @@ body {
 .Tarjeta-Evento {
 	min-height: 220px;
 	padding: 16px 18px;
-	background: var(--color-tarjeta-scrum);
 	border-color: rgba(164, 135, 101, 0.32);
 }
 
@@ -325,7 +329,6 @@ body {
 .Tarjeta-Artefacto {
 	min-height: 270px;
 	padding: 16px 18px;
-	background: var(--color-tarjeta-scrum);
 	border-color: rgba(164, 135, 101, 0.42);
 }
 
@@ -341,7 +344,6 @@ body {
 }
 
 .Tarjeta-Artefacto strong {
-	color: var(--color-acento-scrum);
 	font-size: 14px;
 }
 
@@ -358,6 +360,7 @@ body {
 }
 
 /* Timeline y tarjeta informativa del Sprint */
+
 .Selector-Sprint strong {
 	font-size: 20px;
 }
@@ -408,7 +411,7 @@ body {
 
 .Mini-Seccion-Sprint h4 {
 	margin: 0 0 8px 20px;
-	color: var(--color-acento-scrum);
+	color: #050505;
 	font-size: 12px;
 	text-transform: uppercase;
 }
@@ -437,7 +440,7 @@ body {
 	padding: 8px 14px;
 	border: 1px solid rgba(116, 94, 142, 0.35);
 	border-radius: 8px;
-	background: var(--color-tarjeta-scrum);
+	background: #fffcf8;
 	color: #1a1d22;
 	font: inherit;
 	font-size: 13px;
@@ -469,7 +472,7 @@ body {
 	border: 1px solid #a99c8e;
 	border-top: 6px solid #765a91;
 	border-radius: 0;
-	background: var(--color-tarjeta-scrum);
+	background: #fffaf4;
 }
 
 .Cabecera-Tarjeta-Sprint {
@@ -481,13 +484,13 @@ body {
 
 .Cabecera-Tarjeta-Sprint .Antetitulo-Principal {
 	margin: 0;
-	color: var(--color-acento-scrum);
+	color: #765a91;
 	font-size: 12px;
 }
 
 .Cabecera-Tarjeta-Sprint i {
 	flex: 0 0 auto;
-	color: var(--color-acento-scrum);
+	color: #765a91;
 	font-size: 24px;
 }
 
@@ -540,7 +543,7 @@ body {
 }
 
 .Nuevo-Sprint i {
-	color: var(--color-acento-scrum);
+	color: #765a91;
 	font-size: 20px;
 }
 
@@ -702,4 +705,39 @@ body {
 	.Item-Sprint button {
 		max-width: 100%;
 	}
+}
+@media (max-width: 760px) {
+    #scrum-en-profundidad,
+    #ciclo-sprint {
+        padding: 30px 16px;
+    }
+}
+
+#scrum-en-profundidad,
+#ciclo-sprint {
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
+    background: transparent;
+}
+
+#scrum-en-profundidad::before,
+#ciclo-sprint::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: calc((100% - 100vw) / 2);
+    width: 100vw;
+    background: #fffaf4;
+    pointer-events: none;
+}
+
+#scrum-en-profundidad {
+    --fondo-seccion: #fffaf4;
+}
+
+#ciclo-sprint {
+    --fondo-seccion: #F2E8DC;
 }
