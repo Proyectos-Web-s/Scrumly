@@ -61,6 +61,14 @@ body {
 	isolation: isolate;
 }
 
+.Pagina-Glosario > .Seccion-Principal,
+.Pagina-PF > #inicio-preguntas,
+.Pagina-EDI > #inicio-enlaces,
+.Pagina-ECP > #inicio-Ejercicios,
+.Pagina-ECP > #inicio-metodologia {
+	padding-block: 25px;
+}
+
 /* Extiende el degradado del encabezado del Glosario hasta los bordes de la pantalla. */
 .Pagina-Glosario > .Seccion-Principal::before {
 	position: absolute;

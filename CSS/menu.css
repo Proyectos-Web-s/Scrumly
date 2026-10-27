@@ -18,6 +18,54 @@ body {
     padding-top: 80px;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body section[class]:not(.Columna-Kanban),
+body section[id]:not(.Columna-Kanban) {
+    padding-right: clamp(10px, 2vw, 25px);
+    padding-left: clamp(10px, 2vw, 25px);
+}
+
+.Tarjeta-GCS,
+.Tarjeta-PDS,
+.Tarjeta-MA,
+.Tarjeta-RA,
+.Tarjeta-SN,
+.Tarjeta-Caracteristicas,
+.Tarjeta-Metricas,
+.Tarjeta-Calidad-Agil,
+.Tarjeta-Conclusion,
+.Tarjeta-Nivel,
+.Tarjeta-Otra-Tecnica,
+.Tarjeta-Herramienta,
+.Tarjeta-V-Diagrama,
+.Tarjeta-V-Prueba,
+.Tarjeta-Iterativa,
+.Tarjeta-Mejora-Iterativa,
+.Tarjeta-Etapa-Volteable,
+.Tarjeta-Scrum,
+.Tarjeta-Rol,
+.Tarjeta-Evento,
+.Tarjeta-Artefacto,
+.Tarjeta-Sprint-Info,
+.Tarjeta-Valor,
+.Tarjeta-Principio,
+.Tarjeta-Comparador,
+.Tarjeta-Idea-Kanban,
+.Tarjeta-Tarea-Kanban,
+.Tarjeta-Glosario,
+.Tarjeta-Enlace,
+.Tarjeta-Ejercicio,
+.Tarjeta-Sobre-Ejercicios,
+.Tarjeta-Encuesta,
+.Tarjeta-Equipo {
+    box-shadow: 0 4px 12px rgba(24, 20, 32, 0.1);
+}
+
 .Enlace-Logo {
     display: block;
     line-height: 0;
@@ -25,7 +73,9 @@ body {
 
 .logo-SCRUMLY {
     width: 80px;
-    height: auto;
+    height: 80px;
+    border-radius: 100%;
+    object-fit: cover;
 }
 
 .Titulo-Barra {
@@ -194,6 +244,11 @@ body {
     .Titulo-Barra {
         margin-left: 5px;
         font-size: 32px;
+    }
+
+    .logo-SCRUMLY {
+        width: 60px;
+        height: 60px;
     }
 
     .Hambu {

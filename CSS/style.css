@@ -158,9 +158,30 @@ body {
 }
 
 .A-Ver-Secciones {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     color: #a465fd;
     text-decoration: none;
     font-family: 'Public Sans', sans-serif;
+}
+
+.Tarjeta-GCS .A-Ver-Secciones i,
+.Tarjeta-PDS .A-Ver-Secciones i,
+.Tarjeta-MA .A-Ver-Secciones i,
+.Tarjeta-RA .A-Ver-Secciones i,
+.Tarjeta-SN .A-Ver-Secciones i {
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    color: inherit;
+    font-size: 1em;
+    transition: transform 0.2s ease;
+}
+
+.A-Ver-Secciones:hover i,
+.A-Ver-Secciones:focus-visible i {
+    transform: translateX(3px);
 }
 
 .Tarjeta-GCS:hover,
@@ -238,7 +259,7 @@ body {
 }
 
 .Contenedor-Areas {
-    width: calc(100% - 32px);
+    width: calc(100% - 50px);
     max-width: 1320px;
     margin: 0 auto;
 }
@@ -266,6 +287,40 @@ body {
 .Tarjeta-SN {
     min-width: 0;
     overflow-wrap: anywhere;
+}
+
+@media (max-width: 1024px) {
+    #Seccion-Principal {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 0 24px;
+    }
+
+    .Contenedor-Principal,
+    .Contenedor-Imagen {
+        width: 100%;
+    }
+
+    .Imagen-Principal {
+        margin: 0 auto;
+    }
+
+    .Contenedor-Tarjetas-A,
+    .Contenedor-Tarjetas-B {
+        flex-wrap: wrap;
+    }
+
+    .Tarjeta-GCS,
+    .Tarjeta-PDS,
+    .Tarjeta-MA,
+    .Tarjeta-RA,
+    .Tarjeta-SN {
+        flex: 1 1 280px;
+        width: auto;
+        max-width: 420px;
+        height: auto;
+        min-height: 200px;
+    }
 }
 
 /* Ajustes de tabletas y teléfonos: apila la portada y las tarjetas. */
