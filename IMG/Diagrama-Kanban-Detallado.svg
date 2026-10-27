@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="350" viewBox="0 0 1040 350">
+    <style>
+        text { font-family: "Public Sans", Arial, sans-serif; text-anchor: middle; }
+        .Fondo-Diagrama-Kanban { fill: #fff; stroke: #d9cbb9; stroke-width: 1; }
+        .Columna-Diagrama-Kanban rect { fill: #e5def1; }
+        .Columna-Diagrama-Kanban text { fill: #171717; font-size: 18px; font-weight: 700; }
+        .Tarea-Diagrama-Kanban rect { fill: #fff; stroke: #d9cbb9; }
+        .Tarea-Diagrama-Kanban text { fill: #171717; font-size: 15px; }
+        .Flecha-Diagrama-Kanban path { fill: none; stroke: #80649c; stroke-width: 3; }
+        .Limite-Diagrama-Kanban { fill: #80649c; font-size: 16px; font-weight: 700; }
+    </style>
+    <defs>
+        <marker id="flecha-kanban-diagrama" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+            <path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#80649c" stroke-width="1.5"/>
+        </marker>
+    </defs>
+    <rect class="Fondo-Diagrama-Kanban" x="1" y="1" width="1038" height="348" rx="14"/>
+    <g class="Columna-Diagrama-Kanban">
+        <rect x="45" y="32" width="235" height="286" rx="14"/>
+        <text x="162" y="66">Por Hacer</text>
+        <rect x="402" y="32" width="235" height="286" rx="14"/>
+        <text x="519" y="66">En Proceso</text>
+        <rect x="760" y="32" width="235" height="286" rx="14"/>
+        <text x="877" y="66">Hecho</text>
+    </g>
+    <g class="Tarea-Diagrama-Kanban">
+        <rect x="65" y="130" width="195" height="64" rx="11"/>
+        <text x="162" y="168">Pendiente</text>
+        <rect x="422" y="130" width="195" height="64" rx="11"/>
+        <text x="519" y="168">En desarrollo</text>
+        <rect x="780" y="130" width="195" height="64" rx="11"/>
+        <text x="877" y="168">Terminado</text>
+    </g>
+    <g class="Flecha-Diagrama-Kanban">
+        <path d="M300 162 H380" marker-end="url(#flecha-kanban-diagrama)"/>
+        <path d="M657 162 H738" marker-end="url(#flecha-kanban-diagrama)"/>
+    </g>
+    <text class="Limite-Diagrama-Kanban" x="519" y="274">Límite WIP</text>
+</svg>

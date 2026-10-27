@@ -22,7 +22,7 @@ html {
 
 body {
 	margin: 0;
-	background: #efeae1;
+	background: #fffaf4;
 	color: #181d2a;
 	font-family: 'Public Sans', Arial, sans-serif;
 }
@@ -52,6 +52,7 @@ body {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 68px 20px 80px;
+	background: #fffaf4;
 }
 
 .Seccion-Principal {
@@ -68,7 +69,12 @@ body {
 	left: calc(50% + clamp(0px, (100vw - 1160px) / 2, 20px));
 	width: 100vw;
 	transform: translateX(-50%);
-	background: linear-gradient(105deg, #efeae1 0%, #f2eaf4 100%);
+	background: linear-gradient(
+		to bottom right,
+		#fffaf4 0%,
+		#F2E8DC 50%,
+		#dcd0eb 100%
+	);
 	content: "";
 }
 
@@ -318,10 +324,39 @@ body {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 68px 20px 80px;
+	background: #fffaf4;
 }
 
 .Seccion-Principal-PF {
 	max-width: 1120px;
+}
+
+.Pagina-PF > #inicio-preguntas::before,
+.Pagina-EDI > #inicio-enlaces::before,
+.Pagina-ECP > #inicio-Ejercicios::before {
+	position: absolute;
+	z-index: -1;
+	inset: -68px 0 0;
+	left: calc(50% + clamp(0px, (100vw - 1160px) / 2, 20px));
+	width: 100vw;
+	transform: translateX(-50%);
+	background: #F2E8DC;
+	content: "";
+}
+
+#inicio-metodologia {
+	margin: 24px auto 0;
+}
+
+#inicio-metodologia::before {
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+	left: 50%;
+	width: 100vw;
+	transform: translateX(-50%);
+	background: #F2E8DC;
+	content: "";
 }
 
 .Antetitulo-PF {
@@ -455,6 +490,7 @@ body {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 68px 20px 80px;
+	background: #fffaf4;
 }
 
 .Seccion-Principal-EDI {
@@ -584,6 +620,7 @@ body {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 68px 20px 80px;
+	background: #fffaf4;
 }
 
 .Seccion-Principal-ECP {

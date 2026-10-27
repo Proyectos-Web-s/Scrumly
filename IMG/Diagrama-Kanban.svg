@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="350" viewBox="0 0 1040 350">
+    <style>
+        text { font-family: "Public Sans", Arial, sans-serif; text-anchor: middle; }
+        .Fondo-Diagrama { fill: #fff; stroke: #d9cbb9; stroke-width: 1; }
+        .Columnas-Kanban rect { fill: #e5def1; }
+        .Columnas-Kanban text { fill: #171717; font-size: 18px; font-weight: 700; }
+        .Tarjetas-Kanban rect { fill: #fff; stroke: #d9cbb9; }
+        .Tarjetas-Kanban text { fill: #171717; font-size: 15px; font-weight: 500; }
+        .Etiqueta-Kanban { fill: #80649c; font-size: 16px; font-weight: 700; }
+    </style>
+    <rect class="Fondo-Diagrama" x="1" y="1" width="1038" height="348" rx="18"/>
+    <g class="Columnas-Kanban">
+        <rect x="42" y="28" width="275" height="292" rx="16"/><text x="179" y="66">Por hacer</text>
+        <rect x="382" y="28" width="275" height="292" rx="16"/><text x="519" y="66">En proceso</text>
+        <rect x="722" y="28" width="275" height="292" rx="16"/><text x="859" y="66">Hecho</text>
+    </g>
+    <g class="Tarjetas-Kanban">
+        <rect x="64" y="110" width="230" height="72" rx="12"/><text x="179" y="154">Pendiente</text>
+        <rect x="404" y="110" width="230" height="72" rx="12"/><text x="519" y="154">En desarrollo</text>
+        <rect x="744" y="110" width="230" height="72" rx="12"/><text x="859" y="154">Terminado</text>
+    </g>
+    <text class="Etiqueta-Kanban" x="519" y="272">Límite WIP</text>
+</svg>

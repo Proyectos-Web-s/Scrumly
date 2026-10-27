@@ -1052,20 +1052,20 @@ section#contexto-ciclo-vida {
 .Estela-Avance-SDLC {
   position: absolute;
   z-index: 4;
-  top: 25px;
+  top: 0;
   left: 0;
   width: 60px;
   height: 60px;
   box-sizing: border-box;
   border: 2px solid #75618F;
   border-radius: 50%;
-  background: rgba(255, 250, 245, 0.88);
+  background: transparent;
   box-shadow:
     0 0 0 4px rgba(117, 97, 143, 0.12),
     0 0 14px rgba(117, 97, 143, 0.45);
   pointer-events: none;
   opacity: 0;
-  transform: translate(0, -50%);
+  transform: translate(0, 0);
   will-change: transform, opacity;
 }
 
@@ -1083,18 +1083,18 @@ section#contexto-ciclo-vida {
 .Estela-Eco-SDLC {
   position: absolute;
   z-index: 3;
-  top: 25px;
+  top: 0;
   left: 0;
   width: 60px;
   height: 60px;
   box-sizing: border-box;
   border: 2px solid #75618F;
   border-radius: 50%;
-  background: rgba(255, 250, 245, 0.25);
-  box-shadow: 0 0 10px rgba(117, 97, 143, 0.28);
+  background: transparent;
+  box-shadow: 0 0 14px rgba(117, 97, 143, 0.48);
   pointer-events: none;
   opacity: 0;
-  transform: translate(0, -50%);
+  transform: translate(0, 0);
   will-change: transform, opacity;
 }
 
@@ -1125,13 +1125,13 @@ section#contexto-ciclo-vida {
   background: #fffaf4;
   color: #0b0d1a;
   font-size: 1.2rem;
-  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .Boton-Etapa-SDLC:hover .Icono-Boton-Etapa,
 .Boton-Etapa-SDLC:focus-visible .Icono-Boton-Etapa {
-  transform: translateY(-2px);
   border-color: #75618F;
+  box-shadow: 0 0 0 4px rgba(117, 97, 143, 0.2);
 }
 
 .Boton-Etapa-SDLC.activo {
@@ -1142,6 +1142,7 @@ section#contexto-ciclo-vida {
   border-color: #75618F;
   background: #fffaf5;
   color: #75618F;
+  box-shadow: 0 0 0 4px rgba(117, 97, 143, 0.2);
 }
 
 .Boton-Etapa-SDLC:focus-visible {
@@ -1406,7 +1407,7 @@ section#contexto-ciclo-vida {
 }
 
 /* Descripción debajo de cada diagrama */
-.Figura-Agil figcaption {
+.Figura-Agil > div {
     margin-top: 10px;
     line-height: 1.5;
 }

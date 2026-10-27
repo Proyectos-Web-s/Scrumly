@@ -14,97 +14,7 @@
 	</head>
 	<body>
 		<!-- Barra de navegación principal -->
-		<div class="Barra-de-Navegacion">
-			<a href="index.html" class="Enlace-Logo">
-				<img src="IMG/Logo-SCRUMLY.jpeg" alt="SCRUMLY Logo" class="logo-SCRUMLY" />
-			</a>
-			<p class="Titulo-Barra">SCRUMLY</p>
-			<i class="Hambu bi-list" id="boton-menu"></i>
-
-            <!-- Menu hamburgesa -->
-                <div id="menu-container">
-                    <nav class="Menu" id="menu">
-                    <div class="Menu-Titulo">
-                        <span>MENÚ</span>
-                    </div>
-					
-                    <a href="index.html">
-                        <i class="bi bi-house"></i>
-                        <span>Inicio</span>
-                    </a>
-
-                    <!-- Gestión de Calidad -->
-                    <div class="Item-Menu">
-
-                        <!-- Con un click se despliega -->
-                        <div class="Titulo-Menu">
-                            <i class="bi bi-patch-check"></i>
-
-                            <span>
-                                Gestión de la Calidad<br>
-                                del Software
-                            </span>
-
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-
-                        <div class="Submenu">
-                            <a href="Gestion-de-Calidad-del-Software.html#fundamentos-calidad">Fundamentos</a>
-                            <a href="Gestion-de-Calidad-del-Software.html#calidad-agil">Técnicas de Aseguramiento de la Calidad</a>
-                            <a href="Gestion-de-Calidad-del-Software.html#herramientas-calidad">Herramientas de Calidad</a>
-                        </div>
-
-                    </div>
-
-                    <div class="Item-Menu">
-                        <div class="Titulo-Menu">
-                            <i class="bi bi-bezier2"></i>
-                            <span>Procesos de Desarrollo<br>de Software</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-                        <div class="Submenu">
-                            <a href="Procesos-y-Desarrollo-de-Software.html#inicio-procesos">Ciclo de Vida del Desarrollo (SDLC)</a>
-                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-cascada">Modelo en Cascada</a>
-                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-v">Modelo en V</a>
-                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-iterativo">Modelo Iterativo e Incremental</a>
-                        </div>
-                    </div>
-
-                    <div class="Item-Menu">
-                        <div class="Titulo-Menu">
-                            <i class="bi bi-lightning-charge"></i>
-                            <span>Metodologías Ágiles</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-                        <div class="Submenu">
-                            <a href="Metodologias-Agiles.html#scrum">Scrum</a>
-                            <a href="Metodologias-Agiles.html#kanban">Kanban</a>
-                            <a href="Metodologias-Agiles.html#xp">XP (Extreme Programming)</a>
-                            <a href="Metodologias-Agiles.html#comparativa">Comparador de metodologías</a>
-                        </div>
-                    </div>
-
-                    <div class="Item-Menu">
-                        <div class="Titulo-Menu">
-                            <i class="bi bi-book"></i>
-                            <span>Recursos y Aprendizajes</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-                        <div class="Submenu">
-                            <a href="Recursos-y-Aprendizajes.html#glosario">Glosario</a>
-                            <a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
-                            <a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
-                            <a href="Recursos-y-Aprendizajes.html#ejercicios-practicos">Ejercicios y Casos Prácticos</a>
-							<a href="Recursos-y-Aprendizajes.html#encuesta-metodología">Encuesta sobre Metodologías</a>
-                        </div>
-                    </div>
-
-                    <a href="Sobre-Nosotros.html"><i class="bi bi-people"></i><span>Sobre Nosotros</span></a>
-                    <a href="Contacto.html"><i class="bi bi-envelope"></i><span>Contacto</span></a>
-                        </nav>
-                    </div>
-            
-            </div>
+		<div id="menu-container"></div>
 
 		<!-- Contenido principal de Scrum -->
 		<div class="Pagina-Scrum">
@@ -140,7 +50,7 @@
 
 				<!-- Paneles de Roles, Eventos y Artefactos -->
 				<div class="Contenido-Pestanas">
-					<article class="Panel-Pestana activo" role="tabpanel" data-panel="roles">
+					<div class="Panel-Pestana activo" role="tabpanel" data-panel="roles">
 						<p>El equipo Scrum reúne a quienes construyen el producto, priorizan su valor y facilitan el trabajo.</p>
 						<div class="Tarjetas-Scrum Tarjetas-Roles">
 							<div class="Tarjeta-Scrum Tarjeta-Rol">
@@ -162,9 +72,9 @@
 								<ul><li>Asesora al Product Owner y a los desarrolladores; facilita las prácticas ágiles.</li><li>Ayuda a resolver impedimentos y favorece la autonomía del equipo.</li></ul>
 							</div>
 						</div>
-					</article>
+					</div>
 
-					<article class="Panel-Pestana" role="tabpanel" data-panel="eventos" hidden>
+					<div class="Panel-Pestana" role="tabpanel" data-panel="eventos" hidden>
 						<p>Cada evento crea un momento para planificar, inspeccionar el avance o mejorar el trabajo.</p>
 						<div class="Tarjetas-Scrum Tarjetas-Eventos">
 							<div class="Tarjeta-Scrum Tarjeta-Evento">
@@ -198,9 +108,9 @@
 								<ul><li>Identifica fortalezas, problemas y oportunidades de mejora.</li><li>La Review muestra qué se construyó; la retrospectiva observa cómo se trabajó.</li></ul>
 							</div>
 						</div>
-					</article>
+					</div>
 
-					<article class="Panel-Pestana" role="tabpanel" data-panel="artefactos" hidden>
+					<div class="Panel-Pestana" role="tabpanel" data-panel="artefactos" hidden>
 						<p>Los artefactos hacen visible el trabajo y el resultado que se construye en cada Sprint.</p>
 						<div class="Tarjetas-Scrum Tarjetas-Artefactos">
 							<div class="Tarjeta-Scrum Tarjeta-Artefacto">
@@ -225,7 +135,7 @@
 								<div class="Detalle-Artefacto">Debe estar en condiciones de ser desplegado o distribuido.</div>
 							</div>
 						</div>
-					</article>
+					</div>
 				</div>
 			</section>
 
@@ -260,6 +170,7 @@
         <!-- Sección pie -->
 		<div id="footer-container"></div>
 
+		<script src="JS/menu.js"></script>
 		<script src="JS/footer.js"></script>
 
 		<script src="JS/script.js"></script>

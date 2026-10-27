@@ -14,101 +14,12 @@
 	</head>
 	<body>
 		<!-- Barra de navegación principal -->
-		<div class="Barra-de-Navegacion">
-			<a href="index.html" class="Enlace-Logo">
-				<img src="IMG/Logo-SCRUMLY.jpeg" alt="SCRUMLY Logo" class="logo-SCRUMLY" />
-			</a>
-			<p class="Titulo-Barra">SCRUMLY</p>
-			<i class="Hambu bi-list" id="boton-menu"></i>
-
-            <!-- Menu hamburgesa -->
-                <div id="menu-container">
-                    <nav class="Menu" id="menu">
-                    <div class="Menu-Titulo">
-                        <span>MENÚ</span>
-                    </div>
-
-                    <a href="index.html">
-                        <i class="bi bi-house"></i>
-                        <span>Inicio</span>
-                    </a>
-
-                    <!-- Gestión de Calidad -->
-                    <div class="Item-Menu">
-
-                        <!-- Con un click se despliega -->
-                        <div class="Titulo-Menu">
-                            <i class="bi bi-patch-check"></i>
-
-                            <span>
-                                Gestión de la Calidad<br>
-                                del Software
-                            </span>
-
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-
-                        <div class="Submenu">
-                            <a href="Gestion-de-Calidad-del-Software.html#fundamentos-calidad">Fundamentos</a>
-                            <a href="Gestion-de-Calidad-del-Software.html#calidad-agil">Técnicas de Aseguramiento de la Calidad</a>
-                            <a href="Gestion-de-Calidad-del-Software.html#herramientas-calidad">Herramientas de Calidad</a>
-                        </div>
-
-                    </div>
-
-                    <div class="Item-Menu">
-                        <div class="Titulo-Menu">
-                            <i class="bi bi-bezier2"></i>
-                            <span>Procesos de Desarrollo<br>de Software</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-                        <div class="Submenu">
-                            <a href="Procesos-y-Desarrollo-de-Software.html#inicio-procesos">Ciclo de Vida del Desarrollo (SDLC)</a>
-                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-cascada">Modelo en Cascada</a>
-                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-v">Modelo en V</a>
-                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-iterativo">Modelo Iterativo e Incremental</a>
-                        </div>
-                    </div>
-
-                    <div class="Item-Menu">
-                        <div class="Titulo-Menu">
-                            <i class="bi bi-lightning-charge"></i>
-                            <span>Metodologías Ágiles</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-                        <div class="Submenu">
-                            <a href="Metodologias-Agiles.html#scrum">Scrum</a>
-                            <a href="Metodologias-Agiles.html#kanban">Kanban</a>
-                            <a href="Metodologias-Agiles.html#xp">XP (Extreme Programming)</a>
-                            <a href="Metodologias-Agiles.html#comparativa">Comparador de metodologías</a>
-                        </div>
-                    </div>
-
-                    <div class="Item-Menu">
-                        <div class="Titulo-Menu">
-                            <i class="bi bi-book"></i>
-                            <span>Recursos y Aprendizajes</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-                        <div class="Submenu">
-                            <a href="Recursos-y-Aprendizajes.html#glosario">Glosario</a>
-                            <a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
-                            <a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
-                            <a href="Recursos-y-Aprendizajes.html#ejercicios-practicos">Ejercicios y Casos Prácticos</a>
-							<a href="Recursos-y-Aprendizajes.html#encuesta-metodología">Encuesta sobre Metodologías</a>
-                        </div>
-                    </div>
-
-                    <a href="Sobre-Nosotros.html"><i class="bi bi-people"></i><span>Sobre Nosotros</span></a>
-                    <a href="Contacto.html"><i class="bi bi-envelope"></i><span>Contacto</span></a>
-                    </nav>
-                </div>
-            </div>
+		<div id="menu-container"></div>
 
 
 		<!-- Portada y accesos a cada parte del recorrido ágil -->
 		<div class="Pagina-Agil">
-			<header class="Encabezado-Agil" id="introduccion-agil">
+			<div class="Encabezado-Agil" id="introduccion-agil">
 				<div class="Contenedor-Agil">
 					<p class="Antetitulo-Agil">METODOLOGÍAS ÁGILES · INTRODUCCIÓN</p>
 					<h1>Metodologías <span>Ágiles.</span></h1>
@@ -118,15 +29,15 @@
 						<strong>Scrum, Kanban y Extreme Programming (XP)</strong>.
 					</p>
 				</div>
-			</header>
+			</div>
 
-			<nav class="Navegacion-Agil" aria-label="Secciones de metodologías ágiles">
+			<div class="Navegacion-Agil" aria-label="Secciones de metodologías ágiles">
 				<a class="Boton-Navegacion-Agil activo" href="#manifiesto-agil">Manifiesto Ágil</a>
 				<a class="Boton-Navegacion-Agil" href="#principios-agiles">Principios</a>
 				<a class="Boton-Navegacion-Agil" href="#scrum">Scrum</a>
 				<a class="Boton-Navegacion-Agil" href="#kanban">Kanban</a>
 				<a class="Boton-Navegacion-Agil" href="#xp">XP</a>
-			</nav>
+			</div>
 
 			<!-- Primera sección: valores compartidos del Manifiesto Ágil -->
 			<section id="manifiesto-agil" class="Seccion-Agil" aria-labelledby="titulo-manifiesto">
@@ -139,26 +50,26 @@
 
 				<h3 class="Subtitulo-Agil">Los 4 valores</h3>
 				<div class="Tarjetas-Valores">
-					<article class="Tarjeta-Valor">
+					<div class="Tarjeta-Valor">
 						<i class="bi bi-people" aria-hidden="true"></i>
 						<h4>Individuos e interacciones</h4>
 						<p>Por encima de los procesos y las herramientas.</p>
-					</article>
-					<article class="Tarjeta-Valor">
+					</div>
+					<div class="Tarjeta-Valor">
 						<i class="bi bi-code-slash" aria-hidden="true"></i>
 						<h4>Software funcionando</h4>
 						<p>Por encima de la documentación exhaustiva.</p>
-					</article>
-					<article class="Tarjeta-Valor">
+					</div>
+					<div class="Tarjeta-Valor">
 						<i class="bi bi-person-workspace" aria-hidden="true"></i>
 						<h4>Colaboración con el cliente</h4>
 						<p>Por encima de la negociación contractual.</p>
-					</article>
-					<article class="Tarjeta-Valor">
+					</div>
+					<div class="Tarjeta-Valor">
 						<i class="bi bi-arrow-repeat" aria-hidden="true"></i>
 						<h4>Respuesta al cambio</h4>
 						<p>Por encima del seguimiento de un plan.</p>
-					</article>
+					</div>
 				</div>
 				<p class="Nota-Agil">
 					Aunque valoramos los elementos de la derecha, valoramos más los de la izquierda:
@@ -171,18 +82,18 @@
 				<p class="Antetitulo-Agil">02 · DEL VALOR DE LA PRÁCTICA</p>
 				<h2 id="titulo-principios">Los 12 principios</h2>
 				<div class="Tarjetas-Principios">
-					<article class="Tarjeta-Principio"><span>01</span><p>Satisfacer al cliente mediante entregas tempranas y continuas.</p></article>
-					<article class="Tarjeta-Principio"><span>02</span><p>Aceptar cambios en los requisitos, incluso en etapas tardías.</p></article>
-					<article class="Tarjeta-Principio"><span>03</span><p>Entregar software funcionando frecuentemente.</p></article>
-					<article class="Tarjeta-Principio"><span>04</span><p>Colaborar entre desarrolladores y responsables del negocio.</p></article>
-					<article class="Tarjeta-Principio"><span>05</span><p>Construir proyectos alrededor de personas motivadas.</p></article>
-					<article class="Tarjeta-Principio"><span>06</span><p>Favorecer la comunicación directa.</p></article>
-					<article class="Tarjeta-Principio"><span>07</span><p>El software funcionando es la medida principal del progreso.</p></article>
-					<article class="Tarjeta-Principio"><span>08</span><p>Mantener un ritmo de trabajo sostenible.</p></article>
-					<article class="Tarjeta-Principio"><span>09</span><p>Buscar la excelencia técnica y el buen diseño continuamente.</p></article>
-					<article class="Tarjeta-Principio"><span>10</span><p>Mantener la simplicidad y evitar el trabajo innecesario.</p></article>
-					<article class="Tarjeta-Principio"><span>11</span><p>Favorecer equipos autoorganizados.</p></article>
-					<article class="Tarjeta-Principio"><span>12</span><p>Reflexionar y mejorar periódicamente.</p></article>
+					<div class="Tarjeta-Principio"><span>01</span><p>Satisfacer al cliente mediante entregas tempranas y continuas.</p></div>
+					<div class="Tarjeta-Principio"><span>02</span><p>Aceptar cambios en los requisitos, incluso en etapas tardías.</p></div>
+					<div class="Tarjeta-Principio"><span>03</span><p>Entregar software funcionando frecuentemente.</p></div>
+					<div class="Tarjeta-Principio"><span>04</span><p>Colaborar entre desarrolladores y responsables del negocio.</p></div>
+					<div class="Tarjeta-Principio"><span>05</span><p>Construir proyectos alrededor de personas motivadas.</p></div>
+					<div class="Tarjeta-Principio"><span>06</span><p>Favorecer la comunicación directa.</p></div>
+					<div class="Tarjeta-Principio"><span>07</span><p>El software funcionando es la medida principal del progreso.</p></div>
+					<div class="Tarjeta-Principio"><span>08</span><p>Mantener un ritmo de trabajo sostenible.</p></div>
+					<div class="Tarjeta-Principio"><span>09</span><p>Buscar la excelencia técnica y el buen diseño continuamente.</p></div>
+					<div class="Tarjeta-Principio"><span>10</span><p>Mantener la simplicidad y evitar el trabajo innecesario.</p></div>
+					<div class="Tarjeta-Principio"><span>11</span><p>Favorecer equipos autoorganizados.</p></div>
+					<div class="Tarjeta-Principio"><span>12</span><p>Reflexionar y mejorar periódicamente.</p></div>
 				</div>
 			</section>
 
@@ -199,26 +110,13 @@
 					<p><strong>Artefactos</strong><br>Product Backlog · Sprint Backlog · Incremento</p>
 					<p><strong>Eventos</strong><br>Sprint Planning · Daily Scrum · Sprint Review · Sprint Retrospective</p>
 				</div>
-				<figure class="Figura-Agil">
+				<div class="Figura-Agil">
 					<button class="Boton-Diagrama" type="button" data-titulo-diagrama="Ciclo simplificado del Sprint" aria-label="Ampliar diagrama del ciclo de Scrum">
-						<svg class="Diagrama-Scrum" viewBox="0 0 760 330" role="img" aria-labelledby="titulo-diagrama-scrum">
-							<title id="titulo-diagrama-scrum">Planificar, desarrollar, revisar y mejorar durante un Sprint</title>
-							<defs><marker id="flecha-scrum" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#80649c" stroke-width="1.5"/></marker></defs>
-							<rect class="Fondo-Diagrama" x="1" y="1" width="758" height="328" rx="18"/>
-							<g class="Nodos-Scrum">
-								<rect x="42" y="32" width="160" height="56" rx="14"/><text x="122" y="67">Planificar</text>
-								<rect x="558" y="32" width="160" height="56" rx="14"/><text x="638" y="67">Desarrollar</text>
-								<rect x="558" y="242" width="160" height="56" rx="14"/><text x="638" y="277">Revisar</text>
-								<rect x="42" y="242" width="160" height="56" rx="14"/><text x="122" y="277">Mejorar</text>
-							</g>
-							<g class="Flechas-Diagrama"><path d="M210 60 H545" marker-end="url(#flecha-scrum)"/><path d="M638 98 V225" marker-end="url(#flecha-scrum)"/><path d="M550 270 H215" marker-end="url(#flecha-scrum)"/><path d="M122 230 V103" marker-end="url(#flecha-scrum)"/></g>
-							<text class="Centro-Diagrama" x="380" y="151">Sprint</text>
-							<text class="Subcentro-Diagrama" x="380" y="181">Daily Scrum · cada día</text>
-						</svg>
+						<img class="Diagrama-Scrum" src="IMG/Diagrama-Scrum.svg" alt="Ciclo de Scrum: planificar, desarrollar, revisar y mejorar durante el Sprint." />
 						<span class="Icono-Ampliar bi bi-zoom-in" aria-hidden="true"></span>
 					</button>
-					<figcaption>Figura 1. Ciclo simplificado del Sprint: planificación, desarrollo con Daily Scrum, revisión y retrospectiva.</figcaption>
-				</figure>
+					<div>Figura 1. Ciclo simplificado del Sprint: planificación, desarrollo con Daily Scrum, revisión y retrospectiva.</div>
+				</div>
 				<a class="Boton-Detalle-Agil" href="Scrum-En-Profundidad.html#scrum-en-profundidad">Ver Scrum en profundidad <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 			</section>
 
@@ -230,27 +128,13 @@
 					Kanban representa visualmente el trabajo para facilitar su seguimiento y mejorar el flujo de las actividades.
 					Un tablero básico organiza las tareas en <strong>Por hacer → En proceso → Hecho</strong>.
 				</p>
-				<figure class="Figura-Agil">
+				<div class="Figura-Agil">
 					<button class="Boton-Diagrama" type="button" data-titulo-diagrama="Tablero básico Kanban" aria-label="Ampliar diagrama de Kanban">
-						<svg class="Diagrama-Kanban" viewBox="0 0 1040 350" role="img" aria-labelledby="titulo-diagrama-kanban">
-							<title id="titulo-diagrama-kanban">Tablero Kanban con las columnas Por hacer, En proceso y Hecho</title>
-							<rect class="Fondo-Diagrama" x="1" y="1" width="1038" height="348" rx="18"/>
-							<g class="Columnas-Kanban">
-								<rect x="42" y="28" width="275" height="292" rx="16"/><text x="179" y="66">Por hacer</text>
-								<rect x="382" y="28" width="275" height="292" rx="16"/><text x="519" y="66">En proceso</text>
-								<rect x="722" y="28" width="275" height="292" rx="16"/><text x="859" y="66">Hecho</text>
-							</g>
-							<g class="Tarjetas-Kanban">
-								<rect x="64" y="110" width="230" height="72" rx="12"/><text x="179" y="154">Pendiente</text>
-								<rect x="404" y="110" width="230" height="72" rx="12"/><text x="519" y="154">En desarrollo</text>
-								<rect x="744" y="110" width="230" height="72" rx="12"/><text x="859" y="154">Terminado</text>
-							</g>
-							<text class="Etiqueta-Kanban" x="519" y="272">Límite WIP</text>
-						</svg>
+						<img class="Diagrama-Kanban" src="IMG/Diagrama-Kanban.svg" alt="Tablero Kanban con las columnas Por hacer, En proceso y Hecho, y sus tareas." />
 						<span class="Icono-Ampliar bi bi-zoom-in" aria-hidden="true"></span>
 					</button>
-					<figcaption>Figura 2. Flujo básico Kanban; el límite WIP restringe el trabajo simultáneo en «En proceso».</figcaption>
-				</figure>
+					<div>Figura 2. Flujo básico Kanban; el límite WIP restringe el trabajo simultáneo en «En proceso».</div>
+				</div>
 				<a class="Boton-Detalle-Agil" href="Kanban-En-Profundidad.html">Ver Kanban en profundidad <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 			</section>
 
@@ -263,31 +147,18 @@
 					la adaptación continua y la retroalimentación frecuente.
 				</p>
 				<div class="Tarjetas-Practicas-XP">
-					<article><h3>Programación en parejas</h3><p>Dos personas colaboran en el mismo código, revisando y compartiendo conocimiento.</p></article>
-					<article><h3>Desarrollo dirigido por pruebas</h3><p>Se escribe una prueba antes del código que permite superarla.</p></article>
-					<article><h3>Integración continua</h3><p>Los cambios se integran y verifican con frecuencia.</p></article>
-					<article><h3>Refactorización</h3><p>Se mejora la estructura interna del código sin cambiar su comportamiento.</p></article>
+					<div><h3>Programación en parejas</h3><p>Dos personas colaboran en el mismo código, revisando y compartiendo conocimiento.</p></div>
+					<div><h3>Desarrollo dirigido por pruebas</h3><p>Se escribe una prueba antes del código que permite superarla.</p></div>
+					<div><h3>Integración continua</h3><p>Los cambios se integran y verifican con frecuencia.</p></div>
+					<div><h3>Refactorización</h3><p>Se mejora la estructura interna del código sin cambiar su comportamiento.</p></div>
 				</div>
-				<figure class="Figura-Agil">
+				<div class="Figura-Agil">
 					<button class="Boton-Diagrama" type="button" data-titulo-diagrama="Bucle de prácticas XP" aria-label="Ampliar diagrama de Extreme Programming">
-						<svg class="Diagrama-XP" viewBox="0 0 760 330" role="img" aria-labelledby="titulo-diagrama-xp">
-							<title id="titulo-diagrama-xp">Bucle XP de pruebas, código, refactorización e integración continua</title>
-							<defs><marker id="flecha-xp" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#80649c" stroke-width="1.5"/></marker></defs>
-							<rect class="Fondo-Diagrama" x="1" y="1" width="758" height="328" rx="18"/>
-							<g class="Nodos-Scrum">
-								<rect x="42" y="32" width="160" height="56" rx="14"/><text x="122" y="67">Pruebas</text>
-								<rect x="558" y="32" width="160" height="56" rx="14"/><text x="638" y="67">Código</text>
-								<rect x="558" y="242" width="160" height="56" rx="14"/><text x="638" y="277">Refactorización</text>
-								<rect x="42" y="242" width="160" height="56" rx="14"/><text x="122" y="277">Integración</text>
-							</g>
-							<g class="Flechas-Diagrama"><path d="M210 60 H545" marker-end="url(#flecha-xp)"/><path d="M638 98 V225" marker-end="url(#flecha-xp)"/><path d="M550 270 H215" marker-end="url(#flecha-xp)"/><path d="M122 230 V103" marker-end="url(#flecha-xp)"/></g>
-							<text class="Centro-Diagrama" x="380" y="151">XP</text>
-							<text class="Subcentro-Diagrama" x="380" y="181">Retroalimentación continua</text>
-						</svg>
+						<img class="Diagrama-XP" src="IMG/Diagrama-XP.svg" alt="Bucle de prácticas XP: pruebas, código, refactorización e integración continua." />
 						<span class="Icono-Ampliar bi bi-zoom-in" aria-hidden="true"></span>
 					</button>
-					<figcaption>Figura 3. Prácticas complementarias de XP con retroalimentación continua; no son fases rígidas ni una secuencia única.</figcaption>
-				</figure>
+					<div>Figura 3. Prácticas complementarias de XP con retroalimentación continua; no son fases rígidas ni una secuencia única.</div>
+				</div>
 			</section>
 
 
@@ -370,29 +241,6 @@
 			</section>
 		</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		<!-- Visor accesible compartido por los tres diagramas -->
 		<dialog class="Visor-Diagrama" aria-labelledby="titulo-visor-diagrama">
 			<div class="Cabecera-Visor">
@@ -405,6 +253,7 @@
         <!-- Sección pie -->
 		<div id="footer-container"></div>
 
+		<script src="JS/menu.js"></script>
 		<script src="JS/footer.js"></script>
 
 		<script src="JS/script.js"></script>

@@ -15,139 +15,7 @@
 	<body>
 
         <!-- Barra de Navegación -->
-        <div class="Barra-de-Navegacion">
-            <a href="index.html" class="Enlace-Logo">
-                <img src="IMG/Logo-SCRUMLY.jpeg" alt="SCRUMLY Logo" class="logo-SCRUMLY" />
-            </a>
-            <p class="Titulo-Barra">SCRUMLY</p>
-            <i class="Hambu bi-list" id="boton-menu"></i>
-
-            <!-- Menu hamburgesa -->
-                <div id="menu-container">
-                    <nav class="Menu" id="menu">
-                        <div class="Menu-Titulo">
-                            <span>MENÚ</span>
-                        </div>
-
-                    <a href="index.html">
-                        <i class="bi bi-house"></i>
-                        <span>Inicio</span>
-                    </a>
-
-                    <!-- Gestión de Calidad -->
-                    <div class="Item-Menu">
-
-                        <!-- Con un click se despliega -->
-                        <div class="Titulo-Menu">
-                            <i class="bi bi-patch-check"></i>
-
-                            <span>
-                                Gestión de la Calidad<br>
-                                del Software
-                            </span>
-
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-
-                        <div class="Submenu">
-                            <a href="Gestion-de-Calidad-del-Software.html#fundamentos-calidad">Fundamentos</a>
-                            <a href="Gestion-de-Calidad-del-Software.html#calidad-agil">Técnicas de Aseguramiento de la Calidad</a>
-                            <a href="Gestion-de-Calidad-del-Software.html#herramientas-calidad">Herramientas de Calidad</a>
-                        </div>
-
-                    </div>
-
-
-                    <!-- Procesos de Desarrollo -->
-                    <div class="Item-Menu">
-
-                        <div class="Titulo-Menu">
-                            <i class="bi bi-bezier2"></i>
-
-                            <span>
-                                Procesos de Desarrollo<br>
-                                de Software
-                            </span>
-
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-
-                        <div class="Submenu">
-                            <a href="Procesos-y-Desarrollo-de-Software.html#inicio-procesos">Ciclo de Vida del Desarrollo (SDLC)</a>
-                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-cascada">Modelo en Cascada</a>
-                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-v">Modelo en V</a>
-                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-iterativo">Modelo Iterativo e Incremental</a>
-                        </div>
-
-                    </div>
-
-
-                    <!-- Metodologías Ágiles -->
-                    <div class="Item-Menu">
-
-                        <div class="Titulo-Menu">
-                            <i class="bi bi-lightning-charge"></i>
-
-                            <span>Metodologías Ágiles</span>
-
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-
-                        <div class="Submenu">
-                            <a href="Metodologias-Agiles.html#scrum">Scrum</a>
-                            <a href="Metodologias-Agiles.html#kanban">Kanban</a>
-                            <a href="Metodologias-Agiles.html#xp">XP (Extreme Programming)</a>
-                            <a href="Metodologias-Agiles.html#comparativa">Comparador de metodologías</a>
-                        </div>
-
-                    </div>
-
-
-                    <!-- Recursos -->
-                    <div class="Item-Menu">
-
-                        <div class="Titulo-Menu">
-                            <i class="bi bi-book"></i>
-
-                            <span>Recursos y Aprendizajes</span>
-
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-
-                        <div class="Submenu">
-                            <a href="Recursos-y-Aprendizajes.html#glosario">Glosario</a>
-                            <a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
-                            <a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
-                            <a href="Recursos-y-Aprendizajes.html#ejercicios-practicos">Ejercicios y Casos Prácticos</a>
-                            <a href="Recursos-y-Aprendizajes.html#encuesta-metodología">Encuesta sobre Metodologías</a>
-                        </div>
-
-                    </div>
-
-                    <a href="Sobre-Nosotros.html">
-                        <i class="bi bi-people"></i>
-                        <span>Sobre Nosotros</span>
-                    </a>
-
-                    <a href="Contacto.html">
-                        <i class="bi bi-envelope"></i>
-                        <span>Contacto</span>
-                    </a>
-
-                    </nav>
-                </div>
-            
-        </div>
-
-
-
-
-
-
-
-
-
-
+        <div id="menu-container"></div>
 
 		<!-- Sección principal del glosario -->
 		<div class="Pagina-Glosario">
@@ -207,26 +75,6 @@
 			</section>
 		</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		<!-- Sección principal de preguntas frecuentes -->
 		<div class="Pagina-PF">
 			<section id="inicio-preguntas" class="Seccion-Principal">
@@ -247,7 +95,7 @@
 
 				<!-- Las preguntas funcionan como un acordeón: una respuesta abierta a la vez -->
 				<div class="Lista-Preguntas">
-					<article class="Pregunta-Frecuente">
+					<div class="Pregunta-Frecuente">
 						<button class="Boton-Pregunta" type="button" aria-expanded="false">
 							<span>¿Qué es la calidad del software?</span>
 							<i class="bi bi-chevron-down"></i>
@@ -255,85 +103,65 @@
 						<div class="Respuesta-Pregunta">
 							<p>La calidad del software se relaciona con el grado en que un sistema cumple con los requisitos establecidos y satisface las necesidades de sus usuarios. Para evaluarla se pueden utilizar características, métricas y técnicas de aseguramiento de la calidad.</p>
 						</div>
-					</article>
+					</div>
 
-					<article class="Pregunta-Frecuente">
+					<div class="Pregunta-Frecuente">
 						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué es un proceso de software?</span><i class="bi bi-chevron-down"></i></button>
 						<div class="Respuesta-Pregunta"><p>Es un conjunto de actividades relacionadas que permiten desarrollar un producto de software. Estas actividades pueden incluir la especificación, el diseño, la implementación, la validación y la evolución del software.</p></div>
-					</article>
+					</div>
 
-					<article class="Pregunta-Frecuente">
+					<div class="Pregunta-Frecuente">
 						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué es un modelo de desarrollo de software?</span><i class="bi bi-chevron-down"></i></button>
 						<div class="Respuesta-Pregunta"><p>Es una representación simplificada de un proceso de software. Los modelos permiten organizar y representar las actividades que se realizan durante el desarrollo.</p></div>
-					</article>
+					</div>
 
-					<article class="Pregunta-Frecuente">
+					<div class="Pregunta-Frecuente">
 						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué es el modelo en Cascada?</span><i class="bi bi-chevron-down"></i></button>
 						<div class="Respuesta-Pregunta"><p>Es un modelo de desarrollo en el que las actividades se organizan en etapas. Entre ellas se encuentran la definición de requerimientos, el diseño, la implementación, las pruebas y el mantenimiento.</p></div>
-					</article>
+					</div>
 
-					<article class="Pregunta-Frecuente">
+					<div class="Pregunta-Frecuente">
 						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué es el desarrollo incremental?</span><i class="bi bi-chevron-down"></i></button>
 						<div class="Respuesta-Pregunta"><p>Es un enfoque en el que el sistema se desarrolla y entrega mediante diferentes incrementos. Cada incremento incorpora nuevas funcionalidades hasta llegar a una versión completa del sistema.</p></div>
-					</article>
+					</div>
 
-					<article class="Pregunta-Frecuente">
+					<div class="Pregunta-Frecuente">
 						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué es Scrum?</span><i class="bi bi-chevron-down"></i></button>
 						<div class="Respuesta-Pregunta"><p>Scrum es una metodología ágil que organiza el desarrollo del producto mediante ciclos de trabajo llamados Sprints, permitiendo entregar incrementos del producto y recibir retroalimentación de manera frecuente.</p></div>
-					</article>
+					</div>
 
-					<article class="Pregunta-Frecuente">
+					<div class="Pregunta-Frecuente">
 						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué es un Sprint?</span><i class="bi bi-chevron-down"></i></button>
 						<div class="Respuesta-Pregunta"><p>Es un período de tiempo limitado durante el cual el equipo trabaja para desarrollar un incremento del producto. En Scrum, un Sprint puede durar hasta cuatro semanas.</p></div>
-					</article>
+					</div>
 
-					<article class="Pregunta-Frecuente">
+					<div class="Pregunta-Frecuente">
 						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué es el Product Backlog?</span><i class="bi bi-chevron-down"></i></button>
 						<div class="Respuesta-Pregunta"><p>Es la lista priorizada de los requisitos y funcionalidades que se desean desarrollar en el producto. Se actualiza y modifica a medida que cambian las necesidades del proyecto.</p></div>
-					</article>
+					</div>
 
-					<article class="Pregunta-Frecuente">
+					<div class="Pregunta-Frecuente">
 						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué hace el Scrum Master?</span><i class="bi bi-chevron-down"></i></button>
 						<div class="Respuesta-Pregunta"><p>El Scrum Master ayuda a que Scrum sea comprendido y aplicado correctamente, facilita las reuniones y ayuda al equipo a resolver los impedimentos que puedan afectar el desarrollo del Sprint.</p></div>
-					</article>
+					</div>
 
-					<article class="Pregunta-Frecuente">
+					<div class="Pregunta-Frecuente">
 						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué es una prueba de software?</span><i class="bi bi-chevron-down"></i></button>
 						<div class="Respuesta-Pregunta"><p>Es una actividad utilizada para comprobar el comportamiento del software y detectar errores o problemas antes de su entrega.</p></div>
-					</article>
+					</div>
 
-					<article class="Pregunta-Frecuente">
+					<div class="Pregunta-Frecuente">
 						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Qué diferencia hay entre verificación y validación?</span><i class="bi bi-chevron-down"></i></button>
 						<div class="Respuesta-Pregunta"><p>La verificación busca comprobar que el software se está construyendo de acuerdo con los requisitos y especificaciones. La validación busca comprobar que el producto desarrollado satisface las necesidades de los usuarios.</p></div>
-					</article>
+					</div>
 
-					<article class="Pregunta-Frecuente">
+					<div class="Pregunta-Frecuente">
 						<button class="Boton-Pregunta" type="button" aria-expanded="false"><span>¿Para qué sirve el Glosario de Scrumly?</span><i class="bi bi-chevron-down"></i></button>
 						<div class="Respuesta-Pregunta"><p>El glosario permite consultar rápidamente definiciones de términos relacionados con la calidad del software, los procesos de desarrollo y las metodologías ágiles.</p></div>
-					</article>
+					</div>
 				</div>
 			</section>
 		</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 		<!-- Sección principal de enlaces de interés -->
 		<div class="Pagina-EDI">
@@ -348,19 +176,19 @@
 				<h2 id="titulo-enlaces" class="Texto-Oculto">Libros y guías recomendadas</h2>
 
 				<div class="Tarjetas-Enlaces">
-					<article class="Tarjeta-Enlace">
+					<div class="Tarjeta-Enlace">
 						<div class="Cabecera-Enlace"><i class="bi bi-book"></i><span>LIBRO</span></div>
 						<h3>Ingeniería de Software — Ian Sommerville</h3>
 						<p>Material utilizado para estudiar los procesos de software, modelos de desarrollo, requisitos, pruebas y calidad.</p>
 						<a href="https://gc.scalahed.com/recursos/files/r161r/w25469w/ingdelsoftwarelibro9_compressed.pdf" target="_blank" rel="noopener noreferrer">VER REFERENCIA DEL LIBRO <i class="bi bi-arrow-up-right"></i></a>
-					</article>
+					</div>
 
-					<article class="Tarjeta-Enlace">
+					<div class="Tarjeta-Enlace">
 						<div class="Cabecera-Enlace"><i class="bi bi-file-earmark-text"></i><span>GUÍA</span></div>
 						<h3>Scrum Estándar — Scrum Manager</h3>
 						<p>Material utilizado para estudiar Scrum, sus roles, eventos, artefactos y funcionamiento.</p>
 						<a href="https://www.scrummanager.com/files/scrum_master.pdf" target="_blank" rel="noopener noreferrer">LEER SCRUM ESTÁNDAR <i class="bi bi-arrow-up-right"></i></a>
-					</article>
+					</div>
 				</div>
 
 				<div class="Aviso-Enlaces">
@@ -369,16 +197,6 @@
 				</div>
 			</section>
 		</div>
-
-
-
-
-
-
-
-
-
-
 
 		<div class="Pagina-ECP">
 			<section id="inicio-Ejercicios" class="Seccion-Principal">
@@ -397,7 +215,7 @@
 				<p class="Encabezado-Ejercicios"><i class="bi bi-hammer" aria-hidden="true"></i>4 ejercicios · intentá resolverlos antes de ver la solución</p>
 
 				<div class="Lista-Ejercicios">
-					<article class="Tarjeta-Ejercicio">
+					<div class="Tarjeta-Ejercicio">
 						<div class="Cabecera-Ejercicio">
 							<div>
 								<p class="Antetitulo-Ejercicio">EJERCICIO 01 · MODELO EN CASCADA E INCREMENTAL</p>
@@ -416,9 +234,9 @@
 							<p class="Etiqueta-Solucion-Ejercicio"><i class="bi bi-check-circle" aria-hidden="true"></i>SOLUCIÓN ORIENTATIVA</p>
 							<p>El modelo más adecuado es Cascada. Como los requisitos están bien definidos y son estables, el equipo puede avanzar de una etapa a la siguiente —requisitos, diseño, implementación, pruebas y mantenimiento— sin volver constantemente sobre decisiones anteriores. Si los requisitos fueran inciertos o cambiaran con frecuencia, convendría un enfoque incremental que permita incorporar ajustes entre entregas.</p>
 						</div>
-					</article>
+					</div>
 
-					<article class="Tarjeta-Ejercicio">
+					<div class="Tarjeta-Ejercicio">
 						<div class="Cabecera-Ejercicio">
 							<div>
 								<p class="Antetitulo-Ejercicio">EJERCICIO 02 · NIVELES DE PRUEBA</p>
@@ -437,9 +255,9 @@
 							<p class="Etiqueta-Solucion-Ejercicio"><i class="bi bi-check-circle" aria-hidden="true"></i>SOLUCIÓN ORIENTATIVA</p>
 							<p>En orden: prueba unitaria, prueba de integración y prueba de sistema. La primera revisa el formulario de manera aislada; la segunda comprueba la interacción entre el formulario y la base de datos; y la última evalúa la aplicación completa como un producto integrado.</p>
 						</div>
-					</article>
+					</div>
 
-					<article class="Tarjeta-Ejercicio">
+					<div class="Tarjeta-Ejercicio">
 						<div class="Cabecera-Ejercicio">
 							<div>
 								<p class="Antetitulo-Ejercicio">EJERCICIO 03 · EVENTOS DE SCRUM</p>
@@ -458,9 +276,9 @@
 							<p class="Etiqueta-Solucion-Ejercicio"><i class="bi bi-check-circle" aria-hidden="true"></i>SOLUCIÓN ORIENTATIVA</p>
 							<p>Primero realiza el Daily Scrum para inspeccionar el progreso y adaptar el plan de trabajo. Al terminar el Sprint, lleva a cabo la Sprint Review para inspeccionar el incremento con las partes interesadas y, después, la Retrospectiva para acordar mejoras en la forma de trabajar.</p>
 						</div>
-					</article>
+					</div>
 
-					<article class="Tarjeta-Ejercicio">
+					<div class="Tarjeta-Ejercicio">
 						<div class="Cabecera-Ejercicio">
 							<div>
 								<p class="Antetitulo-Ejercicio">EJERCICIO 04 · GESTIÓN VISUAL DEL TRABAJO</p>
@@ -479,7 +297,7 @@
 							<p class="Etiqueta-Solucion-Ejercicio"><i class="bi bi-check-circle" aria-hidden="true"></i>SOLUCIÓN ORIENTATIVA</p>
 							<p>El equipo no debería iniciar una tercera tarea porque ya alcanzó el límite WIP. Conviene colaborar para terminar o desbloquear una de las tareas en curso; cuando una pase a la siguiente columna y haya espacio disponible, podrán tomar nuevo trabajo. Así se limita el trabajo simultáneo y se favorece un flujo más constante.</p>
 						</div>
-					</article>
+					</div>
 				</div>
 			</section>
 
@@ -501,24 +319,14 @@
 					<div>
 						<h2 id="titulo-sobre-ejercicios">Sobre estos ejercicios</h2>
 						<p>Los ejercicios anteriores son propuestas didácticas elaboradas a partir de los temas del proyecto; no son preguntas copiadas literalmente de los libros. La sección busca reforzar lo aprendido en las demás páginas de Scrumly.</p>
-						<nav class="Enlaces-Temas-Ejercicios" aria-label="Temas relacionados con los ejercicios">
+						<div class="Enlaces-Temas-Ejercicios" aria-label="Temas relacionados con los ejercicios">
 							<a href="Gestion-de-Calidad-del-Software.html#fundamentos-calidad">Fundamentos de calidad <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 							<a href="Scrum-En-Profundidad.html#scrum-en-profundidad">Scrum <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 							<a href="Metodologias-Agiles.html#kanban">Kanban <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
-						</nav>
+						</div>
 					</div>
 				</div>
 			</section>
-
-
-
-
-
-
-
-
-
-
 
 			<section id="inicio-metodologia" class="Seccion-Principal">
 				<p class="Antetitulo-Principal">RECURSOS Y APRENDIZAJES / 05</p>
@@ -593,6 +401,7 @@
         <!-- Sección pie -->
 		<div id="footer-container"></div>
 
+		<script src="JS/menu.js"></script>
 		<script src="JS/footer.js"></script>
 
 		<script src="JS/script.js"></script>

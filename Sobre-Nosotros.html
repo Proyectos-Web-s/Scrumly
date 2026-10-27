@@ -14,109 +14,9 @@
 	</head>
 	<body>
 		<!-- Barra de navegación principal -->
-		<div class="Barra-de-Navegacion">
-			<a href="index.html" class="Enlace-Logo">
-				<img src="IMG/Logo-SCRUMLY.jpeg" alt="SCRUMLY Logo" class="logo-SCRUMLY" />
-			</a>
-			<p class="Titulo-Barra">SCRUMLY</p>
-			<i class="Hambu bi-list" id="boton-menu"></i>
+		<div id="menu-container"></div>
 
-            <!-- Menu hamburgesa -->
-                <div id="menu-container">
-                    <nav class="Menu" id="menu">
-                    <div class="Menu-Titulo">
-                        <span>MENÚ</span>
-                    </div>
-
-                    <a href="index.html">
-                        <i class="bi bi-house"></i>
-                        <span>Inicio</span>
-                    </a>
-
-                    <!-- Gestión de Calidad -->
-                    <div class="Item-Menu">
-
-                        <!-- Con un click se despliega -->
-                        <div class="Titulo-Menu">
-                            <i class="bi bi-patch-check"></i>
-
-                            <span>
-                                Gestión de la Calidad<br>
-                                del Software
-                            </span>
-
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-
-                        <div class="Submenu">
-                            <a href="Gestion-de-Calidad-del-Software.html#fundamentos-calidad">Fundamentos</a>
-                            <a href="Gestion-de-Calidad-del-Software.html#calidad-agil">Técnicas de Aseguramiento de la Calidad</a>
-                            <a href="Gestion-de-Calidad-del-Software.html#herramientas-calidad">Herramientas de Calidad</a>
-                        </div>
-
-                    </div>
-
-                    <div class="Item-Menu">
-                        <div class="Titulo-Menu">
-                            <i class="bi bi-bezier2"></i>
-                            <span>Procesos de Desarrollo<br>de Software</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-                        <div class="Submenu">
-                            <a href="Procesos-y-Desarrollo-de-Software.html#inicio-procesos">Ciclo de Vida del Desarrollo (SDLC)</a>
-                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-cascada">Modelo en Cascada</a>
-                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-v">Modelo en V</a>
-                            <a href="Procesos-y-Desarrollo-de-Software.html#modelo-iterativo">Modelo Iterativo e Incremental</a>
-                        </div>
-                    </div>
-
-                    <div class="Item-Menu">
-                        <div class="Titulo-Menu">
-                            <i class="bi bi-lightning-charge"></i>
-                            <span>Metodologías Ágiles</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-                        <div class="Submenu">
-                            <a href="Metodologias-Agiles.html#scrum">Scrum</a>
-                            <a href="Metodologias-Agiles.html#kanban">Kanban</a>
-                            <a href="Metodologias-Agiles.html#xp">XP (Extreme Programming)</a>
-                            <a href="Metodologias-Agiles.html#comparativa">Comparador de metodologías</a>
-                        </div>
-                    </div>
-
-                    <div class="Item-Menu">
-                        <div class="Titulo-Menu">
-                            <i class="bi bi-book"></i>
-                            <span>Recursos y Aprendizajes</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-                        <div class="Submenu">
-                            <a href="Recursos-y-Aprendizajes.html#glosario">Glosario</a>
-                            <a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
-                            <a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
-                            <a href="Recursos-y-Aprendizajes.html#ejercicios-practicos">Ejercicios y Casos Prácticos</a>
-							<a href="Recursos-y-Aprendizajes.html#encuesta-metodologia">Encuesta sobre Metodologías</a>
-                        </div>
-                    </div>
-
-                    <a href="Sobre-Nosotros.html"><i class="bi bi-people"></i><span>Sobre Nosotros</span></a>
-                    <a href="Contacto.html"><i class="bi bi-envelope"></i><span>Contacto</span></a>
-                        </nav>
-                    </div>
-            
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-		<main class="Pagina-Sobre-Nosotros">
+		<div class="Pagina-Sobre-Nosotros">
 			<section class="Seccion-Principal" aria-labelledby="titulo-principal-sobre-nosotros">
 				<p class="Antetitulo-Principal">SCRUMLY · SOBRE NOSOTROS</p>
 				<h1 id="titulo-principal-sobre-nosotros">El equipo detrás de <span>Scrumly.</span></h1>
@@ -137,81 +37,93 @@
 					<p>Scrumly combina información teórica con ejemplos y recursos didácticos para facilitar el aprendizaje y fomentar el desarrollo de software de calidad.</p>
 				</div>
 				<div class="Pilares-Objetivo">
-					<article class="Pilar-Objetivo">
+					<div class="Pilar-Objetivo">
 						<i class="bi bi-book" aria-hidden="true"></i>
 						<h2>Aprender y compartir</h2>
 						<p>Explicar conceptos de calidad del software y desarrollo de forma sencilla y accesible.</p>
-					</article>
-					<article class="Pilar-Objetivo">
+					</div>
+					<div class="Pilar-Objetivo">
 						<i class="bi bi-people" aria-hidden="true"></i>
 						<h2>Trabajar en equipo</h2>
 						<p>Organizar las tareas, colaborar y aprovechar las habilidades de cada integrante.</p>
-					</article>
-					<article class="Pilar-Objetivo">
+					</div>
+					<div class="Pilar-Objetivo">
 						<i class="bi bi-stars" aria-hidden="true"></i>
 						<h2>Crear una experiencia interactiva</h2>
 						<p>Ofrecer una página que permita explorar los contenidos y reforzar lo aprendido mediante actividades.</p>
-					</article>
+					</div>
 				</div>
 			</section>
-
-
-
-
-
-
-
-
-
-
-
 
 			<section class="Seccion-Equipo" aria-labelledby="titulo-equipo">
 				<div class="Contenedor-Seccion-Equipo">
 					<p class="Antetitulo-Sobre-Nosotros">02 · TRABAJO COLABORATIVO</p>
 					<h2 id="titulo-equipo">Nuestro equipo</h2>
+					<!-- Cada tarjeta tiene frente y reverso; reemplazá el marcador por la foto del integrante cuando esté disponible. -->
 					<div class="Tarjetas-Equipo">
-						<article class="Tarjeta-Equipo">
-							<div class="Ilustracion-Equipo" aria-hidden="true"><i class="bi bi-people"></i></div>
-							<p class="Nombre-Integrante">Matilde Turkalj</p>
-							<h3>Scrum Master</h3>
-							<p class="Descripcion-Integrante">Ayudar a organizar el equipo, acompañar el trabajo colaborativo y facilitar el cumplimiento de los objetivos.</p>
-							<div class="Institucion-Integrante"><i class="bi bi-mortarboard" aria-hidden="true"></i><span>E.P.E.T N° 20</span></div>
-						</article>
-						<article class="Tarjeta-Equipo">
-							<div class="Ilustracion-Equipo" aria-hidden="true"><i class="bi bi-palette"></i></div>
-							<p class="Nombre-Integrante">Lucia Márquez</p>
-							<h3>Diseñadora</h3>
-							<p class="Descripcion-Integrante">Crear una experiencia visual atractiva, clara y fácil de utilizar.</p>
-							<div class="Institucion-Integrante"><i class="bi bi-mortarboard" aria-hidden="true"></i><span>E.P.E.T N° 20</span></div>
-						</article>
-						<article class="Tarjeta-Equipo">
-							<div class="Ilustracion-Equipo" aria-hidden="true"><i class="bi bi-code-slash"></i></div>
-							<p class="Nombre-Integrante">Natanael Meza</p>
-							<h3>Programador</h3>
-							<p class="Descripcion-Integrante">Desarrollar las funcionalidades del sitio y lograr que los contenidos sean interactivos.</p>
-							<div class="Institucion-Integrante"><i class="bi bi-mortarboard" aria-hidden="true"></i><span>E.P.E.T N° 20</span></div>
-						</article>
-						<article class="Tarjeta-Equipo">
-							<div class="Ilustracion-Equipo" aria-hidden="true"><i class="bi bi-shield-check"></i></div>
-							<p class="Nombre-Integrante">Brisa Martinez</p>
-							<h3>Tester</h3>
-							<p class="Descripcion-Integrante">Comprobar que el sitio funcione correctamente, detectar errores y mejorar la experiencia del usuario.</p>
-							<div class="Institucion-Integrante"><i class="bi bi-mortarboard" aria-hidden="true"></i><span>E.P.E.T N° 20</span></div>
-						</article>
+						<div class="Tarjeta-Equipo" role="button" tabindex="0" aria-pressed="false" aria-label="Tarjeta de Matilde Turkalj; activar para ver su foto">
+							<div class="Tarjeta-Equipo-Giro">
+								<div class="Cara-Tarjeta-Equipo Cara-Equipo-Frontal">
+									<div class="Ilustracion-Equipo" aria-hidden="true"><i class="bi bi-people"></i></div>
+									<p class="Nombre-Integrante">Matilde Turkalj</p>
+									<h3>Scrum Master</h3>
+									<p class="Descripcion-Integrante">Ayudar a organizar el equipo, acompañar el trabajo colaborativo y facilitar el cumplimiento de los objetivos.</p>
+									<div class="Institucion-Integrante"><i class="bi bi-mortarboard" aria-hidden="true"></i><span>E.P.E.T N° 20</span></div>
+								</div>
+								<div class="Cara-Tarjeta-Equipo Cara-Equipo-Posterior" aria-hidden="true">
+									<div class="Marco-Foto-Integrante" data-foto="IMG/Equipo/Matilde-Turkalj.jpg"><i class="bi bi-person-square"></i><span>La foto de Matilde Turkalj va acá</span></div>
+									<p class="Nombre-Integrante">Matilde Turkalj</p>
+								</div>
+							</div>
+						</div>
+						<div class="Tarjeta-Equipo" role="button" tabindex="0" aria-pressed="false" aria-label="Tarjeta de Lucia Márquez; activar para ver su foto">
+							<div class="Tarjeta-Equipo-Giro">
+								<div class="Cara-Tarjeta-Equipo Cara-Equipo-Frontal">
+									<div class="Ilustracion-Equipo" aria-hidden="true"><i class="bi bi-palette"></i></div>
+									<p class="Nombre-Integrante">Lucia Márquez</p>
+									<h3>Diseñadora</h3>
+									<p class="Descripcion-Integrante">Crear una experiencia visual atractiva, clara y fácil de utilizar.</p>
+									<div class="Institucion-Integrante"><i class="bi bi-mortarboard" aria-hidden="true"></i><span>E.P.E.T N° 20</span></div>
+								</div>
+								<div class="Cara-Tarjeta-Equipo Cara-Equipo-Posterior" aria-hidden="true">
+									<div class="Marco-Foto-Integrante" data-foto="IMG/Equipo/Lucia-Marquez.jpg"><i class="bi bi-person-square"></i><span>La foto de Lucia Márquez va acá</span></div>
+									<p class="Nombre-Integrante">Lucia Márquez</p>
+								</div>
+							</div>
+						</div>
+						<div class="Tarjeta-Equipo" role="button" tabindex="0" aria-pressed="false" aria-label="Tarjeta de Natanael Meza; activar para ver su foto">
+							<div class="Tarjeta-Equipo-Giro">
+								<div class="Cara-Tarjeta-Equipo Cara-Equipo-Frontal">
+									<div class="Ilustracion-Equipo" aria-hidden="true"><i class="bi bi-code-slash"></i></div>
+									<p class="Nombre-Integrante">Natanael Meza</p>
+									<h3>Programador</h3>
+									<p class="Descripcion-Integrante">Desarrollar las funcionalidades del sitio y lograr que los contenidos sean interactivos.</p>
+									<div class="Institucion-Integrante"><i class="bi bi-mortarboard" aria-hidden="true"></i><span>E.P.E.T N° 20</span></div>
+								</div>
+								<div class="Cara-Tarjeta-Equipo Cara-Equipo-Posterior" aria-hidden="true">
+									<div class="Marco-Foto-Integrante" data-foto="IMG/Equipo/Natanael-Meza.jpg"><i class="bi bi-person-square"></i><span>La foto de Natanael Meza va acá</span></div>
+									<p class="Nombre-Integrante">Natanael Meza</p>
+								</div>
+							</div>
+						</div>
+						<div class="Tarjeta-Equipo" role="button" tabindex="0" aria-pressed="false" aria-label="Tarjeta de Brisa Martinez; activar para ver su foto">
+							<div class="Tarjeta-Equipo-Giro">
+								<div class="Cara-Tarjeta-Equipo Cara-Equipo-Frontal">
+									<div class="Ilustracion-Equipo" aria-hidden="true"><i class="bi bi-shield-check"></i></div>
+									<p class="Nombre-Integrante">Brisa Martinez</p>
+									<h3>Tester</h3>
+									<p class="Descripcion-Integrante">Comprobar que el sitio funcione correctamente, detectar errores y mejorar la experiencia del usuario.</p>
+									<div class="Institucion-Integrante"><i class="bi bi-mortarboard" aria-hidden="true"></i><span>E.P.E.T N° 20</span></div>
+								</div>
+								<div class="Cara-Tarjeta-Equipo Cara-Equipo-Posterior" aria-hidden="true">
+									<div class="Marco-Foto-Integrante" data-foto="IMG/Equipo/Brisa-Martinez.jpg"><i class="bi bi-person-square"></i><span>La foto de Brisa Martinez va acá</span></div>
+									<p class="Nombre-Integrante">Brisa Martinez</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
-
-
-
-
-
-
-
-
-
-
 
 			<section class="Seccion-Contacto-Sobre-Nosotros" aria-labelledby="titulo-contacto-sobre-nosotros">
 				<h2 id="titulo-contacto-sobre-nosotros">¿Querés compartir una idea?</h2>
@@ -219,12 +131,13 @@
 					Contáctanos <i class="bi bi-arrow-right" aria-hidden="true"></i>
 				</a>
 			</section>
-		</main>
+		</div>
 
 
         <!-- Sección pie -->
 		<div id="footer-container"></div>
 
+		<script src="JS/menu.js"></script>
 		<script src="JS/footer.js"></script>
 
         <script src="JS/script.js"></script>

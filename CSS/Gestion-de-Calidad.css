@@ -1066,8 +1066,8 @@ body {
 .Panel-Herramienta {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     width: 100%;
-    
 }
 
 .Paneles-Herramientas {
@@ -1083,6 +1083,8 @@ body {
 }
 
 .Tarjeta-Herramienta {
+    display: flex;
+    flex-direction: column;
     width: min(600px, 100%);
     height: auto;
     overflow: hidden;
@@ -1100,7 +1102,10 @@ body {
 
 .Contenido-Tarjeta-Herramienta {
     position: relative;
-    height: auto;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 335px;
     padding: 18px 22px 16px;
     box-sizing: border-box;
 }
@@ -1158,7 +1163,7 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin-top: 16px;
+    margin-top: auto;
     padding: 11px 2px 0;
     border: 0;
     border-top: 1px solid #e5dbce;
@@ -1564,6 +1569,7 @@ body {
     }
 
     .Contenido-Tarjeta-Herramienta {
+        min-height: 360px;
         padding: 18px 20px;
     }
 

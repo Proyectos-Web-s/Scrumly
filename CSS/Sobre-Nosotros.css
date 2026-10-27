@@ -162,14 +162,71 @@ body {
 }
 
 .Tarjeta-Equipo {
-    display: flex;
     min-width: 0;
     min-height: 460px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+/* El contenedor conserva el foco accesible y la capa interior realiza el giro 3D. */
+.Tarjeta-Equipo:focus-visible {
+    outline: 3px solid #80649c;
+    outline-offset: 4px;
+    border-radius: 16px;
+}
+
+.Tarjeta-Equipo-Giro {
+    display: grid;
+    min-height: inherit;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.Cara-Tarjeta-Equipo {
+    display: flex;
+    grid-area: 1 / 1;
+    min-width: 0;
     flex-direction: column;
     padding: 22px;
     border: 1px solid var(--color-borde-nosotros);
     border-radius: 16px;
+    backface-visibility: hidden;
     background: #fff;
+}
+
+/* La cara posterior reserva un marco uniforme para las fotos del equipo. */
+.Cara-Equipo-Posterior {
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+    text-align: center;
+}
+
+.Marco-Foto-Integrante {
+    display: flex;
+    width: 100%;
+    min-height: 240px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #e1d7f2;
+    color: var(--color-acento-nosotros);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.Marco-Foto-Integrante i {
+    font-size: 66px;
+}
+
+.Marco-Foto-Integrante img {
+    width: 100%;
+    height: 240px;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 .Ilustracion-Equipo {
@@ -215,6 +272,17 @@ body {
 
 .Institucion-Integrante i {
     font-size: 22px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .Tarjeta-Equipo:hover .Tarjeta-Equipo-Giro {
+        transform: rotateY(180deg);
+    }
+}
+
+/* La clase girada permite activar la tarjeta con toque, clic o teclado. */
+.Tarjeta-Equipo.girada .Tarjeta-Equipo-Giro {
+    transform: rotateY(180deg);
 }
 
 /* ========================================
@@ -341,11 +409,22 @@ body {
 
     .Tarjeta-Equipo {
         min-height: 0;
+    }
+
+    .Cara-Tarjeta-Equipo {
         padding: 18px;
     }
 
     .Ilustracion-Equipo {
         min-height: 150px;
+    }
+
+    .Marco-Foto-Integrante {
+        min-height: 200px;
+    }
+
+    .Marco-Foto-Integrante img {
+        height: 200px;
     }
 
     .Institucion-Integrante {
@@ -356,5 +435,11 @@ body {
         align-items: flex-start;
         flex-direction: column;
         padding: 36px 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .Tarjeta-Equipo-Giro {
+        transition: none;
     }
 }

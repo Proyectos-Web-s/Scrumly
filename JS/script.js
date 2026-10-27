@@ -1,57 +1,26 @@
 // Este archivo reúne las interacciones compartidas por las páginas de Scrumly.
-// Cada bloque busca sus elementos en el HTML y solo se activa en las páginas que los contienen.
 
-function inicializarMenu() {
-    const botonMenu = document.getElementById("boton-menu");
-    const menu = document.getElementById("menu");
+// El CSS gestiona el hover; este bloque permite girar con toque/clic y teclado,
+// manteniendo aria-pressed y la visibilidad accesible de cada cara sincronizados.
+document.querySelectorAll(".Tarjeta-Equipo").forEach((tarjeta) => {
+    const caraFrontal = tarjeta.querySelector(".Cara-Equipo-Frontal");
+    const caraPosterior = tarjeta.querySelector(".Cara-Equipo-Posterior");
 
-    if (botonMenu && menu) {
-        botonMenu.onclick = () => {
-            menu.classList.toggle("activo");
-        };
-    }
-}
+    const alternarTarjeta = () => {
+        const girada = tarjeta.classList.toggle("girada");
+        tarjeta.setAttribute("aria-pressed", String(girada));
+        caraFrontal.setAttribute("aria-hidden", String(girada));
+        caraPosterior.setAttribute("aria-hidden", String(!girada));
+    };
 
-function bindSubmenuEvents() {
-    document.querySelectorAll(".Titulo-Menu").forEach((titulo) => {
-        titulo.onclick = () => desplegar(titulo);
-    });
-}
-
-// La navegación ya está declarada en cada HTML; se conectan sus controles al cargar el script.
-inicializarMenu();
-bindSubmenuEvents();
-
-// Abre el submenú del título pulsado y cierra los demás submenús abiertos.
-function desplegar(elemento) {
-    const itemMenu = elemento.closest(".Item-Menu");
-    if (!itemMenu) return;
-
-    const submenu = itemMenu.querySelector(".Submenu");
-    const flecha = elemento.querySelector(".bi-chevron-down");
-
-    // Mantiene abierto como máximo un submenú a la vez.
-    document.querySelectorAll(".Item-Menu .Submenu").forEach((sub) => {
-        if (sub !== submenu) {
-            sub.classList.remove("activo");
+    tarjeta.addEventListener("click", alternarTarjeta);
+    tarjeta.addEventListener("keydown", (evento) => {
+        if (evento.key === "Enter" || evento.key === " ") {
+            evento.preventDefault();
+            alternarTarjeta();
         }
     });
-
-    // Actualiza también la orientación visual de las flechas de los submenús.
-    document.querySelectorAll(".Titulo-Menu .bi-chevron-down").forEach((icono) => {
-        if (icono !== flecha) {
-            icono.classList.remove("girada");
-        }
-    });
-
-    if (submenu) {
-        submenu.classList.toggle("activo");
-    }
-
-    if (flecha) {
-        flecha.classList.toggle("girada");
-    }
-}
+});
 
 // Recorrido interactivo del SDLC: cada objeto contiene el contenido de una etapa
 // y la clase de Bootstrap Icons que se muestra en su botón y en la tarjeta.
@@ -138,112 +107,190 @@ if (selectorEtapasSDLC) {
 function animarEstelaSDLC(indice) {
     if (!selectorEtapasSDLC || !estelaSDLC) return;
 
-    if (primeraSeleccionSDLC) {
-        primeraSeleccionSDLC = false;
-        return;
-    }
-
-    if (indice === indiceAnteriorSDLC) return;
-
     const selectorRect = selectorEtapasSDLC.getBoundingClientRect();
 
-    const centro = (i) => {
-        const rect = botonesEtapaSDLC[i].getBoundingClientRect();
-        return rect.left + rect.width / 2 - selectorRect.left - 30;
+    const posicionDeElemento = (elemento) => {
+        const rect = elemento.getBoundingClientRect();
+        return {
+            x: rect.left - selectorRect.left + (rect.width - 60) / 2,
+            y: rect.top - selectorRect.top + (rect.height - 60) / 2
+        };
     };
-
-    const inicio = centro(indiceAnteriorSDLC);
-    const final = centro(indice);
-    const direccion = final >= inicio ? 1 : -1;
-    const distancia = Math.abs(final - inicio);
-
-    const etapasIntermedias = [];
+    const posicionDeEtapa = (i) =>
+        posicionDeElemento(
+            botonesEtapaSDLC[i].querySelector(".Icono-Boton-Etapa")
+                || botonesEtapaSDLC[i]
+        );
+    const inicio = posicionDeElemento(estelaSDLC);
+    const direccion = indice >= indiceAnteriorSDLC ? 1 : -1;
+    const destinos = [];
 
     for (
         let i = indiceAnteriorSDLC + direccion;
         direccion > 0 ? i < indice : i > indice;
         i += direccion
     ) {
-        etapasIntermedias.push(centro(i));
+        destinos.push(posicionDeEtapa(i));
     }
 
-    const duracion = Math.min(
-        1600,
-        Math.max(550, distancia * 1.8)
+    const final = posicionDeEtapa(indice);
+    destinos.push(final);
+
+    const transformar = (posicion, escala) =>
+        `translate(${posicion.x}px, ${posicion.y}px) scale(${escala})`;
+
+    if (primeraSeleccionSDLC || indice === indiceAnteriorSDLC) {
+        primeraSeleccionSDLC = false;
+        [estelaSDLC, ...ecosSDLC].forEach((elemento) => {
+            elemento.getAnimations().forEach((animacion) => animacion.cancel());
+        });
+        estelaSDLC.style.transform = transformar(final, 1);
+        estelaSDLC.style.opacity = "1";
+        ecosSDLC.forEach((eco, i) => {
+            eco.style.transform = transformar(final, 1 + (i + 1) * 0.12);
+            eco.style.opacity = "0";
+        });
+        return;
+    }
+
+    [estelaSDLC, ...ecosSDLC].forEach((elemento) => {
+        elemento.getAnimations().forEach((animacion) => animacion.cancel());
+    });
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        estelaSDLC.style.transform = transformar(final, 1);
+        estelaSDLC.style.opacity = "1";
+        ecosSDLC.forEach((eco, i) => {
+            eco.style.transform = transformar(final, 1.14 + i * 0.12);
+            eco.style.opacity = "0";
+        });
+        primeraSeleccionSDLC = false;
+        return;
+    }
+
+    const posicionesRuta = [inicio, ...destinos];
+    const distancias = posicionesRuta.slice(1).map((destino, i) =>
+        Math.hypot(
+            destino.x - posicionesRuta[i].x,
+            destino.y - posicionesRuta[i].y
+        )
     );
-
-    // El círculo principal se desliza y rebota en las etapas.
-    const fotogramas = [
-        {
-            transform: `translate(${inicio}px, -50%) scale(.9)`,
-            opacity: 1,
-            offset: 0
-        }
-    ];
-
-    etapasIntermedias.forEach((x, i) => {
-        const avance = Math.abs(x - inicio) / (distancia || 1);
-
-        fotogramas.push({
-            transform: `translate(${x}px, -50%) scale(1.12)`,
-            opacity: 1,
-            offset: Math.max(0.01, avance - 0.035)
-        });
-
-        fotogramas.push({
-            transform: `translate(${x}px, -50%) scale(.94)`,
-            opacity: 1,
-            offset: Math.min(0.99, avance + 0.035)
-        });
-    });
-
-    fotogramas.push({
-        transform: `translate(${final}px, -50%) scale(1.04)`,
+    const distanciaTotal = distancias.reduce((total, tramo) => total + tramo, 0);
+    const duracion = Math.min(3200, Math.max(900, distanciaTotal * 2.3));
+    const posicionesClave = [];
+    const fotogramasEstela = [{
+        transform: transformar(inicio, 1),
         opacity: 1,
-        offset: 0.94
+        offset: 0
+    }];
+    let recorrido = 0;
+
+    destinos.forEach((destino, i) => {
+        const inicioTramo = recorrido / (distanciaTotal || 1);
+        recorrido += distancias[i];
+        const finTramo = recorrido / (distanciaTotal || 1);
+        const amplitudTramo = finTramo - inicioTramo;
+
+        const llegada = inicioTramo + amplitudTramo * 0.72;
+        const rebote = inicioTramo + amplitudTramo * 0.86;
+        const asentamiento = finTramo;
+
+        posicionesClave.push({ posicion: destino, llegada, rebote, asentamiento });
+        fotogramasEstela.push(
+            {
+                transform: transformar(destino, 1.14),
+                opacity: 1,
+                offset: llegada,
+                easing: "cubic-bezier(.22,.8,.25,1)"
+            },
+            {
+                transform: transformar(destino, 0.92),
+                opacity: 1,
+                offset: rebote,
+                easing: "ease-out"
+            },
+            {
+                transform: transformar(destino, 1),
+                opacity: 1,
+                offset: asentamiento,
+                easing: "cubic-bezier(.22,.8,.25,1)"
+            }
+        );
     });
 
-    fotogramas.push({
-        transform: `translate(${final}px, -50%) scale(1)`,
-        opacity: 1,
-        offset: 1
-    });
-
-    estelaSDLC.getAnimations().forEach(a => a.cancel());
-
-    estelaSDLC.animate(fotogramas, {
+    estelaSDLC.style.opacity = "1";
+    const animacionEstela = estelaSDLC.animate(fotogramasEstela, {
         duration: duracion,
         easing: "cubic-bezier(.22,.8,.25,1)",
         fill: "forwards"
     });
+    animacionEstela.onfinish = () => {
+        estelaSDLC.style.transform = transformar(final, 1);
+        estelaSDLC.style.opacity = "1";
+    };
 
-    // Cada eco sigue el recorrido con un pequeño retraso.
     ecosSDLC.forEach((eco, i) => {
-        eco.getAnimations().forEach(a => a.cancel());
+        const opacidad = 0.42 - i * 0.1;
+        const fotogramasEco = [{
+            transform: transformar(inicio, 0.86 + i * 0.08),
+            opacity: 0,
+            offset: 0
+        }];
 
-        eco.animate(
-            [
+        fotogramasEco.push({
+            transform: transformar(inicio, 0.9 + i * 0.08),
+            opacity: opacidad,
+            offset: 0.06
+        });
+
+        posicionesClave.forEach((clave) => {
+            fotogramasEco.push(
                 {
-                    transform: `translate(${inicio}px, -50%) scale(.72)`,
-                    opacity: 0
+                    transform: transformar(clave.posicion, 0.86 + i * 0.08),
+                    opacity: opacidad,
+                    offset: clave.llegada,
+                    easing: "cubic-bezier(.22,.8,.25,1)"
                 },
                 {
-                    transform: `translate(${inicio}px, -50%) scale(1)`,
-                    opacity: 0.5,
-                    offset: 0.12
+                    transform: transformar(clave.posicion, 1.08 + i * 0.08),
+                    opacity: opacidad * 0.72,
+                    offset: clave.rebote,
+                    easing: "ease-out"
                 },
                 {
-                    transform: `translate(${final}px, -50%) scale(.92)`,
-                    opacity: 0
+                    transform: transformar(clave.posicion, 1.2 + i * 0.08),
+                    opacity: opacidad * 0.52,
+                    offset: clave.asentamiento,
+                    easing: "cubic-bezier(.22,.8,.25,1)"
                 }
-            ],
-            {
-                duration: duracion,
-                delay: i * 75,
-                easing: "ease-out",
-                fill: "none"
-            }
-        );
+            );
+        });
+
+        const animacionEco = eco.animate(fotogramasEco, {
+            duration: duracion,
+            delay: (i + 1) * 70,
+            easing: "linear",
+            fill: "both"
+        });
+        animacionEco.onfinish = () => {
+            const desvanecerEco = eco.animate(
+                [
+                    {
+                        transform: transformar(final, 1.2 + i * 0.08),
+                        opacity: opacidad * 0.52
+                    },
+                    {
+                        transform: transformar(final, 1.5 + i * 0.08),
+                        opacity: 0
+                    }
+                ],
+                { duration: 180, easing: "ease-out", fill: "forwards" }
+            );
+            desvanecerEco.onfinish = () => {
+                eco.style.transform = transformar(final, 1.5 + i * 0.08);
+                eco.style.opacity = "0";
+            };
+        };
     });
 }
 
@@ -575,23 +622,33 @@ if (botonesCategoriaHerramienta.length) {
 }
 
 // Las tarjetas de herramientas muestran sus detalles dentro de la misma tarjeta.
+function actualizarTarjetaHerramienta(boton, abierta) {
+    const detalleId = boton.getAttribute("aria-controls");
+    const detalle = detalleId ? document.getElementById(detalleId) : null;
+    const tarjeta = boton.closest(".Tarjeta-Herramienta");
+    const texto = boton.querySelector("span");
+    const icono = boton.querySelector("i");
+
+    if (!detalle || !tarjeta || !texto || !icono) return;
+
+    boton.setAttribute("aria-expanded", String(abierta));
+    detalle.hidden = !abierta;
+    tarjeta.classList.toggle("abierta", abierta);
+    texto.textContent = abierta ? "Ver menos" : "Ver más";
+    icono.classList.toggle("bi-chevron-up", abierta);
+    icono.classList.toggle("bi-chevron-down", !abierta);
+}
+
 document.querySelectorAll(".Boton-Mas-Herramienta").forEach((boton) => {
     boton.addEventListener("click", () => {
-        const detalleId = boton.getAttribute("aria-controls");
-        const detalle = detalleId ? document.getElementById(detalleId) : null;
-        const tarjeta = boton.closest(".Tarjeta-Herramienta");
-        const texto = boton.querySelector("span");
-        const icono = boton.querySelector("i");
-
-        if (!detalle || !tarjeta || !texto || !icono) return;
-
         const abierta = boton.getAttribute("aria-expanded") !== "true";
-        boton.setAttribute("aria-expanded", String(abierta));
-        detalle.hidden = !abierta;
-        tarjeta.classList.toggle("abierta", abierta);
-        texto.textContent = abierta ? "Ver menos" : "Ver más";
-        icono.classList.toggle("bi-chevron-up", abierta);
-        icono.classList.toggle("bi-chevron-down", !abierta);
+
+        if (abierta) {
+            document.querySelectorAll(".Boton-Mas-Herramienta[aria-expanded='true']")
+                .forEach((otraBoton) => actualizarTarjetaHerramienta(otraBoton, false));
+        }
+
+        actualizarTarjetaHerramienta(boton, abierta);
     });
 });
 // Agrega apertura por clic, Enter o espacio a las tarjetas explicativas de modelos.
@@ -902,18 +959,18 @@ function mostrarResultadosGlosario(texto = "", letra = "") {
             <p class="Cantidad-Resultados">${resultados.length} términos</p>
             ${Object.entries(grupos).map(([letra, elementos]) => `
                 <section class="Grupo-Letra">
-                    <header class="Encabezado-Letra">
+                    <div class="Encabezado-Letra">
                         <span class="Inicial-Letra">${letra}</span>
                         <h2>LETRA ${letra}</h2>
                         <strong>${elementos.length} términos</strong>
-                    </header>
+                    </div>
                     <div class="Tarjetas-Resultados">
                         ${elementos.map((elemento) => `
-                            <article class="Tarjeta-Glosario">
+                            <div class="Tarjeta-Glosario">
                                 <i class="bi bi-journal-text"></i>
                                 <h3>${elemento.termino}</h3>
                                 <p>${elemento.descripcion}</p>
-                            </article>
+                            </div>
                         `).join("")}
                     </div>
                 </section>
@@ -1140,7 +1197,7 @@ if (tableroKanban && botonReiniciarKanban) {
             }
 
             tareasColumna.forEach((tarea) => {
-                const tarjeta = document.createElement("article");
+                const tarjeta = document.createElement("div");
                 tarjeta.className = "Tarjeta-Tarea-Kanban";
                 tarjeta.dataset.tareaKanban = tarea.id;
 

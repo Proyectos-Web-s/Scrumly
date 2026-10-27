@@ -14,88 +14,11 @@
 	</head>
 	<body>
 		<!-- Navegación del sitio y acceso a las páginas de metodologías. -->
-		<div class="Barra-de-Navegacion">
-			<a href="index.html" class="Enlace-Logo">
-				<img src="IMG/Logo-SCRUMLY.jpeg" alt="SCRUMLY Logo" class="logo-SCRUMLY" />
-			</a>
-			<p class="Titulo-Barra">SCRUMLY</p>
-			<i class="Hambu bi-list" id="boton-menu" role="button" tabindex="0" aria-label="Abrir menú"></i>
-			<div id="menu-container">
-				<nav class="Menu" id="menu">
-				<div class="Menu-Titulo">
-					<span>MENÚ</span>
-				</div>
-
-				<a href="index.html">
-					<i class="bi bi-house"></i>
-					<span>Inicio</span>
-				</a>
-
-				<div class="Item-Menu">
-					<div class="Titulo-Menu">
-						<i class="bi bi-patch-check"></i>
-						<span>Gestión de la Calidad<br>del Software</span>
-						<i class="bi bi-chevron-down"></i>
-					</div>
-					<div class="Submenu">
-						<a href="Gestion-de-Calidad-del-Software.html#fundamentos-calidad">Fundamentos</a>
-						<a href="Gestion-de-Calidad-del-Software.html#calidad-agil">Técnicas de Aseguramiento de la Calidad</a>
-						<a href="Gestion-de-Calidad-del-Software.html#herramientas-calidad">Herramientas de Calidad</a>
-					</div>
-				</div>
-
-				<div class="Item-Menu">
-					<div class="Titulo-Menu">
-						<i class="bi bi-bezier2"></i>
-						<span>Procesos de Desarrollo<br>de Software</span>
-						<i class="bi bi-chevron-down"></i>
-					</div>
-					<div class="Submenu">
-						<a href="Procesos-y-Desarrollo-de-Software.html#inicio-procesos">Ciclo de Vida del Desarrollo (SDLC)</a>
-						<a href="Procesos-y-Desarrollo-de-Software.html#modelo-cascada">Modelo en Cascada</a>
-						<a href="Procesos-y-Desarrollo-de-Software.html#modelo-v">Modelo en V</a>
-						<a href="Procesos-y-Desarrollo-de-Software.html#modelo-iterativo">Modelo Iterativo e Incremental</a>
-					</div>
-				</div>
-
-				<div class="Item-Menu">
-					<div class="Titulo-Menu">
-						<i class="bi bi-lightning-charge"></i>
-						<span>Metodologías Ágiles</span>
-						<i class="bi bi-chevron-down"></i>
-					</div>
-					<div class="Submenu">
-						<a href="Metodologias-Agiles.html#scrum">Scrum</a>
-						<a href="Metodologias-Agiles.html#kanban">Kanban</a>
-						<a href="Metodologias-Agiles.html#xp">XP (Extreme Programming)</a>
-						<a href="Metodologias-Agiles.html#comparativa">Comparador de metodologías</a>
-					</div>
-				</div>
-
-				<div class="Item-Menu">
-					<div class="Titulo-Menu">
-						<i class="bi bi-book"></i>
-						<span>Recursos y Aprendizajes</span>
-						<i class="bi bi-chevron-down"></i>
-					</div>
-					<div class="Submenu">
-						<a href="Recursos-y-Aprendizajes.html#glosario">Glosario</a>
-						<a href="Recursos-y-Aprendizajes.html#preguntas-frecuentes">Preguntas Frecuentes</a>
-						<a href="Recursos-y-Aprendizajes.html#enlaces-interes">Enlaces de Interés</a>
-						<a href="Recursos-y-Aprendizajes.html#ejercicios-practicos">Ejercicios y Casos Prácticos</a>
-						<a href="Recursos-y-Aprendizajes.html#encuesta-metodología">Encuesta sobre Metodologías</a>
-					</div>
-				</div>
-
-				<a href="Sobre-Nosotros.html"><i class="bi bi-people"></i><span>Sobre Nosotros</span></a>
-				<a href="Contacto.html"><i class="bi bi-envelope"></i><span>Contacto</span></a>
-				</nav>
-			</div>
-		</div>
+		<div id="menu-container"></div>
 
 		<div class="Pagina-Kanban">
 			<!-- Portada de Kanban. -->
-			<header class="Encabezado-Kanban">
+			<div class="Encabezado-Kanban">
 				<p class="Antetitulo-Kanban">METODOLOGÍAS ÁGILES / 02</p>
 				<h1>KANBAN: <span>EL TRABAJO,<br />VISIBLE.</span></h1>
 				<p>
@@ -103,63 +26,34 @@
 					limitar las tareas en curso y mejorar el flujo. No exige Sprints: el trabajo puede
 					avanzar de manera continua, según la capacidad disponible.
 				</p>
-			</header>
+			</div>
 
 			<!-- Principios esenciales y diagrama que se puede ampliar. -->
 			<section class="Seccion-Kanban Seccion-Ideas" aria-labelledby="titulo-ideas-kanban">
 				<p class="Antetitulo-Kanban">01 · GESTIONAR EL TRABAJO</p>
 				<h2 id="titulo-ideas-kanban">Tres ideas centrales</h2>
 				<div class="Tarjetas-Ideas-Kanban">
-					<article class="Tarjeta-Idea-Kanban">
+					<div class="Tarjeta-Idea-Kanban">
 						<h3>Visualizar</h3>
 						<p>Un tablero muestra las tareas y su estado. Las columnas representan etapas del proceso real, no una estructura obligatoria.</p>
-					</article>
-					<article class="Tarjeta-Idea-Kanban">
+					</div>
+					<div class="Tarjeta-Idea-Kanban">
 						<h3>Limitar el trabajo en curso</h3>
 						<p>WIP significa <span lang="en">Work in Progress</span>: trabajo en curso. Establecer un límite ayuda a evitar la sobrecarga y terminar antes de iniciar más tareas.</p>
-					</article>
-					<article class="Tarjeta-Idea-Kanban">
+					</div>
+					<div class="Tarjeta-Idea-Kanban">
 						<h3>Mejorar continuamente</h3>
 						<p>Observar bloqueos, tiempos y acumulaciones permite detectar cuellos de botella y ajustar el proceso.</p>
-					</article>
+					</div>
 				</div>
 
-				<figure class="Figura-Kanban">
+				<div class="Figura-Kanban">
 					<button class="Boton-Diagrama" type="button" data-titulo-diagrama="Flujo visual de Kanban" aria-label="Ampliar diagrama del flujo Kanban">
-						<svg class="Diagrama-Kanban" viewBox="0 0 1040 350" role="img" aria-labelledby="titulo-diagrama-kanban">
-							<title id="titulo-diagrama-kanban">Flujo de trabajo desde Por Hacer hasta En Proceso y Hecho</title>
-							<defs>
-								<marker id="flecha-kanban-diagrama" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
-									<path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#80649c" stroke-width="1.5" />
-								</marker>
-							</defs>
-							<rect class="Fondo-Diagrama-Kanban" x="1" y="1" width="1038" height="348" rx="14" />
-							<g class="Columna-Diagrama-Kanban">
-								<rect x="45" y="32" width="235" height="286" rx="14" />
-								<text x="162" y="66">Por Hacer</text>
-								<rect x="402" y="32" width="235" height="286" rx="14" />
-								<text x="519" y="66">En Proceso</text>
-								<rect x="760" y="32" width="235" height="286" rx="14" />
-								<text x="877" y="66">Hecho</text>
-							</g>
-							<g class="Tarea-Diagrama-Kanban">
-								<rect x="65" y="130" width="195" height="64" rx="11" />
-								<text x="162" y="168">Pendiente</text>
-								<rect x="422" y="130" width="195" height="64" rx="11" />
-								<text x="519" y="168">En desarrollo</text>
-								<rect x="780" y="130" width="195" height="64" rx="11" />
-								<text x="877" y="168">Terminado</text>
-							</g>
-							<g class="Flecha-Diagrama-Kanban">
-								<path d="M300 162 H380" marker-end="url(#flecha-kanban-diagrama)" />
-								<path d="M657 162 H738" marker-end="url(#flecha-kanban-diagrama)" />
-							</g>
-							<text class="Limite-Diagrama-Kanban" x="519" y="274">Límite WIP</text>
-						</svg>
+						<img class="Diagrama-Kanban" src="IMG/Diagrama-Kanban-Detallado.svg" alt="Flujo Kanban desde Por Hacer hasta En Proceso y Hecho, con límite de trabajo en curso." />
 						<span class="Icono-Ampliar-Kanban bi bi-zoom-in" aria-hidden="true"></span>
 					</button>
-					<figcaption>El trabajo avanza por las etapas acordadas. El límite WIP se define según la capacidad del equipo.</figcaption>
-				</figure>
+					<div>El trabajo avanza por las etapas acordadas. El límite WIP se define según la capacidad del equipo.</div>
+				</div>
 			</section>
 
 			<!-- Tablero didáctico con tareas que se mueven y un límite WIP de dos. -->
@@ -181,33 +75,33 @@
 				
 				<div class="Tablero-Kanban" id="tablero-kanban" aria-label="Tablero Kanban interactivo">
 					<section class="Columna-Kanban" data-columna-kanban="0" aria-labelledby="titulo-columna-pendiente">
-						<header class="Cabecera-Columna-Kanban">
+						<div class="Cabecera-Columna-Kanban">
 							<div>
 								<h3 id="titulo-columna-pendiente">Por Hacer</h3>
 								<p>Trabajo pendiente de iniciar</p>
 							</div>
 							<span class="Contador-Columna-Kanban" data-contador-kanban="0">0</span>
-						</header>
+						</div>
 						<div class="Lista-Tareas-Kanban" data-lista-kanban="0"></div>
 					</section>
 					<section class="Columna-Kanban" data-columna-kanban="1" aria-labelledby="titulo-columna-proceso">
-						<header class="Cabecera-Columna-Kanban">
+						<div class="Cabecera-Columna-Kanban">
 							<div>
 								<h3 id="titulo-columna-proceso">En Proceso</h3>
 								<p>Trabajo iniciado y aún no terminado</p>
 							</div>
 							<span class="Contador-Columna-Kanban" data-contador-kanban="1">0/2</span>
-						</header>
+						</div>
 						<div class="Lista-Tareas-Kanban" data-lista-kanban="1"></div>
 					</section>
 					<section class="Columna-Kanban" data-columna-kanban="2" aria-labelledby="titulo-columna-hecho">
-						<header class="Cabecera-Columna-Kanban">
+						<div class="Cabecera-Columna-Kanban">
 							<div>
 								<h3 id="titulo-columna-hecho">Hecho</h3>
 								<p>Trabajo terminado según los criterios acordados</p>
 							</div>
 							<span class="Contador-Columna-Kanban" data-contador-kanban="2">0</span>
-						</header>
+						</div>
 						<div class="Lista-Tareas-Kanban" data-lista-kanban="2"></div>
 					</section>
 				</div>
@@ -252,6 +146,7 @@
         <!-- Sección pie -->
 		<div id="footer-container"></div>
 
+		<script src="JS/menu.js"></script>
 		<script src="JS/footer.js"></script>
 		
 		<script src="JS/script.js"></script>

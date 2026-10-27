@@ -312,7 +312,7 @@ body {
 	
 }
 
-.Tarjetas-Practicas-XP article {
+.Tarjetas-Practicas-XP > div {
 	min-width: 0;
 	min-height: 118px;
 	padding: 18px 22px;
@@ -423,6 +423,7 @@ body {
 	outline-offset: 3px;
 }
 
+.Boton-Diagrama img,
 .Boton-Diagrama svg {
 	display: block;
 	width: 100%;
@@ -511,7 +512,7 @@ body {
 	font-size: 18px;
 }
 
-.Figura-Agil figcaption {
+.Figura-Agil > div {
 	margin-top: 8px;
 	color: #5f5b65;
 	font-size: 14px;

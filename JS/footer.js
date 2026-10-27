@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (!contenedor) return;
 
     const htmlFallback = `
-        <footer class="footer-scrumly">
+        <div class="footer-scrumly">
             <div class="footer-contenido">
                 <div class="footer-marca">
                     <h2>Scrumly.</h2>
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 <p>© 2026 Scrumly · Proyecto educativo</p>
                 <p>Desarrollado por el equipo Scrumly.</p>
             </div>
-        </footer>
+        </div>
     `;
 
     try {
