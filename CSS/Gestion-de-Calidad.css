@@ -1588,6 +1588,11 @@ body {
         padding: 0 16px;
     }
 
+    #fundamentos-calidad {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
     .Contenedor-Titulos {
         margin-left: 0;
     }

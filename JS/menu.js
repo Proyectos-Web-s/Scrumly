@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <i class="bi bi-chevron-down"></i>
                     </div>
                     <div class="Submenu">
-                        <a href="Gestion-de-Calidad-del-Software.html#fundamentos-calidad">Fundamentos</a>
+                        <a href="Gestion-de-Calidad-del-Software.html#inicio-calidad">Fundamentos</a>
                         <a href="Gestion-de-Calidad-del-Software.html#calidad-agil">Técnicas de Aseguramiento de la Calidad</a>
                         <a href="Gestion-de-Calidad-del-Software.html#herramientas-calidad">Herramientas de Calidad</a>
                     </div>
