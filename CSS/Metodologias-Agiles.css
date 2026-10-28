@@ -133,13 +133,13 @@ body {
 .Boton-Navegacion-Agil:hover,
 .Boton-Navegacion-Agil:focus-visible {
 	background: var(--color-acento);
-	color: #fff;
+	color: #171717;
 }
 
 .Boton-Navegacion-Agil.activo {
 	border-color: var(--color-acento);
 	background: var(--color-acento);
-	color: #fff;
+	color: #171717;
 }
 
 /* Secciones de contenido y encabezados. */
@@ -522,7 +522,7 @@ body {
 .Boton-Detalle-Agil {
 	border-color: var(--color-acento);
 	background: var(--color-acento);
-	color: #fff;
+	color: #171717;
 	font-size: 14px;
 	font-weight: 700;
 }
