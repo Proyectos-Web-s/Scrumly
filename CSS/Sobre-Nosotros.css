@@ -15,11 +15,6 @@ body {
     font-family: 'Public Sans', sans-serif;
 }
 
-.Pagina-Sobre-Nosotros {
-    --color-acento-nosotros: #80649c;
-    --color-borde-nosotros: rgba(164, 135, 101, 0.42);
-}
-
 /* ========================================
    CONTENEDORES Y ENCABEZADOS COMPARTIDOS
    ======================================== */
@@ -39,7 +34,7 @@ body {
 .Antetitulo-Principal,
 .Antetitulo-Sobre-Nosotros {
     margin: 0 0 8px;
-    color: var(--color-acento-nosotros);
+    color: #80649c;
     font-size: 16px;
     font-weight: 800;
 }
@@ -66,7 +61,7 @@ body {
 }
 
 .Seccion-Principal h1 span {
-    color: var(--color-acento-nosotros);
+    color: #80649c;
 }
 
 /* ========================================
@@ -120,7 +115,7 @@ body {
 }
 
 .Pilar-Objetivo > i {
-    color: var(--color-acento-nosotros);
+    color: #80649c;
     font-size: 30px;
 }
 
@@ -188,7 +183,7 @@ body {
     min-width: 0;
     flex-direction: column;
     padding: 22px;
-    border: 1px solid var(--color-borde-nosotros);
+    border: 1px solid #A487656B;
     border-radius: 16px;
     backface-visibility: hidden;
     background: #fff;
@@ -213,7 +208,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     background: #e1d7f2;
-    color: var(--color-acento-nosotros);
+    color: #80649c;
     font-size: 15px;
     font-weight: 700;
 }
@@ -235,7 +230,7 @@ body {
     place-items: center;
     border-radius: 10px;
     background: #e1d7f2;
-    color: var(--color-acento-nosotros);
+    color: #80649c;
     font-size: 66px;
 }
 
@@ -272,7 +267,7 @@ body {
     gap: 12px;
     margin-top: auto;
     padding-top: 16px;
-    border-top: 1px solid var(--color-borde-nosotros);
+    border-top: 1px solid #A487656B;
     color: #55515a;
     font-size: 16px;
 }
@@ -312,7 +307,7 @@ body {
     min-width: 180px;
     padding: 12px 20px;
     border-radius: 10px;
-    background: var(--color-acento-nosotros);
+    background: #80649c;
     color: #fff;
     font-size: 17px;
     font-weight: 700;

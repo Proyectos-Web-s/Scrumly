@@ -32,7 +32,7 @@ body {
 }
 
 .Antetitulo{
-    color: var(--color-acento) ;
+    color: #80649c ;
     font-size: 20px;
     padding: 10px;
     padding-left: 20px;
@@ -57,7 +57,7 @@ body {
 }
 
 .Contenedor-Titulos h1 span {
-    color: var(--color-acento) ;
+    color: #80649c ;
 }
 
 .Parrafo-Principal{
@@ -123,7 +123,7 @@ section#modelo-iterativo {
   padding: 5px 8px;
   border-radius: 6px;
   font-size: 15px;
-  color: var(--color-acento);
+  color: #80649c;
   margin-bottom: 8px;
   text-transform: uppercase;
 }
@@ -147,7 +147,7 @@ section#modelo-iterativo {
   flex-shrink: 0;
   border-radius: 8px;
   background: #e4d8f2;
-  color: var(--color-acento);
+  color: #80649c;
   font-size: 26px;
 }
 
@@ -253,7 +253,7 @@ section#modelo-iterativo {
 
 .Numero-Cascada {
   margin-bottom: 3px;
-  color: var(--color-acento);
+  color: #80649c;
   font-size: 0.8rem;
   font-weight: 700;
 }
@@ -273,7 +273,7 @@ section#modelo-iterativo {
   justify-content: center;
   align-self: flex-end;
   margin-top: 3px;
-  color: var(--color-acento);
+  color: #80649c;
   font-size: 0.95rem;
   font-weight: 700;
   z-index: 2;
@@ -325,11 +325,11 @@ section#modelo-iterativo {
 .Paso-Modelo:focus-visible {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(43, 35, 52, 0.12);
-  border-color: var(--color-acento);
+  border-color: #80649c;
 }
 
 .Numero-Paso {
-  color: var(--color-acento);
+  color: #80649c;
   font-size: 1rem;
   font-weight: 700;
 }
@@ -376,7 +376,7 @@ section#modelo-iterativo {
 .Lista-Modelo:hover{
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(43, 35, 52, 0.12);
-  border-color: var(--color-acento);
+  border-color: #80649c;
 }
 
 .Listas-Modelo {
@@ -406,13 +406,13 @@ section#modelo-iterativo {
 .Etapa-V:hover,
 .Etapa-V:focus-visible {
   transform: translateY(-2px);
-  border-color: var(--color-acento);
+  border-color: #80649c;
   box-shadow: 0 6px 16px rgba(43, 35, 52, 0.12);
 }
 
 .Etapa-V strong {
   display: block;
-  color: var(--color-texto);
+  color: #333333;
 }
 
 .Etapa-V p {
@@ -466,7 +466,7 @@ section#modelo-iterativo {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  color: var(--color-acento);
+  color: #80649c;
   font-size: 1.1rem;
   font-weight: 700;
 }
@@ -533,9 +533,9 @@ section#modelo-iterativo {
   min-width: 150px;
   margin: 16px auto 8px;
   padding: 12px 8px;
-  background: var(--color-acento);
-  border-color: var(--color-acento);
-  color: #ffffff;
+  background: #80649c;
+  border-color: #80649c;
+  color: #000000;
 }
 
 .Implementacion-V-Diagrama h4 {
@@ -545,7 +545,7 @@ section#modelo-iterativo {
 .Implementacion-V-Diagrama:hover,
 .Implementacion-V-Diagrama:focus-visible,
 .Implementacion-V-Diagrama[aria-expanded="true"] {
-  background: var(--color-acento);
+  background: #80649c;
 }
 
 .Nota-V-Diagrama {
@@ -639,7 +639,7 @@ section#modelo-iterativo {
 
 .Flecha-Iterativa,
 .Ciclo-Iterativo {
-  color: var(--color-acento);
+  color: #80649c;
   text-align: center;
   line-height: 1;
 }
@@ -650,8 +650,8 @@ section#modelo-iterativo {
 
 .Tarjeta-Mejora-Iterativa {
   min-height: 60px;
-  border-color: var(--color-acento);
-  background: var(--color-acento);
+  border-color: #80649c;
+  background: #80649c;
   color: #0b0d1a;
 }
 
@@ -662,7 +662,7 @@ section#modelo-iterativo {
 .Tarjeta-Mejora-Iterativa:hover,
 .Tarjeta-Mejora-Iterativa:focus-visible,
 .Tarjeta-Mejora-Iterativa[aria-expanded="true"] {
-  background: var(--color-acento);
+  background: #80649c;
 }
 
 .Ciclo-Iterativo {
@@ -697,7 +697,7 @@ section#modelo-iterativo {
 .Funcion-Modelo:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(43, 35, 52, 0.12);
-  border-color: var(--color-acento);
+  border-color: #80649c;
 }
 
 .Funcion-Modelo p {
@@ -767,7 +767,7 @@ section#modelo-iterativo {
   width: 26px;
   height: 26px;
   margin-top: 2px;
-  color: var(--color-acento);
+  color: #80649c;
   font-size: 24px;
   flex-shrink: 0;
 }
@@ -802,7 +802,7 @@ section#modelo-iterativo {
 }
 
 .Etiqueta-Comparacion {
-  color: var(--color-acento);
+  color: #80649c;
   font-size: 14px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -905,7 +905,7 @@ section#contexto-ciclo-vida {
 
 .Antetitulo-Contexto-Ciclo {
   margin: 0 0 24px;
-  color: var(--color-acento);
+  color: #80649c;
   font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -977,7 +977,7 @@ section#contexto-ciclo-vida {
 
 .Antetitulo-Etapas-SDLC {
   margin: 0 0 8px;
-  color: var(--color-acento);
+  color: #80649c;
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -1020,7 +1020,7 @@ section#contexto-ciclo-vida {
   max-width: 86%;
   height: 4px;
   border-radius: 999px;
-  background: var(--color-acento);
+  background: #80649c;
   content: "";
   transition: width 0.55s cubic-bezier(0.22, 1, 0.36, 1);
   pointer-events: none;
@@ -1169,9 +1169,9 @@ section#contexto-ciclo-vida {
   perspective: 1200px;
 }
 
-.Tarjeta-Etapa-Volteable {
+#etapas-sdlc .Tarjeta-Etapa-Volteable {
   min-height: 300px;
-  
+  box-shadow: none;
 }
 
 .Interior-Etapa-SDLC {
@@ -1234,7 +1234,7 @@ section#contexto-ciclo-vida {
   place-items: center;
   border-radius: 24px;
   background: #e7dcf0;
-  color: var(--color-acento);
+  color: #80649c;
   font-size: 2.5rem;
 }
 
@@ -1245,7 +1245,7 @@ section#contexto-ciclo-vida {
 
 .Etiqueta-Panel-Etapa {
   margin: 0 0 8px;
-  color: var(--color-acento);
+  color: #80649c;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -1253,7 +1253,7 @@ section#contexto-ciclo-vida {
 
 .Titulo-Panel-Etapa {
   margin: 0 0 12px;
-  color: var(--color-texto);
+  color: #333333;
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 400;
@@ -1279,7 +1279,7 @@ section#contexto-ciclo-vida {
 .Objetivo-Panel-Etapa > i {
   flex: 0 0 auto;
   margin-top: 2px;
-  color: var(--color-acento);
+  color: #80649c;
 }
 
 /* Contenedor del diagrama */
@@ -1300,7 +1300,7 @@ section#contexto-ciclo-vida {
 }
 
 .Boton-Diagrama:focus-visible {
-    outline: 3px solid var(--color-acento);
+    outline: 3px solid #80649c;
     outline-offset: 3px;
 }
 
@@ -1502,7 +1502,7 @@ body {
   height: 28px;
   border-radius: 50%;
   background: #d9c9ef;
-  color: var(--color-acento);
+  color: #80649c;
   font-weight: 900;
   font-size: 0.9rem;
   flex-shrink: 0;
@@ -1876,7 +1876,7 @@ body {
   }
 
   .Columna-V-Diagrama::before {
-    color: var(--color-acento);
+    color: #80649c;
     font-size: 16px;
     font-weight: 700;
   }

@@ -749,7 +749,7 @@ body {
 }
 
 .Tarjeta-Nivel.abierta {
-    flex: 0 0 auto;
+    flex: 1 1 0;
     height: auto;
 }
 
